@@ -1,0 +1,4 @@
+reason,count
+Prompt-supplied target ID/ingredient and linked inventory aliases,35
+Same prompt-supplied values plus INCI overlap,10
+Same prompt-supplied values plus formulation-category overlap,5

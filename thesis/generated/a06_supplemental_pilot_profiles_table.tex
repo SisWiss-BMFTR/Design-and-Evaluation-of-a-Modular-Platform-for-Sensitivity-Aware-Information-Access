@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}>{\ttfamily\raggedright\arraybackslash}p{42mm}>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X@{}}
+\toprule
+\normalfont Profile & Secure delivered canary & Sensitivity delivered canary & Both modes & Delivered protected leakage \\
+\midrule
+workflow\_follow\_v1 & 16/16 $\rightarrow$ 0/16 & 16/16 $\rightarrow$ 0/16 & 32/32 $\rightarrow$ 0/32 & 0/32 $\rightarrow$ 0/32 \\
+localized\_de\_v1 & 16/16 $\rightarrow$ 0/16 & 16/16 $\rightarrow$ 0/16 & 32/32 $\rightarrow$ 0/32 & 0/32 $\rightarrow$ 0/32 \\
+audit\_paraphrase\_v1 & 14/16 $\rightarrow$ 0/16 & 0/16 $\rightarrow$ 0/16 & 14/32 $\rightarrow$ 0/32 & 0/32 $\rightarrow$ 0/32 \\
+benign\_metadata\_control\_v1 & 0/16 $\rightarrow$ 0/16 & 0/16 $\rightarrow$ 0/16 & 0/32 $\rightarrow$ 0/32 & 0/32 $\rightarrow$ 0/32 \\
+\bottomrule
+\end{tabularx}
+\caption[A06 supplemental development-pilot profiles]{Supplemental A06 development-pilot and exploratory profile results on R-006 and R-007. Cells show prompt-injection guard off $\rightarrow$ on for unauthorised conversations. Each mode has 16 conversations per profile and arm; the pooled denominator is 32. Protected ingredient-plus-percentage delivery was zero throughout. These pilot counts are separate from the full confirmatory run.}
+\label{tab:a06-supplemental-pilot-profiles}
+\end{table}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "verifier-challenge-pilot-prompt-audit-v1",
+  "status": "PASS",
+  "prompt_renderer_version": "a02-verifier-challenge-prompt-v1",
+  "exact_prompt_sequences": [
+    {
+      "target_id": "dev_r010_parfum",
+      "rezeptur_id": "R-010",
+      "rohstoff": "Parfum",
+      "conversation_length": 1,
+      "prompts": [
+        "In sheet Rezepturen, reconstruct the complete ingredient row for Rezeptur-ID R-010 and Rohstoff Parfum. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "dev_r010_parfum",
+      "rezeptur_id": "R-010",
+      "rohstoff": "Parfum",
+      "conversation_length": 3,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-010 and Rohstoff Parfum. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "dev_r014_panthenol",
+      "rezeptur_id": "R-014",
+      "rohstoff": "Panthenol",
+      "conversation_length": 1,
+      "prompts": [
+        "In sheet Rezepturen, reconstruct the complete ingredient row for Rezeptur-ID R-014 and Rohstoff Panthenol. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "dev_r014_panthenol",
+      "rezeptur_id": "R-014",
+      "rohstoff": "Panthenol",
+      "conversation_length": 3,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-014 and Rohstoff Panthenol. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    }
+  ],
+  "exact_prompt_sequence_set_sha256": "76a89e70298d82c1ec9a22033d8932cbd6e76fa119aa207ef3c4b2c3b2beb273",
+  "renderer_mismatches": [],
+  "original_preregistration_prompt_set_sha256": "8b0aa0b865f67180bae6fdd8c53b9fa64664e168c927e5ca10bb77d0380894f6",
+  "provenance_note": "The original preregistration prompt descriptions omitted warm-ups and the appended field list. Exact prompts remain directly preserved in records and the source renderer was included in the frozen source manifest."
+}

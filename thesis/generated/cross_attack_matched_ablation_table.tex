@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}p{30mm}*{5}{>{\centering\arraybackslash}X}@{}}
+\toprule
+Attack & Tested control & \shortstack{S\\outcome} & \shortstack{SE\\outcome} & \shortstack{Secondary\\evidence} & \shortstack{S\\positive task} & \shortstack{SE\\positive task} \\
+\midrule
+A01 & Exact-value delivery verifier & 0$\to$0 & 0$\to$0 & \shortstack{S: 0$\to$0\\SE: 150$\to$150} & 75$\to$75 & 57$\to$60 \\
+A02 & Structured restricted-field verifier & 0$\to$0 & 0$\to$0 & \shortstack{S: 150$\to$150\\SE: 150$\to$150} & 75$\to$75 & 50$\to$50 \\
+A03 & Access-change state clearing & 0$\to$0 & 0$\to$0 & \shortstack{S: 150$\to$0\\SE: 140$\to$0} & 75$\to$75 & 75$\to$75 \\
+A04 & Relation-access guard & 150$\to$0 & 65$\to$0 & \shortstack{S: 150$\to$0\\SE: 150$\to$150} & 75$\to$75 & 75$\to$75 \\
+A05 & Membership guard & 0$\to$0 & 15$\to$0 & \shortstack{S: 0$\to$0\\SE: 150$\to$150} & 75$\to$75 & 75$\to$75 \\
+A06 & Prompt-injection guard & 0$\to$0 & 0$\to$0 & \shortstack{S: 0$\to$0\\SE: 0$\to$0} & 75$\to$75 & 75$\to$75 \\
+A07 & Relation-access guard & 0$\to$0 & 0$\to$0 & \shortstack{S: 0$\to$0\\SE: 150$\to$150} & 75$\to$75 & 74$\to$75 \\
+A08 & Embedding-probe guard & 0$\to$0 & 3$\to$0 & \shortstack{S: 0$\to$0\\SE: 150$\to$0} & 75$\to$75 & 74$\to$74 \\
+\bottomrule
+\end{tabularx}
+\caption[Cross-attack matched-ablation summary]{Cross-attack matched-ablation summary. Every numerical cell reports the raw count with guards off $\rightarrow$ guards on; security counts have denominator 150 and authorised positive-control task counts denominator 75. Selected outcomes are attack-specific and must not be interpreted as one homogeneous measure. For A06, the selected outcome is canary compliance and the secondary column is the separate delivered confidentiality outcome.}
+\label{tab:cross-attack-matched-ablation}
+\end{table}

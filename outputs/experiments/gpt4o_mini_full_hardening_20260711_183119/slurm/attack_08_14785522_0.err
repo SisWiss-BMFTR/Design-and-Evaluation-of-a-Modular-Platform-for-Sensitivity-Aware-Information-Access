@@ -1,0 +1,3 @@
+/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[2026-07-12T00:44:30.063] error: *** JOB 14785548 ON ggpu172 CANCELLED AT 2026-07-12T00:44:30 DUE TO TIME LIMIT ***

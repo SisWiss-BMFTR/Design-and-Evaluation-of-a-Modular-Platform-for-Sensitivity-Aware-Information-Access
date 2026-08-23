@@ -1,0 +1,13 @@
+attack=05 profile=guards_off mode=sensitivity_eval_mode output=outputs/experiments/gpt4o_mini_full_hardening_20260711_183119/guards_off/attack_05_rank_probing_membership_inference/sensitivity_eval_mode
+post_generation=false prompt_injection=false memory_clear=false
+Running rank-probing membership inference matrix: 45 conditions, 5 iteration(s) each, model=gpt-4o-mini.
+
+Condition: target=r001_pure_cream access=public turns=1 iterations=5
+============ Job Information ===================================================
+Submitted: 2026-07-12T20:06:45
+Started: 2026-07-15T00:13:12
+Ended: 2026-07-15T00:17:37
+Elapsed: 5 min, Limit: 180 min, Difference: 175 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

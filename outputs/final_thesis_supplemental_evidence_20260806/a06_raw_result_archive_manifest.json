@@ -1,0 +1,382 @@
+{
+  "schema_version": "a06-raw-result-archive-manifest-v1",
+  "status": "PRESENT_AT_CAPTURE_LOCATION_NOT_GIT_TRACKED",
+  "scope": "The 20 full and 32 pilot primary result JSON files. Duplicate CSV and human-readable report renderings are outside this archive inventory.",
+  "capture_location": {
+    "type": "local_hpc_workspace",
+    "uri": "file:///mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z",
+    "repository_relative_run_root": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z",
+    "durability_boundary": "No external long-term repository URI was available at thesis freeze. The URI identifies the retained cluster workspace copy and is not a claim of public or permanent availability."
+  },
+  "git_policy": "Raw result JSON is excluded from Git because the trees total hundreds of megabytes. The compact audited ledgers, manifests, source snapshot, and execution receipts are tracked separately.",
+  "result_json_files": 52,
+  "records": 1284,
+  "total_bytes": 529797217,
+  "canonical_inventory_sha256": "59f4d8272e88eadaaeff02df645708138f3abf72c435ee859cf94e258ad77131",
+  "inventory": [
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/secure_rag_mode/workflow_follow_v1/R-001/results.json",
+      "sha256": "fd9e4433c78263f035aafcd6f71ec2e7b09fc11ac29013a741def39c62879a8b",
+      "bytes": 18468969,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/secure_rag_mode/workflow_follow_v1/R-002/results.json",
+      "sha256": "66f5b770547f364a2a31f0cbddf6a7dbf3573c54224ec71621679576e64b9312",
+      "bytes": 18474101,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/secure_rag_mode/workflow_follow_v1/R-003/results.json",
+      "sha256": "d518b8014522113ac430109ce1ccf43b609b2dc3c7b5da719f6941e17c915fce",
+      "bytes": 18471077,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/secure_rag_mode/workflow_follow_v1/R-004/results.json",
+      "sha256": "7c9adf33c7f3975a2763038289fc914c35e033a4e72f1f5c07c912ab3e676515",
+      "bytes": 18472481,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/secure_rag_mode/workflow_follow_v1/R-005/results.json",
+      "sha256": "7cc3ba689738c87e486de5a87b1a20a592d621281a2f844f4274cf398040208d",
+      "bytes": 18431152,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/sensitivity_eval_mode/workflow_follow_v1/R-001/results.json",
+      "sha256": "b78d32b3abda1e3b124b63e740e4607d22e4366fabab6f08484fcb71e8898e5d",
+      "bytes": 23235414,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/sensitivity_eval_mode/workflow_follow_v1/R-002/results.json",
+      "sha256": "9ee1b1809b7d05fa3b737a8904db41043e1fceb1e1a24bb8e301bdd2f471bb07",
+      "bytes": 23234430,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/sensitivity_eval_mode/workflow_follow_v1/R-003/results.json",
+      "sha256": "f5b5e94884d3bca45fdea57beb20b90897b5cb6a1131b3051b57a94630ddce32",
+      "bytes": 23232996,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/sensitivity_eval_mode/workflow_follow_v1/R-004/results.json",
+      "sha256": "4be928ed0386947d8785ad119511e487668ff00f573bb36148de0e3d43dd1281",
+      "bytes": 23235144,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_A_guard_off/sensitivity_eval_mode/workflow_follow_v1/R-005/results.json",
+      "sha256": "e86dda9b6a769c011e77b86baefa28eea9d5507db9fd8810484a120eb645ea44",
+      "bytes": 23184511,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/secure_rag_mode/workflow_follow_v1/R-001/results.json",
+      "sha256": "a5f88ab86891f26683ecbab178db819282cebba99a33e0dbdce1396d4d5fec94",
+      "bytes": 18477636,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/secure_rag_mode/workflow_follow_v1/R-002/results.json",
+      "sha256": "686d437e7d31b7e8bd2f40df4b757a3f7f598ae348fd19b0a6a5580706a23eed",
+      "bytes": 18479476,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/secure_rag_mode/workflow_follow_v1/R-003/results.json",
+      "sha256": "d6444dae1c34abf1d824cfa788ce2e5a0e9785499ee264277739d4afdf1fab00",
+      "bytes": 18479123,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/secure_rag_mode/workflow_follow_v1/R-004/results.json",
+      "sha256": "03bf835059ed99cf44946ed72963c19a38ec53b976260fef63933370cb3a5532",
+      "bytes": 18480782,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/secure_rag_mode/workflow_follow_v1/R-005/results.json",
+      "sha256": "fd45e1c4c8c45038f553747691f69dd9b0e0d27ddf343e43150e60ecdfa03ff0",
+      "bytes": 18438543,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/sensitivity_eval_mode/workflow_follow_v1/R-001/results.json",
+      "sha256": "50a61341b3229ac77f8b059ac321b2da99b35557d81420592e52da678d38ad93",
+      "bytes": 23276741,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/sensitivity_eval_mode/workflow_follow_v1/R-002/results.json",
+      "sha256": "1893cd19a33ea14831298d47519c2d8171d6fb9022dc940188f48a1f895e767b",
+      "bytes": 23281024,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/sensitivity_eval_mode/workflow_follow_v1/R-003/results.json",
+      "sha256": "677973c14ef96f2312c90a87c61610ecad69b5c7a85f0ce25f805ee495d80d03",
+      "bytes": 23277046,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/sensitivity_eval_mode/workflow_follow_v1/R-004/results.json",
+      "sha256": "b95391e9d611b911cfe91decfa9be24ac387e9daf0039bbb3a395094dd01172f",
+      "bytes": 23288263,
+      "record_count": 45
+    },
+    {
+      "phase": "full",
+      "path_relative_to_run_root": "full/arm_B_guard_on/sensitivity_eval_mode/workflow_follow_v1/R-005/results.json",
+      "sha256": "b5e55324d6ed323f1c0a4798d9051f613ddb9df402e2f9bdba52bdfd91741503",
+      "bytes": 23229257,
+      "record_count": 45
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/secure_rag_mode/audit_paraphrase_v1/R-006/results.json",
+      "sha256": "09f890ac76e7bbed54cc39c245955e6b308ed2da3a81a321e35cb4969eba8e5d",
+      "bytes": 3125431,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/secure_rag_mode/audit_paraphrase_v1/R-007/results.json",
+      "sha256": "5541ee9e53acb8f06a21d348dca4167090d2cceb9969483afe65b3f451b52b43",
+      "bytes": 3127983,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/secure_rag_mode/benign_metadata_control_v1/R-006/results.json",
+      "sha256": "5429eb1f3c9592b07c87e0b7afcfa224f5d9c511766151195a0c798c864b2483",
+      "bytes": 3084675,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/secure_rag_mode/benign_metadata_control_v1/R-007/results.json",
+      "sha256": "3e4e5beb9d16911cfa1da76e938f002da3de01ab2d360b4da722068f65d0cb2b",
+      "bytes": 3099948,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/secure_rag_mode/localized_de_v1/R-006/results.json",
+      "sha256": "36672168fe2448f1b210220fc3e0bd255e4efc49cdfb94af25c37ea73d1445d1",
+      "bytes": 3122058,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/secure_rag_mode/localized_de_v1/R-007/results.json",
+      "sha256": "dc7fea60c1ed1a7ab0d4335f34d88535f79f5e3018566427b9475a7729bf3cca",
+      "bytes": 3122888,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/secure_rag_mode/workflow_follow_v1/R-006/results.json",
+      "sha256": "d583c62246f6798d6c2cf13fc7cbce4f1e6372bdb1af63c4ee5cfbeada0ea3dd",
+      "bytes": 3127710,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/secure_rag_mode/workflow_follow_v1/R-007/results.json",
+      "sha256": "881b15b61176be9a7118c2e06eb827bf1c4b36545d9f295c3a651423f49151a4",
+      "bytes": 3127465,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/sensitivity_eval_mode/audit_paraphrase_v1/R-006/results.json",
+      "sha256": "192b9cc32082e2f358f0f9cf3dcf251999f5342f6580384a220af8463ba70e5e",
+      "bytes": 3928571,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/sensitivity_eval_mode/audit_paraphrase_v1/R-007/results.json",
+      "sha256": "bdbafcc19486ebc533809f95efde8af19feb27c65b7acba3cd813bc34df2bc38",
+      "bytes": 3929021,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/sensitivity_eval_mode/benign_metadata_control_v1/R-006/results.json",
+      "sha256": "33352832077d29dd0ae20fd3e29a24685c718e796beb15ea9c8dd23ebc643e9b",
+      "bytes": 3884632,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/sensitivity_eval_mode/benign_metadata_control_v1/R-007/results.json",
+      "sha256": "4b378fc695806ceeaafc8cca4deabeda73c2365eafff2b01ff9c60670f3d0064",
+      "bytes": 3902854,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/sensitivity_eval_mode/localized_de_v1/R-006/results.json",
+      "sha256": "f8513c9158c935729bf190be15a576eb64c5ef840d9e45cd1c1d35867c0c0a2b",
+      "bytes": 3921909,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/sensitivity_eval_mode/localized_de_v1/R-007/results.json",
+      "sha256": "0cf93453852c43ca4fd66140ffd0c717f28d766904a8500bf1ba91402df5d4d2",
+      "bytes": 3921071,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/sensitivity_eval_mode/workflow_follow_v1/R-006/results.json",
+      "sha256": "c36403468a87a52c4a8fc7a5708236baac6017483fac4b967b7e71a0e73e275e",
+      "bytes": 3932234,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_A_guard_off/sensitivity_eval_mode/workflow_follow_v1/R-007/results.json",
+      "sha256": "363ee4697ec6e28fe3dd6a4a509e4d66411cfd92fbba14b632813f8d60aea668",
+      "bytes": 3931874,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/secure_rag_mode/audit_paraphrase_v1/R-006/results.json",
+      "sha256": "e0b9b9bd8abdabc0ffe48408831dd3f9600885c5ef5e96737e6ff37dcb9142ee",
+      "bytes": 3126911,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/secure_rag_mode/audit_paraphrase_v1/R-007/results.json",
+      "sha256": "19446e01cbf3fbc1c50b780bfb0812579522308099bbe44a4ed024f043646faa",
+      "bytes": 3127222,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/secure_rag_mode/benign_metadata_control_v1/R-006/results.json",
+      "sha256": "0a7ef227cd174683a02dc1f8faa80bf109788822c80fee36332845d3f049dd61",
+      "bytes": 3084350,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/secure_rag_mode/benign_metadata_control_v1/R-007/results.json",
+      "sha256": "e7a3519c8013114d8e4958a89910b9a557e0393d19b9dd879cecca85c8194fbe",
+      "bytes": 3099623,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/secure_rag_mode/localized_de_v1/R-006/results.json",
+      "sha256": "02cf40e3e1c3193be16d74e5afd94b69bf411633ac8ebe6d8113289c5d367d12",
+      "bytes": 3121892,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/secure_rag_mode/localized_de_v1/R-007/results.json",
+      "sha256": "d25f5d9566622057f4257075cc96bd4b2ba1742169a9a12451d914066e73513d",
+      "bytes": 3121793,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/secure_rag_mode/workflow_follow_v1/R-006/results.json",
+      "sha256": "cc60eea0f5a944babe88f36f2e2de58bee3df3251b634abca165b85dd61717ef",
+      "bytes": 3130570,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/secure_rag_mode/workflow_follow_v1/R-007/results.json",
+      "sha256": "4ad46efd812b94fbff3df4592cd380ba17cae6c0550a1f02f9f35fe995ce823e",
+      "bytes": 3131015,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/sensitivity_eval_mode/audit_paraphrase_v1/R-006/results.json",
+      "sha256": "50435911b1bc8ab6860e48b1cb04634bab62404bd118ba15f850e9f658ff02ea",
+      "bytes": 3939574,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/sensitivity_eval_mode/audit_paraphrase_v1/R-007/results.json",
+      "sha256": "acc84cd3e18f1dccf91ab8e74f196c1f2ed572cf0a2cf707ea2596532ea91ab8",
+      "bytes": 3939902,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/sensitivity_eval_mode/benign_metadata_control_v1/R-006/results.json",
+      "sha256": "e781253b005aecb6691a7cc10bb962a5e4044e238befc78eafa816190232bace",
+      "bytes": 3884332,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/sensitivity_eval_mode/benign_metadata_control_v1/R-007/results.json",
+      "sha256": "e00a4c892c97d20145591ef67fdb1559d68b3da12cdba381f03d407ae08b944f",
+      "bytes": 3902316,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/sensitivity_eval_mode/localized_de_v1/R-006/results.json",
+      "sha256": "8bcf8d3329106415c48c8d87618fb08dda0800675b3fe356438278ac433f27f4",
+      "bytes": 3931025,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/sensitivity_eval_mode/localized_de_v1/R-007/results.json",
+      "sha256": "de24f85236d617284c40448a9b012a6a0a886f20272eeb68fd994e679365b26a",
+      "bytes": 3930897,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/sensitivity_eval_mode/workflow_follow_v1/R-006/results.json",
+      "sha256": "74e042c106346acb1cc632ae39c33e340322a20cdc49f4f9e49d424ccd69daf2",
+      "bytes": 3943755,
+      "record_count": 12
+    },
+    {
+      "phase": "pilot",
+      "path_relative_to_run_root": "pilot/arm_B_guard_on/sensitivity_eval_mode/workflow_follow_v1/R-007/results.json",
+      "sha256": "8a51090f4026cb1c27c0b9efef7dd57c722f6e9de89979495ee8f590a36bb48b",
+      "bytes": 3943550,
+      "record_count": 12
+    }
+  ]
+}

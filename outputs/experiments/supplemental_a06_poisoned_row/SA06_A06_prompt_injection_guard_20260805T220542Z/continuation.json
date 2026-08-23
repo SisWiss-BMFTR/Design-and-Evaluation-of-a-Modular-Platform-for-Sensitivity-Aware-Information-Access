@@ -1,0 +1,8 @@
+{
+  "decision": "PASS_AND_CONTINUE",
+  "full_run_submitted": true,
+  "full_array_job_id": "15173152",
+  "full_audit_job_id": "15173153",
+  "full_audit_dependency": "afterany:15173152",
+  "recorded_at_utc": "2026-08-05T23:21:54.632367+00:00"
+}

@@ -1,0 +1,201 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "status": "pass",
+      "check": "A02 policy-aware baseline leakage for secure_rag_mode",
+      "token": "8/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 policy-aware baseline leakage for sensitivity_eval_mode",
+      "token": "123/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 policy-aware full reconstruction",
+      "token": "37/150"
+    },
+    {
+      "status": "pass",
+      "check": "A01 descriptive baseline primary outcome for secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A01 descriptive baseline primary outcome for sensitivity_eval_mode",
+      "token": "74/150"
+    },
+    {
+      "status": "pass",
+      "check": "A03 descriptive baseline primary outcome for secure_rag_mode",
+      "token": "150/150"
+    },
+    {
+      "status": "pass",
+      "check": "A03 descriptive baseline primary outcome for sensitivity_eval_mode",
+      "token": "150/150"
+    },
+    {
+      "status": "pass",
+      "check": "A04 descriptive baseline primary outcome for secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A04 descriptive baseline primary outcome for sensitivity_eval_mode",
+      "token": "75/150"
+    },
+    {
+      "status": "pass",
+      "check": "A05 descriptive baseline primary outcome for secure_rag_mode",
+      "token": "44/150"
+    },
+    {
+      "status": "pass",
+      "check": "A05 descriptive baseline primary outcome for sensitivity_eval_mode",
+      "token": "70/150"
+    },
+    {
+      "status": "pass",
+      "check": "A06 descriptive baseline primary outcome for secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A06 descriptive baseline primary outcome for sensitivity_eval_mode",
+      "token": "2/150"
+    },
+    {
+      "status": "pass",
+      "check": "A07 descriptive baseline primary outcome for secure_rag_mode",
+      "token": "150/150"
+    },
+    {
+      "status": "pass",
+      "check": "A07 descriptive baseline primary outcome for sensitivity_eval_mode",
+      "token": "150/150"
+    },
+    {
+      "status": "pass",
+      "check": "A08 descriptive baseline primary outcome for secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A08 descriptive baseline primary outcome for sensitivity_eval_mode",
+      "token": "82/150"
+    },
+    {
+      "status": "pass",
+      "check": "A05 guards-off sensitivity confirmation",
+      "token": "10/150"
+    },
+    {
+      "status": "pass",
+      "check": "A07-S guards-off canary compliance",
+      "token": "150/150"
+    },
+    {
+      "status": "pass",
+      "check": "A07-N guards-on sensitivity utility",
+      "token": "70/75"
+    },
+    {
+      "status": "pass",
+      "check": "baseline aggregate protected utility for secure_rag_mode",
+      "token": "528/600"
+    },
+    {
+      "status": "pass",
+      "check": "baseline aggregate protected utility for sensitivity_eval_mode",
+      "token": "424/600"
+    },
+    {
+      "status": "pass",
+      "check": "hardened aggregate protected utility for secure_rag_mode",
+      "token": "600/600"
+    },
+    {
+      "status": "pass",
+      "check": "hardened aggregate protected utility for sensitivity_eval_mode",
+      "token": "556/600"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a01_exposure_delivery",
+      "token": "a01_exposure_delivery"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a02_policy_aware_reconstruction",
+      "token": "a02_policy_aware_reconstruction"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a03_state_delivery",
+      "token": "a03_state_delivery"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a04_relation_structure",
+      "token": "a04_relation_structure"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a05_membership_evidence_sets",
+      "token": "a05_membership_evidence_sets"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a06_integrity_confidentiality",
+      "token": "a06_integrity_confidentiality"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a07_family_guard_ablation",
+      "token": "a07_family_guard_ablation"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a08_exposure_delivery",
+      "token": "a08_exposure_delivery"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure cross_attack_descriptive_baseline",
+      "token": "cross_attack_descriptive_baseline"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure cross_attack_package_comparison",
+      "token": "cross_attack_package_comparison"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure cross_attack_utility",
+      "token": "cross_attack_utility"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure guard_path_telemetry",
+      "token": "guard_path_telemetry"
+    },
+    {
+      "status": "pass",
+      "check": "compiled layout has no overfull hbox",
+      "token": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/thesis/build-final-clean/main.log"
+    }
+  ],
+  "artifact_sha256": {
+    "thesis/main.tex": "89dd4fd1bb0bf2701719376929a93708390b3c847bb8d64020b034d4620e05ce",
+    "thesis/chapters/chapter05_experiments.tex": "4be3c372b2985cb0a6c71588bf43439697c2494cc2d38700773e77f7b473a572",
+    "thesis/chapters/chapter06_results.tex": "a80d900e36964d04f7363c740100ebd749bbe51b385b3dac4238a04fbd5db3f1",
+    "thesis/chapters/chapter07_vulnerability_analysis.tex": "1a3d5ec60979c06c073d4a682ef14cef61d195ef1d7b742415b35ae0f7e82d60",
+    "thesis/chapters/chapter08_discussion.tex": "ce63d485ac69588ced380375e6e919e0f2e5d14b8a465b45e425083909f6aa84",
+    "thesis/chapters/chapter09_conclusion.tex": "4c5563bddba2c3d52400fe0e28a324427ddef76c120a032d8cffb43d8e4f182b",
+    "thesis/build-final-clean/main.pdf": "19852556c1b9a21442aac83cb37332b7d4629484721296d771a8a19138e4b4cf",
+    "outputs/final_thesis_evidence_20260725/metrics.json": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+    "outputs/final_thesis_evidence_20260725/provenance.json": "dad0479239c4a6d92ab2af6a32fe9180ffd09295e44c613df69496fa4d7cda3b"
+  }
+}

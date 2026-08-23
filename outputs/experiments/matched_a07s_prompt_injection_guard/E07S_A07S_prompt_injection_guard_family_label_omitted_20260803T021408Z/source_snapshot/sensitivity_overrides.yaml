@@ -1,0 +1,24 @@
+# Optional manual field/cell-level overrides applied during XLSX ingestion.
+# Matching fields are optional but should be specific enough for reviewability:
+# - sheet: Excel sheet name, for example "Rezepte" or "Rezepturen"
+# - row_index: Excel row number, 1-based and including the header row
+# - column: source Excel column name or logical field name
+# - sensitivity: any label defined in sensitivity_policy.yaml
+# - category: optional replacement category
+# - allowed_roles: optional field-specific ACL; when present, it overrides label-based visibility
+#
+# Example:
+# overrides:
+#   - sheet: "Rezepte"
+#     row_index: 12
+#     column: "Zugehörige Rezeptur-ID"
+#     sensitivity: "restricted"
+#     category: "relation_override"
+#     allowed_roles: ["admin", "research_user"]
+#   - sheet: "Rezepte"
+#     row_index: 12
+#     column: "Name des Produkts"
+#     sensitivity: "public"
+#     category: "general_product_info"
+
+overrides: []

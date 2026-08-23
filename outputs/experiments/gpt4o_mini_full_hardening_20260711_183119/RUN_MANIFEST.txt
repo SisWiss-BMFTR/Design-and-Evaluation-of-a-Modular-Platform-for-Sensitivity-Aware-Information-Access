@@ -1,0 +1,48 @@
+created=2026-07-11T18:31:19+02:00
+model=gpt-4o-mini
+temperature=0.0
+profiles=guards_on guards_off
+rag_modes=secure_rag_mode sensitivity_eval_mode
+access=all
+conversation_lengths=1 3 5
+iterations=5
+targets=all (five-target panels)
+output_root=outputs/experiments/gpt4o_mini_full_hardening_20260711_183119
+git_commit=6affed1791ff570f245fd6e41b5c25ebecf5341c
+Submitted batch job 14782305
+Submitted batch job 14782306
+Submitted batch job 14783275
+Submitted batch job 14784797
+Submitted batch job 14785519
+Submitted batch job 14785520
+Submitted batch job 14785521
+Submitted batch job 14785522
+
+Scheduling note: pending A03/A04 tasks and A05-A08 use the account-authorized
+normal QOS with a 03:00:00 limit. This changes scheduler policy only; model,
+guards, modes, targets, iterations, and metrics are unchanged. Already-running
+A03/A04 tasks remained on the original 2h QOS because SLURM forbids live QOS changes.
+
+Recovery note: A03 guards-on sensitivity task 14783275_1 was cancelled at
+01:41:57 after its live throughput made completion within the 02:00:00 limit
+mathematically infeasible (condition 33/45 with 12 conditions remaining).
+Recovery array 14785808 reruns the unchanged matrix as five target-isolated
+shards under normal QOS / 03:00:00. Shards will be merged and validated to 225 records.
+
+Quota note: recovery shard 14785808_0 failed after OpenAI returned the external
+10,000 RPD limit while nine jobs competed for rolling-window capacity. A03
+recovery and guards-off work were held/cancelled before producing canonical
+outputs to reduce concurrency; failed/cancelled tasks are requeued on user hold
+and will resume after the longer-running jobs drain. No completed dataset was lost.
+
+Serial recovery note (2026-07-12): the API quota recovered and a probe returned OK.
+Missing tasks were resubmitted on user hold for one-job-at-a-time execution:
+A01=14811550, A02=14811551, A04=14811552, A05=14811553,
+A06=14811554, A07=14811555, A08=14811556. A01 task 3 was released first;
+all other recovery work remains held to prevent RPD contention.
+
+2026-07-14T11:10:11+02:00 Serial recovery: A01 guards-off sensitivity job 14811550_3 completed in 00:43:44 and canonical CSV/JSON were validated at 225 records with report.md present. Released A02 guards-off sensitivity job 14811551_3; all other recovery jobs remain held.
+
+2026-07-14T13:31:58+02:00 Unattended serial dependency chain active: A02 14811551_3 completed in 00:34:56; A03 recovery shards 14785808_0..4 chained serially; merge=14853927; A03 guards-off 14783275_2..3; A04-A08 arrays 14811552..14811556 task-by-task; final validated aggregator=14853958 after 14811556_3.
+
+2026-07-15T15:10:25+02:00 Failed A05 array element was no longer requeueable, so submitted identical task-3-only replacement job 14870115 (guards_off/sensitivity_eval_mode) and rewired A06 task 14811554_0 to afterok:14870115_3.

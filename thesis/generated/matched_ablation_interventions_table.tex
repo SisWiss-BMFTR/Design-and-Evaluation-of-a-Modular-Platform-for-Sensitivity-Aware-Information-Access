@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}p{45mm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Attack & Changed control & Recorded controls held fixed \\
+\midrule
+A01 & \path{output_leakage_verifier} & \path{membership_guard}=off; \path{embedding_probe_guard}=off; \path{prompt_injection_guard}=off; \path{access_change_memory_clear}=on; \path{relation_access_guard}=on \\
+A02 & \path{output_leakage_verifier} & \path{membership_guard}=off; \path{embedding_probe_guard}=off; \path{prompt_injection_guard}=off; \path{access_change_memory_clear}=on; \path{relation_access_guard}=on \\
+A03 & \path{access_change_memory_clear} & \path{output_leakage_verifier}=off \\
+A04 & \path{relation_access_guard} & \path{output_leakage_verifier}=off; \path{membership_guard}=off; \path{embedding_probe_guard}=off; \path{prompt_injection_guard}=off; \path{access_change_memory_clear}=on \\
+A05 & \path{membership_guard} & \path{output_leakage_verifier}=off; \path{embedding_probe_guard}=off; \path{prompt_injection_guard}=off; \path{access_change_memory_clear}=on; \path{relation_access_guard}=on \\
+A06 & \path{prompt_injection_guard} & \path{output_leakage_verifier}=off; \path{membership_guard}=off; \path{embedding_probe_guard}=off; \path{access_change_memory_clear}=on; \path{relation_access_guard}=on \\
+A07 & \path{relation_access_guard} & \path{prompt_injection_guard}=on; \path{output_leakage_verifier}=off; \path{membership_guard}=off; \path{embedding_probe_guard}=off; \path{access_change_memory_clear}=on \\
+A08 & \path{embedding_probe_guard} & \path{output_leakage_verifier}=off; \path{membership_guard}=off; \path{prompt_injection_guard}=off; \path{access_change_memory_clear}=on; \path{relation_access_guard}=on \\
+\bottomrule
+\end{tabularx}
+\caption[Matched-ablation interventions]{Actual configuration difference and controls explicitly held fixed in the matched experiments. Each experiment changed one recorded control. For A03, unrelated inherited guard values were not individually materialised in the top-level manifest.}
+\label{tab:matched-ablation-interventions}
+\end{table}

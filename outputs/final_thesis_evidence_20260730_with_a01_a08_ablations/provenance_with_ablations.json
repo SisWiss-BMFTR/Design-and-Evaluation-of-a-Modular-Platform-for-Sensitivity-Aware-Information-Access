@@ -1,0 +1,556 @@
+{
+  "generated_at": "2026-07-30T15:41:11.929858+00:00",
+  "all_valid": true,
+  "experiments": [
+    {
+      "attack": "A01",
+      "evidence_type": "matched guard ablation",
+      "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z",
+      "guards_off_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/arm_A_guard_off",
+      "guards_on_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/arm_B_guard_on",
+      "experiment_manifest": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/experiment_manifest.json",
+      "experiment_manifest_sha256": "f0db5bde200cd7eaaf3431d753f5f8b0c492a73bf1091d7cb5eacd1b00f45c69",
+      "code_commit": "896e29cae8026f40f6abd798f009a3cc260de438",
+      "source_manifest_sha256": "120d4914ca78d13315db3dd29e0d13ffecfadb823c00f2f29d0215c13a08071c",
+      "dataset": {
+        "path": "data/SiSWiss_Testdaten.xlsx",
+        "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236"
+      },
+      "index_hash": "unavailable",
+      "indexed_chunks": 300,
+      "policy_sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "overrides_sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "prompt_style": "neutral",
+      "guards_off_prompt_set_sha256": "32b82809b8b638d88501ac412c07ce002f91550233617f9b6f7d693b9113244a",
+      "guards_on_prompt_set_sha256": "32b82809b8b638d88501ac412c07ce002f91550233617f9b6f7d693b9113244a",
+      "guards_off_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "guards_on_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "scorer_version": "unavailable",
+      "guard_config_off": {
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "guard_config_on": {
+        "output_leakage_verifier": true,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "declared_changed_controls": [
+        "output_leakage_verifier"
+      ],
+      "actual_changed_controls": [
+        "output_leakage_verifier"
+      ],
+      "controls_held_fixed": {
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "working_tree_clean": false,
+      "working_tree_status_captured": true,
+      "expected_conditions_per_arm": 450,
+      "valid_matched_pairs": 450,
+      "prompt_matched_pairs": 450,
+      "condition_matched_pairs": 450,
+      "valid_matched_ablation": true,
+      "excluded_attempts": [],
+      "causal_scope": "Effect of the declared switched control within the captured hardened source snapshot and tested matrix.",
+      "limitations": [
+        "The guards-off arm is not the historical original implementation.",
+        "The recorded working tree was not clean; the source snapshot and hashes preserve the executed state."
+      ]
+    },
+    {
+      "attack": "A02",
+      "evidence_type": "matched guard ablation",
+      "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z",
+      "guards_off_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/arm_A_guard_off",
+      "guards_on_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/arm_B_guard_on",
+      "experiment_manifest": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/experiment_manifest.json",
+      "experiment_manifest_sha256": "29cf5628ca2ebe043e80dc92f0ac2755faf4aecdebea78dc2552ea1bacb94466",
+      "code_commit": "896e29cae8026f40f6abd798f009a3cc260de438",
+      "source_manifest_sha256": "31ab63db2b920328c147ef3409df181b994e7e51c0374884db3e17884afd53b3",
+      "dataset": {
+        "path": "data/SiSWiss_Testdaten.xlsx",
+        "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236"
+      },
+      "index_hash": "unavailable",
+      "indexed_chunks": 300,
+      "policy_sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "overrides_sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "prompt_style": "neutral",
+      "guards_off_prompt_set_sha256": "a5b0ef5a1fddbabaaa7181324389157ca0282af3def982d106d17aa1fa78d144",
+      "guards_on_prompt_set_sha256": "a5b0ef5a1fddbabaaa7181324389157ca0282af3def982d106d17aa1fa78d144",
+      "guards_off_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "guards_on_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "scorer_version": "a02-policy-aware-v1",
+      "guard_config_off": {
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "guard_config_on": {
+        "output_leakage_verifier": true,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "declared_changed_controls": [
+        "output_leakage_verifier"
+      ],
+      "actual_changed_controls": [
+        "output_leakage_verifier"
+      ],
+      "controls_held_fixed": {
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "working_tree_clean": false,
+      "working_tree_status_captured": true,
+      "expected_conditions_per_arm": 450,
+      "valid_matched_pairs": 450,
+      "prompt_matched_pairs": 450,
+      "condition_matched_pairs": 450,
+      "valid_matched_ablation": true,
+      "excluded_attempts": [],
+      "causal_scope": "Effect of the declared switched control within the captured hardened source snapshot and tested matrix.",
+      "limitations": [
+        "The guards-off arm is not the historical original implementation.",
+        "The recorded working tree was not clean; the source snapshot and hashes preserve the executed state."
+      ]
+    },
+    {
+      "attack": "A03",
+      "evidence_type": "matched guard ablation",
+      "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z",
+      "guards_off_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/arm_A_guard_off",
+      "guards_on_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/arm_B_guard_on",
+      "experiment_manifest": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/experiment_manifest.json",
+      "experiment_manifest_sha256": "a6744b672295199817dc51edbf48f5b7548613bb10f126dd2547d91ce0746f08",
+      "code_commit": "896e29cae8026f40f6abd798f009a3cc260de438",
+      "source_manifest_sha256": "f8cb447e157c991b3eebb31d01c6380f1f06c648506a862d447994e0c49bdce9",
+      "dataset": {
+        "path": "data/SiSWiss_Testdaten.xlsx",
+        "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236"
+      },
+      "index_hash": "unavailable",
+      "indexed_chunks": 300,
+      "policy_sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "overrides_sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "prompt_style": "unavailable",
+      "guards_off_prompt_set_sha256": "ac4904d5958f743ac7245c3f963be31f95e8dac4b0bc98d0aa44eeac8bc67b80",
+      "guards_on_prompt_set_sha256": "ac4904d5958f743ac7245c3f963be31f95e8dac4b0bc98d0aa44eeac8bc67b80",
+      "guards_off_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "guards_on_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "scorer_version": "unavailable",
+      "guard_config_off": {
+        "access_change_memory_clear": false,
+        "output_leakage_verifier": false
+      },
+      "guard_config_on": {
+        "access_change_memory_clear": true,
+        "output_leakage_verifier": false
+      },
+      "declared_changed_controls": [
+        "access_change_memory_clear"
+      ],
+      "actual_changed_controls": [
+        "access_change_memory_clear"
+      ],
+      "controls_held_fixed": {
+        "output_leakage_verifier": false
+      },
+      "working_tree_clean": false,
+      "working_tree_status_captured": true,
+      "expected_conditions_per_arm": 450,
+      "valid_matched_pairs": 450,
+      "prompt_matched_pairs": 450,
+      "condition_matched_pairs": 450,
+      "valid_matched_ablation": true,
+      "excluded_attempts": [],
+      "causal_scope": "Effect of the declared switched control within the captured hardened source snapshot and tested matrix.",
+      "limitations": [
+        "The guards-off arm is not the historical original implementation.",
+        "The recorded working tree was not clean; the source snapshot and hashes preserve the executed state.",
+        "Prompt style was not explicitly recorded in the top-level manifest."
+      ]
+    },
+    {
+      "attack": "A04",
+      "evidence_type": "matched guard ablation",
+      "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_20260728T003704Z",
+      "guards_off_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_20260728T003704Z/arm_A_guard_off",
+      "guards_on_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_20260728T003704Z/arm_B_guard_on",
+      "experiment_manifest": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_20260728T003704Z/experiment_manifest.json",
+      "experiment_manifest_sha256": "f49188380115245f93d1f5283f0cd0763152cf6a023266f6e3b3e25e528aea86",
+      "code_commit": "896e29cae8026f40f6abd798f009a3cc260de438",
+      "source_manifest_sha256": "be3816bf7ebb6b810a65f952bc7501ea63c54aeeb4856eef2be8736515e2b491",
+      "dataset": {
+        "path": "data/SiSWiss_Testdaten.xlsx",
+        "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236"
+      },
+      "index_hash": "unavailable",
+      "indexed_chunks": 300,
+      "policy_sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "overrides_sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "prompt_style": "labeled",
+      "guards_off_prompt_set_sha256": "9a1d57d27beeeb38eb978960f4ba7059a36923d08081de8c236408282f1fc6ac",
+      "guards_on_prompt_set_sha256": "9a1d57d27beeeb38eb978960f4ba7059a36923d08081de8c236408282f1fc6ac",
+      "guards_off_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "guards_on_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "scorer_version": "unavailable",
+      "guard_config_off": {
+        "relation_access_guard": false,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true
+      },
+      "guard_config_on": {
+        "relation_access_guard": true,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true
+      },
+      "declared_changed_controls": [
+        "relation_access_guard"
+      ],
+      "actual_changed_controls": [
+        "relation_access_guard"
+      ],
+      "controls_held_fixed": {
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true
+      },
+      "working_tree_clean": false,
+      "working_tree_status_captured": true,
+      "expected_conditions_per_arm": 450,
+      "valid_matched_pairs": 450,
+      "prompt_matched_pairs": 450,
+      "condition_matched_pairs": 450,
+      "valid_matched_ablation": true,
+      "excluded_attempts": [],
+      "causal_scope": "Effect of the declared switched control within the captured hardened source snapshot and tested matrix.",
+      "limitations": [
+        "The guards-off arm is not the historical original implementation.",
+        "The recorded working tree was not clean; the source snapshot and hashes preserve the executed state."
+      ]
+    },
+    {
+      "attack": "A05",
+      "evidence_type": "matched guard ablation",
+      "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z",
+      "guards_off_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/arm_A_guard_off",
+      "guards_on_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/arm_B_guard_on",
+      "experiment_manifest": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/experiment_manifest.json",
+      "experiment_manifest_sha256": "a46795ba96ec16feed8ee9d95f07650454088b5a5bd71957b51f33a09c955ea9",
+      "code_commit": "896e29cae8026f40f6abd798f009a3cc260de438",
+      "source_manifest_sha256": "7814eacec05cf3426233a5fee60ff46ae37dc9598f62ca3b5f977d6433ceb396",
+      "dataset": {
+        "path": "data/SiSWiss_Testdaten.xlsx",
+        "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236"
+      },
+      "index_hash": "unavailable",
+      "indexed_chunks": 300,
+      "policy_sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "overrides_sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "prompt_style": "unavailable",
+      "guards_off_prompt_set_sha256": "197d549ed8852c6412185b5c98735e2720750b641574679d317d4d2085a43edd",
+      "guards_on_prompt_set_sha256": "197d549ed8852c6412185b5c98735e2720750b641574679d317d4d2085a43edd",
+      "guards_off_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "guards_on_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "scorer_version": "unavailable",
+      "guard_config_off": {
+        "membership_guard": false,
+        "output_leakage_verifier": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "guard_config_on": {
+        "membership_guard": true,
+        "output_leakage_verifier": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "declared_changed_controls": [
+        "membership_guard"
+      ],
+      "actual_changed_controls": [
+        "membership_guard"
+      ],
+      "controls_held_fixed": {
+        "output_leakage_verifier": false,
+        "embedding_probe_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "working_tree_clean": false,
+      "working_tree_status_captured": true,
+      "expected_conditions_per_arm": 450,
+      "valid_matched_pairs": 450,
+      "prompt_matched_pairs": 450,
+      "condition_matched_pairs": 450,
+      "valid_matched_ablation": true,
+      "excluded_attempts": [],
+      "causal_scope": "Effect of the declared switched control within the captured hardened source snapshot and tested matrix.",
+      "limitations": [
+        "The guards-off arm is not the historical original implementation.",
+        "The recorded working tree was not clean; the source snapshot and hashes preserve the executed state.",
+        "Prompt style was not explicitly recorded in the top-level manifest."
+      ]
+    },
+    {
+      "attack": "A06",
+      "evidence_type": "matched guard ablation",
+      "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_20260728T162318Z",
+      "guards_off_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_20260728T162318Z/arm_A_guard_off",
+      "guards_on_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_20260728T162318Z/arm_B_guard_on",
+      "experiment_manifest": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_20260728T162318Z/experiment_manifest.json",
+      "experiment_manifest_sha256": "d0a55f9bc37f44afdb3c465f368eed8c1cc248f79d9153c7103a3563e62866b0",
+      "code_commit": "896e29cae8026f40f6abd798f009a3cc260de438",
+      "source_manifest_sha256": "6a98b5af3f240ae9887c55e717b154e740b923df28b8dc483f1b2a8e4ac72420",
+      "dataset": {
+        "path": "data/SiSWiss_Testdaten.xlsx",
+        "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236"
+      },
+      "index_hash": "unavailable",
+      "indexed_chunks": 301,
+      "policy_sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "overrides_sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "prompt_style": "labeled",
+      "guards_off_prompt_set_sha256": "ff5bcc8fab76b76742e4705b9e4a33a89307cd19fee26ccd3ce2c6d82cdeea43",
+      "guards_on_prompt_set_sha256": "ff5bcc8fab76b76742e4705b9e4a33a89307cd19fee26ccd3ce2c6d82cdeea43",
+      "guards_off_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "guards_on_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "scorer_version": "unavailable",
+      "guard_config_off": {
+        "prompt_injection_guard": false,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "guard_config_on": {
+        "prompt_injection_guard": true,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "declared_changed_controls": [
+        "prompt_injection_guard"
+      ],
+      "actual_changed_controls": [
+        "prompt_injection_guard"
+      ],
+      "controls_held_fixed": {
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "working_tree_clean": false,
+      "working_tree_status_captured": true,
+      "expected_conditions_per_arm": 450,
+      "valid_matched_pairs": 450,
+      "prompt_matched_pairs": 450,
+      "condition_matched_pairs": 450,
+      "valid_matched_ablation": true,
+      "excluded_attempts": [],
+      "causal_scope": "Effect of the declared switched control within the captured hardened source snapshot and tested matrix.",
+      "limitations": [
+        "The guards-off arm is not the historical original implementation.",
+        "The recorded working tree was not clean; the source snapshot and hashes preserve the executed state.",
+        "The matched A06 prompt retains an explicit attack-family label."
+      ]
+    },
+    {
+      "attack": "A07",
+      "evidence_type": "matched guard ablation",
+      "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z",
+      "guards_off_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/arm_A_guard_off",
+      "guards_on_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/arm_B_guard_on",
+      "experiment_manifest": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/experiment_manifest.json",
+      "experiment_manifest_sha256": "62ac5fcb55af2523acfe68b8976404f4788ac36fd53a3a61fb838a7aafd9109c",
+      "code_commit": "896e29cae8026f40f6abd798f009a3cc260de438",
+      "source_manifest_sha256": "a01a602d1133e30f1777d50a907c50706a9cb69a550f39b341b54d6c377de6dc",
+      "dataset": {
+        "path": "data/SiSWiss_Testdaten.xlsx",
+        "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236"
+      },
+      "index_hash": "unavailable",
+      "indexed_chunks": 301,
+      "policy_sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "overrides_sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "prompt_style": "neutral",
+      "guards_off_prompt_set_sha256": "79d7f89ff4e6b7f0acd8a2ff1d15d3f7c9fde31579baf82352fd66b451433dfb",
+      "guards_on_prompt_set_sha256": "79d7f89ff4e6b7f0acd8a2ff1d15d3f7c9fde31579baf82352fd66b451433dfb",
+      "guards_off_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "guards_on_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "scorer_version": "unavailable",
+      "guard_config_off": {
+        "relation_access_guard": false,
+        "prompt_injection_guard": true,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "access_change_memory_clear": true
+      },
+      "guard_config_on": {
+        "relation_access_guard": true,
+        "prompt_injection_guard": true,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "access_change_memory_clear": true
+      },
+      "declared_changed_controls": [
+        "relation_access_guard"
+      ],
+      "actual_changed_controls": [
+        "relation_access_guard"
+      ],
+      "controls_held_fixed": {
+        "prompt_injection_guard": true,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "embedding_probe_guard": false,
+        "access_change_memory_clear": true
+      },
+      "working_tree_clean": false,
+      "working_tree_status_captured": true,
+      "expected_conditions_per_arm": 450,
+      "valid_matched_pairs": 450,
+      "prompt_matched_pairs": 450,
+      "condition_matched_pairs": 450,
+      "valid_matched_ablation": true,
+      "excluded_attempts": [],
+      "causal_scope": "Effect of the declared switched control within the captured hardened source snapshot and tested matrix.",
+      "limitations": [
+        "The guards-off arm is not the historical original implementation.",
+        "The recorded working tree was not clean; the source snapshot and hashes preserve the executed state.",
+        "The matched A07 experiment evaluates only the natural A07-N family, not the historical synthetic-trigger A07-S family."
+      ]
+    },
+    {
+      "attack": "A08",
+      "evidence_type": "matched guard ablation",
+      "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z",
+      "guards_off_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/arm_A_guard_off",
+      "guards_on_source": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/arm_B_guard_on",
+      "experiment_manifest": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/experiment_manifest.json",
+      "experiment_manifest_sha256": "704733536c3979e5102d138e3cf43a1963e9960140938b4810c81b287d979537",
+      "code_commit": "896e29cae8026f40f6abd798f009a3cc260de438",
+      "source_manifest_sha256": "81ba73bd3a3c9a3bf0ea8340f45251b8d85789f7513743e407f16affc1d71680",
+      "dataset": {
+        "path": "data/SiSWiss_Testdaten.xlsx",
+        "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236"
+      },
+      "index_hash": "unavailable",
+      "indexed_chunks": 300,
+      "policy_sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "overrides_sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "prompt_style": "neutral",
+      "guards_off_prompt_set_sha256": "fd736a24d58e9129546a0c5a31744f99fb0ab080a8fbc7fa55dc1bfbb5095bde",
+      "guards_on_prompt_set_sha256": "fd736a24d58e9129546a0c5a31744f99fb0ab080a8fbc7fa55dc1bfbb5095bde",
+      "guards_off_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "guards_on_system_prompt_set_sha256": "9107b6e973571b4fa9faeea3a09d8c0155e4a873121278928a20578f47cf43ae",
+      "scorer_version": "unavailable",
+      "guard_config_off": {
+        "embedding_probe_guard": false,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "guard_config_on": {
+        "embedding_probe_guard": true,
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "declared_changed_controls": [
+        "embedding_probe_guard"
+      ],
+      "actual_changed_controls": [
+        "embedding_probe_guard"
+      ],
+      "controls_held_fixed": {
+        "output_leakage_verifier": false,
+        "membership_guard": false,
+        "prompt_injection_guard": false,
+        "access_change_memory_clear": true,
+        "relation_access_guard": true
+      },
+      "working_tree_clean": false,
+      "working_tree_status_captured": true,
+      "expected_conditions_per_arm": 450,
+      "valid_matched_pairs": 450,
+      "prompt_matched_pairs": 450,
+      "condition_matched_pairs": 450,
+      "valid_matched_ablation": true,
+      "excluded_attempts": [
+        {
+          "experiment_root": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T084534Z",
+          "reason": "No result datasets were produced; Slurm logs record AttributeError on a None model response before scoring."
+        }
+      ],
+      "causal_scope": "Effect of the declared switched control within the captured hardened source snapshot and tested matrix.",
+      "limitations": [
+        "The guards-off arm is not the historical original implementation.",
+        "The recorded working tree was not clean; the source snapshot and hashes preserve the executed state.",
+        "An earlier A08 attempt failed before producing records and is excluded; the complete rerun is authoritative."
+      ]
+    }
+  ]
+}

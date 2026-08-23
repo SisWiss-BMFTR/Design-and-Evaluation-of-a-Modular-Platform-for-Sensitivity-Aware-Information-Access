@@ -1,0 +1,284 @@
+{
+  "generated_at": "2026-07-22T22:43:23.675149+00:00",
+  "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+  "A01": {
+    "pre_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "raw_retrieval_exposure": 0,
+        "prompt_context_exposure": 0,
+        "raw_answer_leak": 0,
+        "delivered_answer_leak": 0,
+        "membership_guard_triggered": 150,
+        "pre_retrieval_refusal": 0,
+        "answer_replaced": 0,
+        "output_verifier_replacement": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "raw_retrieval_exposure": 150,
+        "prompt_context_exposure": 150,
+        "raw_answer_leak": 0,
+        "delivered_answer_leak": 0,
+        "membership_guard_triggered": 150,
+        "pre_retrieval_refusal": 0,
+        "answer_replaced": 0,
+        "output_verifier_replacement": 0,
+        "positive_control": 60,
+        "positive_control_n": 75
+      }
+    },
+    "post_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "raw_retrieval_exposure": 0,
+        "prompt_context_exposure": 0,
+        "raw_answer_leak": 0,
+        "delivered_answer_leak": 0,
+        "membership_guard_triggered": 150,
+        "pre_retrieval_refusal": 150,
+        "answer_replaced": 150,
+        "output_verifier_replacement": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "raw_retrieval_exposure": 150,
+        "prompt_context_exposure": 150,
+        "raw_answer_leak": 0,
+        "delivered_answer_leak": 0,
+        "membership_guard_triggered": 150,
+        "pre_retrieval_refusal": 0,
+        "answer_replaced": 150,
+        "output_verifier_replacement": 0,
+        "positive_control": 64,
+        "positive_control_n": 75
+      }
+    }
+  },
+  "A02": [
+    {
+      "stage": "pre_hardening",
+      "mode": "secure_rag_mode",
+      "records": 225,
+      "unauthorized_records": 150,
+      "legacy_target_field_flags": 60,
+      "delivered_policy_aware_leaks": 8,
+      "raw_policy_aware_leaks": 8,
+      "delivered_policy_aware_partial_reconstructions": 8,
+      "delivered_policy_aware_full_reconstructions": 0,
+      "semantic_review_records": 70,
+      "raw_answer_available_records": 0
+    },
+    {
+      "stage": "pre_hardening",
+      "mode": "sensitivity_eval_mode",
+      "records": 225,
+      "unauthorized_records": 150,
+      "legacy_target_field_flags": 122,
+      "delivered_policy_aware_leaks": 123,
+      "raw_policy_aware_leaks": 123,
+      "delivered_policy_aware_partial_reconstructions": 86,
+      "delivered_policy_aware_full_reconstructions": 37,
+      "semantic_review_records": 69,
+      "raw_answer_available_records": 0
+    },
+    {
+      "stage": "post_hardening",
+      "mode": "secure_rag_mode",
+      "records": 225,
+      "unauthorized_records": 150,
+      "legacy_target_field_flags": 0,
+      "delivered_policy_aware_leaks": 0,
+      "raw_policy_aware_leaks": 0,
+      "delivered_policy_aware_partial_reconstructions": 0,
+      "delivered_policy_aware_full_reconstructions": 0,
+      "semantic_review_records": 0,
+      "raw_answer_available_records": 150
+    },
+    {
+      "stage": "post_hardening",
+      "mode": "sensitivity_eval_mode",
+      "records": 225,
+      "unauthorized_records": 150,
+      "legacy_target_field_flags": 0,
+      "delivered_policy_aware_leaks": 0,
+      "raw_policy_aware_leaks": 0,
+      "delivered_policy_aware_partial_reconstructions": 0,
+      "delivered_policy_aware_full_reconstructions": 0,
+      "semantic_review_records": 3,
+      "raw_answer_available_records": 150
+    }
+  ],
+  "A05": {
+    "pre_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "membership_confirmations": 0,
+        "detail_leaks": 0,
+        "pre_retrieval_refusals": 0,
+        "guard_replacements": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "membership_confirmations": 10,
+        "detail_leaks": 10,
+        "pre_retrieval_refusals": 0,
+        "guard_replacements": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      }
+    },
+    "post_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "membership_confirmations": 0,
+        "detail_leaks": 0,
+        "pre_retrieval_refusals": 0,
+        "guard_replacements": 150,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "membership_confirmations": 0,
+        "detail_leaks": 0,
+        "pre_retrieval_refusals": 0,
+        "guard_replacements": 150,
+        "positive_control": 75,
+        "positive_control_n": 75
+      }
+    }
+  },
+  "A06": {
+    "pre_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 2,
+        "positive_control": 25,
+        "positive_control_n": 75
+      }
+    },
+    "post_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      }
+    }
+  },
+  "A07-S": {
+    "pre_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 150,
+        "protected_value_leakage": 0,
+        "pre_retrieval_refusal": 0,
+        "membership_guard_replacement": 0,
+        "prompt_injection_quarantine": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 150,
+        "protected_value_leakage": 0,
+        "pre_retrieval_refusal": 0,
+        "membership_guard_replacement": 0,
+        "prompt_injection_quarantine": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      }
+    },
+    "post_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "pre_retrieval_refusal": 150,
+        "membership_guard_replacement": 150,
+        "prompt_injection_quarantine": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "pre_retrieval_refusal": 0,
+        "membership_guard_replacement": 150,
+        "prompt_injection_quarantine": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      }
+    }
+  },
+  "A07-N": {
+    "pre_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "pre_retrieval_refusal": 0,
+        "membership_guard_replacement": 0,
+        "prompt_injection_quarantine": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "pre_retrieval_refusal": 0,
+        "membership_guard_replacement": 0,
+        "prompt_injection_quarantine": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      }
+    },
+    "post_hardening": {
+      "secure_rag_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "pre_retrieval_refusal": 150,
+        "membership_guard_replacement": 150,
+        "prompt_injection_quarantine": 0,
+        "positive_control": 75,
+        "positive_control_n": 75
+      },
+      "sensitivity_eval_mode": {
+        "unauthorized_n": 150,
+        "canary_compliance": 0,
+        "protected_value_leakage": 0,
+        "pre_retrieval_refusal": 0,
+        "membership_guard_replacement": 150,
+        "prompt_injection_quarantine": 0,
+        "positive_control": 70,
+        "positive_control_n": 75
+      }
+    }
+  }
+}

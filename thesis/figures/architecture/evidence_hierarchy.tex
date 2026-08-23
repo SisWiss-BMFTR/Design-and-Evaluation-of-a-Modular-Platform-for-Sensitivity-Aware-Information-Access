@@ -1,0 +1,27 @@
+\begin{tikzpicture}[
+  font=\sffamily\small,
+  node distance=5mm,
+  evidence/.style={draw, rounded corners=1.5mm, text width=42mm, minimum height=14mm, align=center, fill=blue!7},
+  claim/.style={draw, rounded corners=1.5mm, text width=88mm, minimum height=14mm, align=left, fill=green!9},
+  limit/.style={draw, rounded corners=1.5mm, text width=137mm, minimum height=14mm, align=left, fill=orange!12},
+  arrow/.style={-{Latex[length=2.1mm]}, semithick}
+]
+  \node[evidence] (e1) {1. Original baseline\\historical implementation};
+  \node[claim, right=6mm of e1] (c1) {Permits: vulnerabilities observed in that implementation\\Does not permit: attribution to a later guard};
+
+  \node[evidence, below=of e1] (e2) {2. Hardened package\\complete final control set};
+  \node[claim, right=6mm of e2] (c2) {Permits: outcomes observed in the final package\\Does not permit: isolated before--after causality};
+
+  \node[evidence, below=of e2] (e3) {3. Matched guard ablation\\one recorded switch};
+  \node[claim, right=6mm of e3] (c3) {Permits: effect of the switched control in the matched condition\\Does not permit: recreation of the historical baseline};
+
+  \node[evidence, below=of e3] (e4) {4. Supplemental validation\\replay or frozen challenge};
+  \node[claim, right=6mm of e4] (c4) {Permits: detector or component claim in the frozen test\\Does not permit: retroactive package attribution};
+
+  \draw[arrow] (e1) -- (c1);
+  \draw[arrow] (e2) -- (c2);
+  \draw[arrow] (e3) -- (c3);
+  \draw[arrow] (e4) -- (c4);
+
+  \node[limit, below=8mm of e4, xshift=48mm] (rule) {Interpretation rule: preserve each denominator and evidence source; never replace the baseline with a guards-off arm or pool heterogeneous attack outcomes.};
+\end{tikzpicture}

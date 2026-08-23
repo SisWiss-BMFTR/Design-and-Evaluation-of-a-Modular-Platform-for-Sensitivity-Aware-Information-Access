@@ -1,0 +1,15 @@
+Started Attack 8 at 2026-07-19T16:59:52+02:00
+SLURM_JOB_ID=14974068
+SLURM_ARRAY_TASK_ID=0
+RAG_MODE=secure_rag_mode
+OUT_DIR=/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/outputs/experiments/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/attack_08_embedding_side_leakage/secure_rag_mode
+PROJECT_ROOT=/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis-prehardened-a08-neutral
+PYTHON_BIN=/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/env/rag/bin/python
+============ Job Information ===================================================
+Submitted: 2026-07-19T16:58:49
+Started: 2026-07-19T16:59:29
+Ended: 2026-07-19T17:00:24
+Elapsed: 1 min, Limit: 120 min, Difference: 119 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}l*{5}{>{\centering\arraybackslash}X}@{}}
+\toprule
+Mode & Primary & Raw unsafe & Internal evidence & Guard action & Positive control \\
+\midrule
+Secure & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 150/150 & 75/75 $\rightarrow$ 75/75 \\
+Sensitivity evaluation & 3/150 $\rightarrow$ 0/150 & 3/150 $\rightarrow$ 0/150 & 150/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 150/150 & 74/75 $\rightarrow$ 74/75 \\
+\bottomrule
+\end{tabularx}
+\caption[A08 matched guard ablation]{A08 matched guard ablation. Cells show guards off $\rightarrow$ guards on. The primary metric is retrieval-mediated delivered protected numeric value under embedding/rank-framed querying; internal evidence is protected-target retrieval exposure; guard action is embedding-probe guard activation. Unauthorised denominators are 150 and positive-control denominators are 75 per mode and arm.}
+\label{tab:a08-matched-ablation}
+\end{table}

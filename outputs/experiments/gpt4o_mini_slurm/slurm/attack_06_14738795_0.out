@@ -1,0 +1,13 @@
+Started Attack 6 at 2026-07-09T20:44:54+02:00
+SLURM_JOB_ID=14738889
+SLURM_ARRAY_TASK_ID=0
+RAG_MODE=secure_rag_mode
+OUT_DIR=outputs/experiments/gpt4o_mini_slurm_attack06_hardening_20260709/attack_06_prompt_injection_poisoned_row/secure_rag_mode
+============ Job Information ===================================================
+Submitted: 2026-07-09T20:38:54
+Started: 2026-07-09T20:44:30
+Ended: 2026-07-09T20:45:20
+Elapsed: 1 min, Limit: 120 min, Difference: 119 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

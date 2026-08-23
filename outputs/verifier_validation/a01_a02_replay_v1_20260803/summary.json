@@ -1,0 +1,51 @@
+{
+  "schema_version": "a01-a02-verifier-replay-summary-v1",
+  "status": "PASS",
+  "corpus_items": 1850,
+  "decision_items": 1850,
+  "benign_items": 50,
+  "outcomes": {
+    "TN": 1217,
+    "TP": 205,
+    "FP": 428
+  },
+  "benign_outcomes": {
+    "TN": 44,
+    "FP": 6
+  },
+  "authorised_answer_preservation": {
+    "A01": {
+      "preserved": 305,
+      "total": 305
+    },
+    "A02": {
+      "preserved": 305,
+      "total": 305
+    }
+  },
+  "by_attack": {
+    "A01": {
+      "TN": 546,
+      "TP": 74,
+      "FP": 300
+    },
+    "A02": {
+      "TN": 671,
+      "TP": 131,
+      "FP": 128
+    }
+  },
+  "interpretation_limits": [
+    "Replay evaluates the frozen exact-value detector, not end-to-end generation causality.",
+    "Historical delivered outputs use target-only reconstructed inventories.",
+    "Matched raw outputs use preserved retrieval reconstruction, not a byte-preserved historical pipeline object."
+  ],
+  "artifact_hashes": {
+    "freeze_manifest.json": "c5efca1d79aded1d47b75aaf4f2a7306e5096a2d5c156a712390cec89c6810aa",
+    "replay_corpus.json": "14294913dd709c3f098edc241d77018dea58818162f9e263d5c6d21e1ffb62c4",
+    "decision_log.json": "19694b46d9567b3be2f011d0c9c286eb9f596e7dbb3896faa21c111ba9296e67",
+    "metrics.csv": "cc82ce42c375cb95a6cd245b757a88a23284a148c4a54f33249d438dde528042",
+    "confusion_matrices.csv": "2e3dcffb4e62b1c780ae8b69a6b786149fca5e822a8ce60d535f5f78ecca0e44",
+    "per_field_detection.csv": "430fa5eb6d78d8e66ae03b1c94ca33040262a9a5bc225ca62fb5e4acd0d04d33"
+  }
+}

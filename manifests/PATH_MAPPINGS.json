@@ -1,0 +1,25 @@
+{
+  "schema_version": "internal-portable-path-mapping-v1",
+  "policy": "Immutable historical ledgers remain unchanged. These mappings are additive aids for authorized reviewers.",
+  "mappings": [
+    {
+      "historical_prefix": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/",
+      "portable_prefix": "./",
+      "status": "NEEDS_PORTABLE_MAPPING",
+      "note": "Use repository-relative paths when the referenced artifact is part of the Git tree."
+    },
+    {
+      "historical_prefix": "file:///mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z",
+      "portable_prefix": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z",
+      "internal_archive_id": "supplemental_A06",
+      "status": "VALID_BUT_EXTERNAL",
+      "note": "The historical URI is not durable. Retrieve the archive identified in manifests/ARCHIVED_EVIDENCE.json."
+    },
+    {
+      "historical_prefix": "/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/.env",
+      "portable_prefix": null,
+      "status": "SAFE_TO_EXCLUDE",
+      "note": "Unmanifested source-snapshot credential symlink target; intentionally absent from Git and evidence archives."
+    }
+  ]
+}

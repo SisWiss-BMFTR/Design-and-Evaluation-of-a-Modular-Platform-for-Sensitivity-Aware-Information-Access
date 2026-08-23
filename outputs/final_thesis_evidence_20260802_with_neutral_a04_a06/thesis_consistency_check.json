@@ -1,0 +1,216 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "status": "pass",
+      "check": "three-source terminology: Original baseline",
+      "token": "Original baseline"
+    },
+    {
+      "status": "pass",
+      "check": "three-source terminology: Hardened package",
+      "token": "Hardened package"
+    },
+    {
+      "status": "pass",
+      "check": "three-source terminology: Matched guard ablation",
+      "token": "Matched guard ablation"
+    },
+    {
+      "status": "pass",
+      "check": "three-source terminology: Guards off",
+      "token": "Guards off"
+    },
+    {
+      "status": "pass",
+      "check": "three-source terminology: Guards on",
+      "token": "Guards on"
+    },
+    {
+      "status": "pass",
+      "check": "Chapter 6 remains original-baseline only",
+      "token": "guards?[- ](?:off|on)|matched guard|matched-ablation"
+    },
+    {
+      "status": "pass",
+      "check": "central implemented-guard overview is included",
+      "token": "\\label{tab:implemented-guard-overview}"
+    },
+    {
+      "status": "pass",
+      "check": "synthetic-trigger A07-S remains explicitly distinguished",
+      "token": "A07-S"
+    },
+    {
+      "status": "pass",
+      "check": "A04 neutral-prompt experiment selected",
+      "token": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z"
+    },
+    {
+      "status": "pass",
+      "check": "A06 neutral-prompt experiment selected",
+      "token": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T163000Z"
+    },
+    {
+      "status": "pass",
+      "check": "A04 neutral guards-off sensitivity result is reported",
+      "token": "65/150 sensitivity-mode"
+    },
+    {
+      "status": "pass",
+      "check": "guards-off arm is never called the historical original or pre-hardening system",
+      "token": "(?:pre-hardening|original system).{0,100}guards off|guards off.{0,100}(?:pre-hardening|original system)"
+    },
+    {
+      "status": "pass",
+      "check": "A01 generated ablation table included",
+      "token": "\\input{generated/a01_matched_ablation_table}"
+    },
+    {
+      "status": "pass",
+      "check": "A01 generated ablation figures",
+      "token": "A01"
+    },
+    {
+      "status": "pass",
+      "check": "A01 matched denominators",
+      "token": "150/75"
+    },
+    {
+      "status": "pass",
+      "check": "A02 generated ablation table included",
+      "token": "\\input{generated/a02_matched_ablation_table}"
+    },
+    {
+      "status": "pass",
+      "check": "A02 generated ablation figures",
+      "token": "A02"
+    },
+    {
+      "status": "pass",
+      "check": "A02 matched denominators",
+      "token": "150/75"
+    },
+    {
+      "status": "pass",
+      "check": "A03 generated ablation table included",
+      "token": "\\input{generated/a03_matched_ablation_table}"
+    },
+    {
+      "status": "pass",
+      "check": "A03 generated ablation figures",
+      "token": "A03"
+    },
+    {
+      "status": "pass",
+      "check": "A03 matched denominators",
+      "token": "150/75"
+    },
+    {
+      "status": "pass",
+      "check": "A04 generated ablation table included",
+      "token": "\\input{generated/a04_matched_ablation_table}"
+    },
+    {
+      "status": "pass",
+      "check": "A04 generated ablation figures",
+      "token": "A04"
+    },
+    {
+      "status": "pass",
+      "check": "A04 matched denominators",
+      "token": "150/75"
+    },
+    {
+      "status": "pass",
+      "check": "A05 generated ablation table included",
+      "token": "\\input{generated/a05_matched_ablation_table}"
+    },
+    {
+      "status": "pass",
+      "check": "A05 generated ablation figures",
+      "token": "A05"
+    },
+    {
+      "status": "pass",
+      "check": "A05 matched denominators",
+      "token": "150/75"
+    },
+    {
+      "status": "pass",
+      "check": "A06 generated ablation table included",
+      "token": "\\input{generated/a06_matched_ablation_table}"
+    },
+    {
+      "status": "pass",
+      "check": "A06 generated ablation figures",
+      "token": "A06"
+    },
+    {
+      "status": "pass",
+      "check": "A06 matched denominators",
+      "token": "150/75"
+    },
+    {
+      "status": "pass",
+      "check": "A07 generated ablation table included",
+      "token": "\\input{generated/a07_matched_ablation_table}"
+    },
+    {
+      "status": "pass",
+      "check": "A07 generated ablation figures",
+      "token": "A07"
+    },
+    {
+      "status": "pass",
+      "check": "A07 matched denominators",
+      "token": "150/75"
+    },
+    {
+      "status": "pass",
+      "check": "A08 generated ablation table included",
+      "token": "\\input{generated/a08_matched_ablation_table}"
+    },
+    {
+      "status": "pass",
+      "check": "A08 generated ablation figures",
+      "token": "A08"
+    },
+    {
+      "status": "pass",
+      "check": "A08 matched denominators",
+      "token": "150/75"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure cross_attack_matched_guard_ablations",
+      "token": "cross_attack_matched_guard_ablations"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure historical_baseline_vs_matched_guards_off",
+      "token": "historical_baseline_vs_matched_guards_off"
+    },
+    {
+      "status": "pass",
+      "check": "compiled layout has no overfull hbox",
+      "token": "Overfull \\\\\\\\hbox"
+    },
+    {
+      "status": "pass",
+      "check": "compiled thesis has no TeX errors",
+      "token": "Undefined control sequence|LaTeX Error|Emergency stop|Fatal error"
+    }
+  ],
+  "artifact_sha256": {
+    "thesis/main.tex": "0633ea6d566e7d65ea2fcd19ca7129e1869f1ed0f1cf0da0acbf8b40b8d4a40c",
+    "thesis/chapters/chapter05_experiments.tex": "1d02dd3b46926591a345489becdd7be3a470986451d911a9fdd403e6a010c0b3",
+    "thesis/chapters/chapter06_results.tex": "d526d2b27dac01e6cef7552d147f32ce8e7cbe2baa4f5df3139eb534835b9fea",
+    "thesis/chapters/chapter07_vulnerability_analysis.tex": "e0c4b990dbe761d1a88754cf90cfb0134bdc3525c098142e3d5d3f186504df85",
+    "thesis/chapters/chapter08_discussion.tex": "b827947d10061edddcd5662f331b094b74668343189b6ecc0f802b9253de7ac3",
+    "thesis/chapters/chapter09_conclusion.tex": "b425ea65e3a53932425c1e70f990b7b41134643826d125f2aa87d3ba42846094",
+    "outputs/final_thesis_evidence_20260802_with_neutral_a04_a06/matched_ablation_metric_summary.json": "a4cbe72c1e8a8bb9410c2fa50d9cd2ac7df0ac1b4ce3d9107bca7c632cc4dc73",
+    "outputs/final_thesis_evidence_20260802_with_neutral_a04_a06/provenance_with_ablations.json": "b515e11cfeb3868243f71c067852df90672d5915a07eaf99f67161cb4f5ae424",
+    "thesis/final_thesis_chapters_5_9_with_guard_ablations.pdf": "0451de9de6aeae887ba62120602c5143681d27e2e88d8caee8e229d3539cc234"
+  }
+}

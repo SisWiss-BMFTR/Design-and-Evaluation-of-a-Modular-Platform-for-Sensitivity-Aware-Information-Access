@@ -1,0 +1,13 @@
+Started Attack 5 at 2026-06-27T19:40:49+02:00
+SLURM_JOB_ID=14524344
+SLURM_ARRAY_TASK_ID=0
+RAG_MODE=secure_rag_mode
+OUT_DIR=outputs/experiments/gpt4o_mini_slurm_attack05_membership_guard_20260627/attack_05_rank_probing_membership_inference/secure_rag_mode
+============ Job Information ===================================================
+Submitted: 2026-06-27T19:39:58
+Started: 2026-06-27T19:40:27
+Ended: 2026-06-27T19:57:27
+Elapsed: 17 min, Limit: 120 min, Difference: 103 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

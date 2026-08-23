@@ -1,0 +1,14 @@
+/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_relational_join_path_inference_batch.py", line 1021, in <module>
+    main()
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_relational_join_path_inference_batch.py", line 985, in main
+    record = run_single_case(
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_relational_join_path_inference_batch.py", line 440, in run_single_case
+    answer = run_query(pipeline, target.prompt).strip()
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_relational_join_path_inference_batch.py", line 279, in run_query
+    return pipeline.query(prompt)
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/pipeline/rag_pipeline.py", line 985, in query
+    include_processes=asks_process,
+NameError: name 'asks_process' is not defined

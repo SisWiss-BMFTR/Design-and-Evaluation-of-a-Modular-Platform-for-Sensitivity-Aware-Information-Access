@@ -1,0 +1,3 @@
+The insurance policy starts on January 1, 2024.
+The duration is 12 months.
+The premium is 500 euros.

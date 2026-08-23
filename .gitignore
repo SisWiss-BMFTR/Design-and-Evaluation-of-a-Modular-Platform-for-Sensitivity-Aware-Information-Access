@@ -1,0 +1,112 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local Python/Conda environments and caches
+/env/
+/.venv/
+/venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Downloaded models and caches
+/models/
+*.safetensors
+/.cache/
+/.huggingface/
+
+# IDE, remote-development, and OS metadata
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Local development material unrelated to the final thesis archive
+/logs/
+/reports/
+/writing/
+/reference_materials/
+/jobs/
+/700/
+/CODEX_HOME=*/
+
+# Root-level transient scheduler output
+/slurm-*.out
+/slurm-*.err
+
+# LaTeX build products. Final source, figures, tables, and final_thesis.pdf
+# remain visible and are not ignored.
+/thesis/build*/
+/thesis/outputs/
+thesis/**/*.aux
+thesis/**/*.bbl
+thesis/**/*.bcf
+thesis/**/*.blg
+thesis/**/*.fdb_latexmk
+thesis/**/*.fls
+thesis/**/*.lof
+thesis/**/*.lot
+thesis/**/*.log
+thesis/**/*.out
+thesis/**/*.run.xml
+thesis/**/*.synctex.gz
+thesis/**/*.toc
+/thesis/chapter*_revision_report.md
+
+# Temporary/style-review and non-authoritative build products
+/outputs/deliverables/
+/outputs/audits/final_project_review_*/
+/outputs/audits/final_style_review_*/
+/outputs/audits/final_supervised_revision_*/
+/outputs/audits/style_revision_batch*/
+/outputs/deliverables/final_thesis_latex_*/
+/outputs/deliverables/synchronized_thesis_build_*/
+/outputs/nonrun_archives/
+/outputs/scratch/
+/outputs/tmp/
+/outputs/local_runs/
+
+# Large raw evidence is preserved in verified internal tar.zst archives and
+# bound by manifests/ARCHIVED_EVIDENCE.json. Compact evidence, source
+# snapshots, manifests, receipts, and selected logs remain visible for Git.
+/outputs/experiments/matched_single_guard_ablations/*/arm_A_*/
+/outputs/experiments/matched_single_guard_ablations/*/arm_B_*/
+/outputs/experiments/full_a02_verifier_challenge/*/raw_generation/
+/outputs/experiments/matched_a07s_prompt_injection_guard/*/arm_A_injection_guard_off/
+/outputs/experiments/matched_a07s_prompt_injection_guard/*/arm_B_injection_guard_on/
+/outputs/experiments/supplemental_a06_poisoned_row/*/full/
+/outputs/experiments/supplemental_a06_poisoned_row/*/pilot/
+/outputs/verifier_validation/a01_a02_replay_v1_20260803/replay_corpus.json
+
+# Internal archive payloads are copied to university storage, not normal Git.
+/internal_archive/
+
+# Historical executed source snapshots deliberately include manifest-bound
+# bytecode. Re-include complete snapshots after the generic Python cache rules.
+!/outputs/experiments/matched_single_guard_ablations/*/source_snapshot/
+!/outputs/experiments/matched_single_guard_ablations/*/source_snapshot/**
+!/outputs/experiments/full_a02_verifier_challenge/*/source_snapshot/
+!/outputs/experiments/full_a02_verifier_challenge/*/source_snapshot/**
+!/outputs/experiments/matched_a07s_prompt_injection_guard/*/source_snapshot/
+!/outputs/experiments/matched_a07s_prompt_injection_guard/*/source_snapshot/**
+!/outputs/experiments/supplemental_a06_poisoned_row/*/source_snapshot/
+!/outputs/experiments/supplemental_a06_poisoned_row/*/source_snapshot/**
+
+# Never distribute the unmanifested live-credential symlink present in captured
+# source-snapshot directories. The links remain untouched in the workspace.
+/outputs/experiments/matched_single_guard_ablations/*/source_snapshot/.env
+/outputs/experiments/full_a02_verifier_challenge/*/source_snapshot/.env
+/outputs/experiments/matched_a07s_prompt_injection_guard/*/source_snapshot/.env
+/outputs/experiments/supplemental_a06_poisoned_row/*/source_snapshot/.env

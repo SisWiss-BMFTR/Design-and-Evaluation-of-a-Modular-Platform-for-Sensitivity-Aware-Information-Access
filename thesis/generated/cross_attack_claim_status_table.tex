@@ -1,0 +1,31 @@
+\begin{landscape}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{11mm}>{\raggedright\arraybackslash}p{52mm}>{\raggedright\arraybackslash}p{86mm}>{\raggedright\arraybackslash}p{73mm}@{}}
+\caption[Cross-attack evidential claim status]{Cross-attack claim table. The strongest available component evidence is shown separately from descriptive package observations. Claims are bounded to the recorded targets, prompts, modes, scorers, and source states.}\label{tab:cross-attack-claim-status}\\
+\toprule
+Attack & Strongest relevant component evidence & Claim supported by the evidence & Claim not supported \\
+\midrule
+\endfirsthead
+\toprule
+Attack & Strongest relevant component evidence & Claim supported by the evidence & Claim not supported \\
+\midrule
+\endhead
+A01 & Matched verifier ablation remained 0/150$\to$0/150 per mode; live development-target pilot remained 0/24$\to$0/24; frozen replay exercised known stored leaks and controls. & The historical sensitivity-mode package exhibited direct leakage; the current verifier has measurable exact-value matching and broad replacement behaviour on frozen outputs. & No live vulnerable off condition demonstrates that the verifier reduced A01 leakage, and it cannot explain the historical package difference. \\
+\addlinespace
+A02 & Supplemental sensitivity-mode identical-final-raw-answer fork reduced policy-aware delivery 12/150$\to$0/150; all 12 scorer-positive outputs were blocked, with 50/138 scorer-negative replacements. & The verifier changed final delivery and eliminated scored final-answer leakage in the frozen stress condition while the final raw answer was byte-identical. & The result does not attribute the historical baseline-to-package change, cover verifier effects during warm-ups, establish fully held-out target generalisation, or prove semantic-leakage resistance. \\
+\addlinespace
+A03 & Matched state-clear switch reduced post-transition state exposure from 150/150 to zero in secure mode and 140/150 to zero in sensitivity mode; delivery was zero in both arms. & Access-change clearing caused removal of the measured recent-message/snippet state under the matched condition. & The ablation does not show a delivered-leakage reduction or explain the historical 150/150 package-level delivery difference. \\
+\addlinespace
+A04 & Superseding family-label-omitted matched relation-guard run reduced complete edge leakage 150/150$\to$0/150 in secure mode and 65/150$\to$0/150 in sensitivity mode. & The relation-access guard prevented the scored complete-edge disclosure under the matched tested prompts while positive-control path success remained 75/75. & The result does not establish protection for arbitrary relation graphs or make the historical and hardened packages prompt-equivalent. \\
+\addlinespace
+A05 & Matched membership/existence-guard run reduced sensitivity-mode delivered confirmations 15/150$\to$0/150; 5/150 raw confirmations remained before replacement. & The guard prevented delivery of scored protected indexed-record existence confirmations under the tested wording. & It did not eliminate all unsafe raw generation and is not evidence about model-training membership inference or unseen probe paraphrases. \\
+\addlinespace
+A06 & Audited supplemental frozen challenge reduced delivered exact-canary compliance 300/300$\to$0/300, with all 300 unauthorised matched pairs transitioning $1\to0$. Secure-mode raw canaries fell 150/150$\to$0/150 through context quarantine; sensitivity-mode delivery fell 150/150$\to$0/150 while raw canaries remained in 145/150 guard-on answers before artifact filtering. The earlier matched run remains a separate 0/150$\to$0/150 result per mode. & The evidence supports bounded within-condition attribution to the composite prompt-injection-guard switch for exact-canary delivery under the frozen prompt, targets, source state, and scorer. It does not estimate quarantine and output filtering as independent interventions, and separate fixed-order API generations leave residual call-time/order variation. & Protected-value leakage was 0/300$\to$0/300 and the structurally non-evaluable supplemental authorised positive control had no retrieval opportunity (target and LLM-context exposure both 0/300), so neither confidentiality reduction nor utility preservation is demonstrated. It does not explain the historical 2/150 confidentiality failures or establish robustness to unseen injections. \\
+\addlinespace
+A07 & Supplemental matched A07-S prompt-injection-guard run reduced delivered canary compliance 150/150$\to$0/150 in both modes with 75/75 positive controls. The earlier A07-N relation ablation was zero-to-zero. & Under the exact historical synthetic-trigger prompt, the prompt-injection guard prevented delivered canary compliance: through quarantine in secure mode and artifact removal after raw generation in sensitivity mode. & The evidence is an integrity result, not a confidentiality reduction; it does not make A07-N and A07-S interchangeable or establish robustness to unseen triggers. \\
+\addlinespace
+A08 & Matched embedding-probe-guard run reduced sensitivity-mode target exposure 150/150$\to$0/150 and delivered numeric leakage 3/150$\to$0/150. & The query-handling intervention prevented the scored retrieval-mediated disclosure under the tested embedding/rank wording. & The result is not embedding inversion, does not concern exposed vectors or rankings, and does not establish performance on unseen or benign probe wording. \\
+\bottomrule
+\end{longtable}
+\end{landscape}

@@ -1,0 +1,26 @@
+/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_prompt_injection_poisoned_row.py", line 940, in <module>
+    main()
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_prompt_injection_poisoned_row.py", line 906, in main
+    record = run_single_case(
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_prompt_injection_poisoned_row.py", line 436, in run_single_case
+    warmup_answers.append(run_query(pipeline, prompt).strip())
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_prompt_injection_poisoned_row.py", line 390, in run_query
+    return pipeline.query(prompt)
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/pipeline/rag_pipeline.py", line 1261, in query
+    raw_answer = self.generator.generate(
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/generation/openai_generator.py", line 135, in generate
+    response = self._create_chat_completion(messages)
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/generation/openai_generator.py", line 62, in _create_chat_completion
+    return self.client.chat.completions.create(**request)
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 1192, in create
+    return self._post(
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/openai/_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-kA7idBEWTIRbadefqu6bsfSb on requests per day (RPD): Limit 10000, Used 10000, Requested 1. Please try again in 8.64s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'requests', 'param': None, 'code': 'rate_limit_exceeded'}}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "internal-thesis-fresh-clone-readiness-v1",
+  "status": "PASS_WITH_EXTERNAL_ACTIONS",
+  "proposed_tree": {
+    "source_list": "files_to_commit.txt",
+    "listed_files": 3131,
+    "exported_files_before_build": 3131,
+    "exact_file_set_match": true,
+    "symlinks": 0,
+    "dot_env_present": false,
+    "canonical_pdf_present": true,
+    "maximum_file_bytes": 3475064
+  },
+  "verification": {
+    "git_resident_release_checksums": "PASS",
+    "full_local_release_checksums_with_archives": "PASS",
+    "unit_tests": {
+      "status": "PASS",
+      "tests_run": 55,
+      "openai_calls_made": 0
+    },
+    "latex_build": {
+      "status": "PASS",
+      "engine": "tectonic",
+      "canonical_pages": 191,
+      "rebuilt_pages": 191,
+      "canonical_pdf_sha256": "c08b138ca3343f4284bcd82bec27178c53fdab52f230572c8b47ec84a06b1799",
+      "rebuilt_pdf_sha256": "0fc8c547a259c466e93bf6b3a05410c9a7621e4eb62a42e221990d09b5afe287",
+      "canonical_pdf_bytes": 818290,
+      "rebuilt_pdf_bytes": 818290,
+      "page_text_mismatches": [],
+      "text_content_equivalent": true,
+      "byte_identical": false,
+      "fatal_tex_errors": 0,
+      "overfull_hbox_warnings": 0,
+      "note": "The rebuilt PDF is a verification artifact only. Engine-generated PDF bytes differ, while all 191 extracted page texts are identical. The frozen canonical PDF was not overwritten."
+    },
+    "thesis_source_consistency": {
+      "status": "PASS",
+      "checks": 74,
+      "external_raw_followed": false
+    }
+  },
+  "large_evidence": {
+    "included_in_git_export": false,
+    "archive_manifest_present": true,
+    "inventory_manifests_present": true,
+    "retrieval_instructions_present": true,
+    "git_only_verification_requires_secret": false,
+    "new_hosted_model_runs_require_user_supplied_secret": true
+  },
+  "external_actions_before_delivery": [
+    "Rotate/revoke the two actual-looking OpenAI keys found in Git history.",
+    "Coordinate a Git-history rewrite and re-clone procedure before any further push.",
+    "Copy and restore-test all twelve evidence archives on independent authorized university storage."
+  ]
+}

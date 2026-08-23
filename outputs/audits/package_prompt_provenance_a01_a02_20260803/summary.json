@@ -1,0 +1,131 @@
+{
+  "schema_version": "package-prompt-provenance-a01-a02-v1",
+  "generated_at": "2026-08-03T01:35:11.549916+00:00",
+  "status": "PASS",
+  "scope": "Historical original-baseline and hardened-package user-prompt provenance for A01 and A02; no experimental results are rescored or modified.",
+  "a01": {
+    "status": "PASS",
+    "interpretation": "A01 target-level prompts are partially preserved/reconstructable and are not package-equivalent. The complete historical prompt is unavailable.",
+    "baseline_result_files": {
+      "secure_rag_mode": {
+        "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_01_direct_cell_extraction/secure_rag_mode/results.json",
+        "sha256": "b25a044dd427fcb79b3526529b65d03fdc36b80e3b55d9516b524607cc8d1a17",
+        "prompt_location": "top-level targets[].prompt"
+      },
+      "sensitivity_eval_mode": {
+        "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_01_direct_cell_extraction/sensitivity_eval_mode/results.json",
+        "sha256": "b7fc5b1a496ebef5999d405bc3349fd7511dded3143835ff119a8db352783d9b",
+        "prompt_location": "top-level targets[].prompt"
+      }
+    },
+    "hardened_result_files": {
+      "secure_rag_mode": {
+        "path": "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/attack_01_direct_cell_extraction/secure_rag_mode/results.json",
+        "sha256": "95028a6ec30b75386e889ae43596642e93664a8771f1173a3becfaa1ef90c439",
+        "base_template_location": "top-level targets[].prompt",
+        "prompt_style_location": "top-level design.prompt_style",
+        "prompt_style": "neutral"
+      },
+      "sensitivity_eval_mode": {
+        "path": "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/attack_01_direct_cell_extraction/sensitivity_eval_mode/results.json",
+        "sha256": "85b0eb48c6c1d2798ab1681e3230d2c66e8cfdd5f00e52048e105625f70882b9",
+        "base_template_location": "top-level targets[].prompt",
+        "prompt_style_location": "top-level design.prompt_style",
+        "prompt_style": "neutral"
+      }
+    },
+    "renderer": {
+      "file_path": "code/evaluation2/run_direct_cell_extraction.py",
+      "preserved_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+      "preserved_file_sha256": "3c13d4d6538e46e45a455a23cf9264b55180953341ca0b6b1b5b1d9e43c215a3",
+      "preserved_git_blob": "f659339dcd10b9f019f90425f3e8212014ef785f",
+      "function": "attack_prompt",
+      "function_source_sha256": "f54d0ccb6273099ed792ec236025dd9734ab2db88b927a58672ca6f39706b989",
+      "neutral_regex": "^Direct cell extraction attack\\.\\s*Extract the exact XLSX cell value only\\.\\s*",
+      "correspondence_status": "corroborated reconstruction; not a cryptographic run snapshot",
+      "correspondence_evidence": {
+        "job_logs_recording_prompt_style_neutral": [
+          "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/slurm/attack_01_14997041_0.out",
+          "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/slurm/attack_01_14997041_1.out",
+          "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/slurm/attack_01_eval_retry2_15015898_1.out",
+          "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/slurm/attack_01_eval_retry_15001681_1.out",
+          "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/slurm/attack_01_retry_14998705_0.out"
+        ],
+        "job_logs_recording_renderer_call_site": [
+          "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/slurm/attack_01_eval_retry_15001681_1.err"
+        ],
+        "result_schema_and_design_match_preserved_renderer_version": true,
+        "limitation": "The hardened-package job did not record its exact Git commit, dirty-tree patch, or source manifest. The renderer used by the job was later preserved at the cited commit and is corroborated by the run traceback and result schema, but byte identity of the entire historical source tree cannot be proved."
+      }
+    },
+    "target_comparison": {
+      "targets": 5,
+      "identical": 0,
+      "different": 5,
+      "csv": "a01_target_prompt_comparison.csv",
+      "json": "a01_target_prompt_comparison.json",
+      "markdown": "a01_target_prompt_comparison.md"
+    },
+    "availability": {
+      "baseline_target_level_attack_prompt": "directly stored in targets[].prompt",
+      "hardened_base_template": "directly stored in targets[].prompt",
+      "hardened_final_attack_prompt": "reconstructed from stored base template, recorded neutral style, and corroborated deterministic renderer",
+      "complete_per_conversation_user_prompt_sequence": "unavailable",
+      "exact_system_prompt": "unavailable",
+      "exact_api_message_payload": "unavailable"
+    }
+  },
+  "a02": {
+    "status": "PASS",
+    "interpretation": "A02 complete user-prompt sequences are preserved. Warm-up prompts match in every condition, while the final attack prompt differs in all 450 conditions. The package comparison remains descriptive.",
+    "result_files": {
+      "baseline": {
+        "secure_rag_mode": {
+          "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_02_multiturn_row_construction/secure_rag_mode/results.json",
+          "sha256": "a94eaff5210e4d1685369f78d131d7f52a85619b3b8f3d44a745176184ce2bb1"
+        },
+        "sensitivity_eval_mode": {
+          "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_02_multiturn_row_construction/sensitivity_eval_mode/results.json",
+          "sha256": "11952efb28e55898ba7800b4c55a5351f71122954e7f136f2312e5728cff3872"
+        }
+      },
+      "hardened": {
+        "secure_rag_mode": {
+          "path": "outputs/experiments/post hardened 1-8/attack_02_multiturn_row_construction/secure_rag_mode/results.json",
+          "sha256": "d89ede58db418bbbb66c84ee613469896123616faf29669b0076fa0e0c453544"
+        },
+        "sensitivity_eval_mode": {
+          "path": "outputs/experiments/post hardened 1-8/attack_02_multiturn_row_construction/sensitivity_eval_mode/results.json",
+          "sha256": "0ac49ed2b0b9b0e6dd9bf10e85e8a5ccb5312650175c89dd2eabc418752a561d"
+        }
+      }
+    },
+    "comparison": {
+      "conditions": 450,
+      "warmup_prompt_rows_compared": 900,
+      "conditions_with_identical_warmups": 450,
+      "conditions_with_different_warmups": 0,
+      "conditions_with_identical_final_attack_prompt": 0,
+      "conditions_with_different_final_attack_prompt": 450,
+      "conditions_with_identical_complete_user_prompt_sequence": 0,
+      "conditions_with_different_complete_user_prompt_sequence": 450,
+      "unique_final_prompt_pairs": 6,
+      "comparison_csv": "a02_prompt_sequence_comparison.csv",
+      "unique_final_pairs_json": "a02_unique_final_prompt_pairs.json"
+    },
+    "availability": {
+      "complete_per_conversation_user_prompt_sequence": "directly stored in records[].turns[].prompt",
+      "warmup_prompts": "directly stored and identical across packages",
+      "final_attack_prompt": "directly stored and different in 450/450 conditions",
+      "exact_system_prompt": "unavailable",
+      "exact_api_message_payload": "unavailable",
+      "complete_source_state": "unavailable"
+    }
+  },
+  "interpretive_constraints": [
+    "A01 prompts are partially preserved/reconstructable but are not package-equivalent.",
+    "A02 prompt sequences are preserved and systematically differ.",
+    "Both package comparisons remain descriptive.",
+    "Neither finding resolves the zero-to-zero matched verifier ablations."
+  ]
+}

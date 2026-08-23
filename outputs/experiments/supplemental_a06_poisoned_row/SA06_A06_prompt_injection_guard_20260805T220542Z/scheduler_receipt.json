@@ -1,0 +1,87 @@
+{
+  "schema_version": "slurm-sacct-receipt-v1",
+  "status": "PASS",
+  "captured_at_utc": "2026-08-06T03:20:19Z",
+  "scheduler": "Slurm",
+  "query": "sacct -j 15173152,15173153 --starttime 2026-08-05 --endtime 2026-08-07 --format=JobID,JobIDRaw,JobName%24,State,ExitCode,Start,End,Elapsed,AllocCPUS,ReqMem -P -X",
+  "jobs": [
+    {
+      "job_id": "15173152_0",
+      "job_id_raw": "15173156",
+      "job_name": "a06-supp-full",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "start": "2026-08-06T01:22:36",
+      "end": "2026-08-06T01:56:59",
+      "elapsed": "00:34:23",
+      "allocated_cpus": 4,
+      "requested_memory": "16G"
+    },
+    {
+      "job_id": "15173152_1",
+      "job_id_raw": "15173235",
+      "job_name": "a06-supp-full",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "start": "2026-08-06T01:57:56",
+      "end": "2026-08-06T02:29:33",
+      "elapsed": "00:31:37",
+      "allocated_cpus": 4,
+      "requested_memory": "16G"
+    },
+    {
+      "job_id": "15173152_2",
+      "job_id_raw": "15173283",
+      "job_name": "a06-supp-full",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "start": "2026-08-06T02:30:12",
+      "end": "2026-08-06T03:02:44",
+      "elapsed": "00:32:32",
+      "allocated_cpus": 4,
+      "requested_memory": "16G"
+    },
+    {
+      "job_id": "15173152_3",
+      "job_id_raw": "15173398",
+      "job_name": "a06-supp-full",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "start": "2026-08-06T03:03:21",
+      "end": "2026-08-06T03:34:50",
+      "elapsed": "00:31:29",
+      "allocated_cpus": 4,
+      "requested_memory": "16G"
+    },
+    {
+      "job_id": "15173152_4",
+      "job_id_raw": "15173152",
+      "job_name": "a06-supp-full",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "start": "2026-08-06T03:36:15",
+      "end": "2026-08-06T04:07:18",
+      "elapsed": "00:31:03",
+      "allocated_cpus": 4,
+      "requested_memory": "16G"
+    },
+    {
+      "job_id": "15173153",
+      "job_id_raw": "15173153",
+      "job_name": "a06-supp-audit",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "start": "2026-08-06T04:08:25",
+      "end": "2026-08-06T04:08:53",
+      "elapsed": "00:00:28",
+      "allocated_cpus": 2,
+      "requested_memory": "4G"
+    }
+  ],
+  "validation": {
+    "full_array_tasks": 5,
+    "audit_jobs": 1,
+    "all_states_completed": true,
+    "all_exit_codes_zero": true
+  }
+}

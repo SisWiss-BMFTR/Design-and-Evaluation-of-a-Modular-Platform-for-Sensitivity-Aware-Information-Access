@@ -1,0 +1,380 @@
+{
+  "metric_summary": "outputs/final_thesis_evidence_20260730_with_a01_a08_ablations/matched_ablation_metric_summary.json",
+  "historical_metrics": "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/final_thesis_evidence_20260725/metrics.json",
+  "attack_figures": [
+    {
+      "attack": "A01",
+      "pdf": "thesis/figures/results/a01_matched_guard_ablation.pdf",
+      "png": "thesis/figures/results/a01_matched_guard_ablation.png",
+      "source_values": {
+        "off_primary": [
+          0,
+          0
+        ],
+        "on_primary": [
+          0,
+          0
+        ],
+        "off_utility": [
+          75,
+          57
+        ],
+        "on_utility": [
+          75,
+          60
+        ],
+        "off_stage": [
+          150,
+          0,
+          0,
+          0
+        ],
+        "on_stage": [
+          150,
+          0,
+          0,
+          150
+        ]
+      }
+    },
+    {
+      "attack": "A02",
+      "pdf": "thesis/figures/results/a02_matched_guard_ablation.pdf",
+      "png": "thesis/figures/results/a02_matched_guard_ablation.png",
+      "source_values": {
+        "off_primary": [
+          0,
+          0
+        ],
+        "on_primary": [
+          0,
+          0
+        ],
+        "off_utility": [
+          75,
+          50
+        ],
+        "on_utility": [
+          75,
+          50
+        ],
+        "off_stage": [
+          150,
+          0,
+          0,
+          0
+        ],
+        "on_stage": [
+          150,
+          0,
+          0,
+          52
+        ]
+      }
+    },
+    {
+      "attack": "A03",
+      "pdf": "thesis/figures/results/a03_matched_guard_ablation.pdf",
+      "png": "thesis/figures/results/a03_matched_guard_ablation.png",
+      "source_values": {
+        "off_primary": [
+          0,
+          0
+        ],
+        "on_primary": [
+          0,
+          0
+        ],
+        "off_utility": [
+          75,
+          75
+        ],
+        "on_utility": [
+          75,
+          75
+        ],
+        "off_stage": [
+          140,
+          0,
+          0,
+          0
+        ],
+        "on_stage": [
+          0,
+          0,
+          0,
+          150
+        ]
+      }
+    },
+    {
+      "attack": "A04",
+      "pdf": "thesis/figures/results/a04_matched_guard_ablation.pdf",
+      "png": "thesis/figures/results/a04_matched_guard_ablation.png",
+      "source_values": {
+        "off_primary": [
+          150,
+          25
+        ],
+        "on_primary": [
+          0,
+          0
+        ],
+        "off_utility": [
+          75,
+          75
+        ],
+        "on_utility": [
+          75,
+          75
+        ],
+        "off_stage": [
+          150,
+          25,
+          25
+        ],
+        "on_stage": [
+          150,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "attack": "A05",
+      "pdf": "thesis/figures/results/a05_matched_guard_ablation.pdf",
+      "png": "thesis/figures/results/a05_matched_guard_ablation.png",
+      "source_values": {
+        "off_primary": [
+          0,
+          15
+        ],
+        "on_primary": [
+          0,
+          0
+        ],
+        "off_utility": [
+          75,
+          75
+        ],
+        "on_utility": [
+          75,
+          75
+        ],
+        "off_stage": [
+          150,
+          15,
+          15,
+          0
+        ],
+        "on_stage": [
+          150,
+          5,
+          0,
+          150
+        ]
+      }
+    },
+    {
+      "attack": "A06",
+      "pdf": "thesis/figures/results/a06_matched_guard_ablation.pdf",
+      "png": "thesis/figures/results/a06_matched_guard_ablation.png",
+      "source_values": {
+        "off_primary": [
+          0,
+          0
+        ],
+        "on_primary": [
+          0,
+          0
+        ],
+        "off_utility": [
+          75,
+          75
+        ],
+        "on_utility": [
+          75,
+          75
+        ],
+        "off_stage": [
+          150,
+          0,
+          0,
+          0,
+          0
+        ],
+        "on_stage": [
+          150,
+          0,
+          0,
+          0,
+          150
+        ]
+      }
+    },
+    {
+      "attack": "A07",
+      "pdf": "thesis/figures/results/a07_matched_guard_ablation.pdf",
+      "png": "thesis/figures/results/a07_matched_guard_ablation.png",
+      "source_values": {
+        "off_primary": [
+          0,
+          0
+        ],
+        "on_primary": [
+          0,
+          0
+        ],
+        "off_utility": [
+          75,
+          74
+        ],
+        "on_utility": [
+          75,
+          75
+        ],
+        "off_stage": [
+          150,
+          0,
+          0
+        ],
+        "on_stage": [
+          150,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "attack": "A08",
+      "pdf": "thesis/figures/results/a08_matched_guard_ablation.pdf",
+      "png": "thesis/figures/results/a08_matched_guard_ablation.png",
+      "source_values": {
+        "off_primary": [
+          0,
+          3
+        ],
+        "on_primary": [
+          0,
+          0
+        ],
+        "off_utility": [
+          75,
+          74
+        ],
+        "on_utility": [
+          75,
+          74
+        ],
+        "off_stage": [
+          150,
+          3,
+          3,
+          0
+        ],
+        "on_stage": [
+          0,
+          0,
+          0,
+          150
+        ]
+      }
+    }
+  ],
+  "cross_attack": {
+    "pdf": "thesis/figures/results/cross_attack_matched_guard_ablations.pdf",
+    "png": "thesis/figures/results/cross_attack_matched_guard_ablations.png",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        150,
+        0,
+        25,
+        0
+      ],
+      [
+        0,
+        0,
+        15,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        0
+      ]
+    ]
+  },
+  "historical_vs_guards_off": {
+    "pdf": "thesis/figures/results/historical_baseline_vs_matched_guards_off.pdf",
+    "png": "thesis/figures/results/historical_baseline_vs_matched_guards_off.png",
+    "values": {
+      "secure_rag_mode": {
+        "historical": [
+          0,
+          8,
+          150,
+          0,
+          44,
+          0
+        ],
+        "guards_off": [
+          0,
+          0,
+          0,
+          150,
+          0,
+          0
+        ]
+      },
+      "sensitivity_eval_mode": {
+        "historical": [
+          74,
+          123,
+          150,
+          75,
+          70,
+          82
+        ],
+        "guards_off": [
+          0,
+          0,
+          0,
+          25,
+          15,
+          3
+        ]
+      }
+    }
+  }
+}

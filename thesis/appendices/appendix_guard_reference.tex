@@ -1,0 +1,190 @@
+\chapter{Guard Implementation and Telemetry Reference}
+\label{app:guard-reference}
+
+This appendix documents the captured final/hardened pipeline at implementation level. It is not a reconstruction of the historical baseline, and the existence of a control in the architecture is not evidence that it caused an experimental outcome. Run-specific source snapshots, manifests, scorer identities, prompt/message records, and hashes remain authoritative for the experiments. The reference instead makes the order, mode dependence, switch semantics, interactions, and diagnostic fields explicit so that the evidence in Chapters~\ref{chap:experiments} and~\ref{chap:vulnerability-analysis} can be interpreted without treating a guard as an unspecified black box.
+
+\section{Per-query execution contract}
+\label{sec:appendix-guard-execution}
+
+Listing~\ref{lst:appendix-guard-order} is a compact contract for the final \texttt{RAGPipeline}. It omits retrieval-scoring details but preserves the security-relevant order and early returns.
+
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,aboveskip=4pt,belowskip=4pt,caption={Final guard execution order in \texttt{RAGPipeline.query}},label={lst:appendix-guard-order}]
+on ACCESS_CONTEXT_CHANGE(new_role, new_labels):
+  if clearing_on and prior_access_context_exists and context_changed:
+    clear(conversation, semantic_memory, focus, caches,
+          raw_answer, guard_state)
+procedure QUERY(question):
+  reset_telemetry(); ids <- extract_ids(question)
+  membership <- detect_and_enrich_membership_probe(question)
+  if membership_on and mode != sensitivity_eval and
+     unauthorized(membership):
+    return fixed_membership_refusal
+  probe <- detect_embedding_or_rank_probe(question, ids, membership)
+  strict <- probe.triggered
+  results <- retrieve_and_expand_relations(question, ids, strict,
+                                           relation_on)
+  context <- project_context(results, mode, relation_on,
+                             injection_on, strict)
+  memory <- authorized_memory(question)
+  if strict or explicit_product_formulation_query(question): memory <- empty
+  raw <- generate(context, memory, question)
+  record_raw(raw)
+  answer <- membership_postcheck(question, raw, membership_on)
+  answer <- restricted_value_postcheck(answer, results, verifier_on)
+  delivered <- injection_artifact_postcheck(answer, injection_on)
+  update_focus_and_memory(question, delivered, results)
+  return delivered
+\end{lstlisting}
+
+On the normal path, \texttt{last\_raw\_answer} is the generator output before all three post-generation operations. The early secure-mode membership path makes no model call but stores and returns the fixed refusal. Membership validation runs first after generation, output verification runs second, and injection-artifact filtering runs last. If the output verifier replaces an answer, the function returns from that check and the later injection-artifact check is not reached. Memory stores the delivered answer, not the original raw answer.
+
+\section{Mode-dependent enforcement}
+\label{sec:appendix-mode-enforcement}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\caption{Mode-dependent behaviour of the main pre-generation controls.}
+\label{tab:appendix-mode-enforcement}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{25mm}XXXX@{}}
+\toprule
+Mode & Ordinary field projection & Prompt-injection guard enabled & Membership guard enabled & Triggered embedding guard \\
+\midrule
+Secure RAG & Restricted fields are omitted for the active role. & Suspicious unstructured text is withheld; matched visible lines in structured records are sanitised. & A detected unauthorised protected-record probe may stop before retrieval and generation. & Reinforces strict role-filtered retrieval, secure projection, query-memory suppression, and the side-channel policy. \\
+Sensitivity evaluation & Allowed and restricted fields remain model-visible with labels. & Suspicious content is preserved as quoted, untrusted evaluation data; post-generation artifact filtering remains possible. & The pre-retrieval stop is bypassed, but post-generation validation remains. & Overrides diagnostic exposure for that query by forcing strict retrieval and secure projection. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Secure field projection is core mode behaviour, not a seventh switch in the matched guard ablations. Conversely, sensitivity-evaluation mode intentionally exposes labelled evidence to the model; zero delivered leakage in that mode does not mean that the upstream boundary hid the value.
+
+\begin{landscape}
+\section{Guard contracts}
+\label{sec:appendix-guard-contracts}
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\scriptsize
+\renewcommand{\arraystretch}{0.95}
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{25mm}>{\raggedright\arraybackslash}p{42mm}>{\raggedright\arraybackslash}p{38mm}>{\raggedright\arraybackslash}p{42mm}>{\raggedright\arraybackslash}p{46mm}>{\raggedright\arraybackslash}p{27mm}@{}}
+\caption{Implementation contracts of the six configurable controls.}
+\label{tab:appendix-guard-contracts}\\
+\toprule
+Control & Source entry point & Inspects & Trigger & Enabled action & Disabled semantics \\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{\scriptsize\itshape Table~\ref{tab:appendix-guard-contracts} continued}\\
+\toprule
+Control & Source entry point & Inspects & Trigger & Enabled action & Disabled semantics \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{\scriptsize\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Output-leakage verifier & \path{output_leakage_verifier.py}; pipeline verifier hook & Membership-adjusted answer; allowed/restricted inventories from results and indexed metadata & Case-insensitive exact text or decimal-equivalent number; identical allowed field identity/value is exempt & Replace the intermediate answer with a fixed restricted-value refusal & Record \texttt{observe\_only}; return the answer unchanged \\
+Membership guard & \path{membership_inference_guard.py}; pipeline membership hook & Question, role, formulation metadata, and generated answer & Identifier or existence/index/record wording, enriched with candidate authorisation & Secure-mode early refusal; otherwise post-generation replacement; authorised refusal repair & Skip early stop; post-check observes. Authorised repair remains. \\
+Embedding/rank probe & Pipeline embedding-probe detector & Query, identifiers, membership classification, and role & Retrieval-evidence term plus protected-detail signal for an unauthorised role & Strict retrieval, secure projection, query-memory suppression, and policy chunk & Record \texttt{disabled}; use ordinary mode path \\
+Prompt injection & \path{prompt_injection_guard.py}; context builder and output hook & Retrieved text/metadata; intermediate answer after output verification & Defined canary, trigger, instruction, forced-output, or exfiltration patterns; unstructured protected links in secure context & Quarantine/sanitise secure context, preserve a diagnostic boundary, and redact/refuse recognised artifacts & Use ordinary context builder; no artifact output check \\
+Access-change clearing & Pipeline access-context and clearing hooks; memory \path{clear} & Previous/new role and normalised allowed-label list & Real transition after a prior access context, with clearing allowed for the call & Clear conversation/semantic memory, focus, caches, raw answer, and guard state & Retain state; filtered reads still apply \\
+Relation access & \path{relation_access.py}; traversal, focus, projection, and verifier paths & Directed edge, role, and separate traversal/disclosure policies & Role absent from the relevant edge action's allowed set & In secure paths, deny traversal and/or omit disclosure; sanitise focus and supply policy-edge verifier values & Bypass edge checks; ordinary field projection remains \\
+\end{longtable}
+\end{landscape}
+
+The prompt-injection switch is explicitly composite: it controls both context treatment and a later artifact filter. Its matched off/on estimate therefore belongs to the configured component as a whole unless those sub-actions are separately randomised. The relation switch also interacts with mode and verifier inventory. In sensitivity-evaluation mode, configured restricted edges are intentionally traversable and model-visible with restriction labels unless another guard forces a secure path. Direct explicit-identifier retrieval and relation directions not routed through the guarded expansion are not equivalent to a tested edge traversal.
+
+The output verifier is exact-value based rather than semantic. It can miss paraphrases, translations, ranges, or derived facts and can match coincidental or user-supplied values. Its \texttt{matched\_fields} list deduplicates field names, but \texttt{matched\_count} counts inventory matches and can include the same fact more than once if it appears in multiple inventories. It should not be interpreted as a count of unique disclosures.
+
+\section{Telemetry dictionary}
+\label{sec:appendix-guard-telemetry}
+
+{
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\scriptsize
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{28mm}>{\raggedright\arraybackslash}p{52mm}>{\raggedright\arraybackslash}p{60mm}@{}}
+\caption{Diagnostic interfaces and their correct interpretation.}
+\label{tab:appendix-guard-telemetry}\\
+\toprule
+Interface & Principal fields or content & Interpretation \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{\scriptsize\itshape Table~\ref{tab:appendix-guard-telemetry} continued}\\
+\toprule
+Interface & Principal fields or content & Interpretation \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\scriptsize\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\path{last_results} & Retrieved raw records and metadata local to the completed query & Retrieval is not the same as model-visible exposure; projection or quarantine may remove content later. \\
+\addlinespace
+\path{last_visible_context_chunks} & Context chunks supplied to the prompt renderer & Closest pipeline-level evidence of model-visible retrieved context. The complete API payload additionally requires captured generator messages. \\
+\addlinespace
+\path{last_access_decisions} & Entity/type/role, visible and removed fields, removal reasons, and rendered context where produced & Field and relation projection evidence is embedded here; it is not a uniform relation-guard activation counter. \\
+\addlinespace
+\path{last_raw_answer}; runner delivered answer & Original model output on the normal path; application answer after post-generation controls & Their difference localises a delivery-stage change. The secure membership early-refusal path stores the fixed refusal despite no API call. \\
+\addlinespace
+Generator \path{last_messages}; \path{last_request_settings} & Exact system/conversation/final-user messages and non-message request values retained by supported runners & These fields establish the actual API request when preserved. A top-level prompt description is not an equivalent substitute. \\
+\addlinespace
+\path{last_output_guard} & \path{enabled}, \path{checked}, \path{leakage_detected}, \path{matched_fields}, \path{matched_count}, \path{action} & Actions include \texttt{allow}, \texttt{observe\_only}, \texttt{replace\_with\_refusal}, and \texttt{not\_checked}. A match is not automatically the attack-specific primary outcome. \\
+\addlinespace
+\path{last_membership_guard} & Probe candidate, confidence, reason, sensitivity; \path{enabled}, \path{checked}, \path{unauthorized_user}, \path{triggered}, confirmation flag, and \path{action} & Actions include pre-retrieval or post-generation replacement, authorised-refusal repair, observation, and allow. The implementation measures protected external-index existence, not model-training membership. \\
+\addlinespace
+\path{last_embedding_probe_guard} & \path{checked}, \path{triggered}, strict-retrieval and forced-projection flags, policy-added flag, evidence terms, sensitive signals, and \path{action} & There is no separate \path{enabled} field; disabled operation is represented by \texttt{action=disabled}. It records the composite query intervention. \\
+\addlinespace
+\path{last_prompt_injection_guard} & Enabled/checked; context quarantine/count/patterns; answer checked/artifact/patterns; \path{action} & Actions distinguish context handling, artifact redaction/refusal, allow, and not checked. Output-verifier replacement can prevent the answer-stage check from running. \\
+\addlinespace
+Relation and access-clear evidence & No dedicated per-query \path{last_relation_guard} or \path{last_access_change_guard} dictionary & Relation effects use access decisions, visible context, derived outcomes, and traversal logs. A03 combines the switch value with captured pre/post state and a derived clearing-executed field. \\
+\addlinespace
+Runner record & Condition/pair ID, prompts, target, mode, role, length, iteration, messages/settings where supported, raw/delivered answers, stage scores, and errors & This is the unit used for pairing, completeness checks, scoring, and prompt/message equivalence. Availability is attack- and run-specific. \\
+\addlinespace
+Runtime provenance & Canonical content and serialised-index hashes, indexed chunk count, embedding model and package versions, scorer identity/version/path/hash where captured & Binds a result shard to its runtime inputs. A missing historical field remains unavailable and is not backfilled from a later run. \\
+\end{longtable}
+}
+
+This telemetry schema describes the final implementation and the stronger later runners. Absence of a field in an older record is not evidence that the corresponding stage was safe, inactive, or identical. Chapter~\ref{chap:experiments} and the provenance ledger state which interfaces were actually retained for each evidence source.
+
+\clearpage
+\section{Implementation and provenance map}
+\label{sec:appendix-guard-provenance}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Authoritative implementation locations and experimental binding.}
+\label{tab:appendix-guard-source-map}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{32mm}>{\raggedright\arraybackslash}p{55mm}X@{}}
+\toprule
+Concern & Authoritative source location & Evidence binding \\
+\midrule
+Pipeline orchestration and switch interaction & \path{code/pipeline/rag_pipeline.py} & Captured source snapshot and source-manifest SHA-256 \\
+Field and mode projection & \path{code/security/field_access.py} & Snapshot plus dataset/policy identities and recorded mode/role \\
+Output verification & \path{code/security/output_leakage_verifier.py} & Source hash plus scorer/inventory provenance where supported \\
+Membership guard & \path{code/security/membership_inference_guard.py} & Source hash plus exact prompt/messages and index metadata identity \\
+Prompt injection & \path{code/security/prompt_injection_guard.py} & Source hash plus poison-document, prompt, and artifact-scorer identities \\
+Relation policy & \path{code/security/relation_access.py} & Source and policy hashes plus access decisions/visible context \\
+Conversation memory & \path{code/memory/conversation_memory.py} & Source hash plus A03 before/after runner state \\
+API payload capture & \path{code/generation/openai_generator.py} & Exact messages and request settings where the runner retained them \\
+Runtime hashes & \path{code/evaluation2/runtime_provenance.py} & Per-shard canonical-content, serialised-index, dependency, and scorer provenance \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\FloatBarrier
+
+\paragraph{Completed supplemental A06 binding.}
+The authoritative run root is \path{outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z}. Its frozen implementation is under \path{source_snapshot}; \path{source_manifest.json} binds that tree with canonical file-set SHA-256 \shadigest{9e7cde86d1372952fdcdc4bca835b4ab8743df40579c9e2281a63c92107a6966}. The primary evidence file is \path{authoritative_a06_supplemental_evidence.json}, SHA-256 \shadigest{5adfa65641e5c032daed6aa4b93ce3e6850923f57fa871b7092de0b278ba5512}, and \path{AUDIT_COMPLETE.json} records \texttt{PASS}. The compact additive ledger is \path{outputs/final_thesis_supplemental_evidence_20260806/supplemental_component_evidence.json}. The evidence covers 20 shards of 45 records, 900 conversations, and 450 matched pairs; every shard records 301 indexed entity representations and its canonical-content and serialised-FAISS hashes. All shards identify scorer \path{a06-poisoned-row-integrity-confidentiality-scorer}, version \path{a06-poisoned-row-v1}, source SHA-256 \shadigest{090d7b1a4742e01005a1390b7554b8f73fd8e59d5b923c9e8a4ba68fda15a171}. Exact user-prompt sequences, system messages, request settings, and API messages are retained. Equality is verified for the first three. All 450 paired API-message sequences differ because the enabled component changes model-visible context through secure-mode quarantine or the sensitivity-evaluation untrusted-data and relationship boundary.
+
+The large raw result trees are represented by the tracked compact file \path{outputs/final_thesis_supplemental_evidence_20260806/a06_raw_result_archive_manifest.json}. It inventories 52 pilot/full result JSON files and 1,284 records, records 529,797,217 bytes, binds every file by SHA-256, and has canonical inventory SHA-256 \shadigest{59f4d8272e88eadaaeff02df645708138f3abf72c435ee859cf94e258ad77131}. Its recorded file URI points to the retained HPC workspace copy; the manifest explicitly states that this is neither a public nor a permanent external archive. The tracked \path{scheduler_receipt.json} separately preserves five completed full-array tasks and one completed audit job, all with Slurm exit code \texttt{0:0}.
+
+The current repository hash is intentionally not hard-coded as a universal architecture identifier. Each experiment is bound to the source snapshot and manifest recorded for that run; later source changes cannot retroactively identify an older execution. This separation also prevents a reconstructed historical prompt or inferred configuration from being presented as an exact captured payload.
+
+\FloatBarrier

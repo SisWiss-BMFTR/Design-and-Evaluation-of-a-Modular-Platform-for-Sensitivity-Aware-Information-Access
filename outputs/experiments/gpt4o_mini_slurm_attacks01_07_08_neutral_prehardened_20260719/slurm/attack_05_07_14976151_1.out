@@ -1,0 +1,13 @@
+Started Attack 5 at 2026-07-19T20:59:34+02:00
+SLURM_JOB_ID=14977152
+SLURM_ARRAY_TASK_ID=1
+RAG_MODE=sensitivity_eval_mode
+OUT_DIR=/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/gpt4o_mini_slurm_attacks01_07_neutral_prehardened_20260719/attack_05_rank_probing_membership_inference/sensitivity_eval_mode
+============ Job Information ===================================================
+Submitted: 2026-07-19T19:42:34
+Started: 2026-07-19T20:59:11
+Ended: 2026-07-19T22:59:12
+Elapsed: 120 min, Limit: 120 min, Difference: 0 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

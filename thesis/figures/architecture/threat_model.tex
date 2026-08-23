@@ -1,0 +1,143 @@
+\begin{tikzpicture}[
+  font=\rmfamily\footnotesize,
+  >=Latex,
+  system/.style={
+    draw=blue!60!black,
+    fill=blue!7,
+    rounded corners=2pt,
+    align=center,
+    text width=31mm,
+    minimum height=15mm,
+    inner xsep=2.5mm,
+    inner ysep=2.5mm
+  },
+  attacker/.style={
+    draw=red!65!black,
+    fill=red!7,
+    rounded corners=2pt,
+    align=center,
+    text width=38mm,
+    minimum height=15mm,
+    inner xsep=2.5mm,
+    inner ysep=2.5mm
+  },
+  transition/.style={
+    attacker,
+    text width=42mm,
+    fill=orange!9,
+    draw=orange!75!black
+  },
+  asset/.style={
+    draw=green!55!black,
+    fill=green!9,
+    rounded corners=2pt,
+    align=left,
+    text width=42mm,
+    minimum height=14mm,
+    inner xsep=3mm,
+    inner ysep=2.5mm
+  },
+  corpus/.style={
+    draw=blue!60!black,
+    fill=blue!7,
+    rounded corners=2pt,
+    align=center,
+    text width=35mm,
+    minimum height=14mm,
+    inner xsep=2.5mm,
+    inner ysep=2.5mm
+  },
+  flow/.style={->,thick,draw=black!75},
+  attackflow/.style={->,thick,draw=red!65!black},
+  conditionflow/.style={->,thick,densely dashed,draw=orange!80!black}
+]
+  % Principal system path: one direction and no edge labels.
+  \node[system] (interface) at (-8.0,0) {
+    \textbf{Query interface}\\
+    Current role and mode
+  };
+  \node[system] (retrieval) at (-4.0,0) {
+    \textbf{Index and retrieval}\\
+    Search and permitted relations
+  };
+  \node[system] (context) at (0,0) {
+    \textbf{Model-visible context}\\
+    Projected fields and retained state
+  };
+  \node[system] (generation) at (4.0,0) {
+    \textbf{Generator}\\
+    Raw answer
+  };
+  \node[system] (delivery) at (8.0,0) {
+    \textbf{Delivery controls}\\
+    Guard action and returned answer
+  };
+
+  \draw[flow] (interface) -- (retrieval);
+  \draw[flow] (retrieval) -- (context);
+  \draw[flow] (context) -- (generation);
+  \draw[flow] (generation) -- (delivery);
+
+  % Corpus input is kept within the system boundary.
+  \node[corpus,below=13mm of retrieval] (corpus) {
+    \textbf{Structured corpus}\\
+    Indexed entities and synthetic rows
+  };
+  \draw[flow] (corpus) -- (retrieval);
+
+  \node[
+    draw=gray!65,
+    densely dotted,
+    rounded corners=2mm,
+    fit=(interface)(retrieval)(context)(generation)(delivery)(corpus),
+    inner xsep=4mm,
+    inner ysep=4mm,
+    label={[font=\rmfamily\scriptsize,text=gray!70!black]below right:SYSTEM UNDER TEST}
+  ] (systemboundary) {};
+
+  % Attacker capabilities are stated in boxes so arrows remain unobstructed.
+  \node[attacker,above=15mm of interface] (chat) {
+    \textbf{Standard chat attacker}\\
+    Public or internal role\\
+    Natural-language requests: A01--A05, A08
+  };
+  \node[transition,above=15mm of context] (rolechange) {
+    \textbf{Authority-transition condition}\\
+    Experiment-controlled high-to-low change: A03
+  };
+  \node[attacker,below=15mm of corpus] (poison) {
+    \textbf{Poisoned-corpus attacker}\\
+    Attacker-controlled synthetic public entity: A06/A07 only
+  };
+
+  \draw[attackflow] (chat) -- (interface);
+  \draw[conditionflow] (rolechange) -- (context);
+  \draw[attackflow] (poison) -- (corpus);
+
+  % Security and utility outcomes are distinct evaluation targets.
+  \node[asset,right=15mm of delivery,yshift=20mm] (conf) {
+    \textbf{Confidentiality assets}\\
+    Fields, rows, relation edges, protected indexed-record existence, and conversation state
+  };
+  \node[asset,below=6mm of conf] (integrity) {
+    \textbf{Integrity asset}\\
+    Trusted-instruction boundary and canary-free delivery
+  };
+  \node[asset,below=6mm of integrity] (utility) {
+    \textbf{Authorised task}\\
+    Protected-role expected answer
+  };
+
+  \draw[flow] (delivery.east) -- ++(5mm,0) |- (conf.west);
+  \draw[flow] (delivery.east) -- (integrity.west);
+  \draw[flow] (delivery.east) -- ++(5mm,0) |- (utility.west);
+
+  \node[
+    draw=green!45!black,
+    densely dotted,
+    rounded corners=2mm,
+    fit=(conf)(integrity)(utility),
+    inner sep=3mm,
+    label={[font=\rmfamily\scriptsize,text=green!45!black]above left:EVALUATED OUTCOMES}
+  ] {};
+\end{tikzpicture}

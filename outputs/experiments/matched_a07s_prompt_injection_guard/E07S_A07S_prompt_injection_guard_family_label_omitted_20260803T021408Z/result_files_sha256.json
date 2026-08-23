@@ -1,0 +1,22 @@
+{
+  "arm_A_injection_guard_off/secure_rag_mode/R-001/results.json": "d8abf0cbf4d04ccc66044f564892f4f561325e63cd01cee528d712e6b3b30d03",
+  "arm_A_injection_guard_off/secure_rag_mode/R-002/results.json": "2137aa804fa5baf62d12655a7e2ca885bb8a9dd9a738b9f617cf50d0da300720",
+  "arm_A_injection_guard_off/secure_rag_mode/R-003/results.json": "8e69325a152db2080d6ce3c0cb3f042e1e79b051996568d662fd64b6b29e5bc7",
+  "arm_A_injection_guard_off/secure_rag_mode/R-004/results.json": "78584ca298007d335455d5fcf6e75a299095b087b651f5afe05698ca7a254a9f",
+  "arm_A_injection_guard_off/secure_rag_mode/R-005/results.json": "47b60b34e2e1fbf8b517a246f76c76ec4da6b6a8e722547c6520219ab1566344",
+  "arm_A_injection_guard_off/sensitivity_eval_mode/R-001/results.json": "0d5d095cbac6c78021040838c68c83fcf7fbb2f2faa36a22a33d5872babd4740",
+  "arm_A_injection_guard_off/sensitivity_eval_mode/R-002/results.json": "e0410e8ed39da5b36eb5066bbc6a9efa44a00cea09de008c51a5976301755ccf",
+  "arm_A_injection_guard_off/sensitivity_eval_mode/R-003/results.json": "36172b32dd5a43df2aff8c9b66da6e261c22a0a8191994cd69be72edefb14f3f",
+  "arm_A_injection_guard_off/sensitivity_eval_mode/R-004/results.json": "40c4a57d4ffcbb628fb2d9863754c4c51ede847bd8c358b74f1e0b970d996807",
+  "arm_A_injection_guard_off/sensitivity_eval_mode/R-005/results.json": "58141268435758d8be07ea0d6952b324bd1bb804c5846d4c5ae5f4358211e76b",
+  "arm_B_injection_guard_on/secure_rag_mode/R-001/results.json": "b7d2c086b2d6933020f5771acfdb1639c2ead5187e806326f47c33d0e5298d83",
+  "arm_B_injection_guard_on/secure_rag_mode/R-002/results.json": "66566730b94547318da233c14fd67bd6eebd98e358bfd077f086e0c8ba253b12",
+  "arm_B_injection_guard_on/secure_rag_mode/R-003/results.json": "df5be017e61380422b8830705d2b5f311d759ddd875d7670d99b6c4ca46c5173",
+  "arm_B_injection_guard_on/secure_rag_mode/R-004/results.json": "b6ab9d1ced7a092227066b585ab5cca2861cf7a858918ce99f9d5af4a6a58a9f",
+  "arm_B_injection_guard_on/secure_rag_mode/R-005/results.json": "292dc51eb20d07910913d638fc08af452feda93ea9706a2bbf6671d5e1f3eb8b",
+  "arm_B_injection_guard_on/sensitivity_eval_mode/R-001/results.json": "b78be63bccbfecb859afda3e39990ce3740df30eff30fbc33c929b40d0a4f8cf",
+  "arm_B_injection_guard_on/sensitivity_eval_mode/R-002/results.json": "699351178455fe4efcebb629c44fcea3ddd9af64b6315403ac76510005e3bd4e",
+  "arm_B_injection_guard_on/sensitivity_eval_mode/R-003/results.json": "7356e1d6425f13b1316635feedbd6b08f01e326adc1d50f84a3aa7dd44654360",
+  "arm_B_injection_guard_on/sensitivity_eval_mode/R-004/results.json": "b03ec6765d90349d75fea47140080334fc77004c7b030410b4e6b486ea32c583",
+  "arm_B_injection_guard_on/sensitivity_eval_mode/R-005/results.json": "6dcbba69a479d738ff8834f24c9b4e6197aa0bce1b8b02421bf09a5263d166ee"
+}

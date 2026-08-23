@@ -1,0 +1,365 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "status": "pass",
+      "check": "A02 policy-aware baseline leakage: secure_rag_mode",
+      "token": "8/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 policy-aware hardened leakage: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 policy-aware baseline leakage: sensitivity_eval_mode",
+      "token": "123/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 policy-aware hardened leakage: sensitivity_eval_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 policy-aware full reconstruction",
+      "token": "37/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 legacy flags remain diagnostic",
+      "token": "The legacy runner flags were 60/150 and 122/150, but these are retained only as diagnostic values."
+    },
+    {
+      "status": "pass",
+      "check": "A01 original primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A01 hardened primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A01 original primary outcome: sensitivity_eval_mode",
+      "token": "74/150"
+    },
+    {
+      "status": "pass",
+      "check": "A01 hardened primary outcome: sensitivity_eval_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 original primary outcome: secure_rag_mode",
+      "token": "8/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 hardened primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 original primary outcome: sensitivity_eval_mode",
+      "token": "123/150"
+    },
+    {
+      "status": "pass",
+      "check": "A02 hardened primary outcome: sensitivity_eval_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A03 original primary outcome: secure_rag_mode",
+      "token": "150/150"
+    },
+    {
+      "status": "pass",
+      "check": "A03 hardened primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A03 original primary outcome: sensitivity_eval_mode",
+      "token": "150/150"
+    },
+    {
+      "status": "pass",
+      "check": "A03 hardened primary outcome: sensitivity_eval_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A04 original primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A04 hardened primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A04 original primary outcome: sensitivity_eval_mode",
+      "token": "75/150"
+    },
+    {
+      "status": "pass",
+      "check": "A04 hardened primary outcome: sensitivity_eval_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A05 original primary outcome: secure_rag_mode",
+      "token": "44/150"
+    },
+    {
+      "status": "pass",
+      "check": "A05 hardened primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A05 original primary outcome: sensitivity_eval_mode",
+      "token": "70/150"
+    },
+    {
+      "status": "pass",
+      "check": "A05 hardened primary outcome: sensitivity_eval_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A06 original primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A06 hardened primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A06 original primary outcome: sensitivity_eval_mode",
+      "token": "2/150"
+    },
+    {
+      "status": "pass",
+      "check": "A06 hardened primary outcome: sensitivity_eval_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A08 original primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A08 hardened primary outcome: secure_rag_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A08 original primary outcome: sensitivity_eval_mode",
+      "token": "82/150"
+    },
+    {
+      "status": "pass",
+      "check": "A08 hardened primary outcome: sensitivity_eval_mode",
+      "token": "0/150"
+    },
+    {
+      "status": "pass",
+      "check": "A07 original variant identified",
+      "token": "Synthetic trigger"
+    },
+    {
+      "status": "pass",
+      "check": "A07 hardened variant identified",
+      "token": "Natural-style request"
+    },
+    {
+      "status": "pass",
+      "check": "A07 non-comparability stated",
+      "token": "do not constitute a controlled before--after comparison"
+    },
+    {
+      "status": "pass",
+      "check": "A07 is not presented as a controlled reduction",
+      "token": "A07.{0,180}(?:reduced|changed|fell|dropped).{0,80}150/150.{0,80}0/150"
+    },
+    {
+      "status": "pass",
+      "check": "original aggregate protected utility: secure_rag_mode",
+      "token": "528/600"
+    },
+    {
+      "status": "pass",
+      "check": "original protected utility excluding A07: secure_rag_mode",
+      "token": "518/525"
+    },
+    {
+      "status": "pass",
+      "check": "original aggregate protected utility: sensitivity_eval_mode",
+      "token": "424/600"
+    },
+    {
+      "status": "pass",
+      "check": "original protected utility excluding A07: sensitivity_eval_mode",
+      "token": "424/525"
+    },
+    {
+      "status": "pass",
+      "check": "hardened aggregate protected utility: secure_rag_mode",
+      "token": "600/600"
+    },
+    {
+      "status": "pass",
+      "check": "hardened protected utility excluding A07: secure_rag_mode",
+      "token": "525/525"
+    },
+    {
+      "status": "pass",
+      "check": "hardened aggregate protected utility: sensitivity_eval_mode",
+      "token": "556/600"
+    },
+    {
+      "status": "pass",
+      "check": "hardened protected utility excluding A07: sensitivity_eval_mode",
+      "token": "489/525"
+    },
+    {
+      "status": "pass",
+      "check": "no guards-off evidence in Chapters 5--9",
+      "token": "guards[- ]off"
+    },
+    {
+      "status": "pass",
+      "check": "no guards-on evidence in Chapters 5--9",
+      "token": "guards[- ]on"
+    },
+    {
+      "status": "pass",
+      "check": "no correction-family identifiers in Chapters 5--9",
+      "token": "A07-S|A07-N"
+    },
+    {
+      "status": "pass",
+      "check": "no methodology-correction source in Chapters 5--9",
+      "token": "methodology_correction|methodology correction"
+    },
+    {
+      "status": "pass",
+      "check": "no correction-run evidence in Chapters 5--9",
+      "token": "correction telemetry|correction experiment|correction run"
+    },
+    {
+      "status": "pass",
+      "check": "no matched-prompt correction evidence in Chapters 5--9",
+      "token": "matched prompt hash|prompt hashes matched"
+    },
+    {
+      "status": "pass",
+      "check": "no correction-derived figures in Chapters 5--9",
+      "token": "guard_path_telemetry|a07_family_guard_ablation|a05_membership_evidence_sets"
+    },
+    {
+      "status": "pass",
+      "check": "no unsupported component attribution in Chapter 8",
+      "token": "over-broad membership detector handled direct extraction"
+    },
+    {
+      "status": "pass",
+      "check": "no residual neutral terminology in prose",
+      "token": "neutral pre-hardening runner|neutral pre-hardening condition"
+    },
+    {
+      "status": "pass",
+      "check": "Chapter 6 contains no hardened-package values",
+      "token": "hardened.{0,40}(?:0|[1-9][0-9]*)/(?:75|150)"
+    },
+    {
+      "status": "pass",
+      "check": "Chapter 6 contains no component-study values",
+      "token": "guards?[- ](?:off|on)|ablation|A07-S|A07-N"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a01_exposure_delivery",
+      "token": "a01_exposure_delivery"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a02_policy_aware_reconstruction",
+      "token": "a02_policy_aware_reconstruction"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a03_state_delivery",
+      "token": "a03_state_delivery"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a04_relation_structure",
+      "token": "a04_relation_structure"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a05_membership_baseline",
+      "token": "a05_membership_baseline"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a06_integrity_confidentiality",
+      "token": "a06_integrity_confidentiality"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a07_baseline_integrity_confidentiality_utility",
+      "token": "a07_baseline_integrity_confidentiality_utility"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure a08_exposure_delivery",
+      "token": "a08_exposure_delivery"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure cross_attack_descriptive_baseline",
+      "token": "cross_attack_descriptive_baseline"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure cross_attack_package_comparison",
+      "token": "cross_attack_package_comparison"
+    },
+    {
+      "status": "pass",
+      "check": "generated figure cross_attack_utility",
+      "token": "cross_attack_utility"
+    },
+    {
+      "status": "pass",
+      "check": "compiled layout has no overfull hbox",
+      "token": "Overfull \\\\\\\\hbox"
+    },
+    {
+      "status": "pass",
+      "check": "compiled thesis has no TeX error",
+      "token": "Undefined control sequence|LaTeX Error|Emergency stop|Fatal error"
+    }
+  ],
+  "artifact_sha256": {
+    "thesis/main.tex": "89dd4fd1bb0bf2701719376929a93708390b3c847bb8d64020b034d4620e05ce",
+    "thesis/chapters/chapter05_experiments.tex": "2636de389ee154654700f14f99811d97685492f3600ebd3faf32636a55841946",
+    "thesis/chapters/chapter06_results.tex": "d526d2b27dac01e6cef7552d147f32ce8e7cbe2baa4f5df3139eb534835b9fea",
+    "thesis/chapters/chapter07_vulnerability_analysis.tex": "7b157b1e3fbec4cc457653f527dee94cafeba77fa5ca1602907878218d796ac5",
+    "thesis/chapters/chapter08_discussion.tex": "6d06d584b1d8fc6715d2592e50a15fd163540432f92778a46b4678436b54979c",
+    "thesis/chapters/chapter09_conclusion.tex": "c8cc4185f03831adcec50c6b8159d953206e389870bdb960cdc10826503d2471",
+    "outputs/final_thesis_evidence_20260725/metrics.json": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+    "thesis/final_thesis_chapters_5_9_two_source.pdf": "ca839ad2a02971526cc5d61c7698d79f903fcd4898012803a02ad1edd50f6169"
+  }
+}

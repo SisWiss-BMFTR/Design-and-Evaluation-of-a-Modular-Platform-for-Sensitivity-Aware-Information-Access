@@ -1,0 +1,1352 @@
+{
+  "canonical_inventory_sha256": "e48f54d2d0a03695f6b7a425a93f87fe21e2573efe0c6322d3ffdb3ee1c7371a",
+  "canonicalization": "UTF-8 JSON array per line: [type,relative_path,size,sha256], sorted by relative_path, LF terminated",
+  "claim_relationship": "Matched A02 output-leakage-verifier guard-off/guard-on evidence.",
+  "excluded_non_regular_entries": [
+    {
+      "path": "source_snapshot/.env",
+      "reason": "Non-regular entry excluded from the evidence archive. Source-snapshot .env links are not part of the scientific source manifest and must not be distributed.",
+      "type": "symlink"
+    }
+  ],
+  "experiment_id": "matched_A02",
+  "experiment_type": "AUTHORITATIVE_MATCHED_ABLATION",
+  "member_count": 222,
+  "members": [
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t1_r001_avocadoel/report.md",
+      "sha256": "5c8f45fb844d6df835ddc241348a62b90e949e2032502789544562482d40dd79",
+      "size": 8421,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t1_r001_avocadoel/results.csv",
+      "sha256": "f98417e6b49328a307302ca921ee6cba604fb7fea6c87f0de4e9ed2f5514b851",
+      "size": 48921,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t1_r001_avocadoel/results.json",
+      "sha256": "b2acb2889dea05940491706e996752e80608503b292d24e14500e83a8c98e3ad",
+      "size": 20435676,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t2_r002_sonnenblumenoel/report.md",
+      "sha256": "6a1f546669198cd45fbd2d046d33706d6567f7109005ca48b279b265ee6f09c4",
+      "size": 8841,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t2_r002_sonnenblumenoel/results.csv",
+      "sha256": "7c5d530fd0db7721d0136297ed67cc4f0b483f113e3b5c8435dfbed6495d715b",
+      "size": 51781,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t2_r002_sonnenblumenoel/results.json",
+      "sha256": "cddd1f6d5b679366bfdfd1c3f108a2a36824caceef15adbe0c6f06689dee0c8b",
+      "size": 20810552,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t3_r003_panthenol/report.md",
+      "sha256": "87e381ddb76d39ff49fdd292bc3f4dc721aa88b8f1438d350a41e328d7eb1b46",
+      "size": 8251,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t3_r003_panthenol/results.csv",
+      "sha256": "6dd7770a5540aa5df9347a3ebeb8c8c8de6e0a92f429450514c18af9fea3d13a",
+      "size": 48981,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t3_r003_panthenol/results.json",
+      "sha256": "1466e554a43f73934591eed1a0dd44156e80f65861c007d443813178f2af966f",
+      "size": 21475480,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t4_r005_kamillenextrakt/report.md",
+      "sha256": "ec59006f0beb66cdbf026da8814eac36ad4e8cd80a7b04bab2b90cf3b8905a16",
+      "size": 8363,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t4_r005_kamillenextrakt/results.csv",
+      "sha256": "9f0f0a38372a53e76dbb1e29a5ba70ce1a8016951b524e0bfcbc2fa90e64e4da",
+      "size": 49813,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t4_r005_kamillenextrakt/results.json",
+      "sha256": "64a2a6c028e6d663424c11f7b25d0f20ee3df74c55cbf42453d4485881d04888",
+      "size": 19839740,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t5_r006_aloe_vera_gel/report.md",
+      "sha256": "00ca5912865cadb082a9e926f42da544ecf2bb2316985c143ce7b4201259cc1b",
+      "size": 8530,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t5_r006_aloe_vera_gel/results.csv",
+      "sha256": "0a39b925ed82cadc06e9d3f7a522c864d5f5b00abf18846afe97baedb1ff1d4d",
+      "size": 49967,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/secure_rag_mode/t5_r006_aloe_vera_gel/results.json",
+      "sha256": "c055263eed028fa1ec3909aa3be840152497fb751224e44956579416907a1471",
+      "size": 21440115,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t1_r001_avocadoel/report.md",
+      "sha256": "b0e51138eff38877265acef803e152d4711e25427f1b42a39efc0fa1a1a2faec",
+      "size": 8162,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t1_r001_avocadoel/results.csv",
+      "sha256": "a95fda698eefa9531cac29f9a6edcff2d7ee894ebcf0b39fde4c40dabebfc66f",
+      "size": 47603,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t1_r001_avocadoel/results.json",
+      "sha256": "7108edd74ba4e4381b68c3030a36d069545f24096cfad8a8bf8ba5e9e19920b3",
+      "size": 18973808,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t2_r002_sonnenblumenoel/report.md",
+      "sha256": "28c5c927ce40ca46bd0640618642a729bc87b9c79bf7b9aefca0ff3890d893a3",
+      "size": 8422,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t2_r002_sonnenblumenoel/results.csv",
+      "sha256": "1e6c42b22c0277de00785172a3823ef8e1427b7d51e447da4deec9d987a97947",
+      "size": 53429,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t2_r002_sonnenblumenoel/results.json",
+      "sha256": "e6e0022b101c32976f291f56ce5f6fc28ef0106b435ec9f38411a33b40554c51",
+      "size": 20203733,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t3_r003_panthenol/report.md",
+      "sha256": "6d423f67e475f4f5b00ee4a178279f9b71f77f30bbd89dc1c52e89559fca1e93",
+      "size": 8125,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t3_r003_panthenol/results.csv",
+      "sha256": "e7a2f96afaf61413fb169fb360a9a15ef8494dbf44cf7c67ea259542963c6442",
+      "size": 45731,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t3_r003_panthenol/results.json",
+      "sha256": "76e3279c9dea1425332c4ea18590c368ba261391d1b078e7cecfd240adceb3a7",
+      "size": 22533528,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t4_r005_kamillenextrakt/report.md",
+      "sha256": "5869f284e950c7c7aacb80532c52cf8ef06179f643108571bccf19efc2870224",
+      "size": 8452,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t4_r005_kamillenextrakt/results.csv",
+      "sha256": "7642747a2f4dc9613fd743e30019f5a6869c02e8ffa1ee8d1b4d3b77a9428ce1",
+      "size": 49271,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t4_r005_kamillenextrakt/results.json",
+      "sha256": "4a96a2a1ed13fa06c02b9337cce7baf2fbb7da6822c5b51fc69a7b285093a832",
+      "size": 16985324,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t5_r006_aloe_vera_gel/report.md",
+      "sha256": "dcbb92bff9b38de7f77fd362a8afd90e29dd0a53e28ad23e3a2e11c4ab5de229",
+      "size": 8441,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t5_r006_aloe_vera_gel/results.csv",
+      "sha256": "47e5ca77b0ef93a3f79ef30ea10353bbcf8444b0369e669ce35d3dcd51196574",
+      "size": 49063,
+      "type": "file"
+    },
+    {
+      "path": "arm_A_guard_off/sensitivity_eval_mode/t5_r006_aloe_vera_gel/results.json",
+      "sha256": "f80216f7e187aeeb8a5f47b8ae85b0a221db8adc69803bfc4226b5fa9fbd476b",
+      "size": 22742852,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t1_r001_avocadoel/report.md",
+      "sha256": "2557fee983c17c4dc1339b06bd26cd8be09061ef08dec0a02b9d6ce636cda915",
+      "size": 8210,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t1_r001_avocadoel/results.csv",
+      "sha256": "35bf4cc6b98fea55da66dd764be8562fe68c35a9a1e3bc1fb9528ae926dd8037",
+      "size": 47877,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t1_r001_avocadoel/results.json",
+      "sha256": "19c42d3baa69903e6c61d754991d795746f19875b0d23af7fa46e149aa80823c",
+      "size": 20433259,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t2_r002_sonnenblumenoel/report.md",
+      "sha256": "254ca89b1aba8a1f62f6fdf82d254542fd041a6c24275c2c53c822a24ac7f024",
+      "size": 8672,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t2_r002_sonnenblumenoel/results.csv",
+      "sha256": "9c6f0de91f3cc6ca3dfa9654be25e7dd4bc25008f1cbf697f9fbc87b4bdaaa1a",
+      "size": 50508,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t2_r002_sonnenblumenoel/results.json",
+      "sha256": "16f0bccff349ac270896325f75c5db07294f1b0b632ab82ea381930f65016755",
+      "size": 20807631,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t3_r003_panthenol/report.md",
+      "sha256": "a3520b8f3fdd8fa85e650210112cb90dba08d029f32162e56cb88d111e76db9e",
+      "size": 8164,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t3_r003_panthenol/results.csv",
+      "sha256": "c9b801cbbac77d8a0bdb758b583cad3cafd3e71b43eb4113e0cbf3cf9e58b03a",
+      "size": 47204,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t3_r003_panthenol/results.json",
+      "sha256": "138f4eed11a849683ab6baf9d0b3a15143870bf178ee4370b76d73f91d4593b3",
+      "size": 21471847,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t4_r005_kamillenextrakt/report.md",
+      "sha256": "e1d49dc0262728d50e5b1c895cb3fe28fbca0fb1ea76c4de63c2674f0d84555c",
+      "size": 8415,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t4_r005_kamillenextrakt/results.csv",
+      "sha256": "ad6c51d91e445577386bee82d1ff98e1682df16922aa59075ea80b9325de0e44",
+      "size": 49344,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t4_r005_kamillenextrakt/results.json",
+      "sha256": "1e0cd68af3138914a4815263fb8e4839f0d9919a01990748b27ccff0fed43da7",
+      "size": 19837405,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t5_r006_aloe_vera_gel/report.md",
+      "sha256": "4d75b2f4e778e229b49a292bfc13bc3a872cd5cf4020c789cab813d16e1a78d7",
+      "size": 8223,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t5_r006_aloe_vera_gel/results.csv",
+      "sha256": "27abae21fa9de71e06d80d95264985d8b8500d03b4fe8e480d958823c15aecca",
+      "size": 48111,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/secure_rag_mode/t5_r006_aloe_vera_gel/results.json",
+      "sha256": "39462ad73b5fb5a670f34c58e4399bf6ce7257425914f1728948a48ee15316b2",
+      "size": 21436212,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t1_r001_avocadoel/report.md",
+      "sha256": "b25352f0be260ba927ef2d6e992da554c29fc584659ec6c6d47263f13e48f470",
+      "size": 8038,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t1_r001_avocadoel/results.csv",
+      "sha256": "529c18d627920305ed967cdb79831ca5354ae56aa01dd4da73bc03918ee19d00",
+      "size": 46207,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t1_r001_avocadoel/results.json",
+      "sha256": "35e4c3adf2a3b8bab044d307587158014736eb45ff7a62f7a958eb9f4d99ac8c",
+      "size": 18971257,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t2_r002_sonnenblumenoel/report.md",
+      "sha256": "c93493cc5491f3cb09058ce4946878c6245ec65d2ea3ce07bc7f581aadc346e6",
+      "size": 8244,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t2_r002_sonnenblumenoel/results.csv",
+      "sha256": "ae4a9bdb89d9c7035434f0832d7e65380df98b8f06cf38b31e679dd15dd0d614",
+      "size": 50064,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t2_r002_sonnenblumenoel/results.json",
+      "sha256": "0ff85c4741067cdcb57891163cd7ef60ebc45c1221b332de5937384c56126754",
+      "size": 20196404,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t3_r003_panthenol/report.md",
+      "sha256": "249102ee3750e6a3f14cd5bfd345ec2ad2640e08d1a836ae2ea2109f5b3fbdd3",
+      "size": 7988,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t3_r003_panthenol/results.csv",
+      "sha256": "c035217c96bcc1e6fe3a1d1357a603b4ee99884d4dc48a2139ec89002f1d9189",
+      "size": 44715,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t3_r003_panthenol/results.json",
+      "sha256": "95f5b0365383096abf78bdb1dd55b1e3f9ec2aa31610575ee23fdbd2fcbdc6db",
+      "size": 22531409,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t4_r005_kamillenextrakt/report.md",
+      "sha256": "b2e231836a50f449ea63846b03be71038b0f641cc8b694fc36013171137f7b02",
+      "size": 8315,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t4_r005_kamillenextrakt/results.csv",
+      "sha256": "aed0391cc98a2c138aeb92ea301f58ed965cdebba53439ed24e1e1b1fea0cf39",
+      "size": 47543,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t4_r005_kamillenextrakt/results.json",
+      "sha256": "791c56e06bb0b86ca3632f06a23d1f870aa487a9fcb80e3e168ace3ee60d9172",
+      "size": 16981706,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t5_r006_aloe_vera_gel/report.md",
+      "sha256": "0b0b5b3b76e12b70980a37ae068d9cd5b2c7a608e6955b22200a9409f653e6f8",
+      "size": 8333,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t5_r006_aloe_vera_gel/results.csv",
+      "sha256": "56d6d3a8cba23f68e1b4f4cfb8aabd60376bb7d2d7727b6df987cbb2eabd2f57",
+      "size": 47628,
+      "type": "file"
+    },
+    {
+      "path": "arm_B_guard_on/sensitivity_eval_mode/t5_r006_aloe_vera_gel/results.json",
+      "sha256": "fa7ed2b9eb49f8a0cf8885e96f11ab398cd1b4d6aa56184e80f5dbda169e87e7",
+      "size": 22739983,
+      "type": "file"
+    },
+    {
+      "path": "experiment_manifest.json",
+      "sha256": "29cf5628ca2ebe043e80dc92f0ac2755faf4aecdebea78dc2552ea1bacb94466",
+      "size": 19418,
+      "type": "file"
+    },
+    {
+      "path": "git_status.txt",
+      "sha256": "2f2b73e3e129a6c281ececa7f85611355bd0c7754184d45532c20f6e32b2463e",
+      "size": 41248,
+      "type": "file"
+    },
+    {
+      "path": "prompt_manifest.json",
+      "sha256": "48b944e7bdb563d1fb290d4a867a04190eb79dcfa7ae7455a2a222ce9312f38d",
+      "size": 15212,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_0.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_0.out",
+      "sha256": "a348ccaa634ac55c17259974e515fde6c5c3bd0c5885c9018e17ea954c53d3ab",
+      "size": 12840,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_1.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_1.out",
+      "sha256": "5714bfb190381a65614d15acf4c1168909d7cbd143945b7502d1d47f54ae2379",
+      "size": 13536,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_2.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_2.out",
+      "sha256": "caacaa37fa1bd93b6e005a73424964b7bd6e4ced35f4eca9b5336fab6a4bc6aa",
+      "size": 12840,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_3.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_3.out",
+      "sha256": "23823720c502a0bc8da3586eb3c48b15c5de419c244c22545aed08e1f8128fdf",
+      "size": 13536,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_4.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_4.out",
+      "sha256": "de31e42461503bd0790c5a652a486ad191281b4c4ce4a59633097d889c1542ca",
+      "size": 13304,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_5.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_5.out",
+      "sha256": "95dc9c0224cc82c9d392d102aaadfd9b801d482ff40a0d28b4c96f1bdb90a2c2",
+      "size": 12888,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_6.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_6.out",
+      "sha256": "7084e691721f128c3856d95ffcaf49f08973c0c43e9c8d2977bac7a5f088e89e",
+      "size": 13584,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_7.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_7.out",
+      "sha256": "6391e7c72a016b92fc8c9cf58b36779376505fe035166815194fb25e7008bea2",
+      "size": 12888,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_8.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_8.out",
+      "sha256": "c81e1807e40ac2881960da4c8c74a43846fe8590324bcc60f4d9c8ae6a8d0366",
+      "size": 13584,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_9.err",
+      "sha256": "aaf5ff28b402424b0c41cd6edd79cce8d0396f10e499266fc25f6e2e69ef35a7",
+      "size": 556,
+      "type": "file"
+    },
+    {
+      "path": "slurm/a02_15078233_9.out",
+      "sha256": "55cace81e8d055eff71c2e3870c799de1cbee8afa3c0c8b5cdaa42d812417f11",
+      "size": 13352,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/__pycache__/main.cpython-310.pyc",
+      "sha256": "259636ccd607b53a5f0af0ab0971b2f7ee5a57968123482faa43d920ce1e1153",
+      "size": 2216,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/__pycache__/main.cpython-36.pyc",
+      "sha256": "c4162259947821e85acbdf28e57315269b5aea3f94cd5bb7f61c38f931bc61fc",
+      "size": 2258,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/__pycache__/rag_setup.cpython-310.pyc",
+      "sha256": "c7c41c91a4a33333344ee0dfa03d22f3441cda04b2c55b3727b4fcfc080466b7",
+      "size": 2980,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/__pycache__/rag_setup.cpython-36.pyc",
+      "sha256": "463a5c05d3e9b07a9273f37fe33abd3a30b36efb1e3fdeed962ef9a6ab1ee484",
+      "size": 3385,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/__pycache__/streamlit_app.cpython-310.pyc",
+      "sha256": "480e8e6f1f922bac0b2c671e4fc1000ceab0cae8804559ba7595422817857615",
+      "size": 5785,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/__pycache__/streamlit_app.cpython-36.pyc",
+      "sha256": "47fc3a22fcd07f367d2bf5234e8935b4ccbfb4d18a4fa1c4aa18bf1baa2a9840",
+      "size": 2733,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/config/__pycache__/env_loader.cpython-310.pyc",
+      "sha256": "7f0ff82fe1e6f84b529b1444c8e2d19a5a3e2318976757015453f03bfcf3efbe",
+      "size": 670,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/config/__pycache__/env_loader.cpython-311.pyc",
+      "sha256": "0e7c2ef74bb376780351d313d2cab06e00a609613059e6d035db51118f320e7e",
+      "size": 1570,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/config/__pycache__/env_loader.cpython-36.pyc",
+      "sha256": "0b01fd52841f6374431eb58dace4d746963e6feeb291a91983811e0eced7f09a",
+      "size": 658,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/config/__pycache__/settings.cpython-310.pyc",
+      "sha256": "3edac4bc1b03cda854729f0674ca8824ee467c4a02f5df7cdb3c128ebb8bcc44",
+      "size": 1253,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/config/__pycache__/settings.cpython-311.pyc",
+      "sha256": "ae878b3362b25db3232aed5fdfd91e89385f7389be3e2f9fe9c171cb8621b136",
+      "size": 742,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/config/__pycache__/settings.cpython-36.pyc",
+      "sha256": "d8410ebe0a42dda9cbd4c814ad91e0f665a4bf29a46d43fa27e482a0764e910d",
+      "size": 1191,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/config/env_loader.py",
+      "sha256": "4aa3d53e9e39e1870191f5acf7fa772f1ff431ba3d31287f2a7c59d6029891b8",
+      "size": 631,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/config/settings.py",
+      "sha256": "dac3d9887c5531ab7b228a2798b6b3c90dff8f9f6030aa6c9f611909c963bcd6",
+      "size": 1351,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/leakage_checks.cpython-310.pyc",
+      "sha256": "ecb9e07aa413b92f10dfed6561992f510ef1e5f838c31c36c32615d95edaf52b",
+      "size": 126,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/leakage_checks.cpython-36.pyc",
+      "sha256": "4bd451368e39dc8c22ae67fce2d2afa90c372357936a24c64a2eed5caa8bd4d2",
+      "size": 116,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_access_level_downgrade_memory_leakage.cpython-310.pyc",
+      "sha256": "d9d3b12ee5085b213141f53be26c307a7aee2c5bcea4d331634941c3d01d418f",
+      "size": 10354,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_access_level_downgrade_memory_leakage.cpython-36.pyc",
+      "sha256": "aaba5c1edd35bb087f77757a6d1cfbaa027ce26a44f7d5ae2360d63f44d4c13a",
+      "size": 10285,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_access_level_downgrade_task.cpython-310.pyc",
+      "sha256": "f75f3d0504979db97faacaf1cd6ab5091912516db51a50eedf5d00c19fe970ca",
+      "size": 36539,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_backdoor_triggered_extraction.cpython-310.pyc",
+      "sha256": "0d677ffbc873431ff8618f798152c21f16011e88112c0432ac0411c2633a3022",
+      "size": 32266,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_direct_cell_extraction.cpython-310.pyc",
+      "sha256": "f3b7634103bb88304cc6982ada8db1af03ccb91d3ef7d2ecf1609404ba99ae8f",
+      "size": 22062,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_direct_cell_extraction_sensitivity_eval.cpython-310.pyc",
+      "sha256": "1341e7620a5ddfd56b547fd8cf05a8508d2e7b000a73cb43040f4589179d6e97",
+      "size": 39521,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_embedding_side_leakage.cpython-310.pyc",
+      "sha256": "e2bb3e3a135c4edc6518d005e0b4ea7a1c301eefef7ce4d7d0540a6868be39f9",
+      "size": 28365,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_multiturn_row_construction_batch.cpython-310.pyc",
+      "sha256": "97c0af5e145fd8a7eb8bf99d9b6206f3f43d7a05c1a9dded81a97ae4ed7f994a",
+      "size": 30176,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_multiturn_row_construction_sensitivity_eval.cpython-310.pyc",
+      "sha256": "6b5697a438d1bdc9ed1be65e3a24170d5c22beb7ce085e342ec5498cd4411f4a",
+      "size": 51553,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_multiturn_row_reconstruction.cpython-310.pyc",
+      "sha256": "9ba35a49151bb4c616de9b269c24e6c9a82227039186927c330bcba22232f417",
+      "size": 12388,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_prompt_injection_poisoned_row.cpython-310.pyc",
+      "sha256": "c3032774ff31caa5683c795e32e55429c0b0fe20cbfcbe3a78351a988954e484",
+      "size": 28729,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_rank_probing_membership_inference.cpython-310.pyc",
+      "sha256": "9d87afa42058b4f0d88643770947f7112c92b1da3efe2832773b96562879914d",
+      "size": 13060,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_rank_probing_membership_inference_batch.cpython-310.pyc",
+      "sha256": "56e804ef75de5da005f0e8afabecf9265eada206c322e220a60b396acf60c1ec",
+      "size": 32345,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_relational_join_path_inference.cpython-310.pyc",
+      "sha256": "48c09ab64a0f775f022788252a0e41de708b2ea5872d4b7eb1ee36a4b45df3a6",
+      "size": 11435,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/__pycache__/run_relational_join_path_inference_batch.cpython-310.pyc",
+      "sha256": "b4647dfff8a1c37963b7763e1a2678ad4dc1208accdba7592272ad22105b6032",
+      "size": 28105,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/leakage_checks.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_access_level_downgrade_memory_leakage.py",
+      "sha256": "cf196fc4d76db91c86604b9799e990b30bc6eacdc3c030f412ca5caf61f90ced",
+      "size": 10966,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_access_level_downgrade_task.py",
+      "sha256": "10370c13cb39c26208140a37640b7a8a678d24e033a4f934ddf32c2b16c199b4",
+      "size": 45327,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "sha256": "a4a45b72095065c6f3f17d02f685f82fa57f3d53e536d34dec362c0595e48e95",
+      "size": 39381,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_direct_cell_extraction.py",
+      "sha256": "ba00368c2fac7ebd07a9aab484456e9a482e73e2f9c88f04209833b4277b02e5",
+      "size": 24439,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_direct_cell_extraction_sensitivity_eval.py",
+      "sha256": "4d48111fcca0978325a2e620aeba93758097a6d622e0a25bd146c484386b0af8",
+      "size": 50006,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_embedding_side_leakage.py",
+      "sha256": "a0051efb4ae27d339f2eac07d040a5750871075a8a77ac535410af1463250965",
+      "size": 34123,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_multiturn_row_construction_batch.py",
+      "sha256": "06a89422f8fc9fd4b9d47c3142b54e12c02755ab2bbb0b7bfb55481b8762ae5f",
+      "size": 37439,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_multiturn_row_construction_sensitivity_eval.py",
+      "sha256": "b5025ff36038b2b0380b6d1f21dc53a2e07fc22d7a12cea95e9a871496d560f3",
+      "size": 66136,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_multiturn_row_reconstruction.py",
+      "sha256": "1a36aca08174267e19924412c744dbdfdb46537a0fd70981ca4b41480448a52c",
+      "size": 13568,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "sha256": "d68448fbe94a98993088935b774efcf27a0566afb90a8c6fdd8965d7e4404202",
+      "size": 33983,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_rank_probing_membership_inference.py",
+      "sha256": "0feb96d6761ed0aeceaf58817e2f56ac3f75cfad971229cf9b9a4d9ee2c1e0b2",
+      "size": 14775,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_rank_probing_membership_inference_batch.py",
+      "sha256": "24c363cd51e6ccdab1d645e127741f1344735292c90513a7678aea29bb07bf99",
+      "size": 39322,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_relational_join_path_inference.py",
+      "sha256": "874379713c486faec07933c37874bc8a12c03f4b40956d5e5574fc93c933b276",
+      "size": 13500,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation/run_relational_join_path_inference_batch.py",
+      "sha256": "841569aff1620f38330fe667b112abfdb176bbe24983f8ff3d942ddfc49d1a59",
+      "size": 35836,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/aggregate_full_ablation.cpython-310.pyc",
+      "sha256": "6ca580d55c3555b2a87124820469f949d9e7300a719ca15753befeeedd1f752b",
+      "size": 10802,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/common.cpython-310.pyc",
+      "sha256": "a356dd09f8a4942932d19af5a97695623cb89be3086d7f47432a09188558adf5",
+      "size": 509,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/merge_attack_03_recovery.cpython-310.pyc",
+      "sha256": "371b075bd59dde2969b8a90b77e1719826c228edd72e1db626f5f83609aeb84f",
+      "size": 2925,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/run_access_level_downgrade_task.cpython-310.pyc",
+      "sha256": "5f460a215825291aaf693b22c42514597ba6f0e1a536e6a66fccfc4c372c91df",
+      "size": 36788,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/run_backdoor_triggered_extraction.cpython-310.pyc",
+      "sha256": "4ffee40471cc50ecf949113829a983c47188fc982315686c4a8142922367baee",
+      "size": 37892,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/run_direct_cell_extraction.cpython-310.pyc",
+      "sha256": "cf2cb499bb836201bc562a33365eaf4b146ae9aa759a384508414505ddcfd9d2",
+      "size": 28811,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/run_embedding_side_leakage.cpython-310.pyc",
+      "sha256": "3e64616f0eaafc413e34591683dde291f614aea0ec4da2ca420e3023d8683656",
+      "size": 31933,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/run_multiturn_row_construction_batch.cpython-310.pyc",
+      "sha256": "2680cf5fab608d1cd43ff5cc224cddbdf176e91e1e9a8d313d219ce4874b0102",
+      "size": 38036,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/run_prompt_injection_poisoned_row.cpython-310.pyc",
+      "sha256": "ddc6fb4b31e6c2f9b5b9de4dc1af348d0f080f4c45a519b53549560695b727ea",
+      "size": 32769,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/run_rank_probing_membership_inference_batch.cpython-310.pyc",
+      "sha256": "d573222c34fba3afb1fd22fb5f254f9147e5b5240cfd912dcb035697d4815897",
+      "size": 36581,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/__pycache__/run_relational_join_path_inference_batch.cpython-310.pyc",
+      "sha256": "70f00c3d5264ac7e300161a3b48943fe2917416df2c06ea8b8c43a7d155e7c5c",
+      "size": 32560,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/aggregate_full_ablation.py",
+      "sha256": "369a86ecaf0f12bec9bd8fcc1aa54948c126363f5057e878baca4b8265afcd20",
+      "size": 10267,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/common.py",
+      "sha256": "a921287438b79bed5d2aaf681bbbb239736bfdafc5685b7ecbeeb6d3bd6517ac",
+      "size": 351,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/merge_attack_03_recovery.py",
+      "sha256": "3fb75e82f63d553b1c078f5a8c35565594f280f82c5f5a243f5e5dd2d0aa9e82",
+      "size": 2879,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/run_access_level_downgrade_task.py",
+      "sha256": "72d328bf5fdc5665f218c681fd01a25318b59bbdb5dc49be5cb4bd12d9506605",
+      "size": 45740,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "sha256": "2f8100113ae2a917f7e816d9c442a46bf0999f5ee64ab3189fc5acc3d3584de8",
+      "size": 49346,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/run_direct_cell_extraction.py",
+      "sha256": "1ac2744960ddc2ca81118900704dff9b1fc5cec21ca4a40fa438fa2f942054b2",
+      "size": 35249,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/run_embedding_side_leakage.py",
+      "sha256": "52537177f73934412689d0acbedd3d2330720a4447c81a518d2d1f475442e49f",
+      "size": 38949,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/run_multiturn_row_construction_batch.py",
+      "sha256": "e5cf33c23946d8262b6ca2d4dced99d0d08ef0b2ffa873c0e8d5819fc1984c97",
+      "size": 50037,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "sha256": "0d98b4cb9795f253944a6b2d964501bdfd72f28a37f80aa26d10c968823bec4e",
+      "size": 39942,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/run_rank_probing_membership_inference_batch.py",
+      "sha256": "5dbc74fb14fbe62281d9384cc7ced0ce3f977ffc2ff4b4e7a6b0eb778c544fe5",
+      "size": 45920,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/evaluation2/run_relational_join_path_inference_batch.py",
+      "sha256": "32c49cec1caff908bf62f441850dd521733f64f9b03b37719ccc53e29de8c380",
+      "size": 42990,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/generation/__pycache__/base.cpython-310.pyc",
+      "sha256": "da9f3ad2a1af415f9a511e7df8cd754e4b8479e18f5ca465fc256eb38c2e2f8c",
+      "size": 1003,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/generation/__pycache__/base.cpython-36.pyc",
+      "sha256": "ff3bfa3f8e9752094c2d4d72a5dedb4c1f08ea15d842a7118f3435bb1b63c852",
+      "size": 938,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/generation/__pycache__/openai_generator.cpython-310.pyc",
+      "sha256": "8b2152d7efddbdf2ccd4dcb0b3ee886b6787b9efa1752ad9d20d86b38dde2dbd",
+      "size": 6276,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/generation/__pycache__/openai_generator.cpython-311.pyc",
+      "sha256": "dcc0fbf4b27c6d0fd323ded94dc57dc92d04f16d6e4d5f97d0080187f35c6e8e",
+      "size": 5830,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/generation/__pycache__/openai_generator.cpython-36.pyc",
+      "sha256": "4b087ea932067cc0ea7a0abdc3c72aae807f71188fdaf96e3c6db66cb3006ed5",
+      "size": 3682,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/generation/base.py",
+      "sha256": "74a09ca9da6d008c237c203d2c44ae322b6d1edca7c48c388f2e487a9fa18af0",
+      "size": 557,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/generation/openai_generator.py",
+      "sha256": "76e16c53e7308c24b8c5baa1721546ddf94dbd7d96fd9e3c9632bec5ade2713f",
+      "size": 7014,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/chunker.cpython-310.pyc",
+      "sha256": "cad28fefee531d895cfb560ac039708945110b9262fb3ba8e9d411a6ff6191c1",
+      "size": 452,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/chunker.cpython-36.pyc",
+      "sha256": "7151c157534cc1ff8567b9209149da1b212a2365966cfb0d96a391aba3174b0c",
+      "size": 426,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/embedder.cpython-310.pyc",
+      "sha256": "5ec8a01860ce537efde1db6652de2fb956bf92be6481e73fee9e79f4177579e5",
+      "size": 798,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/embedder.cpython-311.pyc",
+      "sha256": "7d060754aa06276a14b9bfb74bda36d760e945f1daa4f54ba8b5eaaa4ac52c71",
+      "size": 1205,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/embedder.cpython-36.pyc",
+      "sha256": "05e9c867f0393c35c531c64d282f4bd400646b17e1184aaf0de94040a361959a",
+      "size": 776,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/loader.cpython-310.pyc",
+      "sha256": "fc36055801b2179efc0b80868d013b97c214c954d37f9f3407609d1acd8761a9",
+      "size": 441,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/loader.cpython-36.pyc",
+      "sha256": "b0ef1cda06ef4bafd807b3200d7dad1cd92d402e9f74b545692b1af58c021271",
+      "size": 431,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/xlsx_loader.cpython-310.pyc",
+      "sha256": "72aaa2a595c2a196f7eef9a08d9e21fde7d8156dadcc4424127f975ea47f1752",
+      "size": 777,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/xlsx_loader.cpython-36.pyc",
+      "sha256": "b366c13eb1d2d2a29a13db72c28f09bea2d1bd6daf9de10815bfe056bb2cb336",
+      "size": 765,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/xlsx_multilevel_loader.cpython-310.pyc",
+      "sha256": "e2de0573a02bc0fc9557b89f2df35eecab221e03f1a86521501734d9714efae3",
+      "size": 8522,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/__pycache__/xlsx_multilevel_loader.cpython-36.pyc",
+      "sha256": "38861a547f32422d805c9932ac1ed3e085b949ca8162688f33e495d92e72ab1f",
+      "size": 4952,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/chunker.py",
+      "sha256": "6abdf5194a193d13857f9b8a69674e9b4b720378d64d5a646f4c6a2fe7a2c0ca",
+      "size": 275,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/embedder.py",
+      "sha256": "dc81eddc9737565faa24ab1347b7635eccbbd5e0096e5506a8c0fff91eb30bc2",
+      "size": 351,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/loader.py",
+      "sha256": "40f4671495c2ec9099b839439c70c02be2de80d25a1c750577d68c8c20bc5cfb",
+      "size": 226,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/xlsx_loader.py",
+      "sha256": "2ee6cd6918cbcf18bc4827cc8df1d2404ac42bf92400e9299e9f983f9bbd2af7",
+      "size": 503,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/ingestion/xlsx_multilevel_loader.py",
+      "sha256": "13963c425f5a18085acd1d52ec8eabd09d5a5cf639137673a47a6cb2b779429f",
+      "size": 15483,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/main.py",
+      "sha256": "b108b8617b9c5ccb76a7da867aef00a3ebe3d6e5439d6fa68a90e52e0d3e1ec2",
+      "size": 2675,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/memory/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/memory/__pycache__/__init__.cpython-310.pyc",
+      "sha256": "7ee7fb1c611b38b23c0484c45f732d110aec6eb450f8c88c65c8fa31b16c4afb",
+      "size": 116,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/memory/__pycache__/__init__.cpython-36.pyc",
+      "sha256": "ae4e2e6bc3d6447234d0d53fa53faeb04f221353b37cba558520c8badce4c933",
+      "size": 106,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/memory/__pycache__/conversation_memory.cpython-310.pyc",
+      "sha256": "1b4600bb4039fc0818822537b9d340995d5046a1fb719f764e8d8c7c293d66b6",
+      "size": 8573,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/memory/__pycache__/conversation_memory.cpython-36.pyc",
+      "sha256": "df4de2f3b028045f0f4e4692beea71a3e701642d0aca15a479fd511088ed47fa",
+      "size": 3778,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/memory/conversation_memory.py",
+      "sha256": "6e832dcbc0ca9813d5b33c21a267f7b023659f68d6029462b5e8a33e78e9d88d",
+      "size": 10028,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/pipeline/__pycache__/rag_pipeline.cpython-310.pyc",
+      "sha256": "0affc5e3c4bee2b472f69c6bc6b39669fc36807a8fd0ce79bdc4981d3c9da6f3",
+      "size": 33334,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/pipeline/__pycache__/rag_pipeline.cpython-36.pyc",
+      "sha256": "fb7121681375449d5266f87673605e62864bb0e875ad0e4f832f67d767a4c219",
+      "size": 33336,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/pipeline/rag_pipeline.py",
+      "sha256": "667908da71ddea6755267cddc3ce0a51c279aa2c2e3d07509c043426ee14eb3e",
+      "size": 56347,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/rag_setup.py",
+      "sha256": "6814fb42513b0780073a53e6b114dcde4eb3d0b4679c2d6466fd55a5d55d32ca",
+      "size": 4366,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/retrieval/__pycache__/base.cpython-310.pyc",
+      "sha256": "feb1e910a9136bb4313bbe7bcb91670b7513f4244bad47c571cdda0e0edce2a0",
+      "size": 631,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/retrieval/__pycache__/base.cpython-36.pyc",
+      "sha256": "1e6f12be948288bc884aa4022c4247212cc0f7bde67a88307069c09a3f4d4868",
+      "size": 609,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/retrieval/__pycache__/faiss_retriever.cpython-310.pyc",
+      "sha256": "b96db6aa53fc37c952d1e6c00cd650f501af206980e62385ecec9b403fa3364a",
+      "size": 12008,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/retrieval/__pycache__/faiss_retriever.cpython-36.pyc",
+      "sha256": "2df288ecb7a71907bd72a4c932bb8695f4f83d36e12632bc01679d7c24b52722",
+      "size": 9356,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/retrieval/base.py",
+      "sha256": "c025b9b1957a2a2a2191c17677c1944364a323fdc081af02f672e6605d45594e",
+      "size": 264,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/retrieval/faiss_retriever.py",
+      "sha256": "a979dac15ab0e5b2b5acf085aa4c335cc6c235d8cb0f3ebc2a1b1cdb6ae7004d",
+      "size": 11871,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__init__.py",
+      "sha256": "07f18f85db986211290404df6cd60f97b24c10ce0c8642a7b03974ea5b456f3b",
+      "size": 59,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/__init__.cpython-310.pyc",
+      "sha256": "9de8ad9aa1eec7d8a3b3abb0451d5cc1f12b3dd52295c5d8e1135ac2335b063b",
+      "size": 182,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/__init__.cpython-36.pyc",
+      "sha256": "e1e008a982a55e6331c7ec41d9c130f2878f640e0e798b2e767a7eb1d6c6d9b7",
+      "size": 236,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/field_access.cpython-310.pyc",
+      "sha256": "fa271b9c24e320c683f6be7c3182cc3f12922ea2b370885490199d094fab9a31",
+      "size": 25316,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/field_access.cpython-36.pyc",
+      "sha256": "fd68c1d3264062d8486a0a9c3ea63418f140a67a1e4a11a25b811b928bb12a8e",
+      "size": 25139,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/membership_inference_guard.cpython-310.pyc",
+      "sha256": "4cdb2a33c8433c386a2abd68bafc066dec7ff9ed1c8231db511511791d392924",
+      "size": 9682,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/output_leakage_verifier.cpython-310.pyc",
+      "sha256": "3d393778d920981e38f3344c2bebdffeb844ea959438e53b0bc82815e49740e8",
+      "size": 3574,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/output_leakage_verifier.cpython-36.pyc",
+      "sha256": "2bcae8831e3da8e8a3887c33bcb69a4013ce93d31e36b90c187ceaaf323da5b0",
+      "size": 3558,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/prompt_injection_guard.cpython-310.pyc",
+      "sha256": "16ee899e5d42eadb1f0cb188878fd67041382cf9e7679bc396efdd7ec2a50430",
+      "size": 9250,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/prompt_injection_guard.cpython-36.pyc",
+      "sha256": "1cd5e396e8a628eb4629a880bc706d30136b0b1f2dd91fdfcac1d463e0baf8b4",
+      "size": 9218,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/relation_access.cpython-310.pyc",
+      "sha256": "afd35392d776b58ffd12769e3f979d5aab90e19b13e3703c1b7bab427add07a8",
+      "size": 6903,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/__pycache__/temporal_context_supervisor.cpython-310.pyc",
+      "sha256": "54451f075978cb5372b5300be74d984443d8d72faf91fbe1661e09d0fc781fc2",
+      "size": 10713,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/field_access.py",
+      "sha256": "68a9fea3c906890e28ca163ec27b6d21403468755789405497ac0b8040d543bf",
+      "size": 34655,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/membership_inference_guard.py",
+      "sha256": "fbd437984f69f97c98e467cdb0fb1d29270ea4d867046493c97bf0557b0944d5",
+      "size": 12045,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/output_leakage_verifier.py",
+      "sha256": "a0247286c0c497df9a416adcff159f159296350b97671439520016aafb739694",
+      "size": 3747,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/prompt_injection_guard.py",
+      "sha256": "a736fb15ccc523829d7c954c55317c82c7b24ed4c640183cea2fb7fa9a5fcdc3",
+      "size": 12638,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/security/relation_access.py",
+      "sha256": "74814d97ac5bcfe2f7533fed6deb1f86f04c369cf322107ad3457313c663b90c",
+      "size": 9815,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/streamlit_app.py",
+      "sha256": "cfb53fa7ae901648d8c81050c04034ec25150a97d6aba2439f29e518398ffef8",
+      "size": 7613,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/utils/__pycache__/logging.cpython-310.pyc",
+      "sha256": "9dbbf668404e097e4d898178ecdd88a581519633aacdca0cf7eaf5e462942c15",
+      "size": 114,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/utils/__pycache__/logging.cpython-36.pyc",
+      "sha256": "2d318642e2dcf2514fe8b9926da8edbbb8c9cc00effce2e028ab5a8d95e488b4",
+      "size": 104,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/code/utils/logging.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/data/SiSWiss_Testdaten.xlsx",
+      "sha256": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+      "size": 63953,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/scripts/__pycache__/rescore_a02_policy_aware.cpython-310.pyc",
+      "sha256": "a8d8c75131185f3e4e97a9e8394320b87e2b7a1a0bfdd8a83598e374df5c40c2",
+      "size": 9082,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/scripts/rescore_a02_policy_aware.py",
+      "sha256": "c406e2908ee4bb3deb27a20cf25d96e153c0a1151f66511af5f5d8ee5bc5c6ac",
+      "size": 8749,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/scripts/slurm/run_matched_single_guard_a02.sbatch",
+      "sha256": "82f507176de8183eb4746b1f2d87f89d692aff8492c66519f3ea93338eba058b",
+      "size": 2695,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/scripts/slurm/submit_matched_single_guard_a02.sh",
+      "sha256": "24178d411f1da35cfba8c3188c13b93e6b53c0829cd88c8dd5ff55acbe26e64e",
+      "size": 5617,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/sensitivity_overrides.yaml",
+      "sha256": "6bfff51b6f6a80274af5a300fc0ef4e4d496e9709565a4b3f65c0b344dba909d",
+      "size": 940,
+      "type": "file"
+    },
+    {
+      "path": "source_snapshot/sensitivity_policy.yaml",
+      "sha256": "1ebffd8c666c50026d190d45382f24c95c17f83bc44e368f50baaa85f7d79d61",
+      "size": 4113,
+      "type": "file"
+    },
+    {
+      "path": "staged.patch",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "type": "file"
+    },
+    {
+      "path": "submission.json",
+      "sha256": "76a9d224349e697f1c49ef0f93a8fa999ed63e395f763bcc330bd9dbab2c8ee0",
+      "size": 33,
+      "type": "file"
+    },
+    {
+      "path": "tracked_worktree.patch",
+      "sha256": "bf858953bbfced7ddb83494ed17073383e548ee9c6c526bfffc7bc68d71f0bff",
+      "size": 130939,
+      "type": "file"
+    }
+  ],
+  "raw_byte_count": 414386770,
+  "raw_source_root": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z",
+  "schema_version": "canonical-evidence-inventory-v1"
+}

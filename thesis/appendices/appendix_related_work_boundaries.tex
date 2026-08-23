@@ -1,0 +1,64 @@
+\chapter{Detailed Related-Work Boundary Comparison}
+\label{app:related-work-boundaries}
+
+Table~\ref{tab:background-related-work} in Chapter~\ref{chap:background} compares protected assets, attacker capabilities, and observables. The complementary table below retains the detailed policy, state, and evaluation-boundary comparison.
+
+{\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{22mm}>{\raggedright\arraybackslash}p{39mm}>{\raggedright\arraybackslash}p{35mm}>{\raggedright\arraybackslash}p{40mm}@{}}
+\caption{Policy scope, state, and evaluation boundaries in directly relevant work.}
+\label{tab:background-related-work-boundaries}\\
+\toprule
+Work & Structure and policy granularity & State or authority transition & Control or evaluation boundary \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\textit{Table~\ref{tab:background-related-work-boundaries} continued}}\\
+\toprule
+Work & Structure and policy granularity & State or authority transition & Control or evaluation boundary \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\citet{jeong2025permissionrag} & Native IAM checks at resource/document level; field and relation policy are not central evaluated features & Authority transition not evaluated or reported & Post-retrieval permission filtering, access correctness, answer quality, and latency; an application raw/delivery boundary is not a central reported feature \\
+\addlinespace[1.5pt]
+\citet{klisura2026role} & Table- and column-level PostgreSQL policies; Text-to-SQL rather than RAG & Roles vary across examples; retained-state downgrade is outside the evaluated scope & Prompting, fine-tuning, and generator--verifier comparison; RAG-stage telemetry is outside scope \\
+\addlinespace[1.5pt]
+\citet{fazlija2025accessdenied} & Attribute-level policy over synthetic corporate records; independent relation-edge policy is not evaluated & Single exchange; no retained-state authority transition & Self-contained prompt with the relevant data and rules; output grading without operational retrieval stages \\
+\addlinespace[1.5pt]
+\citet{fazlija2026sensitivity} & RBAC-derived policy over sensitive and non-sensitive employee attributes; independent relation-edge policy is not evaluated & Per-session formal and empirical evaluation; no retained high-to-low transition & Formal RAG oracle and sensitivity-awareness privacy game; empirical LoRA and output comparison without matched application-guard attribution \\
+\addlinespace[1.5pt]
+\citet{zeng2024ragprivacy} & Retrieval records; role-conditioned field/relation authorisation is not evaluated & Authority transition not evaluated or reported & End-to-end extraction and privacy analysis; an application raw/delivery guard boundary is not reported \\
+\addlinespace[1.5pt]
+\citet{qi2025spill} & Text datastore; role-conditioned field/relation policy is outside the evaluated scope & Multiple queries, not a retained-authority transition & Extraction through instruction following; evaluation centres on generated output rather than an application delivery guard \\
+\addlinespace[1.5pt]
+\citet{anderson2025ragmia} & Passage membership; sensitivity-aware record fields and edges are outside the evaluated scope & -- & Membership attack evaluation at the query/response boundary; application-stage telemetry is not a central feature \\
+\addlinespace[1.5pt]
+\citet{choi2025safeguarding} & Retrieval-record membership rather than role-governed fields or edges & -- & Similarity-based query detection and detect-and-hide defence across retrieval and query/response boundaries \\
+\addlinespace[1.5pt]
+\citet{liu2026graphragprivacy} & Explicit graph structure; role-conditioned field/edge policy is not a central evaluated feature & -- & End-to-end extraction and candidate defences; thesis-style state/raw/delivery separation is not reported \\
+\addlinespace[1.5pt]
+\citet{greshake2023indirect} & External-content trust rather than structured field/relation authorisation & Application-dependent & Establishes indirect prompt injection across integrations; evaluation centres on attacks rather than matched RAG guard attribution \\
+\addlinespace[1.5pt]
+\citet{zhong2023retrievalpoisoning} & Text passages; field/relation confidentiality policy is outside the evaluated scope & -- & Retrieval manipulation under specified attacker capabilities and selected defence conditions \\
+\addlinespace[1.5pt]
+\citet{zou2025poisonedrag} & Text passages; structured authorisation is outside the evaluated scope & -- & Knowledge-corruption attack and selected defence evaluations at retrieval/generation boundaries \\
+\addlinespace[1.5pt]
+% The authoritative PDF displays an unresolved-citation marker in this cell.
+% Preserve that visible content deliberately without leaving the build unresolved.
+\textbf{?} & Text passages; role-conditioned field/relation policy is outside the evaluated scope & Trigger condition, not an authority transition & Retriever/generator optimisation, transfer tests, and end-to-end black-box evaluation; application policy and delivery attribution are outside scope \\
+\addlinespace[1.5pt]
+\citet{chen2024agentpoison} & Retrieved examples or knowledge; role-conditioned field/relation authorisation is outside scope & Long-term memory is an attack surface; legitimate role downgrade is not evaluated & External-memory/knowledge-base backdoor evaluation with attack success and benign performance \\
+\addlinespace[1.5pt]
+\citet{rao2026fragfuse} & Memory fragments; structured field/relation policy is outside the evaluated scope & Explicit multi-turn memory use; authority remains unprivileged & End-to-end bypass across access controls; a high-to-low role transition is not evaluated \\
+\addlinespace[1.5pt]
+\citet{liang2025saferag} & External text; role-conditioned field/relation confidentiality is outside scope & -- & Benchmark across fourteen components; raw-versus-delivered confidentiality and matched guard attribution are not central reported features \\
+\addlinespace[1.5pt]
+This thesis & Field sensitivity and independent relation policy over mixed-sensitivity entities & Legitimate higher-authority access followed by an explicit lower-authority transition & Stage-aware evaluation; package-level comparison is separated from component attribution \\
+
+\end{longtable}
+}

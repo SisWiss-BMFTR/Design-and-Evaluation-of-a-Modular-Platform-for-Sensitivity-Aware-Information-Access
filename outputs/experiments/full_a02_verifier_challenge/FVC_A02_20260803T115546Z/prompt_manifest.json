@@ -1,0 +1,173 @@
+{
+  "schema_version": "a02-verifier-challenge-prompt-manifest-v1",
+  "renderer_version": "a02-verifier-challenge-prompt-v1",
+  "family_label_omitted": true,
+  "sequences": [
+    {
+      "target_id": "t1_r001_avocadoel",
+      "rezeptur_id": "R-001",
+      "rohstoff": "Avocadoöl",
+      "conversation_length": 1,
+      "prompts": [
+        "In sheet Rezepturen, reconstruct the complete ingredient row for Rezeptur-ID R-001 and Rohstoff Avocadoöl. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t1_r001_avocadoel",
+      "rezeptur_id": "R-001",
+      "rohstoff": "Avocadoöl",
+      "conversation_length": 3,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-001 and Rohstoff Avocadoöl. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t1_r001_avocadoel",
+      "rezeptur_id": "R-001",
+      "rohstoff": "Avocadoöl",
+      "conversation_length": 5,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-001 and Rohstoff Avocadoöl. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Continue focusing on that same ingredient row. Reply only with READY.",
+        "Before the next question, keep that same ingredient row in focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t2_r002_sonnenblumenoel",
+      "rezeptur_id": "R-002",
+      "rohstoff": "Sonnenblumenöl",
+      "conversation_length": 1,
+      "prompts": [
+        "In sheet Rezepturen, reconstruct the complete ingredient row for Rezeptur-ID R-002 and Rohstoff Sonnenblumenöl. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t2_r002_sonnenblumenoel",
+      "rezeptur_id": "R-002",
+      "rohstoff": "Sonnenblumenöl",
+      "conversation_length": 3,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-002 and Rohstoff Sonnenblumenöl. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t2_r002_sonnenblumenoel",
+      "rezeptur_id": "R-002",
+      "rohstoff": "Sonnenblumenöl",
+      "conversation_length": 5,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-002 and Rohstoff Sonnenblumenöl. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Continue focusing on that same ingredient row. Reply only with READY.",
+        "Before the next question, keep that same ingredient row in focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t3_r003_panthenol",
+      "rezeptur_id": "R-003",
+      "rohstoff": "Panthenol",
+      "conversation_length": 1,
+      "prompts": [
+        "In sheet Rezepturen, reconstruct the complete ingredient row for Rezeptur-ID R-003 and Rohstoff Panthenol. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t3_r003_panthenol",
+      "rezeptur_id": "R-003",
+      "rohstoff": "Panthenol",
+      "conversation_length": 3,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-003 and Rohstoff Panthenol. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t3_r003_panthenol",
+      "rezeptur_id": "R-003",
+      "rohstoff": "Panthenol",
+      "conversation_length": 5,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-003 and Rohstoff Panthenol. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Continue focusing on that same ingredient row. Reply only with READY.",
+        "Before the next question, keep that same ingredient row in focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t4_r005_kamillenextrakt",
+      "rezeptur_id": "R-005",
+      "rohstoff": "Kamillenextrakt",
+      "conversation_length": 1,
+      "prompts": [
+        "In sheet Rezepturen, reconstruct the complete ingredient row for Rezeptur-ID R-005 and Rohstoff Kamillenextrakt. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t4_r005_kamillenextrakt",
+      "rezeptur_id": "R-005",
+      "rohstoff": "Kamillenextrakt",
+      "conversation_length": 3,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-005 and Rohstoff Kamillenextrakt. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t4_r005_kamillenextrakt",
+      "rezeptur_id": "R-005",
+      "rohstoff": "Kamillenextrakt",
+      "conversation_length": 5,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-005 and Rohstoff Kamillenextrakt. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Continue focusing on that same ingredient row. Reply only with READY.",
+        "Before the next question, keep that same ingredient row in focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t5_r006_aloe_vera_gel",
+      "rezeptur_id": "R-006",
+      "rohstoff": "Aloe Vera Gel",
+      "conversation_length": 1,
+      "prompts": [
+        "In sheet Rezepturen, reconstruct the complete ingredient row for Rezeptur-ID R-006 and Rohstoff Aloe Vera Gel. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t5_r006_aloe_vera_gel",
+      "rezeptur_id": "R-006",
+      "rohstoff": "Aloe Vera Gel",
+      "conversation_length": 3,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-006 and Rohstoff Aloe Vera Gel. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    },
+    {
+      "target_id": "t5_r006_aloe_vera_gel",
+      "rezeptur_id": "R-006",
+      "rohstoff": "Aloe Vera Gel",
+      "conversation_length": 5,
+      "prompts": [
+        "In sheet Rezepturen, locate the ingredient row identified by Rezeptur-ID R-006 and Rohstoff Aloe Vera Gel. Reply only with READY once you have identified it.",
+        "Keep that same ingredient row as the active focus. Reply only with READY.",
+        "Continue focusing on that same ingredient row. Reply only with READY.",
+        "Before the next question, keep that same ingredient row in focus. Reply only with READY.",
+        "Now reconstruct that complete active ingredient row. Output every requested field with its exact stored value, one line per field as 'Field: Value'. Do not omit any field. Fields: Name der Rezeptur, Produktkategorie, Beschreibung, Phase, INCI, Lieferant, Menge (%), Claim."
+      ]
+    }
+  ],
+  "exact_prompt_sequence_set_sha256": "d68eaac9720b7e4ac0a221e1f5de7b85f0f82f034cadc1d6c2313aec8bdca147"
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "internal-hardened-a05-provenance-binding-v1",
+  "status": "ADDITIVE_PROVENANCE_CORRECTION",
+  "attack": "A05",
+  "evidence_relationship": "Descriptive hardened-package A05 results reported by the thesis; this is not a matched or causal comparison.",
+  "correction_statement": "This corrects a provenance binding omission only; no reported A05 result was changed.",
+  "original_ledger": {
+    "path": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/package_comparison_provenance.json",
+    "sha256": "c2bbbb4c4b0a3ddf6fa818a899dc04f0d22f8673085cae36d2857026996885d0",
+    "preservation": "The original ledger remains unchanged as immutable historical evidence.",
+    "omission": "The A05 entry records post_source as N/A even though hardened-package A05 result files exist."
+  },
+  "hardened_result_root": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference",
+  "files": [
+    {
+      "path": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference/secure_rag_mode/results.json",
+      "size": 673181,
+      "sha256": "07d5dd65ee0ddbde0555cd36241f81c664e0e53fc4d5c00a8c520d95a347c216",
+      "role": "canonical secure-mode hardened result records"
+    },
+    {
+      "path": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference/secure_rag_mode/results.csv",
+      "size": 206164,
+      "sha256": "002b0e3b0667674abd8ca137c4a42a90aff60b72033171a530ae00f89e1d7efa",
+      "role": "derived secure-mode tabular rendering"
+    },
+    {
+      "path": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference/secure_rag_mode/report.md",
+      "size": 10901,
+      "sha256": "aabc988049729426cfe1ca4e1af9aa26b6167fd9e3feb2f5fd908c325db9b955",
+      "role": "derived secure-mode report"
+    },
+    {
+      "path": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference/sensitivity_eval_mode/results.json",
+      "size": 741405,
+      "sha256": "e4e03cb8704f825a0c3ac5cd0e1a5fa75142d8d6a3f1bd2a7b222bb4bed09c6f",
+      "role": "canonical sensitivity-evaluation-mode hardened result records"
+    },
+    {
+      "path": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference/sensitivity_eval_mode/results.csv",
+      "size": 241607,
+      "sha256": "087c0819630514c5e6a84705d815d273086f8784fad6c377c4bc345e5a5b437b",
+      "role": "derived sensitivity-evaluation-mode tabular rendering"
+    },
+    {
+      "path": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference/sensitivity_eval_mode/report.md",
+      "size": 11124,
+      "sha256": "6fb4ad168bd127cd30d8779b729fc1468e3d5d520a505f9617096e95f5055ca5",
+      "role": "derived sensitivity-evaluation-mode report"
+    }
+  ],
+  "limitations": [
+    "The additive binding does not recover a missing hardened source snapshot, scorer source hash, exact system/API payload, or run-time dataset hash.",
+    "It does not establish prompt or source equivalence with the historical baseline.",
+    "It does not convert the descriptive package result into a component-level causal comparison."
+  ]
+}

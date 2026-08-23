@@ -1,0 +1,578 @@
+[
+  {
+    "experiment_name": "A01",
+    "created_at": "2026-07-22T23:57:14",
+    "system_stage": "pre_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 300,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": false,
+      "prompt_injection_guard": false,
+      "access_change_memory_clear": false
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "fd44b5b010ee75ca43999007dbdefcc5533fdb8665fc34675f665826ad84ef7c",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_a01_20260723T090000Z/A01/pre_hardening/secure_rag_mode",
+    "record_count": 225,
+    "result_sha256": "ba63005a651a7b0c7490155da2bd992b1f044ca4867d7de3aa38678c3e3db3e6"
+  },
+  {
+    "experiment_name": "A01",
+    "created_at": "2026-07-22T23:58:35",
+    "system_stage": "pre_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 300,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": false,
+      "prompt_injection_guard": false,
+      "access_change_memory_clear": false
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "fd44b5b010ee75ca43999007dbdefcc5533fdb8665fc34675f665826ad84ef7c",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_a01_20260723T090000Z/A01/pre_hardening/sensitivity_eval_mode",
+    "record_count": 225,
+    "result_sha256": "0acb1f15493e26a522b6d3b657373cfc32222a1535256fddd10ae3589c10fd8f"
+  },
+  {
+    "experiment_name": "A01",
+    "created_at": "2026-07-23T00:28:48",
+    "system_stage": "post_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 300,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": true,
+      "prompt_injection_guard": true,
+      "access_change_memory_clear": true
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "fd44b5b010ee75ca43999007dbdefcc5533fdb8665fc34675f665826ad84ef7c",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_a01_20260723T090000Z/A01/post_hardening/secure_rag_mode",
+    "record_count": 225,
+    "result_sha256": "e8e982f97e341d1130fc7ca0f4a9072bb26545f2a72f94438c688bf6554ca5d0"
+  },
+  {
+    "experiment_name": "A01",
+    "created_at": "2026-07-23T00:36:21",
+    "system_stage": "post_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 300,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": true,
+      "prompt_injection_guard": true,
+      "access_change_memory_clear": true
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "fd44b5b010ee75ca43999007dbdefcc5533fdb8665fc34675f665826ad84ef7c",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_a01_20260723T090000Z/A01/post_hardening/sensitivity_eval_mode",
+    "record_count": 225,
+    "result_sha256": "e8fdd9a7158bf08e0a561746048dbc151cc6ce34a0f81aa4c62795cf8383f4a5"
+  },
+  {
+    "experiment_name": "A05",
+    "created_at": "2026-07-22T18:42:06",
+    "system_stage": "pre_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 300,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": false,
+      "prompt_injection_guard": false,
+      "access_change_memory_clear": false
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "93fde83b61b40d67c67c5c2424045bc80162164456d4c83305d9f33f99cdf4ec",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A05/pre_hardening/secure_rag_mode",
+    "record_count": 225,
+    "result_sha256": "544a55d17c23e37e0ef5d15fd60ab1d3d88ee5ddc78f0ff4923cb51ad29f87bd"
+  },
+  {
+    "experiment_name": "A05",
+    "created_at": "2026-07-22T18:44:09",
+    "system_stage": "pre_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 300,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": false,
+      "prompt_injection_guard": false,
+      "access_change_memory_clear": false
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "93fde83b61b40d67c67c5c2424045bc80162164456d4c83305d9f33f99cdf4ec",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A05/pre_hardening/sensitivity_eval_mode",
+    "record_count": 225,
+    "result_sha256": "5df83ae190fc9941400c596b130eccf106477199db9fff16f67986339c0f25df"
+  },
+  {
+    "experiment_name": "A05",
+    "created_at": "2026-07-22T19:15:13",
+    "system_stage": "post_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 300,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": true,
+      "prompt_injection_guard": true,
+      "access_change_memory_clear": true
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "93fde83b61b40d67c67c5c2424045bc80162164456d4c83305d9f33f99cdf4ec",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A05/post_hardening/secure_rag_mode",
+    "record_count": 225,
+    "result_sha256": "3c126525b7e525ddd26e7b909aa106df3648e11e3205da4cab53cd62743f1739"
+  },
+  {
+    "experiment_name": "A05",
+    "created_at": "2026-07-22T19:22:12",
+    "system_stage": "post_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 300,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": true,
+      "prompt_injection_guard": true,
+      "access_change_memory_clear": true
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "93fde83b61b40d67c67c5c2424045bc80162164456d4c83305d9f33f99cdf4ec",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A05/post_hardening/sensitivity_eval_mode",
+    "record_count": 225,
+    "result_sha256": "6afdfc777d94353e5df73d822d72ce933b87ab58253b3e014b2513c61293ac2f"
+  },
+  {
+    "experiment_name": "A07-S",
+    "created_at": "2026-07-22T19:50:46",
+    "system_stage": "pre_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 305,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": false,
+      "prompt_injection_guard": false,
+      "access_change_memory_clear": false
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "7cabfff1ef0f9dea7ef3077946578675a5d4bac73b7c75d1aefdec54379655fc",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A07-S/pre_hardening/secure_rag_mode",
+    "record_count": 225,
+    "result_sha256": "b08b7214b1c667625ca7352a898e3650af4830821fb2c9f6fd819ac9377c3684"
+  },
+  {
+    "experiment_name": "A07-S",
+    "created_at": "2026-07-22T20:00:30",
+    "system_stage": "pre_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 305,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": false,
+      "prompt_injection_guard": false,
+      "access_change_memory_clear": false
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "7cabfff1ef0f9dea7ef3077946578675a5d4bac73b7c75d1aefdec54379655fc",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A07-S/pre_hardening/sensitivity_eval_mode",
+    "record_count": 225,
+    "result_sha256": "762d4105790459b666780d1c27f25b673419114860ed68c1a8a823f76e42b411"
+  },
+  {
+    "experiment_name": "A07-S",
+    "created_at": "2026-07-22T20:26:01",
+    "system_stage": "post_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 305,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": true,
+      "prompt_injection_guard": true,
+      "access_change_memory_clear": true
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "7cabfff1ef0f9dea7ef3077946578675a5d4bac73b7c75d1aefdec54379655fc",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A07-S/post_hardening/secure_rag_mode",
+    "record_count": 225,
+    "result_sha256": "83fea61ffc3c02e0b7c5c6da09f754d8738a657d6def4e99855e73f63968fa25"
+  },
+  {
+    "experiment_name": "A07-S",
+    "created_at": "2026-07-22T20:38:22",
+    "system_stage": "post_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 305,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": true,
+      "prompt_injection_guard": true,
+      "access_change_memory_clear": true
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "7cabfff1ef0f9dea7ef3077946578675a5d4bac73b7c75d1aefdec54379655fc",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A07-S/post_hardening/sensitivity_eval_mode",
+    "record_count": 225,
+    "result_sha256": "b698b900a01afa73eab39bd1305652e628cff3d0f52e7941c0b6e76e05325eb4"
+  },
+  {
+    "experiment_name": "A07-N",
+    "created_at": "2026-07-22T21:03:59",
+    "system_stage": "pre_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 305,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": false,
+      "prompt_injection_guard": false,
+      "access_change_memory_clear": false
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "6671c75263a2f934647aa638cb3d000bb8e80dba47a1dab8e94abc9c66e86437",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A07-N/pre_hardening/secure_rag_mode",
+    "record_count": 225,
+    "result_sha256": "9e7d033b5e73f2ca0e6ffce59ba8c848495bce07ad4f140918647945da3875b9"
+  },
+  {
+    "experiment_name": "A07-N",
+    "created_at": "2026-07-22T21:18:12",
+    "system_stage": "pre_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 305,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": false,
+      "prompt_injection_guard": false,
+      "access_change_memory_clear": false
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "6671c75263a2f934647aa638cb3d000bb8e80dba47a1dab8e94abc9c66e86437",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A07-N/pre_hardening/sensitivity_eval_mode",
+    "record_count": 225,
+    "result_sha256": "5a2e8079885deff8f41e9389a5c79f84f7cfed641dbc7bafba47a72201af7a89"
+  },
+  {
+    "experiment_name": "A07-N",
+    "created_at": "2026-07-22T21:36:49",
+    "system_stage": "post_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 305,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": true,
+      "prompt_injection_guard": true,
+      "access_change_memory_clear": true
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "6671c75263a2f934647aa638cb3d000bb8e80dba47a1dab8e94abc9c66e86437",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A07-N/post_hardening/secure_rag_mode",
+    "record_count": 225,
+    "result_sha256": "482811865890514df8d3b5f4c24f0142d3588af3420a3ad03e2c1a6ffb0af6ac"
+  },
+  {
+    "experiment_name": "A07-N",
+    "created_at": "2026-07-22T21:56:14",
+    "system_stage": "post_hardening",
+    "git_commit": "e66ee5a22b49886317362b9b577c22d3be248831",
+    "dataset": "data/SiSWiss_Testdaten.xlsx",
+    "dataset_hash": "bbeaf08104ae59a1d3cdc035c03c7509dccb09b643854ae42136ddffc843e236",
+    "index_size": 305,
+    "model": "gpt-4o-mini",
+    "temperature": 0.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "retrieval_k": 5,
+    "targets": 5,
+    "roles": [
+      "public",
+      "internal",
+      "protected"
+    ],
+    "conversation_lengths": [
+      1,
+      3,
+      5
+    ],
+    "iterations": 5,
+    "guards": {
+      "post_generation_verifier": true,
+      "prompt_injection_guard": true,
+      "access_change_memory_clear": true
+    },
+    "attack_prompt_version": "matched-label-free-v1",
+    "prompt_hash": "6671c75263a2f934647aa638cb3d000bb8e80dba47a1dab8e94abc9c66e86437",
+    "scorer_version": "methodology-correction-v1",
+    "source_result_folder": "outputs/experiments/methodology_correction_20260722T160300Z/A07-N/post_hardening/sensitivity_eval_mode",
+    "record_count": 225,
+    "result_sha256": "5a176504ee84bae8b80d2aa5312834a62eb79859edbd55e65fb13123ff5dfd41"
+  }
+]

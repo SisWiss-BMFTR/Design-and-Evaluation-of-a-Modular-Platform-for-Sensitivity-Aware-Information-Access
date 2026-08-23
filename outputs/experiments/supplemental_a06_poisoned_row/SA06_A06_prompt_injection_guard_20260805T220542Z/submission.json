@@ -1,0 +1,7 @@
+{
+  "prepared_only": false,
+  "pilot_array_job_id": "15172915",
+  "pilot_gate_job_id": "15172916",
+  "pilot_gate_dependency": "afterok:15172915",
+  "full_submission": "automatic from the gate job only if the frozen continuation gate passes"
+}

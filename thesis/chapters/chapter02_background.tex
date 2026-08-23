@@ -1,0 +1,292 @@
+\chapter{Background and Related Work}
+\label{chap:background}
+
+This chapter establishes the technical and security concepts needed to evaluate a sensitivity-aware Retrieval-Augmented Generation (RAG) system over structured spreadsheet data. It first treats RAG as a sequence of information transformations, then reviews retrieval and structured-data representations, access-control foundations, security threats, controls, and evaluation principles. The chapter closes with a direct comparison to the closest studies and a deliberately bounded research gap. Exact corpus statistics, model choices, policy mappings, attack prompts, scorers, and experimental conditions remain in Chapters~\ref{chap:architecture}--\ref{chap:experiments}.
+
+\section{RAG as a Security-Relevant System}
+\label{sec:background-rag-system}
+
+RAG conditions generation on evidence retrieved at inference time from an external knowledge source. In the original RAG formulation, a neural retriever selects passages from non-parametric memory and a sequence-to-sequence model marginalises over retrieved passages when generating an answer \citep{lewis2020rag}. Separating the external corpus from the generator makes the corpus an independently updateable source of domain knowledge, but it also creates an application-controlled path through which information not contained in the model parameters can reach a response.
+
+For security analysis, a RAG application is more than a retriever followed by a generator. Ingestion, indexing, query processing, retrieval, relation traversal, context construction, conversational state, generation, and delivery can each transform information or change who can observe it. The following is an analytical abstraction introduced by this thesis, not a standard RAG formalism or a claim that every implementation contains separate components for every function. Let $S$ denote source records, $\pi$ the application policy, $D$ the indexed representation, $q_t$ the query at turn $t$, $p_t$ the current principal, $\rho_t$ the principal's active role, and $m_t$ the application state. On the normal generation path, after any pre-retrieval refusal decision, a policy-aware turn can be represented as
+\begin{align}
+  D &= I(S;\pi), \nonumber\\
+  B_t &= R_k(q_t,D;\pi,p_t,\rho_t), \nonumber\\
+  R_t &= E(q_t,B_t,D;\pi,p_t,\rho_t), \nonumber\\
+  c_t &= C(q_t,R_t,m_t;\pi,p_t,\rho_t), \nonumber\\
+  y^{\mathrm{raw}}_t &\sim G(\,\cdot\mid q_t,c_t), \nonumber\\
+  y^{\mathrm{del}}_t &= V(y^{\mathrm{raw}}_t,q_t,c_t,m_t;\pi,p_t,\rho_t), \nonumber\\
+  m_{t+1} &= U(m_t,q_t,R_t,c_t,y^{\mathrm{raw}}_t,y^{\mathrm{del}}_t;\pi,p_t,\rho_t).
+  \label{eq:background-rag-pipeline}
+\end{align}
+Here, $I$ ingests and indexes the sources; $R_k$ returns a ranked base list $B_t$ of at most $k$ candidates; $E$ applies any authorised relation expansion to produce $R_t$; $C$ constructs model-visible context; $G$ denotes the generator's conditional output distribution; $V$ denotes delivery-time validation or replacement; and $U$ updates retained state. An implementation may combine stages, omit $V$, update state at a different point, or terminate with a refusal before retrieval or generation. Including the intermediate values on the normal path nevertheless prevents an end-to-end answer from obscuring where a security event occurred.
+
+Equation~\ref{eq:background-rag-pipeline} distinguishes the stages at which a protected fact may occur. A protected fact can be absent from $R_t$; present in retrieval but removed from $c_t$; present in $c_t$ but absent from $y^{\mathrm{raw}}_t$; present in the raw answer but removed from $y^{\mathrm{del}}_t$; or retained in $m_{t+1}$. In this thesis, \emph{exposure} denotes protected information that becomes available internally through retrieval, model-visible context, or state. \emph{Delivered leakage} denotes protected information that reaches an unauthorised requester. A clean delivered answer does not establish a clean retrieval path or the absence of model-visible exposure.
+
+Retrieval relevance and authorisation answer different questions. Relevance estimates which evidence may help answer $q_t$; authorisation decides which operations the current principal may perform on which information. A high retrieval score cannot establish permission. Likewise, permission to retrieve an entity need not imply permission to disclose every field, relation, provenance item, score, or representation derived from it. This separation motivates the field-, relation-, state-, generation-, and delivery-level analysis used later in the thesis.
+
+\section{Retrieval and Structured Representation}
+\label{sec:background-structured-retrieval}
+
+\subsection{Sparse, dense, and hybrid retrieval}
+
+Sparse retrieval represents queries and documents through lexical features. BM25 is a widely used sparse retrieval ranking function derived from the probabilistic relevance framework. It weights term matches using inverse document frequency, saturating term frequency, and document-length normalisation \citep{robertson2009bm25}. It is consequently well suited to literal identifiers and distinctive names when those strings occur in both query and record, although lexical mismatch can prevent a semantically relevant record from receiving a strong score.
+
+Dense retrieval instead maps queries and candidate objects into a continuous vector space. Sentence-BERT uses a bi-encoder to produce fixed-size sentence representations that can be compared efficiently \citep{reimers2019sentencebert}; Dense Passage Retrieval separately encodes questions and passages for open-domain question answering \citep{karpukhin2020dpr}. Libraries such as FAISS supply exact and approximate similarity-search primitives over dense vectors \citep{johnson2019faiss}. These works establish retrieval mechanisms, not access-control decisions: similarity is computed from representation geometry rather than from the requester's authority.
+
+Hybrid systems combine signals or ranked lists when no single representation captures every useful match. For example, reciprocal rank fusion combines independently produced rankings without requiring their scores to be calibrated and outperformed its component rankings in the evaluated information-retrieval tasks \citep{cormack2009rrf}. The present thesis uses hybrid retrieval as an implementation choice rather than a retrieval contribution; its security relevance is that candidate generation and relation expansion must remain subject to consistent policy enforcement at their respective boundaries. Exact signals and retrieval depth are documented in Chapter~\ref{chap:architecture}.
+
+\subsection{Structured, tabular, and relational representations}
+
+Passage-oriented RAG does not directly capture the semantics of spreadsheets and relational data. A table couples values to column meanings, row identities, types, and sometimes foreign-key relations. TaBERT jointly represents natural-language context and semi-structured tables \citep{yin2020tabert}. For much larger single tables, the NeurIPS 2024 TableRAG generates separate schema and cell queries, then retrieves column metadata and distinct column--value pairs to support program-aided reasoning over tables containing millions of cells \citep{chen2024milliontablerag}. The 2025 TableRAG instead addresses multi-hop reasoning across heterogeneous textual--tabular documents through iterative text retrieval and SQL execution, motivated in part by the structural loss caused by flattening and chunking \citep{yu2025heterotablerag}. Multi-table retrieval adds a further dependency: some questions require a join plan that cannot be inferred from query--table relevance alone, motivating retrieval that also considers table--table relations \citep{chen2024joinaware}. These studies evaluate representation, retrieval, and table understanding rather than field- or relation-level authorisation.
+
+These studies optimise retrieval or reasoning quality; they do not imply that structural metadata is authorised for every requester. Their results nevertheless matter to the security model. A transformation that preserves enough schema and linkage to support a join can also preserve information whose relation is sensitive. Conversely, a flattened string may retain a protected value while discarding the sensitivity label and provenance needed to govern it. In the analytical model adopted here, schema, provenance, sensitivity, and relation metadata are therefore part of the security-relevant representation, even when only rendered text is passed to the generator.
+
+\subsection{Entity-level retrieval and field-level policy}
+
+Structured systems can retrieve at one granularity and authorise disclosure at another. An entity representation may be the appropriate retrieval unit because it collects the evidence needed to answer a question, yet the entity may mix public identity, internal attributes, protected fields, and restricted edges. Selecting the entity establishes relevance only. Under the policy model of this thesis, context construction must separately project the selected entity onto the fields and relations permitted for the current role.
+
+Prior work evaluates two related forms of granular control. Permission-Aware RAG validates native Identity and Access Management (IAM) permissions for retrieved resources in a multi-resource environment and filters unauthorised documents before generation \citep{jeong2025permissionrag}. Its enforcement unit is the resource or document. In a database-grounded setting, \citet{klisura2026role} add table- and column-level PostgreSQL role policies to Text-to-SQL benchmarks and compare prompting, fine-tuning, and a generator--verifier pipeline. That work tests whether a model produces or refuses SQL under a role policy in a Text-to-SQL setting. These studies show that retrieval-time resource checks and column-level generative verification are feasible research objects. Their evaluated scopes do not jointly cover mixed-sensitivity entity rendering, relation traversal, and retained conversational state in a RAG system.
+
+Model-level sensitivity awareness addresses a related boundary. ACCESS DENIED INC defines sensitivity awareness as adherence to predefined access rights and evaluates correct disclosure, refusal, leakage, and other errors over a synthetic corporate employee database \citep{fazlija2025accessdenied}. Each session is a single exchange, and the relevant employee records and disclosure rules are supplied directly in the prompt to avoid retrieval and back-end confounds. Later work formalises sensitivity awareness through a privacy game, relates it to attribute inference and differential privacy, and evaluates supervised LoRA adaptation of quantised language models on the same benchmark setting \citep{fazlija2026sensitivity}. These studies establish model-behaviour, formal, and model-adaptation perspectives on role-governed attribute disclosure. The present thesis evaluates the complementary application boundary: policy continuity through an operational structured RAG pipeline whose generator is unchanged.
+
+\subsection{Embeddings, rankings, and retrieval observables}
+
+The information observable to an attacker determines the threat being evaluated. Embedding inversion assumes access to an embedding and attempts to reconstruct its source; \citet{morris2023embeddings} demonstrate that text can be reconstructed from dense text embeddings in their evaluated settings. A rank-observation attack would instead require ordered candidates or similarity values. A chat-only attacker who sees neither embeddings, scores, nor a retrieval API has a different capability: query wording may influence which evidence the application retrieves, but the attacker observes only the delivered response.
+
+This thesis classifies the corresponding experiment as an \emph{embedding/rank-framed retrieval probe} and any resulting confidentiality failure as \emph{retrieval-mediated disclosure}. Its prompts refer to embeddings or nearest neighbours, but the measured outcome is a protected value delivered through the RAG answer. The attacker observable is the delivered response. The interface exposes no embedding values, similarity scores, complete rankings, or other internal similarity values. The experiment is therefore not an embedding-inversion study. The exact interface and attacker observables are fixed in Chapter~\ref{chap:methodology}.
+
+\section{Access Control and Policy Preservation}
+\label{sec:background-policy-continuity}
+
+\subsection{Role- and attribute-based access control}
+
+Role-Based Access Control (RBAC) assigns permissions to roles and users to roles, reducing the need to manage permissions independently for every user \citep{sandhu1996rbac}. Attribute-Based Access Control (ABAC) evaluates attributes of subjects, objects, requested operations, and, where applicable, the environment against policy rules \citep{hu2014abac}. For structured RAG, a role can describe the requester's current organisational authority; field sensitivity and relation type can be object attributes; disclosure and traversal can be distinct operations; and the active session or transition can supply environmental attributes. This mapping is a thesis-specific application of RBAC and ABAC, not a claim that either source defines a RAG policy.
+
+The two models also clarify why a prompt-level statement of role is insufficient. In a production system, an access decision should be tied to an authenticated principal and an authoritative policy, not inferred solely from a user instruction. Permission-Aware RAG makes this distinction concrete by consulting native IAM systems for the resources returned by vector retrieval \citep{jeong2025permissionrag}. The case study assumes rather than evaluates authenticated role assignment; its role-binding mechanism is documented in Section~\ref{sec:architecture-policy}. The relevant background principle is that permission is evaluated from trusted security context and at the granularity of the protected operation.
+
+\subsection{Information flow, complete mediation, and derived representations}
+
+Access control governs operations on objects, whereas information-flow security concerns how information of one security class can influence observables at another. Denning's lattice model formalises permitted flows among labelled security classes \citep{denning1976lattice}. Complete mediation likewise states that every access to every object should be checked, including repeated access rather than only an initial reference \citep{saltzer1975protection}. This thesis applies these concepts analytically to context strings, summaries, focus identifiers, and generated paraphrases.
+
+The extension yields two evaluation requirements. First, derived representations capable of conveying a protected fact must either retain sufficient policy and provenance for a decision or be excluded from unauthorised processing. Second, a decision made for one representation or one turn must not be inherited automatically by later transformations under a different authority. The requirements are analytical and do not constitute a formal non-interference theorem. The prototype provides no sound information-flow type system, proof over the generator, or proof that every semantic equivalent of a protected fact is detected.
+
+NIST's zero-trust architecture similarly rejects implicit trust based solely on network location or asset ownership and focuses protection on resources \citep{rose2020zerotrust}. The thesis uses that resource-oriented insistence on explicit evaluation only as an architectural analogy. No NIST zero-trust conformance claim is made; the prototype does not implement the identity, device, network, and policy infrastructure required for such conformance.
+
+\subsection{Policy continuity across the RAG pipeline}
+
+In this thesis, \emph{policy continuity} denotes the requirement that source-level access restrictions remain effective across derived representations, retrieval, context construction, conversational state, generation, and delivery. The term is a thesis-specific analytical definition. It joins the access-control decision at the source to information-flow and complete-mediation concerns at later transformations without claiming formal information-flow control.
+
+Table~\ref{tab:background-security-boundaries} makes the definition operational at a conceptual level. It deliberately describes representations and possible failures rather than the prototype's particular guards; Chapters~\ref{chap:architecture} and~\ref{chap:methodology} define the implementation and evaluation procedures.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Security-relevant transformations in an access-controlled RAG pipeline.}
+\label{tab:background-security-boundaries}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{27mm}>{\raggedright\arraybackslash}p{42mm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Boundary & Security-relevant representation & Characteristic policy-continuity failure \\
+\midrule
+Ingestion and indexing & Source fields, labels, provenance, entity identities, embeddings, and relation metadata & A derived representation retains protected content but loses the metadata needed to govern it. \\
+Query processing & Principal, active role, resolved identifiers, query rewrites, and requested operations & A user-supplied role or an ambiguous identifier substitutes for an authoritative current security context. \\
+Retrieval and traversal & Ranked candidates, scores, expanded entities, and relation edges & A relevant but unauthorised object or edge is selected for downstream use. \\
+Context construction & Rendered fields, provenance, policy instructions, and untrusted retrieved content & A mixed-sensitivity entity is rendered without field or relation projection, or retrieved instructions are treated as trusted control text. \\
+Conversation state & Messages, summaries, semantic snippets, focus identifiers, and caches & Information permitted under an earlier authority remains readable after the active authority changes. \\
+Generation & Model-visible evidence and the raw answer & The generator reproduces protected evidence or follows an instruction embedded in retrieved data. \\
+Delivery & Raw answer, current policy, validation decision, and returned response & Unsafe output reaches the requester, or an over-broad control suppresses an authorised task. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The boundaries are coupled. An ingestion error can propagate to retrieval and context; a delivery verifier can stop a raw disclosure without undoing model-visible exposure; and clearing state during a role change cannot authorise a protected edge retrieved in the new turn. Policy continuity is therefore a property to investigate across the sequence, not the name of a single filter.
+
+\subsection{State and security-context transitions}
+
+Conversation state creates a temporal dimension absent from a stateless access check. Long-term-memory systems may accept information in one turn and retrieve it in another. FragFuse, an accepted USENIX Security 2026 paper, demonstrates an access-control bypass in which an unprivileged attacker fragments prohibited content across benign-looking memory writes and later induces retrieval and fusion \citep{rao2026fragfuse}. It is direct evidence that memory operations can participate in an access-control bypass, but its authority remains unprivileged throughout.
+
+The transition studied in this thesis is different. The access-downgrade experiment begins with access legitimately authorised under a higher role; the experimental system then changes the active role to a lower-authority condition and tests subsequent state and delivery. The principal does not self-escalate, and the experiment does not claim cross-user or cross-session compromise. The security question is whether state created under the old authority is re-evaluated, filtered, or invalidated under the new one. Exact state types, transition handling, and experimental configuration are documented in Chapters~\ref{chap:architecture}--\ref{chap:experiments}.
+
+\section{Security Threats and Closest Prior Work}
+\label{sec:background-threats}
+
+\subsection{Private-corpus extraction and reconstruction}
+
+External retrieval corpora create a privacy surface distinct from model-training memorisation. \citet{zeng2024ragprivacy} empirically study leakage from a private RAG retrieval database and develop prompts that elicit retrieved records. \citet{qi2025spill} target datastore leakage in retrieval-in-context systems and show that instruction-following can be used to obtain verbatim retrieved text in their evaluated models and production GPT configurations. In both cases, the relevant asset is inference-time external data rather than proof that the same text occurred in the generator's training set.
+
+The present thesis narrows this threat to policy-protected structured fields. It evaluates direct protected-field extraction and reconstruction across multiple turns; neither condition is presented as an adaptive corpus-dumping study. Operational identifiers, targets, prompt sequences, and scoring rules are specified in Sections~\ref{sec:methodology-attacks} and~\ref{sec:methodology-scoring}.
+
+\subsection{Relation and derived-structure disclosure}
+
+Confidentiality can reside in structure even when individual node names are public. GraphRAG privacy work directly tests black-box extraction of both raw text and structured entities and relationships, finding a distinct exposure surface for graph structure in the evaluated systems \citep{liu2026graphragprivacy}. This is an important counterexample to any claim that relation leakage is unstudied.
+
+The thesis asks a narrower authorisation question. Under its structured policy, traversal of an edge and disclosure of the edge are separable operations, and a relation may be protected independently of the endpoint fields. Its relation-inference experiment examines role-conditioned inference over configured relations rather than unrestricted graph extraction. The comparison is therefore between general structure extraction from GraphRAG and role-conditioned disclosure of configured relation edges in one spreadsheet-derived pipeline.
+
+\subsection{Protected indexed-record existence}
+
+The existence of a record in a private retrieval corpus may itself be sensitive even if no field is reproduced. Classical membership inference instead asks whether a record was used to train a machine-learning model and infers that fact from model behaviour \citep{shokri2017membership}. The two problems share a binary form but not the protected asset or mechanism.
+
+Direct RAG precedents now exist. \citet{anderson2025ragmia} infer whether a candidate passage belongs to a RAG retrieval database through black- and grey-box prompts and generated responses. \citet{choi2025safeguarding} subsequently propose a similarity-based detector and detect-and-hide defence for retrieval-database membership queries. These studies are prior RAG membership-test and membership-guard precedents, so this thesis makes no first-of-kind claim for those categories. In the protected indexed-record existence probe used here, the protected asset is whether a role-governed structured record exists in the index; the attacker observable is whether an unauthorised requester can infer that existence from the delivered response. Operational scoring and guard naming are defined in later chapters.
+
+\subsection{Stateful and cross-turn leakage}
+
+Repeated queries do not necessarily imply state dependence: an attacker can issue a sequence against a stateless service. A stateful threat requires an earlier turn to change what a later turn can access or generate. FragFuse supplies a close access-control example because the attack deliberately writes fragments to long-term memory and later retrieves and fuses them \citep{rao2026fragfuse}. AgentPoison also treats long-term memory as a poisonable retrieval source, but targets trigger-conditioned agent behaviour rather than post-authorisation confidentiality \citep{chen2024agentpoison}.
+
+The multi-turn reconstruction experiment accumulates information under one authority, whereas the access-downgrade experiment introduces an explicit authority change between related turns. The immediate high-to-low transition is a controlled abstraction of revocation while conversational state persists. It represents conditions such as changed role or group membership, expiry of temporary elevated access, revocation of project or resource permissions, or removal of administrative privileges; it does not assume that an ordinary user can select a different role during a chat. Among the reviewed sources, FragFuse is the closest temporal access-control attack, but it does not study a legitimate high-authority read followed by downgrade or revocation. The thesis consequently treats the role transition, retained-state exposure, and delivered response as separate evidence rather than inferring state leakage from the final answer alone.
+
+\subsection{Indirect prompt injection}
+
+Indirect prompt injection places attacker-controlled instructions in external content that an LLM-integrated application later processes. Greshake et al. demonstrate this attack class against real-world LLM-integrated applications and show how externally sourced content can redirect application behaviour \citep{greshake2023indirect}. In a RAG pipeline, success requires at least two distinct events: malicious content must become model-visible, and the generator must follow or reproduce its instruction. Retrieval success alone is not an integrity violation at delivery.
+
+The outcome also determines the security property. Reproducing an attacker canary or obeying an injected instruction is an integrity outcome. Disclosing a protected value is a confidentiality outcome. Either can occur without the other, and tool execution would constitute a further capability not available to the attacker in this thesis. The poisoned-row prompt-injection experiment therefore records canary integrity and protected-value confidentiality separately; the later methodology does not infer instruction following merely from the presence of poisoned content in retrieval.
+
+\subsection{Corpus poisoning and triggered retrieved instructions}
+
+Corpus poisoning encompasses several objectives. \citet{zhong2023retrievalpoisoning} optimise adversarial passages so that they are retrieved for target questions, concentrating on retrieval manipulation. PoisonedRAG injects a small number of malicious texts to induce attacker-chosen answers for attacker-chosen questions under black- and white-box knowledge assumptions \citep{zou2025poisonedrag}. Phantom constructs a single poisoned passage whose retriever-targeting text is optimised for conditional retrieval when a chosen natural trigger occurs and whose generator-targeting text induces objective-specific output, including integrity violations and passage exfiltration; it changes no model parameters \citep{chaudhari2025phantom}. Phantom was published online in ACM Transactions on AI Security and Privacy in March 2026 \citep{chaudhari2025phantom}. AgentPoison poisons a memory or knowledge base and optimises triggers so that malicious demonstrations are retrieved; the authors likewise describe an external-memory backdoor without additional model training or fine-tuning \citep{chen2024agentpoison}.
+
+Manipulating relevance, corrupting factual answers, injecting natural-language instructions, and learning a parameter backdoor act at different boundaries. The triggered indirect prompt-injection experiment uses a \emph{trigger-conditioned retrieved instruction}. Its generator remains unchanged; the experiment performs no retraining, model-parameter modification, or Phantom- or AgentPoison-style optimisation. It is a controlled trigger-conditioned retrieved-instruction case study, and poisoning prevalence in arbitrary deployments is outside its scope. Its variants answer different attribution questions; their interventions and conditions are defined in Chapters~\ref{chap:experiments} and~\ref{chap:vulnerability-analysis}.
+
+\section{Layered Security Controls and Their Limits}
+\label{sec:background-controls}
+
+\subsection{Retrieval- and context-level enforcement}
+
+Preventing unauthorised evidence from reaching the generator reduces both upstream exposure and the opportunity for delivered leakage. Permission-Aware RAG performs real-time resource checks against native IAM systems after vector retrieval and before generation \citep{jeong2025permissionrag}. Choi et al.'s detect-and-hide method instead recognises membership-style queries through their retrieval-similarity pattern and hides responsive evidence \citep{choi2025safeguarding}. These controls protect different objects: one validates requester permission for resources; the other detects a privacy attack pattern.
+
+For mixed-sensitivity entities, resource filtering may be too coarse. The control taxonomy adopted by this thesis therefore separates candidate authorisation from field and relation projection during context construction. This is a design deduction from the stated policy granularity, not an empirical result attributed to the cited systems. Its completeness depends on every rendering and expansion path preserving policy metadata; omission of one provenance or relation path can bypass an otherwise correct ordinary-field projection.
+
+\subsection{State-transition controls}
+
+Complete mediation suggests rechecking access rather than relying indefinitely on an earlier decision \citep{saltzer1975protection}. In a stateful RAG application, a corresponding control can re-authorise each retained object under the current role or invalidate state whose safety cannot be established. Filtering preserves more conversational continuity but requires policy-bearing state representations; clearing is simpler but sacrifices context. FragFuse shows why memory write and later memory read are separate security-relevant operations \citep{rao2026fragfuse}, but it does not establish a generally sufficient downgrade control. The prototype's concrete transition behaviour is therefore evaluated rather than assumed.
+
+\subsection{Injection and poisoning defences}
+
+Prompt injection exploits the model's difficulty in separating instructions from data. StruQ addresses this mechanism with a structured front end and a specially trained model that separates prompt and data channels, reporting improved prompt-injection resistance in its evaluation \citep{chen2025struq}. This is stronger evidence for structural separation than ordinary natural-language delimiters, but it does not imply that delimiters or source labels create an equivalent trusted channel for an unmodified generator.
+
+Defences can also detect, quarantine, or down-rank suspicious retrieved content. Their scope must match the attack: a retrieval anomaly detector may not stop a benign-looking instruction that is already highly relevant, while an output detector acts only after model-visible exposure. SafeRAG evaluates manipulated external knowledge across fourteen representative RAG components and reports that retrievers, filters, and generators remain vulnerable across its noise, conflict, advertisement, and denial-of-service tasks \citep{liang2025saferag}. SafeRAG concerns integrity and service degradation rather than the field-level confidentiality and role transitions studied here, but it cautions against treating any component class as a universal defence.
+
+\subsection{Output validation and its limitations}
+
+Output validation is a corrective or compensating boundary: it can replace a raw answer that contains a recognised secret, existence confirmation, or attack artefact before delivery. The generator--verifier design studied by \citet{klisura2026role} improves role-conditioned refusal precision for Text-to-SQL in its evaluated settings, illustrating the value of a distinct verification step. Its unit is generated SQL under table and column policies, not free-text RAG output, so the result does not validate this thesis's guard implementation.
+
+Delivery controls have two scope limits in the evidence model used here. First, they do not undo information already exposed to the generator or retained upstream. Second, every detector solves a defined recognition problem; its demonstrated coverage is consequently bounded by the measured misses and benign rejections under that definition, while unmodelled forms remain outside the claim. The later experiments therefore report both security outcomes and narrow authorised positive controls rather than rewarding indiscriminate refusal.
+
+\section{Security Evaluation and Evidence}
+\label{sec:background-evaluation}
+
+\subsection{Exposure, raw generation, control action, and delivery}
+
+RAG's modularity has already motivated component-level evaluation. RAGChecker defines diagnostic metrics for retrieval and generation separately and validates them against human judgements \citep{ru2024ragchecker}; SafeRAG compares attacks across indexing, retrieval, filtering, and generation components \citep{liang2025saferag}. Neither framework claims the policy-specific security telemetry used in this thesis. They nonetheless support the broader methodological point that one end-to-end score can conceal distinct component behaviour.
+
+The conceptual evidence sequence for this thesis comprises retrieved evidence, model-visible context, retained state, raw generation, control detection or transformation, and delivered response. Claims about a stage require a recorded evidence source for that stage; unobserved stages are not inferred. The ordinary chat attacker defined in Chapter~\ref{chap:methodology} directly observes only the delivered response; intermediate telemetry is evaluator evidence. Removing a target before context supports an upstream-exposure claim. Replacing an unsafe raw answer supports a delivery claim, not secure generation.
+
+\subsection{Confidentiality, integrity, and authorised task success}
+
+Confidentiality and integrity require distinct outcomes. Protected-field, relation, and record-existence disclosures are confidentiality failures. Following a poisoned instruction or reproducing a canary is an integrity failure. Retrieval of a poison row is an exposure event, not by itself proof of either delivered failure. This separation avoids counting an injected canary as secret leakage or treating coincidental secret output as evidence that the injected instruction was followed.
+
+The authorised positive control is intentionally narrower than general utility. It asks whether an authorised role can complete the attack-specific protected task. It does not measure overall helpfulness, fluency, latency, or deployment readiness. An authorised factual error is likewise not evidence of improved confidentiality. Detailed denominators and scoring precedence are defined in Section~\ref{sec:methodology-scoring}.
+
+\subsection{Package comparisons and component attribution}
+
+When more than one implementation factor may differ, a package comparison is descriptive. Component attribution requires a matched comparison that holds the evaluation condition fixed while changing one control. A package-level contrast is insufficient for component attribution, and activation telemetry alone is also insufficient. The thesis uses these as evidence categories; they introduce no new causal-inference method. Section~\ref{sec:methodology-evidence} defines them operationally.
+
+\subsection{Finite evidence and reproducibility}
+
+Reproducibility depends on disclosing the code, data, and procedures needed to obtain comparable results; the NeurIPS reproducibility programme documents how checklists, code submission, and replication activity can strengthen machine-learning reporting \citep{pineau2021reproducibility}. The required provenance is specified in Chapter~\ref{chap:methodology}, and claims are narrowed when the available record cannot support broader attribution. An observed count of zero remains bounded to the tested conditions and detection procedure; it does not establish the absence of unmeasured disclosure.
+
+\section{Comparative Related-Work Synthesis}
+\label{sec:background-related-work}
+
+Table~\ref{tab:background-related-work} compares the studies closest to the security questions of this thesis by protected asset, attacker capability, and observable. The complementary policy, state, and evaluation-boundary comparison is retained as Appendix Table~\ref{tab:background-related-work-boundaries}. A dash means that a dimension was not a central evaluated feature; it does not imply that the system could not be extended to support it.
+
+{\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{22mm}>{\raggedright\arraybackslash}p{37mm}>{\raggedright\arraybackslash}p{37mm}>{\raggedright\arraybackslash}p{40mm}@{}}
+\caption{Threat models and observables in directly relevant work.}
+\label{tab:background-related-work}\\
+\toprule
+Work & Protected system or asset & Attacker capability & Attacker-visible or scored outcome \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\textit{Table~\ref{tab:background-related-work} continued}}\\
+\toprule
+Work & Protected system or asset & Attacker capability & Attacker-visible or scored outcome \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\citet{jeong2025permissionrag} & Documents across heterogeneous resource providers & Authenticated requester with provider-specific permissions & Authorised evidence and final QA result; not an extraction attack \\
+\addlinespace[1.5pt]
+\citet{klisura2026role} & Role-governed relational databases and generated SQL & User request conditioned on a supplied database role & SQL generation or refusal and execution accuracy \\
+\addlinespace[1.5pt]
+\citet{fazlija2025accessdenied} & Role-governed attributes in a synthetic corporate employee database & Single-exchange benign or malicious requests and supervisor or lying scenarios, with employee data and policy supplied in the prompt & Correct authorised disclosure or refusal, unauthorised disclosure, over-refusal, and other response errors \\
+\addlinespace[1.5pt]
+\citet{fazlija2026sensitivity} & Role-governed sensitive attributes and sensitivity-aware model behaviour & Formal black-box sensitivity-awareness adversary and empirical benchmark prompts & Sensitivity-awareness outcomes and adversarial advantage; general-capability benchmarks after model adaptation \\
+\addlinespace[1.5pt]
+\citet{zeng2024ragprivacy} & Private external RAG retrieval database & Prompting access to a RAG application & Records recovered through generated responses \\
+\addlinespace[1.5pt]
+\citet{qi2025spill} & Text in a retrieval-in-context datastore & Black-box instruction-based and repeated querying & Verbatim text in generated output \\
+\addlinespace[1.5pt]
+\citet{anderson2025ragmia} & Membership of a candidate passage in a private retrieval database & Black- or grey-box membership prompts & Binary membership inference from generated responses \\
+\addlinespace[1.5pt]
+\citet{choi2025safeguarding} & Membership of retrieval records and retrieval utility & Similarity-patterned membership queries & Detection, hidden retrieval evidence, generated answer, and utility \\
+\addlinespace[1.5pt]
+\citet{liu2026graphragprivacy} & GraphRAG raw text, entities, and relationships & Black-box query sequences against GraphRAG & Extracted text and structured entity/relation information \\
+\addlinespace[1.5pt]
+\citet{greshake2023indirect} & Integrity and confidentiality of LLM-integrated applications & Places instructions in external content consumed by the application & Altered output or application behaviour, including demonstrated compromise cases \\
+\addlinespace[1.5pt]
+\citet{zhong2023retrievalpoisoning} & Retrieval corpus and target-question ranking & Injects optimised adversarial passages & Retrieval success for target questions \\
+\addlinespace[1.5pt]
+\citet{zou2025poisonedrag} & Retrieval corpus and factual-answer integrity & Injects malicious texts under black- or white-box knowledge & Attacker-chosen generated answers \\
+\addlinespace[1.5pt]
+\citet{chaudhari2025phantom} & RAG answer integrity and retrieved-context confidentiality & Injects one optimised poisoned passage for a chosen natural trigger; initial optimisation assumes gradients, with transfer and black-box variants & Conditional retrieval plus objective-specific output, including passage exfiltration and tool effects \\
+\addlinespace[1.5pt]
+\citet{chen2024agentpoison} & Agent memory or RAG knowledge base and downstream actions & Injects poisoned demonstrations and an optimised trigger; no model retraining & Trigger-conditioned retrieval and malicious agent behaviour \\
+\addlinespace[1.5pt]
+\citet{rao2026fragfuse} & Long-term-memory access-control boundary & Adaptive unprivileged user fragments, stores, and later fuses prohibited content & Access-control bypass and harmful task completion \\
+\addlinespace[1.5pt]
+\citet{liang2025saferag} & Integrity and availability across RAG components & Manipulates external knowledge for four attack tasks & Service-quality and attack outcomes \\
+\addlinespace[1.5pt]
+This thesis & Sensitivity-aware RAG over structured spreadsheet entities & Ordinary chat attacker; controlled poisoning capability in specified attacks & Delivered response is attacker-visible; evaluator evidence may distinguish retrieval, context, state, raw generation, control action, and delivery \\
+
+\end{longtable}
+}
+
+The tables provide a critical, counterexample-oriented comparison of the directly relevant studies reviewed for this thesis. The broader search was last updated on 6 August 2026, with a targeted verification of the two sensitivity-awareness studies on 15 August 2026; it was not conducted as a registered systematic review. Unless stated otherwise, the cited rows are published peer-reviewed work. Towards Sensitivity-Aware Language Models is an accepted AISTATS 2026 poster. FragFuse is an officially accepted forthcoming paper with incomplete proceedings metadata. Phantom is published peer-reviewed work in ACM Transactions on AI Security and Privacy. Statements about an absent dimension are consequently restricted to what the compared work centrally evaluates or reports.
+
+Within that scope, the constituent problems are not new in isolation. Retrieval-time resource authorisation is directly studied by Permission-Aware RAG; column-level role reasoning appears in database-grounded generation; sensitivity awareness has a dedicated benchmark, formal privacy analysis, and model-adaptation study \citep{fazlija2025accessdenied,fazlija2026sensitivity}; private-corpus extraction and retrieval-database membership have dedicated attacks and defences; GraphRAG work extracts relations; memory can mediate access-control bypass; and poisoning, indirect injection, and component-level evaluation are established research areas. The thesis is positioned by the particular conjunction it evaluates rather than by claiming any one of these topics as unexplored.
+
+The studies also use materially different threat models. Corpus extraction work generally gives the attacker generated responses and seeks recovered text. Poisoning work grants write access to some external content and primarily measures answer or action integrity. Permission-aware retrieval starts from authenticated resource permissions, whereas role-conditioned Text-to-SQL measures generated queries and refusals. FragFuse is stateful but keeps the user unprivileged; the present downgrade experiment begins with a legitimate protected read. These differences preclude treating reported attack rates or controls as interchangeable.
+
+Finally, prior evaluation granularity is heterogeneous. RAGChecker and SafeRAG demonstrate the value of component-aware diagnosis \citep{ru2024ragchecker,liang2025saferag}, while privacy and poisoning studies usually report the outcome appropriate to their specific attack. The raw-versus-delivered and package-versus-component distinctions in this thesis are thus not claims that earlier evaluation is uniformly end-to-end or inadequate. They are the evidence model required to interpret this prototype's layered controls without assigning effects that its recorded comparisons cannot identify.
+
+\section{Research Gap and Thesis Positioning}
+\label{sec:background-gap}
+
+The compared literature supports three narrow statements about the remaining research problem. A separate evidentiary constraint follows them.
+
+\paragraph{Policy granularity across representations.}
+Permission-Aware RAG enforces resource-level IAM decisions, role-conditioned Text-to-SQL evaluates table and column policy, sensitivity-awareness work evaluates RBAC-derived employee-attribute disclosure, and GraphRAG privacy work studies relation extraction \citep{jeong2025permissionrag,klisura2026role,fazlija2025accessdenied,fazlija2026sensitivity,liu2026graphragprivacy}. Among the works compared in Tables~\ref{tab:background-related-work} and~\ref{tab:background-related-work-boundaries}, these elements are not jointly evaluated as field- and independent relation-level authorisation over mixed-sensitivity entities that pass through retrieval, rendered context, state, free-text generation, and delivery.
+
+\paragraph{Legitimate authority transitions.}
+ACCESS DENIED INC treats a session as a single exchange, and the later sensitivity-awareness study retains a per-session benchmark formulation \citep{fazlija2025accessdenied,fazlija2026sensitivity}. FragFuse demonstrates multi-turn, memory-mediated access-control bypass by an unprivileged attacker \citep{rao2026fragfuse}. Among the compared RAG and LLM-memory studies, we did not identify a controlled evaluation of protected state first created under legitimate high authority and then read after an explicit downgrade to lower authority. This is a bounded literature-search result, not a claim that no such system or unpublished evaluation exists.
+
+\paragraph{Policy-specific stage observability.}
+RAGChecker separates retrieval and generation diagnostics, and SafeRAG evaluates attacks across RAG components \citep{ru2024ragchecker,liang2025saferag}. The compared security studies provide limited evidence of an evaluation that jointly distinguishes role-governed field/relation exposure in retrieval and context, retained state, unsafe raw generation, control action, and delivered response. These stages support different confidentiality and control claims.
+
+The case study additionally separates descriptive package comparison from matched component attribution. This evidentiary constraint is neither a literature gap nor a new causal-inference method; its operational design is specified in Chapter~\ref{chap:methodology}.
+
+Among the studies reviewed for this chapter, no evaluation was identified that combines field- and relation-level authorisation over structured spreadsheet entities, a legitimate high-to-low authority transition, and an evaluation framework that distinguishes context and state exposure, raw generation, control action, and delivered response. This thesis applies that stage-aware evidence model and separates package-level from component-level claims. Chapter~\ref{chap:architecture} maps these concepts to one implemented pipeline; Chapter~\ref{chap:methodology} fixes the threat model and evidence rules; Chapters~\ref{chap:baseline-results} and~\ref{chap:vulnerability-analysis} report the observations; and Chapter~\ref{chap:discussion} bounds their interpretation.
+
+The intended contribution is a modest, testable, code-grounded case study of policy continuity and evidence boundaries in one sensitivity-aware, structured RAG system. A new retrieval algorithm, a universal secure-RAG architecture, and a formal proof of information-flow security are outside its scope. Its conclusions remain conditional on the implemented corpus, policy, model, prompts, state design, attack panels, and scorers.
+
+\section{Chapter Summary}
+
+RAG introduces a sequence of security-relevant transformations between source data and a delivered answer. Sparse, dense, and hybrid retrieval determine relevance; structured retrieval additionally preserves or reconstructs schema and relations. None of these mechanisms determines whether the current principal may observe a selected field, edge, derived representation, or retained state. This thesis calls the continued effectiveness of source restrictions across those transformations \emph{policy continuity}, explicitly as an analytical term rather than a formal security guarantee.
+
+Prior work already demonstrates document-level permission-aware retrieval, table- and column-level role reasoning, sensitivity-awareness benchmarking and model adaptation, private-corpus extraction, retrieval-database membership inference, graph-relation extraction, memory-mediated access-control bypass, indirect prompt injection, and multiple forms of corpus poisoning. The remaining thesis problem is their narrow intersection in a structured, role-aware pipeline and the evidence needed to distinguish internal exposure, raw generation, control action, and delivered outcome. The architecture and methodology chapters now take over the implementation-specific and operational details.

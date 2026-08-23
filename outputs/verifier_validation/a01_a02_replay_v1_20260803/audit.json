@@ -1,0 +1,69 @@
+{
+  "schema_version": "a01-a02-verifier-replay-audit-v1",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "unique_corpus_ids",
+      "status": "PASS",
+      "detail": "1850 items; 1850 unique"
+    },
+    {
+      "name": "one_decision_per_item",
+      "status": "PASS",
+      "detail": "1850 decisions"
+    },
+    {
+      "name": "nonempty_inputs",
+      "status": "PASS",
+      "detail": "all replay inputs nonempty"
+    },
+    {
+      "name": "labels_precede_decisions",
+      "status": "PASS",
+      "detail": "all labels materialised in corpus"
+    },
+    {
+      "name": "historical_not_raw",
+      "status": "PASS",
+      "detail": "historical items explicitly delivered"
+    },
+    {
+      "name": "matched_is_raw",
+      "status": "PASS",
+      "detail": "matched items explicitly raw"
+    },
+    {
+      "name": "expected_strata",
+      "status": "PASS",
+      "detail": {
+        "('A01', 'historical_delivered_output')": 450,
+        "('A02', 'historical_delivered_output')": 450,
+        "('A01', 'preserved_pre_delivery_raw_output')": 450,
+        "('A02', 'preserved_pre_delivery_raw_output')": 450,
+        "('A01', 'preregistered_synthetic_benign_output')": 20,
+        "('A02', 'preregistered_synthetic_benign_output')": 30
+      }
+    },
+    {
+      "name": "summary_counts",
+      "status": "PASS",
+      "detail": {
+        "TN": 1217,
+        "TP": 205,
+        "FP": 428
+      }
+    },
+    {
+      "name": "summary_hashes",
+      "status": "PASS",
+      "detail": {
+        "freeze_manifest.json": "c5efca1d79aded1d47b75aaf4f2a7306e5096a2d5c156a712390cec89c6810aa",
+        "replay_corpus.json": "14294913dd709c3f098edc241d77018dea58818162f9e263d5c6d21e1ffb62c4",
+        "decision_log.json": "19694b46d9567b3be2f011d0c9c286eb9f596e7dbb3896faa21c111ba9296e67",
+        "metrics.csv": "cc82ce42c375cb95a6cd245b757a88a23284a148c4a54f33249d438dde528042",
+        "confusion_matrices.csv": "2e3dcffb4e62b1c780ae8b69a6b786149fca5e822a8ce60d535f5f78ecca0e44",
+        "per_field_detection.csv": "430fa5eb6d78d8e66ae03b1c94ca33040262a9a5bc225ca62fb5e4acd0d04d33"
+      }
+    }
+  ]
+}

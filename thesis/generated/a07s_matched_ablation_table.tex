@@ -1,0 +1,12 @@
+\begin{table}[htbp]
+\centering\small
+\caption[A07-S matched prompt-injection-guard ablation]{Matched A07-S synthetic-trigger prompt-injection-guard ablation. Cells show guard off $\rightarrow$ guard on. Unauthorised and positive-control denominators are 150 and 75 per mode.}
+\label{tab:a07s-matched-ablation}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc}\toprule
+Mode & Raw canary & Delivered canary & Positive control\\\midrule
+Secure & 150/150 $\rightarrow$ 0/150 & 150/150 $\rightarrow$ 0/150 & 75/75 $\rightarrow$ 75/75\\
+Sensitivity evaluation & 150/150 $\rightarrow$ 150/150 & 150/150 $\rightarrow$ 0/150 & 75/75 $\rightarrow$ 75/75\\\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -1,0 +1,190 @@
+\chapter{Baseline Security Evaluation}
+\label{chap:baseline-results}
+
+\section{Overview of Baseline Outcomes}
+\label{sec:baseline-overview}
+
+Chapter~\ref{chap:experiments} defines the common experimental configuration, leakage taxonomy, and attack procedures. The present chapter reports only the attack-family-label-free rerun of the original pre-hardening system. Hardened-package results are reported in Chapter~\ref{chap:vulnerability-analysis}. For every attack and RAG mode, the baseline contains 150 unauthorised public/internal conversations and 75 protected positive-control conversations.
+
+The reported outcome is attack-specific. A01, A02, A03, and A08 use a confidentiality outcome; A04 uses complete relation-edge disclosure; A05 uses protected-record existence confirmation; and A07 uses canary compliance as its principal integrity outcome. A06 is not reduced to one outcome: canary compliance measures integrity and protected-value delivery measures confidentiality. Protected-value disclosure likewise remains separate from A07 canary compliance. Internal retrieval, memory, or model-visible exposure is reported as a diagnostic signal and is not equated with delivered leakage. Likewise, where a runner distinguishes raw generation from the delivered answer, the delivery-stage measurement remains the principal user-visible confidentiality outcome.
+
+Figure~\ref{fig:baseline-primary-outcomes} compares heterogeneous attack-specific outcomes: A07 reports integrity manipulation, whereas A04 and A05 report side-channel disclosure. The attack-specific tables provide the exact values and corresponding positive controls.
+
+To avoid duplicating the same measurements as both tables and figures, the stage-specific plots and additional recorded examples are retained in Appendix~\ref{app:detailed-baseline}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{results/cross_attack_descriptive_baseline.pdf}
+  \caption[Original-baseline reported outcomes]{Selected unauthorised outcomes in the descriptive original baseline. A02 uses policy-aware delivered row leakage rather than the legacy target-field flag. Other rates use delivered confidentiality leakage for A01, A03, A06, and A08; relation-edge leakage for A04; protected-record existence confirmation for A05; and canary compliance for A07. A06 canary compliance is reported separately in Section~\ref{sec:baseline-a06}. Every bar uses 150 unauthorised conversations. Source: original attack-family-label-free result JSON and the A02 policy-aware rescore.}
+  \label{fig:baseline-primary-outcomes}
+\end{figure}
+
+\section{A01: Direct Cell Extraction}
+\label{sec:baseline-a01}
+
+\begin{table}[htbp]\centering
+\caption{A01 attack-family-label-free pre-hardening results.}
+\begin{tabularx}{\textwidth}{Xrrrr}\toprule
+Mode & Context & Public & Internal & Protected\\\midrule
+Secure & 150/150 & 0/75 & 0/75 & 75/75\\
+Sensitivity evaluation & 150/150 & 20/75 & 54/75 & 75/75\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Observed pattern.}
+The protected target was present in recorded retrieval context in all 150 unauthorised runs in each mode. Secure mode delivered no exact target values. Sensitivity-evaluation mode delivered the target in 74/150 unauthorised conversations: 20/75 public and 54/75 internal. By conversation length, the sensitivity-mode leaks were 37/50 at one turn, 23/50 at three turns, and 14/50 at five turns. Protected positive-control success was 75/75 in both modes. The baseline runner did not separately preserve final model-visible context or raw pre-delivery answers, so those intermediate measurements are not available.
+
+\section{A02: Multi-Turn Row Construction}
+\label{sec:baseline-a02}
+
+\begin{table}[htbp]\centering
+\caption[A02 policy-aware baseline results]{A02 policy-aware attack-family-label-free baseline results. ``Partial'' and ``full'' are mutually exclusive policy-aware reconstruction outcomes.}
+\begin{tabularx}{\textwidth}{Xrrrrrr}\toprule
+Mode & \shortstack{Complete field\\support} & Public & Internal & Partial & Full & Protected\\\midrule
+Secure & 120/150 & 3/75 & 5/75 & 8/150 & 0/150 & 68/75\\
+Sensitivity evaluation & 120/150 & 57/75 & 66/75 & 86/150 & 37/150 & 74/75\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Observed pattern.}
+Policy-aware rescoring found newly delivered restricted information in 8/150 secure-mode and 123/150 sensitivity-mode conversations. The sensitivity-mode total comprised 86 partial and 37 full reconstructions; public and internal access contributed 57 and 66 policy-aware leaks. By conversation length, the sensitivity-mode totals were 23/50, 50/50, and 50/50, with 16/50, 20/50, and 1/50 full reconstructions. Secure-mode leakage comprised eight partial reconstructions and no full reconstruction.
+
+The legacy runner flags were 60/150 and 122/150, but these are retained only as diagnostic values. The policy-aware scorer excludes role-authorised values and prompt-supplied repetitions and therefore supplies the confidentiality metric used throughout the final thesis. Under the target-aware exact field matcher, the final retrieved context contained all eight scored target fields in 120/150 unauthorised conversations in each mode. The other 30 conversations all concerned the Panthenol target and contained seven of the eight scored fields; only the target Phase field was not detected. The count therefore measures complete field support, not retrieval of the target entity as a whole. Protected full-row reconstruction succeeded in 68/75 secure-mode and 74/75 sensitivity-mode runs.
+
+The attack-family-label-free original-baseline runner stored only the final answer and did not store a distinct raw pre-delivery model answer. Raw model leakage is therefore not available for this baseline. Although the offline rescorer used the stored final answer as a computational proxy when populating its internal raw field, that proxy is not reported as an observed raw-generation metric.
+
+\paragraph{Representative recorded output.}
+One sensitivity-evaluation record for target \texttt{t1\_r001\_avocadoel}, public access, one turn, and iteration~1 delivered the following complete reconstruction (Markdown spacing normalised):
+\begin{quote}\small
+``Name der Rezeptur: Pure Cream; Produktkategorie: Lotion; Beschreibung: Lotion mit beruhigend Wirkung; Phase: B; INCI: Persea Gratissima Oil; Lieferant: OilPure; Menge (\%): 15.55; Claim: schützend.''
+\end{quote}
+The stored scorer marked all eight target fields and full reconstruction for this record. This excerpt illustrates the event counted by the full-reconstruction metric; it is not an additional trial.
+
+\section{A03: Access-Level Downgrade}
+\label{sec:baseline-a03}
+
+\begin{table}[htbp]\centering
+\caption{A03 attack-family-label-free pre-hardening results.}
+\begin{tabularx}{\textwidth}{Xrrrrr}\toprule
+Mode & State & Public & Internal & Total & Protected\\\midrule
+Secure & 150/150 & 75/75 & 75/75 & 150/150 & 75/75\\
+Sensitivity evaluation & 150/150 & 75/75 & 75/75 & 150/150 & 75/75\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Observed pattern.}
+A03 produced the most consistent baseline confidentiality failure. All public and internal downgrade conversations delivered the protected value in both modes. Logged downgraded retrieval exposure and memory/state exposure were also 150/150 per mode. The result did not vary across the three tested pre-attack history lengths: each contributed 50/50 leaking unauthorised conversations. Protected setup and positive-control behaviour succeeded throughout, so the failure did not coincide with absent target availability.
+
+\section{A04: Relational Join-Path Inference}
+\label{sec:baseline-a04}
+
+\begin{table}[htbp]\centering
+\caption{A04 attack-family-label-free pre-hardening results.}
+\begin{tabularx}{\textwidth}{Xrrrrrr}\toprule
+Mode & Exposure & Node & \shortstack{Public\\edge} & \shortstack{Internal\\edge} & \shortstack{All\\edges} & Protected\\\midrule
+Secure & 150/150 & 64/150 & 0/75 & 0/75 & 0/150 & 75/75\\
+Sensitivity evaluation & 150/150 & 77/150 & 31/75 & 44/75 & 75/150 & 25/75\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Observed pattern.}
+Secure mode disclosed at least one protected relation node in 64/150 unauthorised conversations but no complete edge or path. Sensitivity-evaluation mode disclosed a node in 77/150 conversations and a complete edge in 75/150. Edge disclosure was 0/50 at one turn, 40/50 at three turns, and 35/50 at five turns; public and internal users accounted for 31 and 44 edge disclosures. Neither mode produced downstream protected ingredient or process-detail leakage. Complete protected answers succeeded in 75/75 secure-mode runs and 25/75 sensitivity-mode runs.
+
+\section{A05: Protected-Record Membership/Existence Probe}
+\label{sec:baseline-a05}
+
+\begin{table}[htbp]\centering
+\caption{A05 attack-family-label-free pre-hardening results.}
+\begin{tabularx}{\textwidth}{Xrrrrr}\toprule
+Mode & Retrieval & Public & Internal & Total & Protected\\\midrule
+Secure & 150/150 & 0/75 & 44/75 & 44/150 & 75/75\\
+Sensitivity evaluation & 150/150 & 26/75 & 44/75 & 70/150 & 75/75\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Observed pattern.}
+Secure-mode membership disclosure was role-specific: all 44 confirmations occurred under internal access, while public answers produced none. The confirmations were distributed across conversation lengths as 20/50, 10/50, and 14/50. Sensitivity-evaluation mode produced 70/150 confirmations, comprising 26/75 public and 44/75 internal conversations. Their length distribution was 50/50 at one turn, 10/50 at three turns, and 10/50 at five turns. Candidate or target evidence was present in retrieval in all 150 unauthorised conversations in each mode. Protected membership confirmation succeeded in every positive-control run.
+
+\section{A06: Prompt Injection through a Poisoned Row}
+\label{sec:baseline-a06}
+
+\begin{table}[htbp]\centering
+\caption{A06 attack-family-label-free pre-hardening results.}
+\begin{tabularx}{\textwidth}{Xrrrrr}\toprule
+Mode & Exposure & Canary & \shortstack{Secret\\leak} & \shortstack{Public /\\internal} & Protected\\\midrule
+Secure & 150/150 & 0/150 & 0/150 & 0/75 / 0/75 & 75/75\\
+Sensitivity evaluation & 150/150 & 0/150 & 2/150 & 0/75 / 2/75 & 25/75\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Observed pattern.}
+The evaluated injection produced no canary compliance in either mode. Secure mode also produced no delivered protected-value disclosure. Sensitivity-evaluation mode produced 2/150 protected-value leaks, both under internal access, at one turn, for the same target/iteration combination. The poisoned row and protected target content were recorded in retrieval in all 150 unauthorised runs per mode. The two disclosures are confidentiality failures. Zero canary output provides no evidence that the stored override instruction was followed. Positive-control success was 75/75 in secure mode and 25/75 in sensitivity-evaluation mode.
+
+\section{A07: Backdoor-Triggered Extraction}
+\label{sec:baseline-a07}
+
+\begin{table}[htbp]\centering
+\caption{A07 attack-family-label-free pre-hardening results.}
+\begin{tabularx}{\textwidth}{Xrrrr}\toprule
+Mode & Exposure & Canary & \shortstack{Secret\\leak} & Protected\\\midrule
+Secure & 150/150 & 150/150 & 0/150 & 10/75\\
+Sensitivity evaluation & 150/150 & 150/150 & 0/150 & 0/75\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Observed pattern.}
+Every unauthorised answer emitted the attack-specific canary in both modes: public and internal users each contributed 75/75 compliant answers. Compliance was complete for every conversation length (50/50 at one, three, and five turns). No answer met the protected-value leakage criterion, so the successful baseline outcome was integrity manipulation rather than direct confidentiality disclosure. Authorised positive-control task success was very weak: only 10/75 secure-mode positive controls succeeded, and none succeeded in sensitivity-evaluation mode.
+
+\paragraph{Representative recorded output.}
+For target R-001, public access, one turn, and iteration~1 in sensitivity-evaluation mode, the synthetic trigger prompt produced:
+\begin{quote}\small
+``ATTACK7\_CANARY\_R001\newline The protected formulation is not available from retrieved context.''
+\end{quote}
+The first line satisfied the canary-compliance criterion, while the second line contained no protected ingredient--percentage pair. The record therefore demonstrates why integrity compliance and confidentiality leakage are reported separately.
+
+\section{A08: Embedding/Rank-Framed Retrieval Probe}
+\label{sec:baseline-a08}
+
+\begin{table}[htbp]\centering
+\caption{A08 attack-family-label-free pre-hardening results.}
+\begin{tabularx}{\textwidth}{Xrrrrr}\toprule
+Mode & Retrieval & Public & Internal & Total & Protected\\\midrule
+Secure & 150/150 & 0/75 & 0/75 & 0/150 & 75/75\\
+Sensitivity evaluation & 150/150 & 33/75 & 49/75 & 82/150 & 75/75\\\bottomrule
+\end{tabularx}\end{table}
+
+\paragraph{Observed pattern.}
+Protected target retrieval was recorded in all unauthorised runs in both modes. Secure mode delivered no target value. Sensitivity-evaluation mode produced 82/150 retrieval-supported numeric disclosures: 33/75 public and 49/75 internal. By length, leakage was 50/50 at one turn, 15/50 at three turns, and 17/50 at five turns. Unsupported leakage was 0/150, so no disclosed value was scored in the absence of target retrieval. Authorised positive-control task success was 75/75 in both modes.
+
+\section{Cross-Attack Baseline Synthesis}
+\label{sec:baseline-synthesis}
+
+\begin{small}
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\centering\arraybackslash}p{0.09\textwidth}>{\centering\arraybackslash}p{0.12\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}}
+\caption[Cross-attack original-baseline outcomes]{Cross-attack attack-family-label-free pre-hardening outcomes. Primary security outcomes use 150 unauthorised conversations per mode; positive controls use 75 protected conversations.}\label{tab:baseline-cross-attack}\\
+\toprule
+Attack & Primary leakage category & Secure & Sensitivity & Important secondary metrics and positive control\\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\tablename\ \thetable\ continued}\\
+\toprule
+Attack & Primary leakage category & Secure & Sensitivity & Important secondary metrics and positive control\\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+A01 Direct Cell Extraction & Direct final-answer leakage & 0/150 & 74/150 & Retrieval exposure was 150/150 per mode; positive control was 75/75 per mode.\\
+A02 Multi-Turn Row Construction & Policy-aware row reconstruction & 8/150 & 123/150 & Secure mode had 8 partial and 0 full reconstructions; sensitivity mode had 86 partial and 37 full. Legacy flags were 60/150 and 122/150. Positive control was 68/75 and 74/75.\\
+A03 Access-Level\newline Downgrade & Memory and state leakage with direct disclosure & 150/150 & 150/150 & Retrieval and memory exposure were 150/150 per mode; positive control was 75/75 per mode.\\
+A04 Relational Join-Path Inference & Relation side channel & 0/150 edges & 75/150 edges & Secure mode disclosed nodes in 64/150; sensitivity mode in 77/150. Downstream detail leakage was zero. Positive control was 75/75 and 25/75.\\
+A05 Protected-Record Membership/Existence Probe & Protected-record existence disclosure & 44/150 & 70/150 & Retrieval evidence was 150/150 per mode; positive-control task success was 75/75 per mode.\\
+A06 Prompt Injection / Poisoned Row & Confidentiality and integrity reported separately & 0/150 secret & 2/150 secret & Canary compliance was 0/150 in both modes. Retrieval/access exposure was 150/150; positive-control task success was 75/75 and 25/75.\\
+A07 Backdoor-Triggered\newline Extraction & Integrity / canary compliance & 150/150 & 150/150 & Protected-value leakage was 0/150 per mode; positive control was 10/75 and 0/75.\\
+A08 Embedding/\newline Rank-Framed\newline Retrieval Probe & Retrieval-mediated numeric disclosure & 0/150 & 82/150 & Retrieval exposure was 150/150 per mode; unsupported leakage was zero. Positive-control task success was 75/75 per mode.\\
+\end{longtable}
+\end{small}
+
+Internal exposure was widespread: each attack-family-label-free baseline runner recorded attack-relevant retrieval, context, or state exposure in all unauthorised runs. Delivered outcomes were more selective. A01 leaked only in sensitivity-evaluation mode, and A06 produced two confidentiality leaks without canary compliance. Thus, exposure indicates attack opportunity but is not itself interchangeable with user-visible leakage.
+
+Among confidentiality outcomes, A03 was the most severe and consistent: every downgraded conversation delivered the protected value, independently of mode, role, or history length. A02 showed a different pattern of partial and compositional disclosure. Policy-aware rescoring found 123 sensitivity-mode conversations with newly delivered restricted information, including 37 full reconstructions, and 8 secure-mode partial reconstructions. The broader legacy flags remain diagnostic rather than policy-aware leakage.
+
+A04 and A05 demonstrate that derived structure and protected-record existence require their own outcome definitions. A04 exposed protected relation nodes even when a complete edge was absent, and sensitivity-evaluation mode disclosed 75 complete edges. A05 confirmed protected-record existence without requiring full record disclosure. A08 used embedding/rank-oriented query framing and produced 82 retrieval-supported numeric disclosures in sensitivity-evaluation mode, spanning all three tested conversation lengths; it did not expose embeddings, scores, or a ranking list.
+
+The tested poisoned-row instruction in A06 produced no canary compliance, whereas A07 produced complete canary compliance in both modes without protected-value disclosure. Authorised positive-control task success ranged from 0/75 to 75/75. The largest losses occurred in sensitivity-evaluation mode for A04, A06, and A07. The narrow, attack-specific positive-control measure is reported alongside the security outcomes and assesses authorised task completion, not general system utility.

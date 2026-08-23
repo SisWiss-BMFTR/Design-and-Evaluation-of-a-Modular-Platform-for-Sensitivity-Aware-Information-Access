@@ -1,0 +1,44 @@
+!/.env.example
+**/__pycache__/**  # except manifest-bound source-snapshot bytecode
+**/source_snapshot/.env
+*.code-workspace
+*.py[cod]  # except manifest-bound source-snapshot bytecode
+*.safetensors
+.env
+.env.*
+.idea/**
+.pytest_cache/**
+.venv/**
+.vscode/**
+env/**
+internal_archive/**
+jobs/**  # unrelated Qwen development orchestration
+logs/**  # superseded root-level descriptive results; originals retained
+models/**
+outputs/audits/final_project_review_*/**
+outputs/audits/final_style_review_*/**
+outputs/audits/final_supervised_revision_*/**
+outputs/audits/style_revision_batch*/**
+outputs/deliverables/**  # canonical copy is thesis/final_thesis.pdf
+outputs/experiments/full_a02_verifier_challenge/*/raw_generation/**
+outputs/experiments/matched_a07s_prompt_injection_guard/*/arm_A_injection_guard_off/**
+outputs/experiments/matched_a07s_prompt_injection_guard/*/arm_B_injection_guard_on/**
+outputs/experiments/matched_single_guard_ablations/*/arm_A_*/**
+outputs/experiments/matched_single_guard_ablations/*/arm_B_*/**
+outputs/experiments/supplemental_a06_poisoned_row/*/full/**
+outputs/experiments/supplemental_a06_poisoned_row/*/pilot/**
+outputs/experiments/verifier_challenge_pilot/*/raw_generation/**
+outputs/experiments/verifier_challenge_pilot/VCP_A01_A02_20260803T024445Z/**
+outputs/final_thesis_evidence_20260802_corrected_no_rerun/**
+outputs/final_thesis_evidence_20260802_no_rerun_revision*/**
+outputs/nonrun_archives/**
+outputs/verifier_validation/a01_a02_replay_v1_20260803/replay_corpus.json
+reference_materials/**
+reports/**
+slurm-*.err
+slurm-*.out
+thesis/build*/**
+thesis/chapter*_revision_report.md
+thesis/outputs/**
+venv/**
+writing/**

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabularx}{\textwidth}{@{}l*{6}{>{\centering\arraybackslash}X}@{}}
+\toprule
+Mode & Delivered canary & Raw canary & Secret leakage & Model-visible exposure & Guard checked & Positive control \\
+\midrule
+Secure & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 150/150 & 75/75 $\rightarrow$ 75/75 \\
+Sensitivity evaluation & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 150/150 $\rightarrow$ 150/150 & 0/150 $\rightarrow$ 150/150 & 75/75 $\rightarrow$ 75/75 \\
+\bottomrule
+\end{tabularx}
+\caption[A06 matched prompt-injection-guard ablation]{A06 matched prompt-injection-guard ablation. Cells show guards off $\rightarrow$ guards on. Canary compliance is an integrity outcome and secret leakage is a separate confidentiality outcome. Security denominators are 150 and positive-control denominators are 75 per mode and arm.}
+\label{tab:a06-matched-ablation}
+\end{table}

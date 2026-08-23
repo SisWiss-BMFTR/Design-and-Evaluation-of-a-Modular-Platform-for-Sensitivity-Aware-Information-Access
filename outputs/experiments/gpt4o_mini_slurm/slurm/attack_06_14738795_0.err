@@ -1,0 +1,12 @@
+/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_prompt_injection_poisoned_row.py", line 892, in <module>
+    main()
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_prompt_injection_poisoned_row.py", line 838, in main
+    targets = build_target_panel(documents, args.target_ids)
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_prompt_injection_poisoned_row.py", line 207, in build_target_panel
+    secret = parse_secret_line(doc["text"])
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/code/evaluation2/run_prompt_injection_poisoned_row.py", line 182, in parse_secret_line
+    raise ValueError("could not extract an ingredient/amount marker from formulation text")
+ValueError: could not extract an ingredient/amount marker from formulation text

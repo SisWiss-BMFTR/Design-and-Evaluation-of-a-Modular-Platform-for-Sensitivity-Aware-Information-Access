@@ -1,0 +1,80 @@
+{
+  "canonical_inventory_sha256": "80222625e03625460218b5e948da8a91fbec92725380bd8f83191377616d001f",
+  "canonicalization": "UTF-8 JSON array per line: [type,relative_path,size,sha256], sorted by relative_path, LF terminated",
+  "claim_relationship": "Frozen A01/A02 deterministic verifier replay corpus and decisions.",
+  "excluded_non_regular_entries": [],
+  "experiment_id": "verifier_replay",
+  "experiment_type": "DETERMINISTIC_VERIFIER_REPLAY",
+  "member_count": 11,
+  "members": [
+    {
+      "path": "audit.json",
+      "sha256": "26b7244329af18f0ae829881e52e62081c78e8af7d72f7fb8038245eb65188eb",
+      "size": 2103,
+      "type": "file"
+    },
+    {
+      "path": "confusion_matrices.csv",
+      "sha256": "80dcd2f9fa7cdb52ba646e5f601c121b540898ada2c2a705bf897c271bd72092",
+      "size": 1283,
+      "type": "file"
+    },
+    {
+      "path": "decision_log.json",
+      "sha256": "19694b46d9567b3be2f011d0c9c286eb9f596e7dbb3896faa21c111ba9296e67",
+      "size": 1719512,
+      "type": "file"
+    },
+    {
+      "path": "dependency_versions.txt",
+      "sha256": "46ff4674267aeba97cb04383b0ead783d7c6ea07f0026872c5e7bf034e5858c2",
+      "size": 7067,
+      "type": "file"
+    },
+    {
+      "path": "freeze_manifest.json",
+      "sha256": "c5efca1d79aded1d47b75aaf4f2a7306e5096a2d5c156a712390cec89c6810aa",
+      "size": 20073,
+      "type": "file"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "40005ee44b4b95341880e2d8376489ea8866a5f63aa0b28d13c427b51b99f704",
+      "size": 1361,
+      "type": "file"
+    },
+    {
+      "path": "per_field_detection.csv",
+      "sha256": "cfd04200aff52139314c8c9c5b4c38442dec0aa2e6aab33a535c00504730afc5",
+      "size": 692,
+      "type": "file"
+    },
+    {
+      "path": "replay_corpus.json",
+      "sha256": "14294913dd709c3f098edc241d77018dea58818162f9e263d5c6d21e1ffb62c4",
+      "size": 52921613,
+      "type": "file"
+    },
+    {
+      "path": "report.md",
+      "sha256": "e1c81478f8b81d4f93db159158b6912ec9f7eb3411954f19b425e31853c6a062",
+      "size": 498,
+      "type": "file"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "8c206aeb22cf8ae9a56bcc368bd293d963480ccb40d1ef152573e2fa672b4227",
+      "size": 1517,
+      "type": "file"
+    },
+    {
+      "path": "working_tree.patch",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "type": "file"
+    }
+  ],
+  "raw_byte_count": 54675719,
+  "raw_source_root": "outputs/verifier_validation/a01_a02_replay_v1_20260803",
+  "schema_version": "canonical-evidence-inventory-v1"
+}

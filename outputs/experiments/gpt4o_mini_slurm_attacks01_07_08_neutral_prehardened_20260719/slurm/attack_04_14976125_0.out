@@ -1,0 +1,13 @@
+Started Attack 4 at 2026-07-19T21:10:52+02:00
+SLURM_JOB_ID=14976142
+SLURM_ARRAY_TASK_ID=0
+RAG_MODE=secure_rag_mode
+OUT_DIR=/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/gpt4o_mini_slurm_attacks01_07_neutral_prehardened_20260719/attack_04_relational_join_path_inference/secure_rag_mode
+============ Job Information ===================================================
+Submitted: 2026-07-19T20:06:32
+Started: 2026-07-19T21:10:29
+Ended: 2026-07-19T23:10:45
+Elapsed: 121 min, Limit: 120 min, Difference: -1 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

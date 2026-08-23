@@ -1,0 +1,226 @@
+labels:
+  public:
+    rank: 0
+  internal:
+    rank: 1
+  confidential:
+    rank: 2
+  restricted:
+    rank: 3
+  protected:
+    rank: 4
+
+roles:
+  public_user:
+    allowed_labels:
+      - public
+  internal_user:
+    allowed_labels:
+      - public
+      - internal
+  research_user:
+    allowed_labels:
+      - public
+      - internal
+      - confidential
+      - restricted
+  admin:
+    allowed_labels:
+      - public
+      - internal
+      - confidential
+      - restricted
+      - protected
+
+role_aliases:
+  public: public_user
+  internal: internal_user
+  protected: admin
+  researcher: research_user
+
+default_role: public_user
+default_sensitivity: internal
+
+columns:
+  product_id:
+    sensitivity: public
+    category: product_identity
+    aliases:
+      - Rezept-ID
+
+  product_name:
+    sensitivity: public
+    category: product_identity
+    aliases:
+      - Name des Produkts
+
+  target_market:
+    sensitivity: public
+    category: product_metadata
+    aliases:
+      - Zielmarkt/Verwendung
+
+  linked_rezeptur:
+    sensitivity: protected
+    category: relation
+    aliases:
+      - Zugehörige Rezeptur-ID
+      - Verwendete Rezeptur-ID
+      - Rezeptur-ID
+
+  linked_verfahren:
+    sensitivity: protected
+    category: relation
+    aliases:
+      - Zugehöriges Verfahren-ID
+      - Verfahren-ID
+
+  formulation_name:
+    sensitivity: confidential
+    category: formulation_identity
+    aliases:
+      - Name der Rezeptur
+
+  formulation_category:
+    sensitivity: internal
+    category: formulation_metadata
+    aliases:
+      - Produktkategorie
+
+  formulation_description:
+    sensitivity: confidential
+    category: formulation_metadata
+    aliases:
+      - Beschreibung
+
+  formulation_phase:
+    sensitivity: confidential
+    category: formulation_composition
+    aliases:
+      - Phase
+
+  ingredient:
+    sensitivity: restricted
+    category: formulation_composition
+    aliases:
+      - Rohstoff
+
+  inci:
+    sensitivity: restricted
+    category: formulation_composition
+    aliases:
+      - INCI
+
+  supplier:
+    sensitivity: restricted
+    category: supplier
+    aliases:
+      - Lieferant
+      - Supplier
+
+  formulation_percentage:
+    sensitivity: protected
+    category: formulation_percentage
+    aliases:
+      - Menge (%)
+      - Anteil (%)
+      - Percentage
+
+  claim:
+    sensitivity: internal
+    category: product_claim
+    aliases:
+      - Claim
+
+  process_name:
+    sensitivity: confidential
+    category: process
+    aliases:
+      - Name des Verfahrens
+
+  process_description:
+    sensitivity: confidential
+    category: process
+    aliases:
+      - Prozessbeschreibung
+
+  process_step:
+    sensitivity: restricted
+    category: process_detail
+    aliases:
+      - Schritt 1
+      - Schritt 2
+      - Schritt 3
+      - Schritt 4
+
+  property_parameter:
+    sensitivity: internal
+    category: property
+    aliases:
+      - Parameter
+
+  property_value:
+    sensitivity: internal
+    category: property
+    aliases:
+      - Wert
+      - pH
+      - Viskosität (RT)
+      - viscosity
+
+  test_method:
+    sensitivity: internal
+    category: testing
+    aliases:
+      - Bedingung/Methode
+
+  test_date:
+    sensitivity: internal
+    category: testing
+    aliases:
+      - Prüfdatum
+
+  tester:
+    sensitivity: confidential
+    category: personnel
+    aliases:
+      - Prüfer
+
+  notes:
+    sensitivity: protected
+    category: notes
+    aliases:
+      - Bemerkung
+relations:
+  product_to_formulation:
+    source_type: product
+    target_type: formulation
+    metadata_key: rezeptur_id
+    field_name: linked_rezeptur
+    edge_sensitivity: protected
+    disclose_roles:
+      - admin
+    traverse_roles:
+      - admin
+
+  product_to_process:
+    source_type: product
+    target_type: process
+    metadata_key: verfahren_id
+    field_name: linked_verfahren
+    edge_sensitivity: protected
+    disclose_roles:
+      - admin
+    traverse_roles:
+      - admin
+
+  process_to_formulation:
+    source_type: process
+    target_type: formulation
+    metadata_key: rezeptur_id
+    field_name: linked_rezeptur
+    edge_sensitivity: protected
+    disclose_roles:
+      - admin
+    traverse_roles:
+      - admin

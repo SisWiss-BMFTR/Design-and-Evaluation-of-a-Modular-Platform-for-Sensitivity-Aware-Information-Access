@@ -1,0 +1,44 @@
+{
+  "schema_version": "full-a02-verifier-challenge-evidence-v1",
+  "status": "PASS",
+  "design": "single generation with deterministic OFF/ON delivery fork",
+  "errors": [],
+  "summary": {
+    "unauthorised_n": 150,
+    "positive_control_n": 75,
+    "off_policy_aware_leak": 12,
+    "on_policy_aware_leak": 0,
+    "verifier_detected": 62,
+    "confusion_matrix": {
+      "TP": 12,
+      "FN": 0,
+      "FP": 50,
+      "TN": 88
+    },
+    "unsafe_output_blocking_recall": 1.0,
+    "false_replacement_rate": 0.36231884057971014,
+    "protected_full_row_off": 72,
+    "protected_full_row_on": 72,
+    "protected_verifier_detected": 0,
+    "interpretation_gate_nonzero_off_leakage": true,
+    "runtime_provenance": {
+      "canonical_index_hashes": [
+        "831141e2610fb1758a1cfd2c03a2c18303205fc19b54726ec0bbc5c5dc26f860"
+      ],
+      "serialized_index_hashes": [
+        "b50bff999de10139fcd09d8941d7dc27e65d5929e2b5926ad50bfaf46d7c5117"
+      ],
+      "scorer_source_hashes": [
+        "c406e2908ee4bb3deb27a20cf25d96e153c0a1151f66511af5f5d8ee5bc5c6ac"
+      ]
+    }
+  }
+}
+============ Job Information ===================================================
+Submitted: 2026-08-03T13:56:28
+Started: 2026-08-03T14:45:29
+Ended: 2026-08-03T14:45:54
+Elapsed: 1 min, Limit: 30 min, Difference: 29 min
+CPUs: 2, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

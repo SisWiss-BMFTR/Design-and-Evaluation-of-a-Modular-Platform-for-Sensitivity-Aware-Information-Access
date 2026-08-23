@@ -1,0 +1,101 @@
+{
+  "inventories": [
+    {
+      "canonical_inventory_sha256": "9ca176ed5a12bb4264ab333337984f9ea5b41e23911402488aeca00f047b66be",
+      "experiment_id": "matched_A01",
+      "inventory_file_sha256": "65a84164fdd60657973e3f21214933904d6ce85d91e425bc9b3d60124eab5fca",
+      "inventory_path": "manifests/evidence_inventories/matched_A01.json",
+      "member_count": 220,
+      "raw_byte_count": 286281482
+    },
+    {
+      "canonical_inventory_sha256": "e48f54d2d0a03695f6b7a425a93f87fe21e2573efe0c6322d3ffdb3ee1c7371a",
+      "experiment_id": "matched_A02",
+      "inventory_file_sha256": "3c42504fda6f60df2234feb0d9a3d232eb88d19b42e064b33030159e0b2fb41e",
+      "inventory_path": "manifests/evidence_inventories/matched_A02.json",
+      "member_count": 222,
+      "raw_byte_count": 414386770
+    },
+    {
+      "canonical_inventory_sha256": "39077d491f2809a4426c64346a9ca3fca0d8b6cdd74c215ad4b32d1e491e82df",
+      "experiment_id": "matched_A03",
+      "inventory_file_sha256": "e9797f85a40c11630d7af418bdea3790223a68150d480864331d6c1a5775a272",
+      "inventory_path": "manifests/evidence_inventories/matched_A03.json",
+      "member_count": 220,
+      "raw_byte_count": 645299286
+    },
+    {
+      "canonical_inventory_sha256": "d446ac70cd68f9d82246207d6fc7b2fd7b75a873c2e96f4ad76d14ccc9b9fd7d",
+      "experiment_id": "matched_A04",
+      "inventory_file_sha256": "97dddede3ff9db7c418aca7c7a94718ef1499edd04eca21e6621ddc6684a248f",
+      "inventory_path": "manifests/evidence_inventories/matched_A04.json",
+      "member_count": 222,
+      "raw_byte_count": 421549199
+    },
+    {
+      "canonical_inventory_sha256": "f09ecd7f1038a66754733df20fe2b394d1839dea65083da152dd98905c4cadb1",
+      "experiment_id": "matched_A05",
+      "inventory_file_sha256": "d5a902e4d5fcb68ec34a9c8e12e2f60322620a2c9f945da4405c0e75d3cfa3ae",
+      "inventory_path": "manifests/evidence_inventories/matched_A05.json",
+      "member_count": 220,
+      "raw_byte_count": 476463541
+    },
+    {
+      "canonical_inventory_sha256": "222928bb4303be6abbe30d8ff0f9e5eac3ec3d3dd0eed7065a34d48655b20ae0",
+      "experiment_id": "matched_A06",
+      "inventory_file_sha256": "62bb84451f70493357def7a1abe2ace5781e76f8dd3697629206effad4f48775",
+      "inventory_path": "manifests/evidence_inventories/matched_A06.json",
+      "member_count": 223,
+      "raw_byte_count": 385278947
+    },
+    {
+      "canonical_inventory_sha256": "b42445d88ec0d51f06a458e020466043fe6ec36fb5277728f0a0a93b5b5f83f2",
+      "experiment_id": "matched_A07",
+      "inventory_file_sha256": "5d23a6add7a5dd5176248ee3e30af719c7143d2af5c6c57927c2583be4234d3c",
+      "inventory_path": "manifests/evidence_inventories/matched_A07.json",
+      "member_count": 220,
+      "raw_byte_count": 383509229
+    },
+    {
+      "canonical_inventory_sha256": "dfd7805ea24a2b17974618a1a1250016f43bf871c92d8457822f24ad8cf169c1",
+      "experiment_id": "matched_A08",
+      "inventory_file_sha256": "cd969be8ee324d4527c77d1d9e238af9676a0ecdb3cf6d24d22e9000751b2f14",
+      "inventory_path": "manifests/evidence_inventories/matched_A08.json",
+      "member_count": 220,
+      "raw_byte_count": 478500244
+    },
+    {
+      "canonical_inventory_sha256": "80a9878e1fa798cbe5ad8d5a28473d091f9ba1bc4b3dca66676335130cc145e2",
+      "experiment_id": "supplemental_A02",
+      "inventory_file_sha256": "640da18368944fedb812a6638c2fb51a562a2127bdd6815517026a92430f104b",
+      "inventory_path": "manifests/evidence_inventories/supplemental_A02.json",
+      "member_count": 186,
+      "raw_byte_count": 104510070
+    },
+    {
+      "canonical_inventory_sha256": "f1a4535505bcd208671d1078a43dbc6ff57e92c950fca44e66095d13f64f2195",
+      "experiment_id": "supplemental_A06",
+      "inventory_file_sha256": "82568b4c453f7fa425fb6c13c27f5fe54379467175cccb0b105325ab13f83532",
+      "inventory_path": "manifests/evidence_inventories/supplemental_A06.json",
+      "member_count": 284,
+      "raw_byte_count": 535773189
+    },
+    {
+      "canonical_inventory_sha256": "fcdf0e056347149528e0d247a3be6643576a7da37ec4e29978d8f7394f782469",
+      "experiment_id": "supplemental_A07S",
+      "inventory_file_sha256": "9791862d27da97ea5359cb131b74275378e6b8e4421062cfaeec1562dc32b8af",
+      "inventory_path": "manifests/evidence_inventories/supplemental_A07S.json",
+      "member_count": 162,
+      "raw_byte_count": 386533842
+    },
+    {
+      "canonical_inventory_sha256": "80222625e03625460218b5e948da8a91fbec92725380bd8f83191377616d001f",
+      "experiment_id": "verifier_replay",
+      "inventory_file_sha256": "94a361e52710b42e3797fc3d5d4a51a872f771c649eed9664097f945ab2e6be9",
+      "inventory_path": "manifests/evidence_inventories/verifier_replay.json",
+      "member_count": 11,
+      "raw_byte_count": 54675719
+    }
+  ],
+  "schema_version": "canonical-evidence-inventory-summary-v1"
+}

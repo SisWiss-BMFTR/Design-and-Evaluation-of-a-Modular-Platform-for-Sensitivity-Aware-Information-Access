@@ -1,0 +1,5 @@
+?? outputs/experiments/matched_a07s_prompt_injection_guard/
+?? outputs/final_thesis_evidence_20260802_corrected_no_rerun/
+?? outputs/final_thesis_evidence_20260802_no_rerun_revision/
+?? outputs/final_thesis_evidence_20260802_no_rerun_revision_provenance_v2/
+?? outputs/final_thesis_evidence_20260802_no_rerun_revision_v2/

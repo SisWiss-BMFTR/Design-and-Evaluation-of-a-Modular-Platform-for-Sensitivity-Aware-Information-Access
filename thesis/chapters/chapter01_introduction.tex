@@ -1,0 +1,81 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Motivation}
+
+Retrieval-Augmented Generation (RAG) combines a generative language model with information retrieved from an external corpus. The external memory makes it possible to answer questions about specialised or changing information without encoding the entire corpus in model parameters \citep{lewis2020rag}. This is attractive for organisational use: a natural-language interface can be placed over technical documents, product records, or laboratory data while the underlying source remains independently maintainable.
+
+The same design creates a security problem. A conventional application normally authorises a request at a defined resource boundary. A RAG application transforms a resource several times: source fields become entity representations, embedding-index entries, retrieval candidates, relation edges, prompt context, conversation state, raw model output, and finally a delivered answer. A permission attached to the source does not automatically remain meaningful in every derived representation. A relevant entity can contain both public and protected fields; a hidden relation can still be traversed; a value legitimately disclosed before an access downgrade can persist in memory; or an instruction embedded in a retrieved row can be interpreted as control text. Research has independently demonstrated both extraction risks from private retrieval corpora \citep{zeng2024ragprivacy} and indirect prompt injection through externally supplied content \citep{greshake2023indirect}. Consequently, grounding a language model in enterprise data does not enforce enterprise policy.
+
+This thesis studies that gap through a concrete, instrumented system, with claims limited to the evaluated RAG application. The system answers questions over a fictitious but realistic cosmetic product-development workbook. It preserves structured fields and relations, applies role- and field-level sensitivity policy, retrieves entity representations through a hybrid of dense, lexical, identifier, and relation-aware mechanisms, and supplies the resulting context to \texttt{gpt-4o-mini}. Two modes make the security boundary observable. \emph{Secure mode} projects disallowed fields before prompt construction. \emph{Sensitivity-evaluation mode} deliberately retains labelled mixed-sensitivity evidence so that downstream generation and delivery controls can be tested. The latter is a diagnostic exposure condition, not a proposed secure deployment mode.
+
+\section{Problem statement}
+
+The technical problem is \emph{policy continuity}: whether the authorisation decision made for a source field remains effective as information crosses retrieval, relation, state, generation, and delivery boundaries. Document-level allow/deny filtering is insufficient for the implemented use case because one entity can contain multiple sensitivity classes and because answers may disclose derived facts without reproducing a complete source record. The evaluated properties therefore include more than direct secret copying:
+
+\begin{itemize}[leftmargin=*]
+  \item direct delivery of a protected field or exact value;
+  \item partial or complete reconstruction of a structured row across turns;
+  \item persistence of previously authorised information after an access downgrade;
+  \item disclosure of protected relation structure or indexed-record existence;
+  \item integrity failure caused by instructions or triggers in retrieved content; and
+  \item retrieval-mediated disclosure elicited by embedding- or rank-oriented wording.
+\end{itemize}
+
+These properties occur at different pipeline stages, so one generic leakage rate cannot represent them. Model-visible evidence is an internal exposure. Raw generation records model behaviour before delivery controls, whereas delivered output is the user-visible security outcome. Canary compliance measures integrity rather than confidentiality. A protected-role positive control measures only whether the attack-specific authorised task remains possible.
+
+The historical baseline and later hardened package can differ simultaneously in source state, prompts, and several controls. Their numerical difference describes the two packages but cannot, by itself, identify the effect of one guard. A hardened-code run with one guard disabled retains other hardening changes and does not recreate the historical implementation. The evaluation maintains four distinct evidence levels: descriptive original-baseline evidence, descriptive hardened-package evidence, matched off/on guard ablations, and supplemental component validation. Claim strength is bounded by the evidence level, and sources are reported separately without pooling or substitution.
+
+\section{Research questions}
+\label{sec:research-questions}
+
+The final implementation and evidence in Chapters~\ref{chap:experiments}--\ref{chap:conclusion} determine the following research questions.
+
+\begin{description}[style=nextline]
+  \item[\textbf{RQ1: Policy continuity.}]
+  To what extent does field-level, role-based sensitivity policy remain effective as information passes through retrieval, relation handling, conversational state, prompt construction, generation, and final delivery?
+
+  \item[\textbf{RQ2: Failure boundaries.}]
+  Under which of the eight tested direct, multi-turn, stateful, relational, existence-probing, poisoned-context, triggered-injection, and embedding/rank-framed conditions do unauthorised internal exposure, delivered disclosure, or integrity failure occur, and at which pipeline boundary?
+
+  \item[\textbf{RQ3: Control contribution and task preservation.}]
+  Within matched and supplemental validation conditions, which implemented controls change an upstream exposure or attack-specific delivered outcome, and what happens to the corresponding authorised positive-control task?
+\end{description}
+
+RQ1 addresses the architectural question of whether policy survives representation changes. RQ2 serves a diagnostic role by locating observed failures without assuming that all attack metrics are interchangeable. RQ3 imposes an evidential condition on component attribution: the experiment must switch or freeze the relevant component. The questions do not ask whether the system is universally secure, and a zero count in the finite test matrix is not interpreted as such a guarantee.
+
+\section{Scope and terminology}
+\label{sec:introduction-scope}
+
+The object under test is one modular RAG prototype, one fictitious workbook, one generation model, one sentence-embedding model, and fixed attack panels. The protected assets include workbook fields, structured rows, relation edges, the existence of protected indexed records, and security-relevant conversation state. The ordinary attacker interacts through the chat interface. Only the poisoned-row and triggered-instruction experiments add a stronger corpus-poisoning capability through synthetic public entities containing attacker-controlled text.
+
+The evaluation proceeds through four evidence categories. First, the \emph{historical baseline} records the pre-hardening implementation. Second, the \emph{hardened package} records the final implementation with its complete control set. These packages can differ in prompts, source state, and multiple controls, so their comparison is descriptive. Third, \emph{matched guard ablations} switch one recorded control within a captured hardened source state. Finally, \emph{supplemental validation} uses separately reported replay or prospectively specified component tests. A guard-disabled hardened run retains other hardening changes and is therefore not a reconstruction of the historical implementation.
+
+Several names used in the repository require precise interpretation. The protected indexed-record existence probe uses historical \emph{membership} terminology, but it does not test whether a record participated in model training, the classical membership-inference construct \citep{shokri2017membership}. The embedding/rank-framed probe measures retrieval-mediated disclosure through the RAG interface; the interface exposes no embeddings, similarity scores, or complete ranking. The triggered indirect prompt-injection experiment uses a retrieved instruction with an unchanged generator and no model retraining.
+
+\section{Contributions}
+\label{sec:contributions}
+
+The thesis makes four main contributions.
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{A realistic structured RAG pipeline.} A fictitious but domain-realistic product-development workbook is converted into relational entity representations with field sensitivity, source provenance, role policy, and explicit relation policy. The final architecture carries these policies through retrieval, context projection, security-context transition, prompt handling, and delivery.
+
+  \item \textbf{An attack-centred evaluation framework.} Eight attack families stress direct confidentiality, reconstruction, retained state, relations, protected indexed-record existence, poisoned-context integrity, triggered indirect injection, and retrieval-mediated disclosure. The framework separates internal exposure, raw generation, delivered output, integrity compliance, and authorised positive-control task success.
+
+  \item \textbf{A modular research and evaluation platform.} Independently configurable attack modules, observable pipeline boundaries, frozen scorers, and recorded evidence sources support reproducible stress tests. Historical-package observations, matched ablations, and supplemental component studies remain distinct so that each claim reflects the experiment that supports it.
+
+  \item \textbf{Empirical findings across security boundaries.} The historical implementation shows substantial failures when protected evidence remains model-visible, while structural pre-generation projection performs strongly in the evaluated direct-confidentiality conditions. The hardened package records a substantial descriptive improvement. Matched and supplemental experiments identify component effects at relation, state, context, and delivery boundaries, while zero-to-zero results and non-evaluable controls delimit the remaining claims.
+\end{enumerate}
+
+Together, these contributions provide a system and evidence framework for analysing where sensitivity policy can be lost in a structured RAG pipeline and what individual controls change under tested conditions. The thesis does not propose a new foundation model or a universal defence.
+
+\paragraph{Summary of findings.}
+
+The historical evaluation shows a consistent architectural contrast. Role-based projection before generation generally kept protected values outside the model-visible context and performed strongly under the evaluated direct-confidentiality conditions. Deliberately retaining labelled mixed-sensitivity evidence exposed the generator to protected content and produced substantial failures across confidentiality and integrity boundaries. The final hardened package recorded no unauthorised attack-specific outcome in the finite matrix, representing a substantial descriptive improvement; incomplete package equivalence prevents attributing that difference to one control.
+
+Matched and supplemental studies provide the narrower component evidence. They show that controls at relation, state, context, and delivery boundaries affect different outcomes, and that successful delivery filtering can coexist with upstream exposure. Component effects therefore remain attack- and stage-specific rather than forming one aggregate effectiveness score. The conclusions are conditional on the tested corpus, prompts, models, controls, and threat capabilities.
+
+\section{Thesis structure}
+
+Chapter~\ref{chap:background} introduces RAG, structured retrieval, access control, and the security literature relevant to the tested attack classes. Chapter~\ref{chap:architecture} reconstructs the final implemented architecture from the code and policy files. Chapter~\ref{chap:methodology} defines the threat model, attack suite, measurement stages, and evidence hierarchy. Chapter~\ref{chap:experiments} specifies the concrete execution matrix and provenance. Chapter~\ref{chap:baseline-results} reports the descriptive original baseline. Chapter~\ref{chap:vulnerability-analysis} analyses the hardened package, matched guard ablations, and supplemental studies. Chapter~\ref{chap:discussion} synthesises the security and task-preservation implications, and Chapter~\ref{chap:conclusion} states the bounded conclusions, limitations, and future work.

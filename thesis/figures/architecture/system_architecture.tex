@@ -1,0 +1,183 @@
+\begin{tikzpicture}[
+  font=\rmfamily\footnotesize,
+  >=Latex,
+  process/.style={
+    draw=blue!60!black,
+    fill=blue!7,
+    rounded corners=2pt,
+    align=center,
+    text width=62mm,
+    minimum height=11mm,
+    inner xsep=3mm,
+    inner ysep=2.2mm
+  },
+  source/.style={
+    draw=green!55!black,
+    fill=green!9,
+    rounded corners=2pt,
+    align=center,
+    inner xsep=3mm,
+    inner ysep=2.2mm
+  },
+  enforcement/.style={
+    draw=orange!75!black,
+    fill=orange!12,
+    rounded corners=2pt,
+    align=center,
+    text width=62mm,
+    minimum height=11mm,
+    inner xsep=3mm,
+    inner ysep=2.2mm
+  },
+  sidepolicy/.style={
+    draw=purple!65!black,
+    fill=purple!8,
+    rounded corners=2pt,
+    align=left,
+    text width=35mm,
+    inner xsep=3mm,
+    inner ysep=2.5mm
+  },
+  state/.style={
+    draw=green!55!black,
+    fill=green!8,
+    rounded corners=2pt,
+    align=left,
+    text width=35mm,
+    inner xsep=3mm,
+    inner ysep=2.5mm
+  },
+  telemetry/.style={
+    draw=black!55,
+    fill=black!2,
+    dashed,
+    rounded corners=2pt,
+    align=center,
+    text width=103mm,
+    inner xsep=3mm,
+    inner ysep=2.5mm
+  },
+  offline/.style={
+    draw=black!50,
+    fill=black!2,
+    rounded corners=2pt,
+    align=center,
+    text width=39mm,
+    minimum height=15mm,
+    inner xsep=2.5mm,
+    inner ysep=2.5mm
+  },
+  policytag/.style={
+    circle,
+    draw=purple!65!black,
+    fill=purple!12,
+    font=\rmfamily\scriptsize,
+    inner sep=1.2pt
+  },
+  flow/.style={->,thick,draw=black!75},
+  stateflow/.style={->,densely dashed,thick,draw=green!55!black},
+  evidenceflow/.style={->,densely dashed,semithick,draw=black!55}
+]
+  % Offline index construction.
+  \node[offline,draw=green!55!black,fill=green!9] (xlsx) at (-5.1,0) {
+    \textbf{Fictional XLSX corpus}\\
+    Four relational sheets
+  };
+  \node[offline,draw=blue!60!black,fill=blue!7] (loader) at (0,0) {
+    \textbf{Structured loader}\\
+    Fields and source provenance
+  };
+  \node[offline,draw=blue!60!black,fill=blue!7,text width=45mm] (index) at (5.5,0) {
+    \textbf{Search representation}\\
+    300 entities; MiniLM embeddings; FAISS inner-product index
+  };
+
+  \draw[flow] (xlsx) -- (loader);
+  \draw[flow] (loader) -- (index);
+
+  \node[
+    draw=gray!60,
+    densely dotted,
+    rounded corners=2mm,
+    fit=(xlsx)(loader)(index),
+    inner sep=3mm,
+    label={[font=\rmfamily\scriptsize,text=gray!70!black]above left:OFFLINE INDEX CONSTRUCTION}
+  ] (offlineband) {};
+
+  % One uninterrupted online request path.
+  \node[source,text width=62mm,below=17mm of loader] (query) {
+    \textbf{1. Request}\\
+    User query, current role, and context mode
+  };
+  \node[process,below=4mm of query] (analysis) {
+    \textbf{2. Query and identifier analysis}\\
+    Probe classification and eligible-focus resolution
+  };
+  \node[process,below=4mm of analysis] (retrieval) {
+    \textbf{3. Hybrid retrieval and relation expansion}\\
+    Exact or dense candidates; permitted relation paths; $k=5$
+  };
+  \node[enforcement,below=4mm of retrieval] (context) {
+    \textbf{4. Authorised model context and prompt}\\
+    Role/mode field projection, quarantine, and authorised memory
+  };
+  \node[process,below=4mm of context] (model) {
+    \textbf{5. Generation}\\
+    \texttt{gpt-4o-mini} produces the recorded raw answer
+  };
+  \node[enforcement,below=4mm of model] (delivery) {
+    \textbf{6. Delivery controls}\\
+    Membership, injection-artifact, and restricted-value checks
+  };
+  \node[source,text width=62mm,below=4mm of delivery] (answer) {
+    \textbf{7. Delivered answer}\\
+    Sanitised output returned to the user
+  };
+
+  \draw[flow] (query) -- (analysis);
+  \draw[flow] (analysis) -- (retrieval);
+  \draw[flow] (retrieval) -- (context);
+  \draw[flow] (context) -- (model);
+  \draw[flow] (model) -- (delivery);
+  \draw[flow] (delivery) -- (answer);
+
+  \node[
+    draw=gray!60,
+    densely dotted,
+    rounded corners=2mm,
+    fit=(query)(analysis)(retrieval)(context)(model)(delivery)(answer),
+    inner xsep=4mm,
+    inner ysep=3mm,
+    label={[font=\rmfamily\scriptsize,text=gray!70!black]above left:ONLINE REQUEST PATH}
+  ] (onlineband) {};
+
+  % Cross-cutting architecture inputs and state.
+  \node[sidepolicy,left=6mm of retrieval] (policy) {
+    \textbf{Sensitivity policy}\\
+    Roles, labels, relations, and overrides.\\[1mm]
+    \textbf{P} marks policy-governed stages.
+  };
+  \node[state,right=6mm of context] (memory) {
+    \textbf{Conversation state}\\
+    Recent turns, summary, snippets, and focus. Supplies authorised memory and receives sanitised updates.
+  };
+
+  \node[policytag] at ([xshift=-2.3mm,yshift=-2.3mm]loader.north east) {P};
+  \node[policytag] at ([xshift=-2.3mm,yshift=-2.3mm]retrieval.north east) {P};
+  \node[policytag] at ([xshift=-2.3mm,yshift=-2.3mm]context.north east) {P};
+  \node[policytag] at ([xshift=-2.3mm,yshift=-2.3mm]delivery.north east) {P};
+  \node[policytag] at ([xshift=-2.3mm,yshift=-2.3mm]memory.north east) {P};
+
+  % The prepared index feeds retrieval; state is read before generation and
+  % updated only from the sanitised delivery path.
+  \draw[flow] (index.south) -- ++(0,-8mm) -| (retrieval.east);
+  \draw[stateflow] (memory.west) -- (context.east);
+  \draw[stateflow] (answer.east) -- ++(16mm,0) |- (memory.south);
+
+  \node[telemetry,below=7mm of answer] (telemetry) {
+    \textbf{Evidence telemetry}\\
+    Retrieved evidence, model-visible context, retained state, raw answer,
+    control actions, delivered answer, scores, and provenance
+  };
+  \draw[evidenceflow] (answer) -- (telemetry);
+\end{tikzpicture}

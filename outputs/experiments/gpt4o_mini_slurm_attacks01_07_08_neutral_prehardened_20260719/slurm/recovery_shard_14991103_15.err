@@ -1,0 +1,10 @@
+/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/env/rag/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis-neutral-baseline-20260719/code/evaluation2/run_rank_probing_membership_inference_batch.py", line 987, in <module>
+    main()
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis-neutral-baseline-20260719/code/evaluation2/run_rank_probing_membership_inference_batch.py", line 932, in main
+    targets = build_target_panel(documents=documents, target_ids=args.target_ids)
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis-neutral-baseline-20260719/code/evaluation2/run_rank_probing_membership_inference_batch.py", line 169, in build_target_panel
+    raise ValueError(f"unknown formulation target id(s): {', '.join(missing)}")
+ValueError: unknown formulation target id(s): r001_pure_cream

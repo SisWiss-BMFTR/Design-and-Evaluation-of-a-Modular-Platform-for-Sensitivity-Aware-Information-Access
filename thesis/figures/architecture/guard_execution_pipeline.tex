@@ -1,0 +1,116 @@
+\begin{tikzpicture}[
+  font=\rmfamily\footnotesize,
+  >=Latex,
+  node distance=4.5mm,
+  pipeline/.style={
+    draw=black!65,
+    rounded corners=2pt,
+    align=left,
+    text width=66mm,
+    inner xsep=4mm,
+    inner ysep=2.6mm,
+    fill=black!3
+  },
+  query/.style={pipeline,align=center,fill=black!4},
+  preguard/.style={pipeline,fill=blue!8,draw=blue!60!black},
+  modelstage/.style={pipeline,fill=black!4,draw=black!65},
+  postguard/.style={pipeline,fill=orange!12,draw=orange!70!black},
+  delivery/.style={pipeline,align=center,fill=black!7,draw=black!75},
+  statecontrol/.style={
+    pipeline,
+    text width=31mm,
+    font=\rmfamily\footnotesize,
+    fill=green!10,
+    draw=green!50!black
+  },
+  bypassnote/.style={
+    pipeline,
+    text width=31mm,
+    font=\rmfamily\footnotesize,
+    fill=red!5,
+    draw=red!55!black
+  },
+  evidence/.style={
+    pipeline,
+    text width=112mm,
+    font=\rmfamily\footnotesize,
+    align=center,
+    fill=black!2,
+    draw=black!55,
+    dashed
+  },
+  flow/.style={->,thick,draw=black!75},
+  conditional/.style={->,densely dashed,thick,draw=green!50!black},
+  bypass/.style={->,densely dashed,thick,draw=red!60!black}
+]
+  \node[query] (query) {
+    \textbf{1. User query}\\
+    Reset per-query guard telemetry
+  };
+
+  \node[preguard,below=of query] (probes) {
+    \textbf{2. Probe checks before retrieval}\\
+    \textbf{2a. Membership/existence:} a secure-mode match may return an early refusal.\\
+    \textbf{2b. Embedding/rank:} a match may force strict access, suppress memory, and add a side-channel policy instruction.
+  };
+
+  \node[preguard,below=of probes] (retrieval) {
+    \textbf{3. Retrieval and permitted relation expansion}\\
+    Resolve identifiers and eligible focus; select exact or hybrid candidates; apply relation-edge policy.
+  };
+
+  \node[preguard,below=of retrieval] (context) {
+    \textbf{4. Model-visible context}\\
+    Apply field/relation projection and prompt-injection handling.
+  };
+
+  \node[modelstage,below=of context] (memory) {
+    \textbf{5. Authorised conversational state}\\
+    Select or suppress recent messages, summary, and semantic memory.
+  };
+
+  \node[modelstage,below=of memory] (generation) {
+    \textbf{6. Generation}\\
+    Construct system/API messages; generate and record the raw answer.
+  };
+
+  \node[postguard,below=of generation] (postchecks) {
+    \textbf{7. Delivery controls, executed in order}\\
+    \textbf{7a.} Membership-answer validation and replacement\\
+    \textbf{7b.} Restricted-value output verification; a replacement returns immediately\\
+    \textbf{7c.} Otherwise, injection-artifact redaction or refusal
+  };
+
+  \node[delivery,below=of postchecks] (delivered) {
+    \textbf{8. Delivered answer}\\
+    Return the answer; update sanitised focus and conversation memory
+  };
+
+  \node[bypassnote,right=4mm of probes] (earlyrefusal) {
+    \textbf{Early-refusal path}\\
+    Retrieval, generation, and downstream checks are bypassed.
+  };
+
+  \node[statecontrol,left=4mm of memory] (stateclear) {
+    \textbf{Access-context change}\\
+    Optionally clear retained state before the next query cycle.
+  };
+
+  \node[evidence,below=5.5mm of delivered] (evidence) {
+    \textbf{Evaluator evidence:} conditions, retrieved evidence, model-visible context, retained state,
+    raw answer, control action, delivered answer, scores, and provenance
+  };
+
+  \draw[flow] (query) -- (probes);
+  \draw[flow] (probes) -- (retrieval);
+  \draw[flow] (retrieval) -- (context);
+  \draw[flow] (context) -- (memory);
+  \draw[flow] (memory) -- (generation);
+  \draw[flow] (generation) -- (postchecks);
+  \draw[flow] (postchecks) -- (delivered);
+  \draw[flow] (delivered) -- (evidence);
+
+  \draw[bypass] (probes.east) -- (earlyrefusal.west);
+  \draw[bypass] (earlyrefusal.south) |- (delivered.east);
+  \draw[conditional] (stateclear.east) -- (memory.west);
+\end{tikzpicture}

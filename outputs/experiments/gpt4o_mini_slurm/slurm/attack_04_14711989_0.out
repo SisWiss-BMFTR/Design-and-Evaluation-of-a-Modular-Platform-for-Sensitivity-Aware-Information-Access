@@ -1,0 +1,16 @@
+Started Attack 4 at 2026-07-07T00:07:48+02:00
+SLURM_JOB_ID=14711990
+SLURM_ARRAY_TASK_ID=0
+RAG_MODE=secure_rag_mode
+OUT_DIR=outputs/experiments/gpt4o_mini_slurm/attack_04_relational_join_path_inference/secure_rag_mode
+Running relational join-path inference matrix: 45 conditions, 5 iteration(s) each.
+
+Condition: target=p-001_r-001_v-001 access=public turns=1 iterations=5
+============ Job Information ===================================================
+Submitted: 2026-07-07T00:07:20
+Started: 2026-07-07T00:07:26
+Ended: 2026-07-07T00:08:34
+Elapsed: 2 min, Limit: 120 min, Difference: 118 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

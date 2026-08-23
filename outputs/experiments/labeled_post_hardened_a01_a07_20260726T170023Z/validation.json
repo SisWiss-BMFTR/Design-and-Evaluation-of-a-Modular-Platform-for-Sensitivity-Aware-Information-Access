@@ -1,0 +1,239 @@
+{
+  "validated_at": "2026-07-26T19:57:20.830317+00:00",
+  "valid": true,
+  "files": {
+    "A01/secure_rag_mode": {
+      "records": 225,
+      "csv_rows": 225,
+      "unique_keys": 225,
+      "targets": [
+        "t1_r001_avocadoel",
+        "t2_r002_sonnenblumenoel",
+        "t3_r003_panthenol",
+        "t4_r005_kamillenextrakt",
+        "t5_r006_aloe_vera_gel"
+      ],
+      "accesses": [
+        "internal",
+        "protected",
+        "public"
+      ],
+      "conversation_lengths": [
+        1,
+        3,
+        5
+      ],
+      "iterations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "errors": [],
+      "metrics": {
+        "unauthorized_delivered_leaks": 0,
+        "unauthorized_runs": 150,
+        "protected_delivered_disclosures": 75,
+        "protected_runs": 75,
+        "output_guard_blocks": 0
+      }
+    },
+    "A01/sensitivity_eval_mode": {
+      "records": 225,
+      "csv_rows": 225,
+      "unique_keys": 225,
+      "targets": [
+        "t1_r001_avocadoel",
+        "t2_r002_sonnenblumenoel",
+        "t3_r003_panthenol",
+        "t4_r005_kamillenextrakt",
+        "t5_r006_aloe_vera_gel"
+      ],
+      "accesses": [
+        "internal",
+        "protected",
+        "public"
+      ],
+      "conversation_lengths": [
+        1,
+        3,
+        5
+      ],
+      "iterations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "errors": [],
+      "metrics": {
+        "unauthorized_delivered_leaks": 0,
+        "unauthorized_runs": 150,
+        "protected_delivered_disclosures": 19,
+        "protected_runs": 75,
+        "output_guard_blocks": 0
+      }
+    },
+    "A07-S/secure_rag_mode": {
+      "records": 225,
+      "csv_rows": 225,
+      "unique_keys": 225,
+      "targets": [
+        "r001_pure_cream",
+        "r002_hydra_serum",
+        "r003_glow_elixir",
+        "r004_hydra_elixir",
+        "r005_calm_elixir"
+      ],
+      "accesses": [
+        "internal",
+        "protected",
+        "public"
+      ],
+      "conversation_lengths": [
+        1,
+        3,
+        5
+      ],
+      "iterations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "errors": [],
+      "metrics": {
+        "unauthorized_answer_leaks": 0,
+        "unauthorized_runs": 150,
+        "protected_positive_control_successes": 30,
+        "protected_runs": 75,
+        "prompt_context_quarantines": 75,
+        "canary_outputs": 0
+      }
+    },
+    "A07-S/sensitivity_eval_mode": {
+      "records": 225,
+      "csv_rows": 225,
+      "unique_keys": 225,
+      "targets": [
+        "r001_pure_cream",
+        "r002_hydra_serum",
+        "r003_glow_elixir",
+        "r004_hydra_elixir",
+        "r005_calm_elixir"
+      ],
+      "accesses": [
+        "internal",
+        "protected",
+        "public"
+      ],
+      "conversation_lengths": [
+        1,
+        3,
+        5
+      ],
+      "iterations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "errors": [],
+      "metrics": {
+        "unauthorized_answer_leaks": 0,
+        "unauthorized_runs": 150,
+        "protected_positive_control_successes": 75,
+        "protected_runs": 75,
+        "prompt_context_quarantines": 0,
+        "canary_outputs": 0
+      }
+    },
+    "A07-N/secure_rag_mode": {
+      "records": 225,
+      "csv_rows": 225,
+      "unique_keys": 225,
+      "targets": [
+        "r001_pure_cream",
+        "r002_hydra_serum",
+        "r003_glow_elixir",
+        "r004_hydra_elixir",
+        "r005_calm_elixir"
+      ],
+      "accesses": [
+        "internal",
+        "protected",
+        "public"
+      ],
+      "conversation_lengths": [
+        1,
+        3,
+        5
+      ],
+      "iterations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "errors": [],
+      "metrics": {
+        "unauthorized_answer_leaks": 0,
+        "unauthorized_runs": 150,
+        "protected_positive_control_successes": 35,
+        "protected_runs": 75,
+        "prompt_context_quarantines": 75,
+        "canary_outputs": 0
+      }
+    },
+    "A07-N/sensitivity_eval_mode": {
+      "records": 225,
+      "csv_rows": 225,
+      "unique_keys": 225,
+      "targets": [
+        "r001_pure_cream",
+        "r002_hydra_serum",
+        "r003_glow_elixir",
+        "r004_hydra_elixir",
+        "r005_calm_elixir"
+      ],
+      "accesses": [
+        "internal",
+        "protected",
+        "public"
+      ],
+      "conversation_lengths": [
+        1,
+        3,
+        5
+      ],
+      "iterations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "errors": [],
+      "metrics": {
+        "unauthorized_answer_leaks": 0,
+        "unauthorized_runs": 150,
+        "protected_positive_control_successes": 66,
+        "protected_runs": 75,
+        "prompt_context_quarantines": 0,
+        "canary_outputs": 0
+      }
+    }
+  },
+  "totals": {
+    "records": 1350,
+    "expected_records": 1350,
+    "duplicate_conditions": 0,
+    "missing_or_invalid_units": 0
+  },
+  "errors": []
+}

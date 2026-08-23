@@ -1,0 +1,198 @@
+\chapter{System Architecture}
+\label{chap:architecture}
+
+\section{Architectural objective and interpretation}
+
+This chapter describes the final implemented architecture that underlies the hardened and matched experiments. It is reconstructed from the current code, configuration, and final evidence in Chapters~\ref{chap:experiments}--\ref{chap:conclusion}. The evaluated system uses one hosted generator, \texttt{gpt-4o-mini}; relation expansion is implemented over explicit spreadsheet metadata; and field, relation, state, query, prompt-injection, and delivery controls are represented as separate enforcement points.
+
+Figure~\ref{fig:system-architecture} separates offline index construction, the online request path, and cross-cutting policy, state, and evidence functions. Offline preparation converts the workbook into structured entity representations and a dense index. The numbered online path then combines current authority, query analysis, hybrid retrieval, relation handling, context projection, memory, generation, and delivery validation. Policy markers identify the governed stages without obscuring the principal data flow.
+
+\begin{figure}[htbp]
+  \centering
+  \resizebox{0.98\textwidth}{!}{\input{figures/architecture/system_architecture}}
+  \caption[Final sensitivity-aware RAG architecture]{Final implemented architecture, separated into offline index construction, the numbered online request path, and cross-cutting controls. Solid arrows show principal data flow. Purple \textbf{P} markers identify stages governed by the sensitivity policy; green dashed arrows show authorised state use and sanitised state updates; the dashed lower box lists recorded evaluator evidence. Orange boxes are security-relevant context or delivery boundaries. Sensitivity-evaluation mode intentionally changes context construction, but it does not bypass recording of raw and delivered outcomes.}
+  \label{fig:system-architecture}
+\end{figure}
+
+The figure is not a depiction of the historical baseline source tree. The historical system shared the broad ingestion--retrieval--generation pattern, but the final architecture contains later field, relation, state, query, prompt-injection, and delivery controls. Differences between historical and final packages are evaluated descriptively; single-control claims come only from the matched and supplemental studies.
+
+\section{Data source and entity construction}
+\label{sec:architecture-data}
+
+The knowledge base is \path{data/SiSWiss_Testdaten.xlsx}, a German-language workbook that uses terminology specific to cosmetic product development. Its structure and use case are inspired by a real-world product-development setup, but all records are fictitious; no real company, customer, or confidential operational data was copied into the dataset. The structured loader reads four sheets:
+
+\begin{description}[style=nextline]
+  \item[\texttt{Rezepturen}]
+  Formulation identity, category, description, phases, raw materials, INCI names, suppliers, percentages, claims, and notes.
+  \item[\texttt{Verfahren}]
+  Process identity, description, four process steps, linked formulation, and notes.
+  \item[\texttt{Rezepte}]
+  Product identity, target market, linked formulation, linked process, and notes.
+  \item[\texttt{Eigenschaften}]
+  Product test parameter, value, method, date, and tester; these rows are merged into the corresponding product representation.
+\end{description}
+
+The loader produces one representation per formulation, process, or product. The clean corpus contains 100 of each type and therefore 300 indexed entities. The poisoned-row and triggered-instruction conditions add synthetic entities only to their respective corpora, as specified in Chapter~\ref{chap:experiments}. Although historical result schemas use the name \texttt{indexed\_chunks}, the structured experiments count these prepared entity texts rather than generic fixed-size text chunks.
+
+\begin{table}[htbp]
+\centering
+\caption{Structured entity representation in the clean index.}
+\label{tab:architecture-entities}
+\begin{tabularx}{\textwidth}{@{}lrrX@{}}
+\toprule
+Entity type & Count & Principal identifier & Integrated content and relations \\
+\midrule
+Formulation & 100 & \texttt{rezeptur\_id} & Formulation metadata, ingredient rows, percentages, suppliers, claims, phases, and notes. \\
+Process & 100 & \texttt{verfahren\_id} & Process metadata and steps; relation to a formulation. \\
+Product & 100 & \texttt{rezept\_id} & Product metadata and integrated test properties; relations to a formulation and process. \\
+\midrule
+Total & 300 & --- & One prepared text and structured metadata object per entity. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Each structured field records a logical field name, rendered value, sensitivity label, category, and source object containing sheet, Excel row, entity identifier, and column. Entity metadata also records document type, retrieval and membership sensitivity, the set of field sensitivities, and the maximum sensitivity. This representation supports exact scoring and role projection without treating the entity text as the only source of truth.
+
+\section{Sensitivity and relation policy}
+\label{sec:architecture-policy}
+
+The principal policy is stored in \path{sensitivity_policy.yaml}. It defines five ordered labels and four policy roles. Table~\ref{tab:architecture-role-policy} distinguishes those roles from the three aliases used by the experiment runners.
+
+\begin{table}[htbp]
+\centering
+\caption{Implemented role and label policy.}
+\label{tab:architecture-role-policy}
+\begin{tabularx}{\textwidth}{@{}l l X@{}}
+\toprule
+Policy role & Experimental alias & Permitted labels \\
+\midrule
+\texttt{public\_user} & \texttt{public} & public \\
+\texttt{internal\_user} & \texttt{internal} & public, internal \\
+\texttt{research\_user} & not evaluated & public, internal, confidential, restricted \\
+\texttt{admin} & \texttt{protected} & public, internal, confidential, restricted, protected \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Column rules map logical fields and source-column aliases to sensitivities and categories. Examples include public product identity, internal properties, confidential formulation descriptions and testers, restricted ingredients and process steps, and protected formulation percentages, notes, and relation identifiers. If a field contains an explicit \texttt{allowed\_roles} list, that list overrides label-based visibility. \path{sensitivity_overrides.yaml} permits reviewable cell- or field-specific changes but is empty in the reported configuration.
+
+Relations are policy objects rather than untyped metadata. Three configured edge types connect product to formulation, product to process, and process to formulation. Each has an edge sensitivity and separate role lists for disclosure and traversal; the reported policy permits only \texttt{admin}. The relation guard therefore answers two distinct questions: whether the edge identifier may appear in context, and whether retrieval may follow the edge to a target entity. This separation is necessary for the relation-inference experiment because a hidden association is itself a scored outcome.
+
+\section{Index construction and retrieval}
+
+Entity texts are embedded with \texttt{sentence-transformers/all-MiniLM-L6-v2}, a sentence-transformer model used for semantic similarity \citep{reimers2019sentencebert,minilmmodelcard}. The resulting vectors are L2-normalised and inserted into a FAISS \texttt{IndexFlatIP}; the query vector is normalised before search, so the inner product corresponds to cosine similarity. The experimental top-$k$ value is five.
+
+The \texttt{FaissRetriever} also builds a lower-cased search blob from entity text and recursively flattened metadata. Hybrid retrieval scores semantic similarity and lexical term overlap, applies small document-type and exact-identifier boosts, and can enforce a retrieval-sensitivity filter. Queries with explicit normalised identifiers can bypass approximate matching through metadata lookup. The pipeline then expands relevant product, formulation, or process relations when the question asks for linked content, subject to the relation policy when that guard is enabled.
+
+This retrieval design deliberately prioritises controlled functionality over a novel ranking contribution. It provides the experimental attacks with several realistic access paths---semantic similarity, exact identifiers, lexical terms, and relational links---while retaining structured metadata for later attribution. It does not expose embeddings, similarity scores, or complete rankings to the user.
+
+\section{Online query processing}
+\label{sec:online-processing}
+
+The final \texttt{RAGPipeline.query} path performs the following operations.
+
+\begin{enumerate}[leftmargin=*]
+  \item It resets per-query guard telemetry and extracts explicit product, formulation, and process identifiers from the question.
+  \item It detects protected indexed-record existence probes. In secure mode, an unauthorised detected probe may be refused before retrieval.
+  \item It detects embedding/rank-oriented probes. When triggered, the pipeline can force strict role-filtered retrieval, secure field projection, memory suppression for the query, and an additional side-channel policy instruction.
+  \item It resolves explicit identifiers and eligible conversational focus, retrieves candidates through exact or hybrid search, and expands permitted relations.
+  \item It constructs context according to the selected mode and the prompt-injection and relation-guard configuration.
+  \item It supplies recent authorised messages, a sensitivity-filtered summary, and relevant semantic memory unless the current query path suppresses them.
+  \item It sends system and user messages to the generator and stores the raw answer.
+  \item It validates membership/existence wording, restricted structured values, and injection artifacts before returning the delivered answer.
+  \item It records the result and updates focus and conversation memory under the current sensitivity context.
+\end{enumerate}
+
+The effect of a control depends on its position in the pipeline. A post-generation verifier cannot undo earlier model-visible exposure. A query guard can change retrieval and memory before generation, and relation checks influence both candidate expansion and rendered context. The matched experiments therefore report outcomes at the stage affected by the switched control. An intervention need not change delivered confidentiality when it acts at another stage.
+
+Figure~\ref{fig:guard-execution-pipeline} reads from top to bottom. Solid arrows show the normal query path, while dashed arrows show the conditional early-refusal and state-clearing paths. On the normal generation path, membership-answer validation runs first, the restricted-value verifier runs second, and injection-artifact filtering runs last. A secure-mode membership refusal can terminate the path before retrieval and generation, while an output-verifier replacement returns before the injection-artifact check. The diagram therefore describes an ordered, interacting pipeline rather than parallel filters.
+
+\begin{figure}[htbp]
+  \centering
+  \resizebox{0.99\textwidth}{!}{\input{figures/architecture/guard_execution_pipeline}}
+  \caption[Guard execution order in the final pipeline]{Guard execution and conditional return paths in the captured final \texttt{RAGPipeline}. The numbered boxes follow the ordinary top-to-bottom query path. Blue controls act before generation or during context construction, orange controls act in the displayed post-generation order, and the green access-transition control executes outside the ordinary query path. Dashed arrows identify paths that bypass part of the ordinary sequence.}
+  \label{fig:guard-execution-pipeline}
+\end{figure}
+\FloatBarrier
+
+\section{Context-construction modes}
+\label{sec:architecture-modes}
+
+\subsection{Secure RAG mode}
+
+In \texttt{secure\_rag\_mode}, retrieved entities are projected for the active role before prompt construction. Permitted fields are rendered with entity and source information; non-permitted fields are omitted and logged in an access decision. Relation edges are independently projected. If an entity has no visible field, it contributes no ordinary context chunk. Thus, the generator should not see the protected source field merely because the mixed-sensitivity entity was semantically relevant.
+
+When the prompt-injection guard is enabled, instruction-like retrieved lines are quarantined in this path. When an embedding/rank probe forces strict access, retrieval is additionally filtered and the same secure projection is used even if the pipeline was otherwise instantiated in diagnostic mode.
+
+\subsection{Sensitivity-evaluation mode}
+
+In \texttt{sensitivity\_eval\_mode}, the context wrapper intentionally renders both allowed and restricted fields with explicit sensitivity, visibility, allowed-role, and disclosure labels. The wrapper states that the content is untrusted evaluation data and that restricted fields must not be disclosed. This mode asks whether downstream generation and delivery layers preserve the labelled policy despite model-visible evidence.
+
+The mode is a diagnostic condition and is unsuitable for secure deployment. A target can be exposed to the model in all 150 unauthorised conversations while appearing in zero delivered answers; upstream exposure and delivery are distinct outcomes. Model-visible exposure remains security relevant, and adaptive elicitation of the value remains unresolved.
+
+\section{Prompt construction and generation}
+
+The generator constructs one system message identifying a retrieval-augmented assistant and requesting coherent, grounded conversation. Recent conversation messages, when authorised, follow the system message. The final user message contains the operational instructions, retrieved context, optional summary and memory snippets, and the current question. It directs the model to use retrieved context as its main factual source, limit answers to active entities, avoid invention, and honour the visibility rules present in sensitivity-evaluation context.
+
+The reported experiments use \texttt{gpt-4o-mini} through the OpenAI chat-completions interface \citep{openai2024gpt4omini}. Generation temperature is 0.0. Temperature zero reduces configured sampling variation but does not turn repeated remote API calls into independently seeded or guaranteed byte-identical trials. Chapter~\ref{chap:experiments} therefore reports repeated calls descriptively rather than using independence-based significance tests.
+
+\section{Conversation memory and access transitions}
+
+Conversation memory has three forms: a recent-turn window, a generated summary, and a FAISS index over textual turn memories. The configured window is six turns; semantic retrieval returns at most four snippets; and a summary update is requested after four unsummarised turns. Each stored turn and summary has a sensitivity derived from the retrieved entities and current context. Reads filter messages, snippets, and summaries by the active allowed-label list.
+
+The pipeline separately tracks an entity-focus history for pronoun resolution and follow-up questions. This state can include product, formulation, and process identifiers and is therefore security-relevant. When access-change clearing is enabled and the user role or allowed sensitivities change, the pipeline clears recent turns, summary, semantic memory, focus, cached results, visible context, previous raw answer, and guard state. The access-downgrade experiment tests whether this transition removes measured state exposure; it does not assume that state presence necessarily becomes delivered leakage.
+
+\section{Configurable guards and enforcement points}
+\label{sec:architecture-guards}
+
+The final pipeline exposes six separately configurable switches. They are not operationally independent: an early refusal can bypass later controls, the embedding-probe guard can force secure projection, the relation guard changes context and part of the verifier inventory, and the prompt-injection switch bundles pre- and post-generation actions. Table~\ref{tab:architecture-guard-points} summarises where each acts. Chapter~\ref{chap:vulnerability-analysis} reports the actual off/on evidence and should be consulted before inferring effectiveness.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4.5pt}
+\caption{Configurable controls in the final architecture.}
+\label{tab:architecture-guard-points}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{36mm}>{\raggedright\arraybackslash}p{36mm}X@{}}
+\toprule
+Control & Primary enforcement point & Implemented action \\
+\midrule
+Output-leakage verifier & Intermediate answer before delivery & Checks current-result and indexed restricted-value inventories after membership processing. With the switch off it still records detection as \texttt{observe\_only}; with it on, a match can replace the answer. \\
+Membership/existence guard & Before retrieval and first after generation & Detects protected formulation-existence probes. It can stop an unauthorised secure-mode query before retrieval, validate generated confirmations, and restore a structured authorised response when appropriate. \\
+Embedding-probe guard & Query, retrieval, memory, and context & Requires retrieval-oriented evidence plus a protected-detail signal for an unauthorised role; then applies strict filtering and projection, suppresses query memory, and adds a policy notice. \\
+Prompt-injection guard & Retrieved context and last post-generation check & Quarantines or sanitises instruction-like content in secure mode, preserves it behind an untrusted-data boundary in diagnostic mode, and redacts recognised canary or trigger artifacts after generation. \\
+Access-change state clearing & Role/allowed-label transition & On an actual transition after a prior context exists, clears messages, summary, semantic memory, focus, cached retrieval/context, previous raw answer, and guard state. \\
+Relation-access guard & Relation traversal, focus, projection, and verifier inventory & Separates edge traversal from edge disclosure in secure paths. Diagnostic mode deliberately retains labelled restricted edges unless another control forces secure projection. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Output-leakage verifier.}
+The verifier is evaluated even when its enforcement switch is off. It builds allowed and restricted structured-field inventories for the active role from the current results and a restricted inventory derived from indexed metadata. It then applies case-insensitive exact matching for textual values of at least three characters and decimal-normalised matching for numeric values. Only the same structured field identity with the same allowed value is exempted. A detected value is recorded as \texttt{observe\_only} when disabled and causes a fixed refusal when enabled. This deterministic rule can detect known exact values reliably, but it can over-trigger on user echoes or coincidental numbers and miss paraphrases, ranges, translations, and derived disclosures. Its \texttt{matched\_count} is a count of inventory matches rather than necessarily a count of unique disclosed facts.
+
+\paragraph{Membership/existence guard.}
+The query detector uses a formulation identifier and/or existence-, record-, or index-oriented wording and enriches the candidate from retriever metadata. In secure mode, an enabled guard can return a fixed refusal before retrieval or a model call. Sensitivity-evaluation mode deliberately continues to generation and applies the first post-generation check to detected unauthorised probes. That check records whether the answer contains a binary membership signal, but this signal is telemetry and is not the enforcement predicate. Unless the answer already equals the canonical membership refusal, an enabled guard replaces the answer with that fixed refusal; with enforcement disabled, the same case is recorded as \texttt{observe\_only} and returned unchanged. The post-generation action is therefore broad query-conditioned replacement rather than selective replacement of only answers classified as confirmations. Protected structured details are checked separately by the output-leakage verifier. The same pipeline can repair an authorised model refusal into a structured \texttt{MEMBER} or \texttt{NOT FOUND} response; that authorised-response path is part of the captured implementation and is not evidence of unauthorised protection.
+
+\paragraph{Embedding-probe guard.}
+This guard does not trigger on every mention of embeddings or ranking. It requires at least one retrieval-evidence phrase, at least one protected-detail signal, and an unauthorised role. A trigger applies role-filtered retrieval, forces secure field projection even when the pipeline is in sensitivity-evaluation mode, suppresses conversation messages, semantic snippets, and the summary for that query, and prepends a side-channel policy notice. It does not clear persistent memory and has no delivery-stage replacement. Fixed lexical evidence terms limit generalisation to unseen paraphrases.
+
+\paragraph{Prompt-injection guard.}
+The switch controls a composite component. Before generation, secure mode withholds suspicious unstructured document text or sanitises matched lines in structured context; sensitivity-evaluation mode retains the evidence but adds an explicit untrusted-data boundary. After generation, the same switch checks the intermediate answer for the defined attack-canary and trigger families and redacts affected lines or returns a refusal. This is not a general semantic detector for every possible injected instruction, and an off/on ablation estimates the configured composite component rather than separately identifying its context and delivery sub-actions.
+
+\paragraph{Access-change state clearing.}
+The transition hook compares the previous and new role and normalised allowed-label list. Because the implementation compares ordered lists, a reordered configuration can also register as a transition. When a prior access context exists, the context changes, clearing is enabled, and the caller has not suppressed it, the hook clears recent turns, summary state, semantic-memory index and texts, cached retrieval and visible context, focus identifiers, the previous raw answer, and the four dedicated guard-state dictionaries. With the switch off, retained memory is still subject to current-role filtering on later reads. The core pipeline has no dedicated \texttt{last\_access\_change\_guard} object; the access-downgrade runner therefore records before/after state and derives whether clearing executed.
+
+\paragraph{Relation-access guard.}
+Configured directed edges have separate role sets for traversal and disclosure. In secure or forced-secure paths, the guard can deny eligible product-to-formulation or product-to-process expansion, omit restricted edge values from rendered context, sanitise relation-derived focus identifiers, and contribute relation-policy fields to output verification. In sensitivity-evaluation mode, traversal and labelled restricted-edge display are deliberately retained to test downstream restraint. Disabling the guard bypasses the dedicated edge checks but does not disable ordinary field-level projection. There is no uniform \texttt{last\_relation\_guard} object; projection effects appear in access decisions and visible context, while traversal denials are log events.
+
+These controls use patterns, exact-value inventories, policy objects, and mode-dependent branches. A switch being enabled is not the same as its trigger firing, and a guard action is not the same as a reduction in the attack-specific outcome. These distinctions are part of the empirical interpretation rather than hidden implementation details.
+
+\section{Telemetry and evidence production}
+
+The pipeline exposes structured diagnostic state after each query, including retrieved results, model-visible context, field decisions, and the raw answer. The runner records the delivered answer. Dedicated decision dictionaries exist for output verification, membership, embedding probes, and prompt injection; relation evidence is embedded in access decisions and visible context, while access-change clearing is derived from configuration and captured before/after state. Attack runners add condition identifiers, targets, roles, modes, conversation lengths, prompt sequences where supported, scoring fields, and runtime provenance. Availability varies by historical run, which is why the provenance ledger records unavailable fields explicitly instead of reconstructing them without support.
+
+The principal evidence is machine-readable JSON and CSV, not the rendered thesis tables. Source snapshots, file hashes, index-content hashes, scorer identifiers, and exact messages were added progressively to later matched and supplemental runs. This improves the newer experiments but does not retroactively complete historical provenance. Chapter~\ref{chap:experiments} defines which evidence is authoritative for each comparison.
+
+\section{Chapter summary}
+
+The final system carries field and relation policy from structured ingestion into retrieval, context, state, and delivery. Its two modes separate pre-generation projection from diagnostic downstream enforcement, and its telemetry distinguishes exposure, raw generation, guard action, and delivery. This architecture explains the attack surface, but architecture alone does not establish guard effectiveness. The next chapter defines the threat model and evidence rules used to turn observations and interventions into appropriately bounded claims.

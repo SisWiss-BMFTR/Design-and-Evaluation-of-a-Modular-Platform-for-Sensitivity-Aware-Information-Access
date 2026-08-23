@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-08-01T15:56:02.907530+00:00",
+  "audit_type": "additive record-level matched-prompt provenance",
+  "mutates_historical_results": false,
+  "attacks": [
+    {
+      "attack": "A03",
+      "run_root": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z",
+      "guard_off_records": 450,
+      "guard_on_records": 450,
+      "union_pair_ids": 450,
+      "complete_pairs": 450,
+      "equal_prompt_pairs": 450,
+      "prompt_styles": [
+        "inferred-neutral"
+      ],
+      "original_top_level_prompt_style_available": false,
+      "classification_method": "case-insensitive search for the explicit attack-family label in the preserved final attack prompt"
+    },
+    {
+      "attack": "A05",
+      "run_root": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z",
+      "guard_off_records": 450,
+      "guard_on_records": 450,
+      "union_pair_ids": 450,
+      "complete_pairs": 450,
+      "equal_prompt_pairs": 450,
+      "prompt_styles": [
+        "inferred-neutral"
+      ],
+      "original_top_level_prompt_style_available": false,
+      "classification_method": "case-insensitive search for the explicit attack-family label in the preserved final attack prompt"
+    }
+  ]
+}

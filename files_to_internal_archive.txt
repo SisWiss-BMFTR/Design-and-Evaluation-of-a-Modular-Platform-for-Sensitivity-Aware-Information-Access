@@ -1,0 +1,22 @@
+internal_archive/thesis_evidence_20260823/archives/*.tar.zst
+internal_archive/thesis_evidence_20260823/archives/*.verification.json
+internal_archive/thesis_evidence_20260823/pre_cleanup/**
+logs/**  # DESCRIPTIVE_HISTORICAL
+outputs/deliverables/**
+outputs/experiments/full_a02_verifier_challenge/*/raw_generation/**
+outputs/experiments/matched_a07s_prompt_injection_guard/*/arm_A_injection_guard_off/**
+outputs/experiments/matched_a07s_prompt_injection_guard/*/arm_B_injection_guard_on/**
+outputs/experiments/matched_single_guard_ablations/*/arm_A_*/**
+outputs/experiments/matched_single_guard_ablations/*/arm_B_*/**
+outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_20260728T003704Z/**  # SUPERSEDED
+outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_20260728T162318Z/**  # SUPERSEDED
+outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T160000Z/**  # SUPERSEDED
+outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T084534Z/**  # SUPERSEDED
+outputs/experiments/supplemental_a06_poisoned_row/*/full/**
+outputs/experiments/supplemental_a06_poisoned_row/*/pilot/**
+outputs/experiments/verifier_challenge_pilot/*/raw_generation/**
+outputs/experiments/verifier_challenge_pilot/VCP_A01_A02_20260803T024445Z/**  # FAILED
+outputs/final_thesis_evidence_20260802_corrected_no_rerun/**  # SUPERSEDED
+outputs/final_thesis_evidence_20260802_no_rerun_revision*/**  # SUPERSEDED
+outputs/nonrun_archives/**
+outputs/verifier_validation/a01_a02_replay_v1_20260803/replay_corpus.json

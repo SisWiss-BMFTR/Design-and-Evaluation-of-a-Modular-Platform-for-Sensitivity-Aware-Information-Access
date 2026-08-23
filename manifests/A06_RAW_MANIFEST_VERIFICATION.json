@@ -1,0 +1,18 @@
+{
+  "schema_version": "internal-a06-raw-manifest-verification-v1",
+  "status": "PASS",
+  "manifest": "outputs/final_thesis_supplemental_evidence_20260806/a06_raw_result_archive_manifest.json",
+  "run_root": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z",
+  "file_count": 52,
+  "record_count": 1284,
+  "total_bytes": 529797217,
+  "canonical_inventory_sha256": "59f4d8272e88eadaaeff02df645708138f3abf72c435ee859cf94e258ad77131",
+  "checks": {
+    "all_files_present": true,
+    "all_sizes_match": true,
+    "all_sha256_values_match": true,
+    "canonical_inventory_matches": true,
+    "error_count": 0
+  },
+  "durability": "The original raw files and the newly created supplemental_A06.tar.zst archive are currently on the same HPC-backed filesystem. Independent internal archival remains pending."
+}

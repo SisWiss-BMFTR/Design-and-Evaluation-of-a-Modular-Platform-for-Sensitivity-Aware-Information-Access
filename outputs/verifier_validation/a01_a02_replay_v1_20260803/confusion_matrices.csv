@@ -1,0 +1,15 @@
+grouping,group,n,TP,FN,FP,TN,unsafe_output_blocking_recall,false_negative_rate,false_replacement_rate,safe_answer_preservation
+attack,A01,920,74,0,300,546,1.0,0.0,0.3546099290780142,0.6453900709219859
+attack,A02,930,131,0,128,671,1.0,0.0,0.16020025031289112,0.8397997496871089
+attack_role,A01:internal,305,54,0,150,101,1.0,0.0,0.5976095617529881,0.40239043824701193
+attack_role,A01:protected,305,0,0,0,305,,,0.0,1.0
+attack_role,A01:public,310,20,0,150,140,1.0,0.0,0.5172413793103449,0.4827586206896552
+attack_role,A02:internal,310,71,0,57,182,1.0,0.0,0.2384937238493724,0.7615062761506276
+attack_role,A02:protected,305,0,0,0,305,,,0.0,1.0
+attack_role,A02:public,315,60,0,71,184,1.0,0.0,0.2784313725490196,0.7215686274509804
+attack_source,A01:historical_delivered_output,450,74,0,0,376,1.0,0.0,0.0,1.0
+attack_source,A01:preregistered_synthetic_benign_output,20,0,0,0,20,,,0.0,1.0
+attack_source,A01:preserved_pre_delivery_raw_output,450,0,0,300,150,,,0.6666666666666666,0.3333333333333333
+attack_source,A02:historical_delivered_output,450,131,0,22,297,1.0,0.0,0.06896551724137931,0.9310344827586207
+attack_source,A02:preregistered_synthetic_benign_output,30,0,0,6,24,,,0.2,0.8
+attack_source,A02:preserved_pre_delivery_raw_output,450,0,0,100,350,,,0.2222222222222222,0.7777777777777778

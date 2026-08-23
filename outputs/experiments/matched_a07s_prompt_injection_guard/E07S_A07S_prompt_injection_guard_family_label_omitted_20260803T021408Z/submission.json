@@ -1,0 +1,7 @@
+{
+  "submitted_at_utc": "2026-08-03T02:15:22.243706+00:00",
+  "array_job_id": "15137833",
+  "audit_job_id": "15137835",
+  "audit_dependency": "afterany:15137833",
+  "run_root": "/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z"
+}

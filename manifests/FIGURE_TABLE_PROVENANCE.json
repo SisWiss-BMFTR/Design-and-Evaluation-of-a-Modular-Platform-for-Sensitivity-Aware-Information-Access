@@ -1,0 +1,655 @@
+{
+  "schema_version": "internal-thesis-figure-table-provenance-v1",
+  "status": "PASS",
+  "scope": "Existing frozen scientific result assets; no regeneration performed.",
+  "figures": [
+    {
+      "output_path": "thesis/figures/results/a01_exposure_delivery.pdf",
+      "output_sha256": "9471f382401587428c1779420c264d8e1d249fde0bb1253567c3780d34e7e849",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a01_exposure_delivery.png",
+      "output_sha256": "19095ac7bb0bf7c3c850fdc082b030832c2139cb589023e1fe6354b4e7659b88",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a02_policy_aware_reconstruction.pdf",
+      "output_sha256": "03b1e9c3533c4f7a4169b042b4394d6f8717180f540bc760136ca58d97a636ef",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a02_policy_aware_reconstruction.png",
+      "output_sha256": "c554c5fc3bf84ab48e065b23cc88f355a914ddc14dbda30adc79a2eed3243fd5",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a03_state_delivery.pdf",
+      "output_sha256": "5159fc019db0b732dcf9743846f4ac60d8692e2832bb4252e1360b5d2bc739ef",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a03_state_delivery.png",
+      "output_sha256": "d3b2c910b49f4cdcb05c95278a39b6d7ba593809c1bef4681fd7f313e0262245",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a04_relation_structure.pdf",
+      "output_sha256": "17bdc5b5b1aa140f512af455a6f60f52edf3cb9734bd5469b2ac548507e6bfa1",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a04_relation_structure.png",
+      "output_sha256": "8aa7afc9230a009d41661e0d14d7b4ec2553e8fe5444810276e01312bb8474ab",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a05_membership_baseline.pdf",
+      "output_sha256": "0fe9f2ef53cad941d6615cd8de7a5a11a015aaaa9eae4722297d525b16ebb30c",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a05_membership_baseline.png",
+      "output_sha256": "68f1e277d5105098c7fd0c13944b24b40d3f3df57b9db801cfed8371417fae72",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a06_integrity_confidentiality.pdf",
+      "output_sha256": "01b51fa00ae3991f71b10af730d39fe45ea180e5b3b39d6eaca81f626028d127",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a06_integrity_confidentiality.png",
+      "output_sha256": "8da43284f0be935aa5c975aec358b211b272127e72a20041e80d6c503f382cfb",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a07_baseline_integrity_confidentiality_utility.pdf",
+      "output_sha256": "eb6d63615d5a9454967fea85c7b54da5420e6ecf7ec653d9da5ef1988ae786a9",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a07_baseline_integrity_confidentiality_utility.png",
+      "output_sha256": "b9034ea9bcb83a4fbf4882b3e1231f95e8b916fdfe28c3b6e0c5e88969342bb2",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a08_exposure_delivery.pdf",
+      "output_sha256": "88ba3b308289d78d95a2fcaf9bc34a71e6161ef77b956eb720e6996082590304",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a08_exposure_delivery.png",
+      "output_sha256": "599f81bee0fa8af1fbe1f7fae8b45abea55dc1050c97bf45c5c1bdfcc745a60f",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/cross_attack_descriptive_baseline.pdf",
+      "output_sha256": "e54fd5bf82e2d95423ee668a3d1592abd0bd6b912b249b4ab400db5cdf5926b9",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/cross_attack_descriptive_baseline.png",
+      "output_sha256": "a7dd9162b63103903382addfe25bfacc6ddc43bfabf587da56ad8028761e49cb",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/cross_attack_package_comparison.pdf",
+      "output_sha256": "fec61becc78b5f8559b4d8dd468fe817e645a5f12ed859e48aa8aa3bc962456f",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/cross_attack_package_comparison.png",
+      "output_sha256": "b50be3fffdff2f87017814a0447bddfa713c91add8487478260efddbaf980ee0",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/cross_attack_utility.pdf",
+      "output_sha256": "893fca41cb752f8e6d3a7d023a489e9893f733522aa0b7464dfadd068659eb58",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/cross_attack_utility.png",
+      "output_sha256": "6ad8398e8edbc36af68d26e9ce18b63ce4a3be7da37dc1df160a90407c00506b",
+      "generating_script": "scripts/plot_final_thesis_figures.py",
+      "generating_script_sha256": "65430b8c4fb28bd6d1ee63db058c3f1fd9b55b168b5ba77e5cc4b86bc3a10ac2",
+      "principal_input": "outputs/final_thesis_evidence_20260725/metrics.json",
+      "principal_input_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+      "generation_command": "python scripts/plot_final_thesis_figures.py",
+      "provenance_note": null
+    },
+    {
+      "output_path": "thesis/figures/results/a01_matched_guard_ablation.pdf",
+      "output_sha256": "1de7b503ac5200f0d0ffa5c56c583c13d7c9136c1996282e50af20d83b33f11e",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a01_matched_guard_ablation.png",
+      "output_sha256": "5ad0e873f2cc3429fc7be8efba3f86ef6d35e9dd5356c661f7c1584493752d44",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a02_matched_guard_ablation.pdf",
+      "output_sha256": "6fc76ad6cb0ab139c8090f3544a4b87c5355779fff04e1110d9ed0646073037f",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a02_matched_guard_ablation.png",
+      "output_sha256": "93e8b8f583ce93b08fa0b44d4cc8625ac6a863b93bb3870fa6c8d53e18015d08",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a03_matched_guard_ablation.pdf",
+      "output_sha256": "c71db105ce75f5d8021cdfd791eebe53038164c05247fbc2bd68973aca2eadcb",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a03_matched_guard_ablation.png",
+      "output_sha256": "86a093be723a41c6fafbc633991cbfee815d0df2861feb6b23f1468f45686d37",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a04_matched_guard_ablation.pdf",
+      "output_sha256": "a9bfab151d39002f70df1bcb72de8fa4ef02bcc4a083fa3b352980334d5c670f",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a04_matched_guard_ablation.png",
+      "output_sha256": "4fe3458e1544366b9334d818ad33148b92f34e20c808a2d1f0e011341f7d9e71",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a05_matched_guard_ablation.pdf",
+      "output_sha256": "359ae71a8a0aba4635ba10c2c424d8df8b6b27cdefeedb260856c53a0dd99126",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a05_matched_guard_ablation.png",
+      "output_sha256": "82d84d6d7685b1701e4bcec5d706c04b5f20a2ce370fe4b48103e52430acd857",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a06_matched_guard_ablation.pdf",
+      "output_sha256": "0a37cc20e5ef3da790ce4e41990293131715911dd606b3bcfe73b55939a4aa75",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a06_matched_guard_ablation.png",
+      "output_sha256": "5732259bedaca3693972f18cb5f65f3196089ebc8294c9450f03a8e61b18f05a",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a07_matched_guard_ablation.pdf",
+      "output_sha256": "442219e401528a1edf4e9fe7f719eeb12819177f62e238a9ba16fb038874ec9e",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a07_matched_guard_ablation.png",
+      "output_sha256": "f23cce674d2df778c58969f98d67272e2bc2c3237f1a8fe228df7b450758883f",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a08_matched_guard_ablation.pdf",
+      "output_sha256": "9e54caea4f307b460040dca132f5ad9e92ca467474431f86673c3f1349b37539",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/a08_matched_guard_ablation.png",
+      "output_sha256": "87d5572cf0214558a16ac3f43e9a335230bbf3752ac9253b9cb8a99cdca661cf",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/cross_attack_matched_guard_ablations.pdf",
+      "output_sha256": "fae3f89990d7a0c2a4c8a0c582ddab2e37193d3c38832f92535e1c8b53315fa5",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/cross_attack_matched_guard_ablations.png",
+      "output_sha256": "17893866bbba134b2ddbfe25058aa21e9cc1d0aa37f4759c2f41324b042b5cf9",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/historical_baseline_vs_matched_guards_off.pdf",
+      "output_sha256": "f19c818c77c1cdb3f878378979325b066028a0df7ba1a184d707588d2338a168",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    },
+    {
+      "output_path": "thesis/figures/results/historical_baseline_vs_matched_guards_off.png",
+      "output_sha256": "6085ef454567735ad4d53ec8a8396e4c611e5bce2bc46ab8790291b6ed63c4e3",
+      "generating_script": "scripts/plot_matched_ablation_figures.py",
+      "generating_script_sha256": "0f92b79dee1952c31de008b881ec16e7fb579a795fab64a4c3d7eb328ff5b2a6",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/plot_matched_ablation_figures.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/figures/results --validation-output outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_figure_validation.json",
+      "provenance_note": "The generator also reads the historical metrics ledger."
+    }
+  ],
+  "tables": [
+    {
+      "output_path": "thesis/generated/a01_matched_ablation_table.tex",
+      "output_sha256": "ff6c0f1b456fd42b71754326637715f59686c5fd64d7ab7bde1e9bc79724c0d0",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/a02_matched_ablation_table.tex",
+      "output_sha256": "897d35de0cf5fc7a17125b205f37b919a4e4f0d501042c9868c5a730ac129170",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/a03_matched_ablation_table.tex",
+      "output_sha256": "92b0867b0a353be3eccaab853146aab1fa6d763790e9a669ce42aa5a865b1ba4",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/a04_matched_ablation_table.tex",
+      "output_sha256": "52d49c411c9a75ed0c3108587468008b1d7a124021f21f598defd78dda9db0f1",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/a05_matched_ablation_table.tex",
+      "output_sha256": "53d0eb6d0b1f8e64fd237a9dfdfa73e2b04c9642fe56dc25ac8240f68866c01d",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/a06_matched_ablation_table.tex",
+      "output_sha256": "3dfa44bca84fc8da3a24f6ded7cc2b9cdf0f2fc94f70b837f75588736397d838",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/a07_matched_ablation_table.tex",
+      "output_sha256": "eacda2b965ab6699877faaa8f180aaf7643074eeac66af9e5763ffcf3d675ee7",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/a08_matched_ablation_table.tex",
+      "output_sha256": "96834583dcb6b69e3f7fa6e70aea80d8ffb875aed1b6f18f73a808ff06fdefa3",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/cross_attack_matched_ablation_table.tex",
+      "output_sha256": "5b60f4d2a8eb30d97de5f364b7ad695b94163e1eef04b8d4b08125d50ebeecbe",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/historical_vs_guards_off_table.tex",
+      "output_sha256": "3f9a59b153a64f19176ce5d48c0004fa3e9aaab47fce835743231f062dc99525",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/matched_telemetry_availability_table.tex",
+      "output_sha256": "308f905100e1de96104754fb1167374a902ad6612254f4d481132a045b891ed4",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json",
+      "principal_input_sha256": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/matched_ablation_interventions_table.tex",
+      "output_sha256": "480b7ad1bd19aa402f529c6bbbfbd467d63f7f4b43c997ed61b954d24707739d",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json",
+      "principal_input_sha256": "e79d12b64c18198e8d2059ea797fdabcd6543d693fa5ecff974e3571752a7ed9",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/matched_ablation_validation_table.tex",
+      "output_sha256": "6e1564a8f7a4e5207a67a20a74b26eae39f8dae012161d061a6a61fa9883fa51",
+      "generating_script": "scripts/generate_matched_ablation_tables.py",
+      "generating_script_sha256": "816e324f7a8407df9428dd77ac7f7a30a0ad20096d09c6dd67824ae8771ace2d",
+      "principal_input": "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json",
+      "principal_input_sha256": "e79d12b64c18198e8d2059ea797fdabcd6543d693fa5ecff974e3571752a7ed9",
+      "generation_command": "python scripts/generate_matched_ablation_tables.py --metric-summary outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json --provenance outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json --historical-metrics outputs/final_thesis_evidence_20260725/metrics.json --output-dir thesis/generated",
+      "provenance_note": "The generator also reads matched metrics/provenance and historical metrics as applicable."
+    },
+    {
+      "output_path": "thesis/generated/verifier_replay_summary_table.tex",
+      "output_sha256": "8040952a96e077cda80e2efc61612aeb1cdcd30f6ba85ecde8d912eed3807d49",
+      "generating_script": "scripts/build_supplemental_component_validation_evidence.py",
+      "generating_script_sha256": "704e54e770375562f70db0e0dabf1226c875f5a539e8215772a96d91c3c8e5f0",
+      "principal_input": "outputs/final_thesis_supplemental_evidence_20260803/supplemental_component_evidence.json",
+      "principal_input_sha256": "7fe6ba199b0fc6bd10c578c7eeeb9ceec29f7a79bfb8757496f422fa7027599f",
+      "generation_command": "python scripts/build_supplemental_component_validation_evidence.py",
+      "provenance_note": "The ledger is the compact principal evidence output; the generator reads the frozen raw roots recorded in its source."
+    },
+    {
+      "output_path": "thesis/generated/a02_full_verifier_challenge_table.tex",
+      "output_sha256": "db767e2c984f990ef135419a31df3e4c56ba34e3738e73fa3043d074e9ccb945",
+      "generating_script": "scripts/build_supplemental_component_validation_evidence.py",
+      "generating_script_sha256": "704e54e770375562f70db0e0dabf1226c875f5a539e8215772a96d91c3c8e5f0",
+      "principal_input": "outputs/final_thesis_supplemental_evidence_20260803/supplemental_component_evidence.json",
+      "principal_input_sha256": "7fe6ba199b0fc6bd10c578c7eeeb9ceec29f7a79bfb8757496f422fa7027599f",
+      "generation_command": "python scripts/build_supplemental_component_validation_evidence.py",
+      "provenance_note": "The ledger is the compact principal evidence output; the generator reads the frozen raw roots recorded in its source."
+    },
+    {
+      "output_path": "thesis/generated/a02_full_verifier_breakdown_table.tex",
+      "output_sha256": "d9208d13ece6ba34a105fad994856608a840cf2ebf528a607b6dc61856c98cab",
+      "generating_script": "scripts/build_supplemental_component_validation_evidence.py",
+      "generating_script_sha256": "704e54e770375562f70db0e0dabf1226c875f5a539e8215772a96d91c3c8e5f0",
+      "principal_input": "outputs/final_thesis_supplemental_evidence_20260803/supplemental_component_evidence.json",
+      "principal_input_sha256": "7fe6ba199b0fc6bd10c578c7eeeb9ceec29f7a79bfb8757496f422fa7027599f",
+      "generation_command": "python scripts/build_supplemental_component_validation_evidence.py",
+      "provenance_note": "The ledger is the compact principal evidence output; the generator reads the frozen raw roots recorded in its source."
+    },
+    {
+      "output_path": "thesis/generated/a02_full_verifier_false_replacement_table.tex",
+      "output_sha256": "bbd9babf5d5649a98c3dcb60d6999d23bddad50f8e1a085206e82036681f5fc7",
+      "generating_script": "scripts/build_supplemental_component_validation_evidence.py",
+      "generating_script_sha256": "704e54e770375562f70db0e0dabf1226c875f5a539e8215772a96d91c3c8e5f0",
+      "principal_input": "outputs/final_thesis_supplemental_evidence_20260803/supplemental_component_evidence.json",
+      "principal_input_sha256": "7fe6ba199b0fc6bd10c578c7eeeb9ceec29f7a79bfb8757496f422fa7027599f",
+      "generation_command": "python scripts/build_supplemental_component_validation_evidence.py",
+      "provenance_note": "The ledger is the compact principal evidence output; the generator reads the frozen raw roots recorded in its source."
+    },
+    {
+      "output_path": "thesis/generated/a07s_matched_ablation_table.tex",
+      "output_sha256": "72d5afcb93372c5e1f7715ff01a615e624cf628c160d8e1a8cf2d820c2f6da8c",
+      "generating_script": "scripts/build_supplemental_component_validation_evidence.py",
+      "generating_script_sha256": "704e54e770375562f70db0e0dabf1226c875f5a539e8215772a96d91c3c8e5f0",
+      "principal_input": "outputs/final_thesis_supplemental_evidence_20260803/supplemental_component_evidence.json",
+      "principal_input_sha256": "7fe6ba199b0fc6bd10c578c7eeeb9ceec29f7a79bfb8757496f422fa7027599f",
+      "generation_command": "python scripts/build_supplemental_component_validation_evidence.py",
+      "provenance_note": "The ledger is the compact principal evidence output; the generator reads the frozen raw roots recorded in its source."
+    },
+    {
+      "output_path": "thesis/generated/a01_package_prompt_provenance_table.tex",
+      "output_sha256": "6f8a9cf1278fcff6d512cf8924afa562fa90f9dd6f32b52f7fdc931fcb115d94",
+      "generating_script": null,
+      "generating_script_sha256": null,
+      "principal_input": "outputs/audits/package_prompt_provenance_a01_a02_20260803/summary.json",
+      "principal_input_sha256": "49fff200b99107dd038c7793f9e7775552201d460e199af638e02791e862f924",
+      "generation_command": null,
+      "provenance_note": "The exact historical table-generation command was not retained; it is intentionally not reconstructed."
+    },
+    {
+      "output_path": "thesis/generated/a06_supplemental_pilot_profiles_table.tex",
+      "output_sha256": "88fe8b45e0e8042f86c26a97cccde7cd146aee7e22abe6056cdf38d516e59941",
+      "generating_script": null,
+      "generating_script_sha256": null,
+      "principal_input": "outputs/final_thesis_supplemental_evidence_20260806/supplemental_component_evidence.json",
+      "principal_input_sha256": "5c0dcfebaa2ee6dfee6c97c51c31cddefaf0437a2c28d45be965a6472691f41c",
+      "generation_command": null,
+      "provenance_note": "Frozen final table bound to the audited supplemental ledger; exact historical table-generation command was not retained."
+    },
+    {
+      "output_path": "thesis/generated/a06_supplemental_frozen_challenge_table.tex",
+      "output_sha256": "07157d1d863477d500c0cfb13b8279c3ba54096ea5671a76a9309ca874cd66dc",
+      "generating_script": null,
+      "generating_script_sha256": null,
+      "principal_input": "outputs/final_thesis_supplemental_evidence_20260806/supplemental_component_evidence.json",
+      "principal_input_sha256": "5c0dcfebaa2ee6dfee6c97c51c31cddefaf0437a2c28d45be965a6472691f41c",
+      "generation_command": null,
+      "provenance_note": "Frozen final table bound to the audited supplemental ledger; exact historical table-generation command was not retained."
+    },
+    {
+      "output_path": "thesis/generated/cross_attack_claim_status_table.tex",
+      "output_sha256": "18a1a6a1ab8d2efab112498fdcf795f409800ddeea301bb33e74750636f11bba",
+      "generating_script": null,
+      "generating_script_sha256": null,
+      "principal_input": "outputs/final_thesis_supplemental_evidence_20260806/supplemental_component_evidence.json",
+      "principal_input_sha256": "5c0dcfebaa2ee6dfee6c97c51c31cddefaf0437a2c28d45be965a6472691f41c",
+      "generation_command": null,
+      "provenance_note": "Interpretive final claim-status table; exact historical table-generation command was not retained."
+    }
+  ],
+  "coverage": {
+    "figure_files_declared": 42,
+    "figure_files_observed": 42,
+    "table_files_declared": 22,
+    "table_files_observed": 22
+  }
+}

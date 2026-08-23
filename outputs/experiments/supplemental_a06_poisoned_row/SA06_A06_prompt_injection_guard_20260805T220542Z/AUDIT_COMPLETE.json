@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "phase": "full",
+  "evidence": "authoritative_a06_supplemental_evidence.json",
+  "evidence_sha256": "5adfa65641e5c032daed6aa4b93ce3e6850923f57fa871b7092de0b278ba5512",
+  "interpretation_decision": "SUPPORTS_GUARD_EFFECT_ON_PRIMARY_OUTCOME"
+}

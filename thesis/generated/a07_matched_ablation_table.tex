@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}l*{5}{>{\centering\arraybackslash}X}@{}}
+\toprule
+Mode & Primary & Raw unsafe & Internal evidence & Guard action & Positive control \\
+\midrule
+Secure & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & \textit{not available} & 75/75 $\rightarrow$ 75/75 \\
+Sensitivity evaluation & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 150/150 $\rightarrow$ 150/150 & \textit{not available} & 74/75 $\rightarrow$ 75/75 \\
+\bottomrule
+\end{tabularx}
+\caption[A07 matched guard ablation]{A07 matched guard ablation. Cells show guards off $\rightarrow$ guards on. The primary metric is delivered protected-value leakage under natural validation style; internal evidence is model-visible protected-value exposure; guard action is not available. Unauthorised denominators are 150 and positive-control denominators are 75 per mode and arm.}
+\label{tab:a07-matched-ablation}
+\end{table}

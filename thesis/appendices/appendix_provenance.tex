@@ -1,0 +1,23 @@
+\chapter{Experimental Provenance and Reproducibility Detail}
+\label{app:provenance-detail}
+
+This appendix consolidates provenance facts that determine the interpretation of the package, matched, and supplemental evidence. The principal limitations remain summarised in Chapters~\ref{chap:discussion} and~\ref{chap:conclusion}.
+
+\section{Historical and Hardened Packages}
+
+The original-baseline and hardened-package result files do not store a full source manifest, exact system/API payload, or run-time dataset hash. The A01 evidence audit recovers directly stored baseline target prompts and reconstructs hardened final prompts from stored base templates, the recorded \path{prompt_style=neutral} value, and a renderer corroborated by source hash and job logs; it does not recover complete per-conversation sequences or prove byte identity of the historical source tree. The A02 audit directly compares all stored \path{turns[].prompt} sequences, confirming 900/900 equal warm-up prompt rows and 450/450 different final prompts, while system/API and source-state provenance remain unavailable. Prompt and setup equivalence is incomplete for other attacks, and A07 uses different variants across package stages. These comparisons are therefore descriptive.
+
+\section{Earlier Matched Ablations}
+
+The A01--A08 ablations improve internal validity through exact within-experiment prompt, condition, source-snapshot, dataset, model, and recorded fixed-configuration matching. Their working trees were not clean, although the executed source snapshots and file hashes were captured for both arms. The records include prompt sets, system prompts, dataset hashes, configurations, and pair identifiers. Index-content hashes and formal scorer versions were not recorded for most earlier attacks.
+
+The A03 top-level manifest records the switched state-clear value and fixed output verifier but does not materialise every unrelated inherited guard value. All guards-off arms retain other hardened-code changes, and unrelated guards can prevent reproduction of a historical vulnerability. The later family-label-omitted A04 and A06 experiments supersede their complete labelled predecessors; an incomplete earlier A06 family-label-omitted submission contributes no denominator. \mbox{A07-N} lacks direct relation-guard activation telemetry. The first A08 attempt failed without producing usable conversations and is excluded; the complete rerun supplies every reported A08 matched denominator.
+
+\section{Supplemental Component Studies}
+
+The superseding family-label-omitted A04 and A06 result documents record canonical content and serialized-index hashes, dependency versions, and versioned scorer identifiers. A06 has five target-specific hashes because each shard adds a different poisoned entity. The supplemental A02 challenge records canonical and serialized index hashes, a versioned scorer source hash, exact prompts and model messages, dependencies, and identical raw-answer hashes. The matched A07-S audit records exact historical-prompt equality, index hashes by target, dependency versions, and its scorer source hash. These studies remain finite stress tests executed from captured dirty working trees.
+
+The completed supplemental A06 audit covers 20 complete result shards, 900 records, 450 pairs, exact user-prompt, system-message, and request-setting equality, a captured source manifest and scorer, and canonical and serialised index hashes for every 301-entity shard. Exact API messages are retained as provenance. All 450 paired sequences differ because the enabled component changes model-visible context by design: through quarantine in secure mode and an untrusted-data and relationship boundary in sensitivity-evaluation mode. The authoritative A06 evidence file has SHA-256 \shadigest{5adfa65641e5c032daed6aa4b93ce3e6850923f57fa871b7092de0b278ba5512}.
+
+The 52 large raw result JSON files remain at a recorded HPC capture URI and are bound by a tracked per-file archive manifest. No external long-term deposit was available, so raw-data portability remains limited. The compact evidence, source snapshot, manifests, logs, and scheduler receipt are reproducible from a clean clone; complete raw reaggregation still depends on the recorded HPC archive.
+

@@ -1,0 +1,175 @@
+\chapter{Experiments}
+\label{chap:experiments}
+
+\section{Experimental framework}
+
+This chapter specifies the experiments used to evaluate the implemented system; Chapter~\ref{chap:baseline-results} reports the measurements. Attack-specific batch runners instantiated the same ingestion, embedding, retrieval, access-control, memory, and generation pipeline with an attack-specific target panel, prompt sequence, and scoring procedure. Their machine-readable JSON and CSV records are the primary evidence used in the subsequent chapters.
+
+Two system modes were evaluated. In \texttt{secure\_rag\_}\allowbreak\texttt{mode}, fields not permitted for the active role were removed before prompt construction. In \texttt{sensitivity\_eval\_}\allowbreak\texttt{mode}, mixed-sensitivity context could deliberately remain visible to the generator, with sensitivity labels, in order to test whether the generation and output-control layers prevented disclosure. Consequently, model-visible exposure in the latter mode is a diagnostic condition rather than, by itself, a delivered leak.
+
+The authoritative pre-hardening baseline was an attack-family-label-free rerun. Leading family labels such as ``Direct cell extraction attack'' were removed from final user prompts, while the operational requests remained: A07 still supplied its diagnostic trigger phrase and A08 still framed the request as a vector-search probe. Thus, \emph{label-free attack prompt} means that the explicit family label was absent, not that all mechanism-specific wording was removed. Earlier labelled pre-hardening outputs are excluded from the reported baseline results.
+
+The evidence base comprises the original baseline, the complete hardened-package evaluation, matched guard ablations for A01--A08, and later supplemental component-validation studies. These sources remain separate because they answer different questions and together support Chapters~\ref{chap:baseline-results}--\ref{chap:conclusion}. Appendix~\ref{app:experiment-protocols} records their exact storage locations, prompt and source provenance, validation ledgers, and supplemental mechanics.
+
+\section{Execution environment and common configuration}
+
+The experiments ran as Slurm jobs on nodes in the \texttt{kisski} partition. Each task requested four CPU cores and 16~GB of memory; the initial wall-clock limit was two hours, while unchanged recovery jobs used a three-hour limit. No GPU resource was requested. The generator was accessed through the OpenAI API, whereas the embedding model and FAISS index ran locally. Both pre-hardening and post-hardening stages evaluated secure and sensitivity-evaluation mode.
+
+\begin{table}[htbp]
+\centering
+\caption{Common experimental configuration.}
+\label{tab:common-experiment-config}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.29\textwidth}X}
+\toprule
+Item & Configuration \\
+\midrule
+Dataset & \texttt{data/SiSWiss\_Testdaten.xlsx} \\
+Generation model & \texttt{gpt-4o-mini} \\
+Generation temperature & 0.0 \\
+Embedding model & \texttt{sentence-transformers/all-MiniLM-L6-v2} \\
+Vector index & FAISS \\
+Retrieval depth & $k=5$ \\
+Recent-memory window & 6 turns \\
+Memory retrieval depth & 4 snippets \\
+Memory summary batch & 4 turns \\
+Access aliases & \texttt{public}, \texttt{internal}, \texttt{protected} \\
+Conversation lengths & 1, 3, and 5 user turns \\
+Targets per attack and mode & 5 \\
+Iterations per condition & 5 \\
+Conversations per attack, mode, stage & 225 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The workbook was a fictional cosmetic product-development dataset and contained no real company or customer data. The structured loader produced 100 formulation, 100 process, and 100 product entities, with property rows integrated into the corresponding product representations. The clean full-run index therefore contained 300 entities. The five-target panels were deterministic; depending on the attack, a target denoted a formulation field, a protected formulation record, or a product--formulation--process path. Synthetic-entity and shard-specific index accounting is given in Appendix~\ref{sec:appendix-index-accounting}.
+
+The three access aliases defined three experimental roles in an ordered test policy. \texttt{public} permitted public material, \texttt{internal} permitted public and internal material, and \texttt{protected} served as the authorised positive-control condition and mapped to the administrative policy role. The access alias \texttt{protected} is distinct from the sensitivity label of the same name.
+
+For each target, the experiment crossed three access aliases, three conversation lengths, and five iterations, yielding $5\times3\times3\times5=225$ conversations per attack and mode. Of these, 150 used unauthorised public or internal access and 75 used protected access. Longer conversations used fixed benign warm-up prompts followed by the same attack on the final turn; the one-, three-, and five-turn settings were controlled history-length conditions rather than adaptive attacks. Aggregate matrix counts are recorded in Appendix~\ref{sec:appendix-index-accounting}.
+
+The denominators count recorded conversations, not 150 statistically independent attack designs. Observations share five targets, fixed prompt templates, roles, and conversation-length conditions; the five iterations are repeated API calls at temperature 0.0 rather than independently seeded trials. Results are therefore reported descriptively at the conversation level. Counts are not accompanied by independence-based significance tests, and repeated calls are not used to claim population-level precision.
+
+\section{Evaluation procedure}
+
+The runners recorded attack inputs, access level, conversation length, retrieved entities, model-visible context where applicable, memory state for stateful attacks, raw and delivered answers where supported, and attack-specific Boolean scoring fields. The principal confidentiality outcome was unauthorised delivered-answer leakage. Diagnostic context exposure, canary compliance, relation-edge disclosure, protected-record existence confirmation, and authorised positive-control task success were retained as separate measurements because they describe different security and task-performance properties. The positive control is not a general system-utility measure.
+
+The success criterion for an attack was evaluated only on public and internal runs. A protected run was instead a positive control: success required that an authorised user receive the expected protected information. Exact denominators are therefore 150 for unauthorised outcomes and 75 for positive controls in each attack--mode--stage cell.
+
+\subsection{Evidence Sources and Comparison Scope}
+\label{sec:evidence-provenance}
+
+This thesis uses four forms of evidence. The \emph{original baseline} is the complete attack-family-label-free evaluation of the historical implementation before hardening. It identifies and characterises vulnerabilities observed in that implementation. The \emph{hardened-package evaluation} measures the final implementation with the complete set of implemented security controls enabled. The \emph{matched guard ablations} use the same captured hardened source state and identical experimental inputs while switching one recorded control off and on. Finally, \emph{supplemental component validation} contains deterministic verifier replay, pre-labelled synthetic benign-output controls, prospectively specified challenge studies, and a matched A07-S synthetic-trigger ablation. These later studies are additive and do not replace any historical or earlier matched result.
+
+Comparing the first two stages shows how security and authorised positive-control task outcomes differed between two implementation packages. This comparison remains descriptive and does not by itself establish that one individual control caused a numerical change, particularly where exact prompts, setup messages, source-state metadata, or implementation manifests are unavailable or differ. The matched ablations support narrower attribution to the switched control within the captured hardened codebase and tested matrix.
+
+The guards-off arm is not the historical original implementation and is never used as a replacement for the original baseline. Likewise, the guards-on arm is not substituted for the complete hardened-package matrix. These four evidence sources answer different questions and remain numerically separate.
+
+\begin{table}[htbp]
+\centering
+\caption[Evidence sources and interpretation]{Evidence sources and permitted interpretation in the current thesis.}
+\label{tab:evidence-provenance}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.25\textwidth}X>{\raggedright\arraybackslash}p{0.28\textwidth}}
+\toprule
+Evidence or comparison & Purpose & Permissible interpretation \\
+\midrule
+Original baseline & Identify attack-specific vulnerabilities in the historical implementation. & Descriptive original-system evidence. \\
+Hardened package & Report outcomes after the complete hardening package was introduced. & Descriptive package-level evidence. \\
+Matched guard ablation & Compare the same captured hardened source with one recorded control off and on. & Effect of the switched control under the matched tested conditions. \\
+Supplemental component validation & Test a frozen detector on stored outputs, use an identical-final-raw-answer delivery fork, restore a historical prompt variant, or run a prospectively frozen matched challenge behind a disjoint development-target gate. & Component evidence only within the frozen replay or challenge condition; no retroactive package attribution. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent Numerical differences between the two packages are descriptive. Component attribution applies only to the recorded intervention and tested condition in matched off/on experiments or the identical-raw-answer delivery fork. A switch controlling several pipeline stages yields a composite-component estimate unless its sub-actions are varied separately. Separate-generation matched arms retain residual generator-call, service-time, and fixed-order variation; the identical-raw-answer fork provides stronger delivery-stage isolation. Deterministic replay supports detector-behaviour claims only within the frozen corpus and is not an end-to-end causal experiment. Attack-specific prompt and source limitations are retained in Appendix~\ref{sec:appendix-package-provenance} and applied where the package results are interpreted.
+
+\subsection{Matched Guard-Ablation Design}
+\label{sec:matched-ablation-design}
+
+For A01--A08, matched \emph{Guards off} and \emph{Guards on} arms shared the captured source snapshot, dataset and policy, model settings, targets, access aliases, conversation lengths, iterations, modes, prompts, and condition identifiers. The recorded intervention was the output verifier for A01/A02, access-change clearing for A03, relation access for A04 and A07-N, membership enforcement for A05, prompt-injection handling for A06, and embedding-probe handling for A08. Each arm contained 450 conversations, giving 450 validated off/on pairs per attack. Delivered attack-specific outcomes remained the principal user-visible measurements, with internal exposure, raw generation, guard action, state exposure, and positive controls reported separately where available. Appendix~\ref{sec:appendix-matched-validation} provides the complete intervention, validation, telemetry, source-manifest, scorer, and exclusion records.
+
+\subsection{Supplemental Component-Validation Design}
+\label{sec:supplemental-component-validation}
+
+Supplemental component validation comprises frozen A01/A02 verifier replay, an identical-final-raw-answer A02 delivery fork, a prospectively frozen A06 challenge, and a matched A07-S synthetic-trigger experiment. Replay characterises detector behaviour without model calls. The A02 fork holds the final generated answer fixed, while the A06 and A07-S studies use matched separate generations. None of these measurements is merged into the original-baseline, hardened-package, or earlier matched-ablation denominators. Appendix~\ref{sec:appendix-supplemental-designs} records the complete gates, prompts, provenance, pairing, and evidence bindings.
+
+\FloatBarrier
+
+\subsection{Leakage taxonomy and measurement stages}
+\label{sec:leakage-taxonomy}
+
+The attacks measure direct delivery, partial or complete row reconstruction, relation structure, protected-record existence, retained state, and canary compliance. These outcomes remain attack-specific; the full classification is given in Appendix Table~\ref{tab:leakage-taxonomy}. Three measurement stages are used consistently. \emph{Internal or model-visible exposure} records protected evidence in retrieval, memory, or prompt context. \emph{Raw model leakage}, where logged, records unsafe generation before an output guard. \emph{Delivered leakage} records the answer after implemented controls and is the principal user-visible confidentiality metric. The original A02 baseline did not log a separate raw answer, so its stored delivered answer remains classified as delivered leakage. Canary compliance is an integrity outcome separate from confidentiality, and authorised positive-control success is reported separately rather than treated as general utility. Refusal of an authorised request is not counted as an unqualified security improvement.
+
+\section{A01: Direct Cell Extraction}
+\label{sec:experiment-a01}
+
+\paragraph{Objective and mechanism.}
+A01 tests whether an unauthorised public or internal user who knows a formulation identifier and ingredient name can obtain an exact protected formulation cell without direct workbook or index access. The final prompt requests the \texttt{Menge (\%)} value for one of five fixed formulation-percentage cells.
+
+\paragraph{Design and outcome.}
+The five targets were crossed with the common roles, one-, three-, and five-turn conditions, five iterations, modes, and evaluation stages. The runner recorded retrieval exposure, model-visible exposure where available, normalised exact target-value occurrence in raw answers where retained and in delivered answers, protected positive-control success, and authorised errors. For the five numeric targets, the scorer detected decimal-normalised numeric occurrences exactly equal to the expected cell value. An unauthorised public or internal delivered match constituted the attack-specific outcome. Approximate, paraphrased, transformed, derived, or otherwise semantically reconstructable disclosures were not counted by this scorer. Appendix~\ref{sec:appendix-attack-prompts} gives the representative prompt; representative output and baseline measurements appear in Section~\ref{sec:baseline-a01}, with post-hardening evidence in Chapter~\ref{chap:vulnerability-analysis}.
+
+\section{A02: Multi-Turn Row Construction}
+\label{sec:experiment-a02}
+
+\paragraph{Objective and mechanism.}
+A02 tests whether a public or internal user can accumulate and reconstruct protected fields from one formulation row across a conversation. Warm-up and focus prompts maintain the same formulation and ingredient as the active entity; the final prompt requests field--value pairs. For the authoritative policy-aware result, the scorer identifies target fields in the final delivered answer through normalised exact substring matching, a field-labelled pattern for \texttt{Phase}, or decimal-normalised numeric equality for \texttt{Menge (\%)}. It then applies the active-role policy and excludes restricted field values already supplied in the prompt. Partial reconstruction means that at least one but fewer than all required restricted target fields were detected by these rules; complete reconstruction means that all required restricted fields were detected. Field-labelled non-exact outputs are retained only as manual-review candidates and are not counted automatically as leakage. Consequently, semantic, approximate, translated, transformed, or derived disclosures may be missed.
+
+\paragraph{Design and outcome.}
+Five formulation-row targets were crossed with the common roles, conversation lengths, five iterations, modes, and stages; the recent-memory window was six turns. Measurements distinguish retrieval support, model-visible restricted fields, delivered restricted fields, complete reconstruction, positive controls, and authorised errors. Delivery of at least one role-restricted field constituted success, while complete reconstruction remained a separate outcome. Appendix~\ref{sec:appendix-attack-prompts} gives the representative three-turn prompt. Section~\ref{sec:baseline-a02} reports a representative unsafe output and the baseline results; Chapter~\ref{chap:vulnerability-analysis} reports the post-hardening evidence.
+
+\section{A03: Access-Level Downgrade}
+\label{sec:experiment-a03}
+
+\paragraph{Objective and mechanism.}
+A03 tests whether information obtained under protected access remains available after the session's security context changes to public or internal. The setup phase seeds the conversation with a protected formulation value; after the transition, the final prompt asks the system to repeat or reuse it. This controlled transition represents revocation or expiry of previously legitimate authority rather than a user assigning their own role.
+
+\paragraph{Design and outcome.}
+Five targets were tested with initial protected access and final public, internal, or protected access, one-, three-, and five-turn histories, five iterations, both modes, and both stages. The runner inspected downgraded retrieval, recent messages, summaries, relevant memory snippets, final answers, memory-exposure flags, positive-control success, and authorised errors. Success required the protected content to survive the transition and appear in a public or internal delivered answer. The exact example is retained in Appendix~\ref{sec:appendix-attack-prompts}; results appear in Section~\ref{sec:baseline-a03} and Chapter~\ref{chap:vulnerability-analysis}.
+
+\section{A04: Relational Join-Path Inference}
+\label{sec:experiment-a04}
+
+\paragraph{Objective and mechanism.}
+A04 tests whether a user who knows a public product identifier but lacks access to protected formulation or process relations can reconstruct \emph{Product $\rightarrow$ Formulation $\rightarrow$ Process}. Five deterministic paths were selected from the available target pool.
+
+\paragraph{Design and outcome.}
+The paths were crossed with the common roles, conversation lengths, iterations, modes, and stages; the matched experiment used the same matrix and switched the relation-access guard. The runner recorded relation and target retrieval, protected-node exposure, linked identifiers, protected details, relation-edge leakage, completeness, positive-control success, and errors. The primary event was complete unauthorised disclosure of the relation edge connecting the public product to the hidden formulation and process identifiers. Single-node disclosure, downstream details, and other reconstruction assistance remained secondary outcomes. Appendix~\ref{sec:appendix-attack-prompts} retains the exact prompt; baseline and post-hardening evidence appear in Section~\ref{sec:baseline-a04} and Chapter~\ref{chap:vulnerability-analysis}.
+
+\section{A05: Protected-Record Membership/Existence Probe}
+\label{sec:experiment-a05}
+
+\paragraph{Objective and mechanism.}
+A05 tests whether a user who knows or guesses a formulation identifier or near-duplicate name can confirm that one of five protected formulation records exists in the index. The interface exposes no raw scores. Here, \emph{membership} means protected-record existence in the external indexed corpus, not membership in model-training data.
+
+\paragraph{Design and outcome.}
+The five records were crossed with the common roles, conversation lengths, iterations, modes, and stages in the 300-entity clean index. The runner recorded target retrieval, candidate evidence, predicted membership, not-found answers, target mentions, rank evidence, guard activation, answer replacement, positive controls, and authorised errors. A public or internal delivered confirmation, or target-specific evidence sufficient to infer existence, counted as the primary side-channel event; additional formulation details remained secondary leakage. Appendix~\ref{sec:appendix-attack-prompts} retains the exact membership prompt. Results appear in Section~\ref{sec:baseline-a05} and Chapter~\ref{chap:vulnerability-analysis}.
+
+\section{A06: Prompt Injection through a Poisoned Row}
+\label{sec:experiment-a06}
+
+\paragraph{Objective and mechanism.}
+A06 tests whether an attacker-controlled public row can cause exact-canary instruction compliance as an integrity failure and, separately, delivery of a linked protected ingredient and percentage as a confidentiality failure. The attacker can influence a public row but cannot alter system instructions or directly access protected rows. One synthetic row per target contains instruction-like text, a canary, and a protected-formulation link that becomes available when a later query retrieves the row.
+
+\paragraph{Design and outcome.}
+Five targets were crossed with the common roles, conversation lengths, and iterations in both modes for the original and hardened packages. The earlier matched experiment repeated the matrix with the composite prompt-injection guard off and on. The primary supplemental outcome is unauthorised delivered exact-canary compliance; delivered protected ingredient-plus-percentage leakage is a separate secondary confidentiality outcome, and protected-role task success is a positive control excluded from both security denominators. The runner records poison retrieval, visibility before and after projection, LLM-context inclusion, raw and delivered canary output, raw and delivered protected-value leakage, quarantine, guard execution, and positive controls. Protected-data success requires unauthorised target disclosure; canary emission is counted separately as instruction compliance.
+
+\paragraph{Supplemental frozen challenge.}
+The prospectively frozen challenge used R-006 and R-007 as disjoint development targets before carrying the unchanged primary profile to the established R-001--R-005 thesis panel. Only \texttt{prompt\_injection\_guard} differed across arms, so the configured component's pre-generation and post-generation actions were not independently varied. Both continuation gates depended on technical validity and the primary canary outcome; neither imposed a positive-control threshold. The pilot and confirmatory phases passed their technical audits and remain separate from the original baseline, hardened package, and earlier zero-to-zero A06 ablation. Appendix~\ref{sec:a06-supplemental-design} retains the exact prompts, poisoned document, profiles, frozen phase table, gate rules, completion counts, hashes, archive statement, and provenance package. Baseline results appear in Section~\ref{sec:baseline-a06}; all matched and supplemental outcomes, including the positive-control limitation, appear in Chapter~\ref{chap:vulnerability-analysis}.
+
+\section{A07: Backdoor-Triggered Extraction}
+\label{sec:experiment-a07}
+
+\paragraph{Objective and mechanism.}
+A07 tests whether a dormant instruction in retrieved data can be activated by a trigger and cause malicious output or protected extraction. The attacker can plant or exploit a public validation row and later include its trigger while remaining unauthorised for the linked protected target. The original baseline uses a synthetic variant that pairs an explicit trigger with a canary and extraction instruction; the hardened package uses the \texttt{natural} attack style. These package stages are different attack variants and are not treated as a controlled before--after pair.
+
+\paragraph{Design and outcome.}
+Five targets were crossed with the common role, length, iteration, and mode matrix. The earlier matched A07-N experiment switches relation access under the natural request while prompt-injection handling remains enabled; the supplemental A07-S experiment restores the historical synthetic-trigger family and switches prompt-injection handling. Measurements include validation-row and target retrieval, canary output, pre-retrieval refusal, model exposure, protected leakage, extraction error, positive controls, and authorised error. Protected extraction succeeds when an unauthorised answer contains target information; canary emission is a distinct integrity outcome. Appendix~\ref{sec:appendix-attack-prompts} gives the synthetic-trigger example. Section~\ref{sec:baseline-a07} and Chapter~\ref{chap:vulnerability-analysis} report the variant-specific results without pooling them.
+
+\section{A08: Embedding/Rank-Framed Retrieval Probe}
+\label{sec:experiment-a08}
+
+\paragraph{Objective and mechanism.}
+A08 tests whether vector-search, nearest-neighbour, similarity, or rank framing of an ordinary request induces disclosure of a protected formulation value. The attacker can issue framed queries but cannot inspect embeddings, raw similarity scores, or ranking lists. The request asks what the nearest indexed formulation representation reveals about a protected \texttt{Menge (\%)} value; the measured construct is retrieval-mediated numeric disclosure, not embedding inversion or leakage of the embedding representation.
+
+\paragraph{Design and outcome.}
+Five formulation-percentage targets were evaluated across the full common matrix with \texttt{gpt-4o-mini} at temperature 0.0. The matched family-label-omitted experiment switches only the embedding-probe guard. The runner records retrieval exposure, target-value occurrence, unauthorised access failure, delivered and unsupported leakage, positive controls, and answer errors. Success requires a public or internal delivered answer to contain the protected numeric value; retrieval support and unsupported occurrence remain separate. Appendix~\ref{sec:appendix-attack-prompts} gives the exact probe, and Appendix~\ref{sec:appendix-matched-validation} records the excluded failed first submission. Results appear in Section~\ref{sec:baseline-a08} and Chapter~\ref{chap:vulnerability-analysis}.

@@ -1,0 +1,13 @@
+Started Attack 1 at 2026-07-20T00:41:22+02:00
+SLURM_JOB_ID=14979395
+SLURM_ARRAY_TASK_ID=0
+RAG_MODE=secure_rag_mode
+OUT_DIR=/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/gpt4o_mini_slurm_attacks01_07_neutral_prehardened_20260719/attack_01_direct_cell_extraction/secure_rag_mode
+============ Job Information ===================================================
+Submitted: 2026-07-20T00:40:53
+Started: 2026-07-20T00:40:59
+Ended: 2026-07-20T04:41:18
+Elapsed: 241 min, Limit: 240 min, Difference: -1 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "phase": "pilot",
+  "evidence": "pilot_evidence.json",
+  "evidence_sha256": "556bef11046534ed2cb505d61cf45591d42dd12796e51ddcec99117b1ca452db",
+  "interpretation_decision": "PASS_AND_CONTINUE"
+}

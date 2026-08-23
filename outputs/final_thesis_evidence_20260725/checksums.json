@@ -1,0 +1,8 @@
+{
+  "metrics_sha256": "64e55c4db2d7d7d36e821f71dce2171feb7a82d7ae9e317b3ba34b48b037ae0e",
+  "provenance_sha256": "dad0479239c4a6d92ab2af6a32fe9180ffd09295e44c613df69496fa4d7cda3b",
+  "correction_manifest_sha256": "2fa497f8e07c0a1d4ac07e72e2969d674d2b872e4533a44adb38a97612bbc74a",
+  "correction_summary_sha256": "8b63ae5c5357d2547cb499d731eace149d35f59aa1b9377016a1d332abd78985",
+  "a02_rescore_summary_sha256": "20d062410ae5aa9f14d7d073feaca00c3c227c2d820e69a9af97fe5bcea14901",
+  "prompt_audit_sha256": "c0e6429c369a73768e0b3341b498ffb5ee0acaf70ab138cdf30d20d5cb2c962b"
+}

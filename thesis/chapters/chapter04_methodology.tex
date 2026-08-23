@@ -1,0 +1,180 @@
+\chapter{Threat Model and Evaluation Methodology}
+\label{chap:methodology}
+
+\section{Methodological objective}
+
+The methodology evaluates whether the implemented structured RAG system exposes protected information or follows attacker-controlled retrieved instructions under specified access and attack conditions. Its purpose is to identify observable failure paths and, where the evidence design permits, isolate the contribution of a recorded control. It does not attempt to prove security for arbitrary RAG systems, prompts, data, or attackers.
+
+The system is evaluated end to end while retaining stage-level telemetry. This dual perspective is necessary because the same delivered result can arise through different paths. A clean answer may follow clean retrieval, or it may follow model-visible exposure and a delivery-stage replacement. Conversely, an unsafe answer can originate in retrieved evidence, retained state, relation metadata, poisoned content, or unsupported generation. The methodology therefore treats retrieval, model-visible context, state, raw answer, guard action, and final delivery as separate evidence where available.
+
+The final outcome definitions, evidence sources, and numerical design in this chapter are consistent with Chapters~\ref{chap:experiments}--\ref{chap:conclusion}. The only reported generation model is \texttt{gpt-4o-mini}.
+
+\section{Assets, principals, and trust boundaries}
+\label{sec:threat-assets}
+
+Figure~\ref{fig:threat-model} summarises the attacker entry points, system boundary, and protected properties. The confidentiality assets are individual fields, multi-field rows, relation edges, protected indexed-record existence, and conversation state derived from those facts. The integrity asset is the distinction between trusted application instructions and untrusted corpus data. The authorised positive-control task is recorded separately because a defence that refuses all requests can suppress leakage while making the protected task unusable.
+
+\begin{landscape}
+\begin{figure}[H]
+  \centering
+  \resizebox{0.93\linewidth}{!}{\input{figures/architecture/threat_model}}
+  \caption[Threat model and security assets]{Threat model. The central left-to-right path is the system under test. Red boxes and arrows identify standard chat and poisoned-corpus attacker capabilities; the dashed orange arrow is the experiment-controlled A03 authority transition. The poisoned-row and triggered indirect prompt-injection experiments add the stronger ability to place a synthetic public entity in the corpus. Confidentiality, integrity, and the narrow authorised task remain separate evaluation targets.}
+  \label{fig:threat-model}
+\end{figure}
+\end{landscape}
+
+The active principal is represented by the current policy role. Public and internal aliases are unauthorised for the protected targets. The protected alias maps to the administrative role and is the authorised positive-control condition. A policy decision is evaluated against the current role, not the role that existed when a previous turn was produced.
+
+The generator service is inside the evaluated application path: model-visible context is therefore an internal exposure event, while the answer returned by the application is the delivered event. The thesis does not model compromise of the hosted model provider, interception of API traffic, or later provider-side use of prompts. It evaluates what the application sends to and receives from the configured generator.
+
+\section{Attacker capabilities and exclusions}
+
+\subsection{Standard chat attacker}
+
+The standard attacker can submit natural-language requests while operating under an assigned public or internal access alias, participate in a multi-turn conversation, refer to previous turns, provide identifiers or candidate names, and use the fixed attack prompts. The access alias is an experimental condition, not a user-controlled privilege-escalation mechanism. The access-downgrade experiment additionally changes the current access context after an authorised setup turn. The attacker is assumed to know or guess the target identifiers and values required by the experiment's deterministic scoring panel; this is a targeted security test rather than a discovery benchmark.
+
+The standard attacker does not have direct access to the workbook, filesystem, source code during execution, vector index, embedding vectors, full retrieval ranking, similarity scores, hidden metadata, raw model answer, or guard telemetry. These exclusions are particularly important for the embedding/rank-framed retrieval probe: its wording refers to nearest neighbours, but the interface does not provide vector-level observables.
+
+\subsection{Poisoned-corpus attacker}
+
+The poisoned-row and triggered indirect prompt-injection experiments use a stronger capability. A synthetic public entity containing attacker-controlled instruction-like text can be added to the indexed corpus. The attacker does not alter the model, policy implementation, or existing protected entities. This models externally contributed or insufficiently trusted source content that reaches the generator through retrieval, consistent with the indirect prompt-injection surface described by \citet{greshake2023indirect}. It is also related to retrieval-corpus poisoning \citep{zou2025poisonedrag}, although the thesis uses deterministic synthetic rows rather than optimised poisoning at scale.
+
+\section{Access and mode conditions}
+
+Each full attack execution crosses three access aliases and two RAG modes. Table~\ref{tab:methodology-access} defines their methodological meaning.
+
+\begin{table}[htbp]
+\centering
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{28mm}>{\raggedright\arraybackslash}p{37mm}X@{}}
+\toprule
+Condition & Policy meaning & Evaluation role \\
+\midrule
+\texttt{public} & Public fields only & Unauthorised condition for all protected targets. \\
+\texttt{internal} & Public and internal fields & Unauthorised condition for protected targets; may legitimately use internal fields. \\
+\texttt{protected} & Administrative role; all five labels & Authorised positive control, not an attack denominator. \\
+\path{secure_rag_mode} & Role projection before prompt construction & Tests pre-generation policy enforcement. \\
+\path{sensitivity_eval_mode} & Labelled mixed-sensitivity context may remain visible & Diagnostic test of downstream generation and delivery enforcement. \\
+\bottomrule
+\end{tabularx}
+\caption{Access and mode conditions used in the evaluation.}
+\label{tab:methodology-access}
+\end{table}
+
+An attack-specific security numerator is calculated only over public and internal conversations, giving 150 unauthorised records per attack--mode--stage cell. Protected conversations have a separate denominator of 75. A protected failure is not counted as a security success; it is a positive-control task failure. The positive control is narrow: it tests the expected protected answer for that attack, not general helpfulness or deployment utility.
+
+\section{Attack suite}
+\label{sec:methodology-attacks}
+
+The eight attack families target complementary policy transformations. Table~\ref{tab:methodology-attack-suite} defines the construct measured by each attack. Concrete prompts, targets, conversation lengths, and success criteria follow in Chapter~\ref{chap:experiments}.
+
+\begin{landscape}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{12mm}>{\raggedright\arraybackslash}p{42mm}>{\raggedright\arraybackslash}p{76mm}>{\raggedright\arraybackslash}p{75mm}@{}}
+\caption{Attack suite and primary security constructs.}\label{tab:methodology-attack-suite}\\
+\toprule
+ID & Attack & Mechanism and protected property & Principal attack-specific outcome \\
+\midrule
+\endfirsthead
+\toprule
+ID & Attack & Mechanism and protected property & Principal attack-specific outcome \\
+\midrule
+\endhead
+A01 & Direct Cell Extraction & Requests an exact protected formulation field using target identifiers. Tests whether mixed-sensitivity entity retrieval or generation exposes the field. & Unauthorised delivered exact target value; internal context exposure is diagnostic. \\
+\addlinespace
+A02 & Multi-Turn Row Construction & Uses fixed warm-up turns followed by a request for restricted row fields. Tests reconstruction across a controlled conversation. & Policy-aware newly delivered restricted fields; complete reconstructions reported separately. \\
+\addlinespace
+A03 & Access-Level Downgrade & Obtains a value under protected access, changes to a lower role, and asks the continuing conversation to reuse it. & Post-transition state exposure and unauthorised delivery of the previously authorised value. \\
+\addlinespace
+A04 & Relational Join-Path Inference & Starts from a product and attempts to expose or traverse product--formulation--process links. & Complete protected relation-edge disclosure; downstream detail remains a separate confidentiality outcome. \\
+\addlinespace
+A05 & Protected-Record Membership/Existence Probe & Asks whether a candidate protected formulation exists in the indexed corpus. It is not a model-training membership test. & Unauthorised delivered indexed-record existence confirmation; raw confirmation tracked when available. \\
+\addlinespace
+A06 & Prompt Injection through a Poisoned Row & Retrieves an attacker-controlled public row containing instruction-like content and a canary. & Canary compliance as integrity outcome; protected-value delivery as a separate confidentiality outcome. \\
+\addlinespace
+A07 & Triggered Indirect Prompt Injection & A synthetic trigger in retrieved public content attempts to cause canary output. A07-N is a natural validation request; A07-S is the historical synthetic trigger. & Canary compliance as integrity outcome, kept separate from protected-value leakage. \\
+\addlinespace
+A08 & Embedding/Rank-Framed Retrieval Probe & Uses nearest-neighbour or indexed-chunk wording to request a protected numeric value. No vectors or scores are exposed. & Retrieval-mediated delivered numeric disclosure and target exposure; not embedding inversion. \\
+\bottomrule
+\end{longtable}
+\end{landscape}
+
+The suite includes confidentiality, side-channel, state, and integrity properties. It is therefore invalid to average the eight primary numerators as if they were repeated measures of one construct. Cross-attack tables retain the attack-specific label and denominator.
+
+\section{Measurement stages and outcome taxonomy}
+\label{sec:methodology-stages}
+
+For a protected target signal $t$ and unauthorised condition $i$, the runners may record the following ordered stages:
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{retrieval or state exposure}: $t$ is present in a retrieved entity, model-visible context, recent message, summary, snippet, focus identifier, or attack-specific relation representation;
+  \item \textbf{raw unsafe output}: the model-generated answer before delivery controls contains the attack-specific signal;
+  \item \textbf{guard action}: a configured component detects, quarantines, redacts, or replaces content; and
+  \item \textbf{delivered outcome}: the application response returned to the user contains the attack-specific signal.
+\end{enumerate}
+
+These stages are ordered observations, not separately randomised mechanisms. One configured switch can act at several stages, and an upstream action can prevent a downstream component from being reached. In A06, for example, \texttt{prompt\_injection\_guard} combines pre-generation context treatment---secure-mode quarantine or a sensitivity-evaluation untrusted-data boundary---with post-generation canary/trigger-artifact filtering. Its off/on comparison therefore estimates the configured composite component, not the independent contribution of either sub-action. A raw-to-delivered difference can localise where an observed answer changed, but it does not by itself decompose the causal contribution of every operation in that path.
+
+Not every historical runner preserved every stage. Missing raw-answer or activation telemetry is reported as unavailable and is not inferred from final answer text. The delivered attack-specific outcome is the principal user-visible measure, but internal exposure remains security-relevant because it identifies a failed upstream boundary and a dependency on later controls.
+
+The operational taxonomy used in Chapter~\ref{chap:experiments} contains direct final-answer leakage, partial leakage and reconstruction, side-channel leakage, memory/state leakage, integrity/canary compliance, and authorised positive-control success. A conversation can belong to more than one diagnostic category, but each reported primary rate uses the explicitly defined attack-specific scorer.
+
+\section{Scoring principles}
+\label{sec:methodology-scoring}
+
+The primary scorers are deterministic and attack-specific. They inspect exact protected values, structured field labels, relation identifiers, existence language, state inventories, or canary strings. For an attack-mode cell with $N=150$ unauthorised conversations and Boolean delivered score $z_i$, the reported rate is
+\begin{equation}
+  \widehat{p}_{\mathrm{delivered}}=\frac{\sum_{i=1}^{N} z_i}{N}.
+\end{equation}
+The thesis reports the raw count and denominator rather than implying that the records are independent population samples. Each cell reuses five targets, fixed prompt templates, two unauthorised roles, three conversation lengths, and repeated API calls. No independence-based significance test is applied.
+
+A02 uses a policy-aware scorer because a legacy target-field flag could count values already supplied in the prompt or permitted to the role. The corrected scorer asks whether restricted information is newly delivered relative to the role and prompt sequence; complete row reconstruction is a stricter secondary outcome. Exact matching remains conservative in one direction and broad in another: it can miss paraphrases, approximations, translations, ranges, or derived disclosure, while a delivery verifier can match coincidental values unrelated to the intended protected field. Manual-review candidates are not automatically counted as leaks.
+
+Canary compliance is never treated as confidentiality leakage. For A06 and A07, a canary can establish that retrieved instructions affected the answer even when no protected value is disclosed. Conversely, the incidental A06 protected-value outcome is reported independently of canary compliance. This separation prevents an integrity result from being advertised as secret extraction.
+
+\section{Evidence hierarchy and causal interpretation}
+\label{sec:methodology-evidence}
+
+Figure~\ref{fig:evidence-hierarchy} defines the four evidence levels used throughout the report. The numbering is organisational, not a licence to combine the levels. The first two sources have broad package coverage but limited component attribution. The later sources provide narrower intervention control for the recorded condition but do not recreate the historical package.
+
+\begin{figure}[p]
+  \centering
+  \resizebox{0.98\textwidth}{!}{\input{figures/architecture/evidence_hierarchy}}
+  \caption[Evidence hierarchy and permitted claims]{Evidence hierarchy and claim boundaries. Each source answers a different question. Package observations remain descriptive; component attribution is restricted to a matched intervention or frozen supplemental test.}
+  \label{fig:evidence-hierarchy}
+\end{figure}
+
+The interpretation rules are:
+
+\begin{enumerate}[leftmargin=*]
+  \item The original baseline identifies vulnerabilities observed in the historical implementation.
+  \item The hardened-package matrix identifies outcomes observed with the final package. A baseline-to-package difference is descriptive unless the complete treatment, prompts, and source state are controlled.
+  \item A matched guard ablation supports a bounded within-experiment claim about the recorded switched component, as configured, only when both arms share conditions and a relevant outcome is reproduced with the control off. If that switch activates several sub-actions, attribution remains at component level unless those sub-actions are separately randomised. When the two arms use separate generator calls, matching controls recorded conditions but does not eliminate residual service-time, call-order, or generator variation.
+  \item A guard action with zero attack-specific outcome in both arms demonstrates execution or output modification, not leakage reduction.
+  \item Supplemental replay characterises a frozen detector and corpus. An identical-raw-answer fork can isolate final-delivery behaviour, while a matched prompt-specific rerun can isolate that prompt condition. Neither retroactively repairs historical provenance.
+  \item Guards-off hardened code is not substituted for the historical baseline, and guards-on matched results are not substituted for the complete hardened-package matrix.
+\end{enumerate}
+
+Prompt equivalence is part of this hierarchy. A01 target-level prompts are partially preserved or reconstructable but are not package-equivalent; complete historical user sequences and exact API payloads are unavailable. A02 user-prompt sequences are preserved: warm-ups match, but every final package prompt differs. A03 setup prompts differ, A05 formulations differ, A06 prompts match, A07 package stages use different variants, and exact package prompt text is unavailable for A04 and A08. These limitations do not invalidate the recorded package outcomes; they constrain the comparison to a descriptive one.
+
+\section{Validity safeguards}
+
+\subsection{Internal validity}
+
+Fixed target panels, roles, conversation lengths, temperature, and deterministic scorers improve within-run consistency. Matched experiments additionally require shared condition identifiers, prompt sequences, model and system prompts, dataset and policy configuration, and a captured source snapshot across arms. Completeness, duplication, execution errors, and pairing are audited before selection. Later experiments capture stronger provenance, including source and scorer hashes and index-content hashes, without claiming that the same fields existed historically.
+
+The main internal-validity limitation is interference from fixed controls. A single switched guard can be tested while other hardened mechanisms remain enabled. If the guards-off arm is not vulnerable, necessity cannot be inferred. Repeated remote API calls can also vary even at temperature zero; small unpaired positive-control differences are not automatically attributed to the switch.
+
+\subsection{Construct validity}
+
+Every attack is named according to what the interface and scorer actually measure. A05 concerns protected external-index existence, A07 concerns retrieved trigger instructions, and A08 concerns retrieval-mediated disclosure under probe framing. Raw exposure, delivery, relation structure, state, and canary compliance remain distinct. Exact scorers and pattern-based guards may miss semantic equivalents and should be interpreted as lower-dimensional operationalisations of broader security concepts.
+
+\subsection{External validity}
+
+The case study uses one fictional workbook, five targets per attack, one generation model, one embedding model, retrieval depth five, fixed prompt templates, and controlled history lengths. It does not cover adaptive red teams, concurrent users, cross-session caches, external tools, arbitrary policy errors, exposed similarity APIs, or changes in authority during a model call. Findings therefore apply to the tested system and conditions.
+
+\section{Ethics and data handling}
+
+The workbook is synthetic and contains no real customer, employee, or company secrets. Attack rows and canaries are also synthetic. This allows exact ground-truth scoring and publication of methodology without exposing a real protected record. The work nevertheless treats model-visible protected values and stored raw answers as security-sensitive evidence because the architectural lesson is intended for systems that may later operate on real organisational data.
+
+\section{Chapter summary}
+
+The methodology defines a chat attacker, a stronger poisoned-corpus attacker for A06/A07, explicit confidentiality and integrity assets, three access aliases, two context modes, eight attack constructs, and four measurement stages. Every conclusion is bound to one of four evidence levels. Chapter~\ref{chap:experiments} instantiates this methodology with the concrete target matrix, prompts, runners, provenance, and denominators used by the reported results.

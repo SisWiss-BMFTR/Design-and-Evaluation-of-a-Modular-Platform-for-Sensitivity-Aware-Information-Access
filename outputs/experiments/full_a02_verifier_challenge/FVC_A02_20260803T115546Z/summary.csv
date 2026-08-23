@@ -1,0 +1,10 @@
+role,conversation_length,n,off_policy_aware_leak,on_policy_aware_leak,verifier_detected,false_replacement,protected_full_row_off,protected_full_row_on
+internal,1,25,0,0,25,25,,
+internal,3,25,0,0,0,0,,
+internal,5,25,0,0,0,0,,
+protected,1,25,,,0,,25,25
+protected,3,25,,,0,,22,22
+protected,5,25,,,0,,25,25
+public,1,25,0,0,25,25,,
+public,3,25,7,0,7,0,,
+public,5,25,5,0,5,0,,

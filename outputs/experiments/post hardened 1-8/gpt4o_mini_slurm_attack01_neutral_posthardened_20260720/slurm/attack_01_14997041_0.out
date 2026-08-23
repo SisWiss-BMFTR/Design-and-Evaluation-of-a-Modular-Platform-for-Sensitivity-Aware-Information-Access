@@ -1,0 +1,14 @@
+Started Attack 1 at 2026-07-20T19:40:18+02:00
+SLURM_JOB_ID=14997045
+SLURM_ARRAY_TASK_ID=0
+RAG_MODE=secure_rag_mode
+PROMPT_STYLE=neutral
+OUT_DIR=outputs/experiments/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/attack_01_direct_cell_extraction/secure_rag_mode
+============ Job Information ===================================================
+Submitted: 2026-07-20T19:39:23
+Started: 2026-07-20T19:39:55
+Ended: 2026-07-20T21:40:19
+Elapsed: 121 min, Limit: 120 min, Difference: -1 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

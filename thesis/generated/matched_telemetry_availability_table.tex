@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+Attack & Internal evidence & Raw answer & Delivered answer & Guard action \\
+\midrule
+A01 & model-visible exposure & available & available & answer replacement \\
+A02 & model-visible restricted-field exposure & available & available & verifier replacement \\
+A03 & state exposure after role change & available & available & state clearing \\
+A04 & model-visible relation exposure & available & available & not available \\
+A05 & target retrieval exposure & available & available & answer replacement \\
+A06 & model-visible protected-value exposure & available & available & prompt-injection guard execution \\
+A07 & model-visible protected-value exposure & available & available & not available \\
+A08 & protected-target retrieval exposure & available & available & embedding-probe guard activation \\
+\bottomrule
+\end{tabularx}
+\caption[Matched-ablation telemetry availability]{Availability and meaning of measurement-stage evidence in the matched ablations. Internal evidence is attack-specific and is not itself delivered leakage.}
+\label{tab:matched-telemetry-availability}
+\end{table}

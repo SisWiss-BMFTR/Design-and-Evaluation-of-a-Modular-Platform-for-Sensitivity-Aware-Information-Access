@@ -1,0 +1,195 @@
+\documentclass[
+  12pt,
+  a4paper,
+  oneside,
+  openany
+]{report}
+
+% -----------------------------------------------------------------------------
+% Encoding, language, and typography
+% -----------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{seqsplit}
+\setlength{\emergencystretch}{3em}
+
+% -----------------------------------------------------------------------------
+% Page layout
+% -----------------------------------------------------------------------------
+\usepackage[
+  a4paper,
+  top=30mm,
+  bottom=30mm,
+  inner=35mm,
+  outer=25mm
+]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% -----------------------------------------------------------------------------
+% Tables, figures, and lists
+% -----------------------------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{graphicx}
+\graphicspath{{figures/}{thesis/figures/}}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,fit,positioning,shapes.geometric}
+
+% Permit slightly more flexible table-column spacing.
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+
+% -----------------------------------------------------------------------------
+% Source-code and identifier formatting
+% -----------------------------------------------------------------------------
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  columns=fullflexible,
+  frame=single,
+  showstringspaces=false
+}
+\newcommand{\shadigest}[1]{\texttt{\seqsplit{#1}}}
+
+% -----------------------------------------------------------------------------
+% References and PDF metadata
+% -----------------------------------------------------------------------------
+\usepackage{csquotes}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+  pdftitle={Design and Evaluation of a Modular Platform for Sensitivity-Aware Information Access},
+  pdfauthor={Arash Hedayatzadeh},
+  pdfsubject={Master's Thesis in Computer Engineering},
+  pdfkeywords={retrieval-augmented generation, RAG, access control, tabular data, security}
+}
+
+% Avoid isolated headings at the bottom of a page.
+\usepackage{needspace}
+\usepackage{etoolbox}
+\preto\section{\Needspace{5\baselineskip}}
+\preto\subsection{\Needspace{4\baselineskip}}
+
+% -----------------------------------------------------------------------------
+% Thesis metadata. Add the student ID when it is available from an authoritative
+% university record; it is intentionally left blank rather than inferred from
+% a cluster account name.
+% -----------------------------------------------------------------------------
+\newcommand{\thesistitle}{Design and Evaluation of a Modular Platform for Sensitivity-Aware Information Access}
+\newcommand{\thesisauthor}{Arash Hedayatzadeh}
+\newcommand{\studentid}{}
+\newcommand{\universityname}{Leibniz University Hannover}
+\newcommand{\institutename}{Institute of Data Science}
+\newcommand{\firstexaminername}{Dr. Sandipan Sikdar}
+\newcommand{\secondexaminername}{Dr. Daniel Kudenko}
+\newcommand{\advisorname}{Dren Fazlija}
+\newcommand{\submissiondate}{August 23, 2026}
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+% Front matter
+% -----------------------------------------------------------------------------
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \vspace*{18mm}
+
+    {\large Master's Thesis in the Computer Engineering Programme\par}
+
+    \vspace{12mm}
+
+    {\normalsize at the \institutename\par}
+    \vspace{2mm}
+    {\normalsize \universityname\par}
+
+    \vfill
+
+    {\LARGE\bfseries \thesistitle\par}
+
+    \vspace{15mm}
+
+    {\large Hannover, \submissiondate\par}
+
+    \vspace{8mm}
+
+    {\normalsize \thesisauthor\par}
+    \ifdefempty{\studentid}{}{\vspace{1mm}{\normalsize \studentid\par}}
+
+    \vfill
+
+    \begin{tabular}{@{}p{35mm}l@{}}
+      First examiner:  & \firstexaminername \\
+      Second examiner: & \secondexaminername \\
+      Advisor:         & \advisorname
+    \end{tabular}
+
+    \vspace*{15mm}
+  \end{center}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\pagenumbering{roman}
+\include{frontmatter/declaration}
+\include{frontmatter/ai_declaration}
+\include{frontmatter/abstract}
+\tableofcontents
+\clearpage
+\listoftables
+\clearpage
+\listoffigures
+\clearpage
+
+% -----------------------------------------------------------------------------
+% Main matter
+% -----------------------------------------------------------------------------
+\pagenumbering{arabic}
+
+\include{chapters/chapter01_introduction}
+\include{chapters/chapter02_background}
+\include{chapters/chapter03_system_architecture}
+\include{chapters/chapter04_methodology}
+
+\include{chapters/chapter05_experiments}
+\include{chapters/chapter06_results}
+\include{chapters/chapter07_vulnerability_analysis}
+\include{chapters/chapter08_discussion}
+\include{chapters/chapter09_conclusion}
+
+% -----------------------------------------------------------------------------
+% Appendices
+% -----------------------------------------------------------------------------
+\appendix
+\include{appendices/appendix_related_work_boundaries}
+\include{appendices/appendix_experiment_protocols}
+\include{appendices/appendix_detailed_baseline}
+\include{appendices/appendix_detailed_hardening}
+\include{appendices/appendix_provenance}
+\include{appendices/appendix_guard_reference}
+
+% -----------------------------------------------------------------------------
+% Bibliography
+% -----------------------------------------------------------------------------
+{\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+}
+
+\end{document}

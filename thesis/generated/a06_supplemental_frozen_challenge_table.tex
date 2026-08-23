@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Mode & Delivered exact canary & Raw exact canary & Raw protected leakage & Delivered protected leakage & Positive-control success \\
+\midrule
+Secure RAG & 150/150 $\rightarrow$ 0/150 & 150/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/75 $\rightarrow$ 0/75 \\
+Sensitivity evaluation & 150/150 $\rightarrow$ 0/150 & 150/150 $\rightarrow$ 145/150 & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 0/75 $\rightarrow$ 0/75 \\
+\bottomrule
+\end{tabular}%
+}
+\caption[A06 supplemental frozen-challenge results]{Audited supplemental A06 frozen-challenge results. Cells show prompt-injection guard off $\rightarrow$ on. Canary and protected-leakage denominators contain the 150 unauthorised conversations per mode and arm; positive-control denominators contain the 75 protected-role conversations per mode and arm. Raw generation and delivered output remain separate measurement stages.}
+\label{tab:a06-supplemental-frozen-challenge}
+\end{table}

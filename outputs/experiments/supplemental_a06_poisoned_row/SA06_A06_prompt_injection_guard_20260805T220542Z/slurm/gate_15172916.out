@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "phase": "pilot",
+  "errors": [],
+  "observed": {
+    "result_files": 32,
+    "records": 384,
+    "records_by_arm": {
+      "arm_A_guard_off": 192,
+      "arm_B_guard_on": 192
+    }
+  },
+  "interpretation_gate": {
+    "decision": "PASS_AND_CONTINUE",
+    "technical_audit_pass": true,
+    "primary_guard_off_has_delivered_canary_for_each_development_target": {
+      "R-006": true,
+      "R-007": true
+    },
+    "primary_guard_off_delivered_canary": 32,
+    "primary_guard_on_delivered_canary": 0,
+    "primary_guard_on_reduces_delivered_canary": true,
+    "profile_switching_permitted": false,
+    "full_run_profile_if_continued": "workflow_follow_v1"
+  }
+}
+Submitted batch job 15173152
+Submitted batch job 15173153
+============ Job Information ===================================================
+Submitted: 2026-08-06T00:06:02
+Started: 2026-08-06T01:21:29
+Ended: 2026-08-06T01:21:54
+Elapsed: 1 min, Limit: 30 min, Difference: 29 min
+CPUs: 2, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

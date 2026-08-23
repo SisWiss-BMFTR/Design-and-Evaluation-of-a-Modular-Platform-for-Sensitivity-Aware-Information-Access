@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-08-03T01:38:24.645840+00:00",
+  "status": "PASS",
+  "checks": {
+    "complete_record_matrices": true,
+    "no_duplicate_pair_ids": true,
+    "no_error_records": true,
+    "all_pairs_valid": true,
+    "single_declared_difference_matches_manifest": true
+  }
+}

@@ -1,0 +1,9 @@
+attack=05 mode=sensitivity_eval_mode target=r002_hydra_serum index=1 output=/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis/outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/recovery_shards/attack_05_rank_probing_membership_inference/sensitivity_eval_mode/r002_hydra_serum
+============ Job Information ===================================================
+Submitted: 2026-07-20T14:51:40
+Started: 2026-07-20T16:11:12
+Ended: 2026-07-20T16:12:14
+Elapsed: 2 min, Limit: 240 min, Difference: 238 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

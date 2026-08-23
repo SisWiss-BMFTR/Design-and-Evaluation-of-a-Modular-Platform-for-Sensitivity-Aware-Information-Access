@@ -1,0 +1,3 @@
+group,stratum,n,TP,FN,FP,TN
+Role,Public,75,12,0,25,38
+Role,Internal,75,0,0,25,50

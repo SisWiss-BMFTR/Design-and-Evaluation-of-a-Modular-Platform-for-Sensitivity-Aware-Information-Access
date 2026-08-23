@@ -1,0 +1,3 @@
+# Final thesis evidence with package-prompt provenance v3
+
+This directory contains the authoritative A01--A08 matched-ablation evidence and the descriptive package-comparison ledger. The package ledger incorporates the additive A01/A02 prompt-provenance audit at `outputs/audits/package_prompt_provenance_a01_a02_20260803/summary.json`. No historical result or reported metric is modified. A01 target-level prompts are partially preserved/reconstructable but are not package-equivalent; A02 user-prompt sequences are preserved, with matching warm-ups and different final prompts in all 450 conditions. Both package comparisons remain descriptive, and neither refinement changes the zero-to-zero matched verifier ablations.

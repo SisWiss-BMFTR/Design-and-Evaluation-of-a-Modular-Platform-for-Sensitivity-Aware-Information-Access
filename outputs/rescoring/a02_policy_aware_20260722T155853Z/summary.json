@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-07-22T15:58:54.230097+00:00",
+  "summaries": [
+    {
+      "stage": "pre_hardening",
+      "mode": "secure_rag_mode",
+      "records": 225,
+      "unauthorized_records": 150,
+      "legacy_target_field_flags": 60,
+      "delivered_policy_aware_leaks": 8,
+      "raw_policy_aware_leaks": 8,
+      "delivered_policy_aware_partial_reconstructions": 8,
+      "delivered_policy_aware_full_reconstructions": 0,
+      "semantic_review_records": 70,
+      "raw_answer_available_records": 0
+    },
+    {
+      "stage": "pre_hardening",
+      "mode": "sensitivity_eval_mode",
+      "records": 225,
+      "unauthorized_records": 150,
+      "legacy_target_field_flags": 122,
+      "delivered_policy_aware_leaks": 123,
+      "raw_policy_aware_leaks": 123,
+      "delivered_policy_aware_partial_reconstructions": 86,
+      "delivered_policy_aware_full_reconstructions": 37,
+      "semantic_review_records": 69,
+      "raw_answer_available_records": 0
+    },
+    {
+      "stage": "post_hardening",
+      "mode": "secure_rag_mode",
+      "records": 225,
+      "unauthorized_records": 150,
+      "legacy_target_field_flags": 0,
+      "delivered_policy_aware_leaks": 0,
+      "raw_policy_aware_leaks": 0,
+      "delivered_policy_aware_partial_reconstructions": 0,
+      "delivered_policy_aware_full_reconstructions": 0,
+      "semantic_review_records": 0,
+      "raw_answer_available_records": 150
+    },
+    {
+      "stage": "post_hardening",
+      "mode": "sensitivity_eval_mode",
+      "records": 225,
+      "unauthorized_records": 150,
+      "legacy_target_field_flags": 0,
+      "delivered_policy_aware_leaks": 0,
+      "raw_policy_aware_leaks": 0,
+      "delivered_policy_aware_partial_reconstructions": 0,
+      "delivered_policy_aware_full_reconstructions": 0,
+      "semantic_review_records": 3,
+      "raw_answer_available_records": 150
+    }
+  ]
+}

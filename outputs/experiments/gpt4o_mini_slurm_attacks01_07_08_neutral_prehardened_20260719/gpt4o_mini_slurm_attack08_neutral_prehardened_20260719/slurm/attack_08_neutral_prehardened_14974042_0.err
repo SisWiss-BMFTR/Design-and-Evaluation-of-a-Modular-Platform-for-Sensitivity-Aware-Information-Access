@@ -1,0 +1,20 @@
+/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/env/rag/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis-prehardened-a08-neutral/code/evaluation2/run_embedding_side_leakage.py", line 833, in <module>
+    main()
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis-prehardened-a08-neutral/code/evaluation2/run_embedding_side_leakage.py", line 784, in main
+    shared = build_shared_components()
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis-prehardened-a08-neutral/code/evaluation2/run_embedding_side_leakage.py", line 260, in build_shared_components
+    documents = load_xlsx_multilevel(DATASET)
+  File "/mnt/vast-kisski/projects/kisski_l3s_sis_wiss/rag-master-thesis-prehardened-a08-neutral/code/ingestion/xlsx_multilevel_loader.py", line 87, in load_xlsx_multilevel
+    excel = pd.read_excel(data_path, sheet_name=None)
+  File "/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/env/rag/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 495, in read_excel
+    io = ExcelFile(
+  File "/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/env/rag/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 1550, in __init__
+    ext = inspect_excel_format(
+  File "/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/env/rag/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 1402, in inspect_excel_format
+    with get_handle(
+  File "/user/arash.hedayatzadeh/u26184/.project/dir.project/rag-master-thesis/env/rag/lib/python3.10/site-packages/pandas/io/common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'data/SiSWiss_Testdaten.xlsx'

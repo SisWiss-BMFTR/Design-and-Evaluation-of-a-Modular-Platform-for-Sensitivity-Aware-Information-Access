@@ -1,0 +1,2033 @@
+{
+  "credential_reference_summary": [
+    {
+      "category": "ACCESS_TOKEN",
+      "file_count": 2,
+      "match_count": 3
+    },
+    {
+      "category": "API_KEY",
+      "file_count": 44,
+      "match_count": 83
+    },
+    {
+      "category": "COOKIE",
+      "file_count": 2,
+      "match_count": 2
+    },
+    {
+      "category": "CREDENTIAL",
+      "file_count": 10,
+      "match_count": 69
+    },
+    {
+      "category": "OPENAI_API_KEY",
+      "file_count": 95,
+      "match_count": 136
+    },
+    {
+      "category": "PASSWORD",
+      "file_count": 2,
+      "match_count": 3
+    },
+    {
+      "category": "PRIVATE_KEY",
+      "file_count": 2,
+      "match_count": 2
+    },
+    {
+      "category": "SECRET",
+      "file_count": 271,
+      "match_count": 1000
+    },
+    {
+      "category": "TOKEN",
+      "file_count": 34,
+      "match_count": 520
+    }
+  ],
+  "disclosure_rule": "No secret values, matching lines, or secret digests are recorded.",
+  "domain_secret_or_canary_literal_references": [
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/gpt4o_mini_slurm/slurm/attack_06_14738795_0.err",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/gpt4o_mini_slurm/slurm/attack_07_14634372_0.err",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T163000Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T163000Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T163000Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T163000Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/verifier_challenge_pilot/VCP_A01_A02_20260803T024529Z/source_snapshot/code/evaluation/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/verifier_challenge_pilot/VCP_A01_A02_20260803T024529Z/source_snapshot/code/evaluation/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/verifier_challenge_pilot/VCP_A01_A02_20260803T024529Z/source_snapshot/code/evaluation2/run_backdoor_triggered_extraction.py",
+      "variable": "SECRET"
+    },
+    {
+      "category": "domain_secret_or_canary_literal",
+      "match_count": 1,
+      "path": "outputs/experiments/verifier_challenge_pilot/VCP_A01_A02_20260803T024529Z/source_snapshot/code/evaluation2/run_prompt_injection_poisoned_row.py",
+      "variable": "SECRET"
+    }
+  ],
+  "files_scanned": 3133,
+  "high_confidence_secret_findings": [],
+  "literal_credential_assignment_candidates": [],
+  "nested_git_or_history_artifacts": [],
+  "private_path_file_count": 273,
+  "private_path_files": [
+    {
+      "categories": [
+        "hpc_mnt_vast_path"
+      ],
+      "path": "docs/PROVENANCE_LIMITATIONS.md"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "manifests/PATH_MAPPINGS.json"
+    },
+    {
+      "categories": [
+        "private_user_path",
+        "hpc_file_uri"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/dependency_versions.txt"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/slurm/full_15144593_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/source_snapshot/scripts/__pycache__/a02_verifier_challenge_prompts.cpython-310.pyc"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/source_snapshot/scripts/slurm/run_full_a02_verifier_challenge.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/full_a02_verifier_challenge/FVC_A02_20260803T115546Z/source_snapshot/scripts/slurm/submit_full_a02_verifier_challenge.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/RUN_MANIFEST.txt"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/slurm/attack_08_neutral_prehardened_14974042_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/slurm/attack_08_neutral_prehardened_14974042_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/slurm/attack_08_neutral_prehardened_14974178_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/slurm/attack_08_neutral_prehardened_14974178_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/slurm/attack_08_neutral_prehardened_14974178_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/slurm/attack_08_neutral_prehardened_14974178_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/authoritative_a07s_evidence.json"
+    },
+    {
+      "categories": [
+        "private_user_path",
+        "hpc_file_uri"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/runtime_environment.json"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/a07s_15137833_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/slurm/audit_15137835.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/source_snapshot/code/evaluation2/__pycache__/run_backdoor_triggered_extraction.cpython-310.pyc"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/source_snapshot/scripts/slurm/run_matched_a07s_prompt_injection.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/source_snapshot/scripts/slurm/submit_matched_a07s_prompt_injection.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260803T021408Z/submission.json"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_5.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_5.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_6.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_6.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_7.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_7.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_8.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_8.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_9.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/slurm/a01_15076148_9.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/source_snapshot/scripts/slurm/run_matched_single_guard_a01.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E01_A01_output_leakage_verifier_20260727T143137Z/source_snapshot/scripts/slurm/submit_matched_single_guard_a01.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_5.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_5.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_6.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_6.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_7.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_7.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_8.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_8.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_9.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/slurm/a02_15078233_9.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/source_snapshot/scripts/slurm/run_matched_single_guard_a02.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E02_A02_output_leakage_verifier_20260727T185707Z/source_snapshot/scripts/slurm/submit_matched_single_guard_a02.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_5.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_5.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_6.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_6.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_7.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_7.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_8.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_8.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_9.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/slurm/a03_15079459_9.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/source_snapshot/scripts/slurm/run_matched_single_guard_a03.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E03_A03_access_change_memory_clear_20260727T231454Z/source_snapshot/scripts/slurm/submit_matched_single_guard_a03.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_5.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_5.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_6.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_6.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_7.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_7.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_8.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_8.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_9.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/slurm/a04_15118319_9.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/source_snapshot/scripts/slurm/run_matched_single_guard_a04.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/source_snapshot/scripts/slurm/submit_matched_single_guard_a04.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E04_A04_relation_access_guard_neutral_20260801T163000Z/tracked_worktree.patch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_5.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_5.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_6.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_6.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_7.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_7.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_8.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_8.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_9.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/slurm/a05_15084722_9.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/source_snapshot/scripts/slurm/run_matched_single_guard_a05.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E05_A05_membership_guard_20260728T121108Z/source_snapshot/scripts/slurm/submit_matched_single_guard_a05.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T163000Z/source_snapshot/scripts/slurm/run_matched_single_guard_a06.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T163000Z/source_snapshot/scripts/slurm/submit_matched_single_guard_a06.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E06_A06_prompt_injection_guard_neutral_20260801T163000Z/tracked_worktree.patch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_5.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_5.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_6.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_6.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_7.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_7.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_8.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_8.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_9.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/slurm/a07_15093151_9.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/source_snapshot/scripts/slurm/run_matched_single_guard_a07.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E07_A07_relation_access_guard_20260728T231214Z/source_snapshot/scripts/slurm/submit_matched_single_guard_a07.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_5.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_5.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_6.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_6.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_7.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_7.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_8.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_8.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_9.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/slurm/a08_15095739_9.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/source_snapshot/scripts/slurm/run_matched_single_guard_a08.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/matched_single_guard_ablations/E08_A08_embedding_probe_guard_20260729T092151Z/source_snapshot/scripts/slurm/submit_matched_single_guard_a08.sh"
+    },
+    {
+      "categories": [
+        "private_user_path",
+        "hpc_file_uri"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/dependency_versions.txt"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/full_15173152_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_0.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_0.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_1.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_1.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_2.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_2.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_3.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_3.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_4.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_4.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_5.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_5.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_6.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_6.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_7.err"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/slurm/pilot_15172915_7.out"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/code/evaluation2/__pycache__/a06_supplemental_profiles.cpython-310.pyc"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/code/evaluation2/__pycache__/run_prompt_injection_poisoned_row.cpython-310.pyc"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/scripts/slurm/run_a06_supplemental_full.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/scripts/slurm/run_a06_supplemental_pilot.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/supplemental_a06_poisoned_row/SA06_A06_prompt_injection_guard_20260805T220542Z/source_snapshot/scripts/slurm/submit_a06_supplemental_challenge.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "outputs/experiments/verifier_challenge_pilot/VCP_A01_A02_20260803T024529Z/source_snapshot/scripts/slurm/run_verifier_challenge_pilot.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path",
+        "hpc_file_uri"
+      ],
+      "path": "outputs/verifier_validation/a01_a02_replay_v1_20260803/dependency_versions.txt"
+    },
+    {
+      "categories": [
+        "hpc_mnt_vast_path",
+        "vscode_remote_state"
+      ],
+      "path": "scripts/audit_internal_candidate_secrets.py"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/local/run_attack_01_vscode.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_a06_supplemental_full.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_a06_supplemental_pilot.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_01_cpu.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_02_cpu.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_03_cpu.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_03_guards_on_sensitivity_shards.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_04_cpu.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_05_cpu.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_06_cpu.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_07_cpu.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_attack_08_cpu.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_full_a02_verifier_challenge.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_full_ablation_attack.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_labeled_post_hardened_a01_a07.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_a01_rerun.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_a05_a07_reruns.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_a07s_prompt_injection.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_single_guard_a01.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_single_guard_a02.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_single_guard_a03.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_single_guard_a04.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_single_guard_a05.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_single_guard_a06.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_single_guard_a07.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_matched_single_guard_a08.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_post_hardened_attacks_03_08.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/run_verifier_challenge_pilot.sbatch"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_a06_supplemental_challenge.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_full_a02_verifier_challenge.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_full_ablation_suite.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_a07s_prompt_injection.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_single_guard_a01.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_single_guard_a02.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_single_guard_a03.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_single_guard_a04.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_single_guard_a05.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_single_guard_a06.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_single_guard_a07.sh"
+    },
+    {
+      "categories": [
+        "private_user_path"
+      ],
+      "path": "scripts/slurm/submit_matched_single_guard_a08.sh"
+    }
+  ],
+  "report_generation_note": "The generated scan reports contain no matched values. Their final serialized bytes are validated again by the separate final pre-staging scan.",
+  "reviewed_disposition": "All broad SECRET-literal candidates are scientific attack/canary fixtures in evaluation source, captured snapshots, or experiment receipts; no authentication credential value was detected or recorded.",
+  "scan_date": "2026-08-23",
+  "schema_version": "clean-internal-archival-workspace-security-scan-v1",
+  "scope": "Complete archival workspace before Git initialization",
+  "signed_url_candidates": [],
+  "status": "PASS"
+}

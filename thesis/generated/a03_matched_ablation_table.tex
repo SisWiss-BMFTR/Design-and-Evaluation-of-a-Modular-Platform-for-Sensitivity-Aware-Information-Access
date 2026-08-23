@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}l*{5}{>{\centering\arraybackslash}X}@{}}
+\toprule
+Mode & Primary & Raw unsafe & Internal evidence & Guard action & Positive control \\
+\midrule
+Secure & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 150/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 150/150 & 75/75 $\rightarrow$ 75/75 \\
+Sensitivity evaluation & 0/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 0/150 & 140/150 $\rightarrow$ 0/150 & 0/150 $\rightarrow$ 150/150 & 75/75 $\rightarrow$ 75/75 \\
+\bottomrule
+\end{tabularx}
+\caption[A03 matched guard ablation]{A03 matched guard ablation. Cells show guards off $\rightarrow$ guards on. The primary metric is delivered post-downgrade leakage; internal evidence is state exposure after role change; guard action is state clearing. Unauthorised denominators are 150 and positive-control denominators are 75 per mode and arm.}
+\label{tab:a03-matched-ablation}
+\end{table}

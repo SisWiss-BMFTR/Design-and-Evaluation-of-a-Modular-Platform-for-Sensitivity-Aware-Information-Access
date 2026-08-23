@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "phase": "full",
+  "errors": [],
+  "observed": {
+    "result_files": 20,
+    "records": 900,
+    "records_by_arm": {
+      "arm_A_guard_off": 450,
+      "arm_B_guard_on": 450
+    }
+  },
+  "interpretation_gate": {
+    "decision": "SUPPORTS_GUARD_EFFECT_ON_PRIMARY_OUTCOME",
+    "technical_audit_pass": true,
+    "primary_guard_off_delivered_canary": 300,
+    "primary_guard_on_delivered_canary": 0,
+    "nonzero_guard_off_primary_outcome": true,
+    "guard_on_reduces_primary_outcome": true,
+    "historical_results_replaced": false
+  }
+}

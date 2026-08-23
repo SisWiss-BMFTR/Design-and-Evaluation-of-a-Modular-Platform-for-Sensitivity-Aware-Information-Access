@@ -1,0 +1,186 @@
+{
+  "generated_at": "2026-07-22T15:57:43.055549+00:00",
+  "pre_root": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719",
+  "post_root": "outputs/experiments/post hardened 1-8",
+  "prompt_rows": 6300,
+  "exact_matches": 4500,
+  "differences": 1800,
+  "coverage": [
+    {
+      "attack_id": "A01",
+      "mode": "secure_rag_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 0,
+      "status": "exact prompts not stored",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_01_direct_cell_extraction/secure_rag_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/attack_01_direct_cell_extraction/secure_rag_mode/results.json"
+    },
+    {
+      "attack_id": "A01",
+      "mode": "sensitivity_eval_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 0,
+      "status": "exact prompts not stored",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_01_direct_cell_extraction/sensitivity_eval_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/gpt4o_mini_slurm_attack01_neutral_posthardened_20260720/attack_01_direct_cell_extraction/sensitivity_eval_mode/results.json"
+    },
+    {
+      "attack_id": "A02",
+      "mode": "secure_rag_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_02_multiturn_row_construction/secure_rag_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_02_multiturn_row_construction/secure_rag_mode/results.json"
+    },
+    {
+      "attack_id": "A02",
+      "mode": "sensitivity_eval_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_02_multiturn_row_construction/sensitivity_eval_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_02_multiturn_row_construction/sensitivity_eval_mode/results.json"
+    },
+    {
+      "attack_id": "A03",
+      "mode": "secure_rag_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_03_access_level_downgrade_task/secure_rag_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_03_access_level_downgrade_task/secure_rag_mode/results.json"
+    },
+    {
+      "attack_id": "A03",
+      "mode": "sensitivity_eval_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_03_access_level_downgrade_task/sensitivity_eval_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_03_access_level_downgrade_task/sensitivity_eval_mode/results.json"
+    },
+    {
+      "attack_id": "A04",
+      "mode": "secure_rag_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 0,
+      "status": "exact prompts not stored",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_04_relational_join_path_inference/secure_rag_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_04_relational_join_path_inference/secure_rag_mode/results.json"
+    },
+    {
+      "attack_id": "A04",
+      "mode": "sensitivity_eval_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 0,
+      "status": "exact prompts not stored",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_04_relational_join_path_inference/sensitivity_eval_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_04_relational_join_path_inference/sensitivity_eval_mode/results.json"
+    },
+    {
+      "attack_id": "A05",
+      "mode": "secure_rag_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_05_rank_probing_membership_inference/secure_rag_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference/secure_rag_mode/results.json"
+    },
+    {
+      "attack_id": "A05",
+      "mode": "sensitivity_eval_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_05_rank_probing_membership_inference/sensitivity_eval_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_05_rank_probing_membership_inference/sensitivity_eval_mode/results.json"
+    },
+    {
+      "attack_id": "A06",
+      "mode": "secure_rag_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_06_prompt_injection_poisoned_row/secure_rag_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_06_prompt_injection_poisoned_row/secure_rag_mode/results.json"
+    },
+    {
+      "attack_id": "A06",
+      "mode": "sensitivity_eval_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_06_prompt_injection_poisoned_row/sensitivity_eval_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_06_prompt_injection_poisoned_row/sensitivity_eval_mode/results.json"
+    },
+    {
+      "attack_id": "A07",
+      "mode": "secure_rag_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_07_backdoor_triggered_extraction/secure_rag_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_07_backdoor_triggered_extraction/secure_rag_mode/results.json"
+    },
+    {
+      "attack_id": "A07",
+      "mode": "sensitivity_eval_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 225,
+      "status": "comparable",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/attack_07_backdoor_triggered_extraction/sensitivity_eval_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_07_backdoor_triggered_extraction/sensitivity_eval_mode/results.json"
+    },
+    {
+      "attack_id": "A08",
+      "mode": "secure_rag_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 0,
+      "status": "exact prompts not stored",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/attack_08_embedding_side_leakage/secure_rag_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_08_embedding_side_leakage/secure_rag_mode/results.json"
+    },
+    {
+      "attack_id": "A08",
+      "mode": "sensitivity_eval_mode",
+      "pre_records": 225,
+      "post_records": 225,
+      "common_conditions": 225,
+      "conditions_with_stored_prompts": 0,
+      "status": "exact prompts not stored",
+      "pre_result": "outputs/experiments/gpt4o_mini_slurm_attacks01_07_08_neutral_prehardened_20260719/gpt4o_mini_slurm_attack08_neutral_prehardened_20260719/attack_08_embedding_side_leakage/sensitivity_eval_mode/results.json",
+      "post_result": "outputs/experiments/post hardened 1-8/attack_08_embedding_side_leakage/sensitivity_eval_mode/results.json"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+started=2026-07-21T04:52:27+02:00 attack=03 mode=sensitivity_eval_mode prompt_style=neutral output=outputs/experiments/post hardened 1-8/attack_03_access_level_downgrade_task/sensitivity_eval_mode
+Running access-level downgrade task matrix: 45 conditions, 5 iteration(s) each, model=gpt-4o-mini.
+
+Condition: target=t1_r001_avocadoel access_after=public pre_attack_history=1 iterations=5
+============ Job Information ===================================================
+Submitted: 2026-07-21T03:17:05
+Started: 2026-07-21T04:52:04
+Ended: 2026-07-21T05:00:03
+Elapsed: 8 min, Limit: 360 min, Difference: 352 min
+CPUs: 4, Nodes: 1
+Estimated credit Consumption:  core-hours
+================================================================================

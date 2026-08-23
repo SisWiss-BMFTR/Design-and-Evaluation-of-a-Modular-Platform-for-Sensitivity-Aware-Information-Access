@@ -1,0 +1,54 @@
+{
+  "schema_version": "a07s-failed-run-receipt-v1",
+  "experiment_id": "E07S_A07S_prompt_injection_guard_family_label_omitted_20260802T233117Z",
+  "array_job_id": "15136850",
+  "array_job_state": "COMPLETED",
+  "array_task_exit_codes": {
+    "0": "0:0",
+    "1": "0:0",
+    "2": "0:0",
+    "3": "0:0",
+    "4": "0:0"
+  },
+  "audit_job_id": "15136851",
+  "audit_job_state": "FAILED",
+  "validation_status": "FAIL",
+  "reason": "Single-target Slurm shards restarted target enumeration at one. R-002 through R-005 therefore used synthetic product P-971 instead of historical products P-972 through P-975. The dependent audit rejected 16 of 20 shards and recorded 720 attack-prompt mismatches.",
+  "historical_mapping": {
+    "R-001": "P-971",
+    "R-002": "P-972",
+    "R-003": "P-973",
+    "R-004": "P-974",
+    "R-005": "P-975"
+  },
+  "observed_failed_run_mapping": {
+    "R-001": "P-971",
+    "R-002": "P-971",
+    "R-003": "P-971",
+    "R-004": "P-971",
+    "R-005": "P-971"
+  },
+  "valid_pairing_diagnostics": {
+    "records_per_arm": 450,
+    "shared_pair_ids": 450,
+    "arm_prompt_sequence_matches": 450,
+    "arm_condition_matches": 450,
+    "arm_system_prompt_matches": 450
+  },
+  "invalid_shards": 16,
+  "total_shards": 20,
+  "record_level_prompt_mismatches": 720,
+  "supersession_policy": "The failed raw run and its two cancelled/rejected predecessors were deleted at the user's request to prevent accidental thesis integration. This receipt preserves the failure reason and hashes but is not experimental evidence.",
+  "deleted_run_roots": [
+    "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260802T231838Z",
+    "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260802T232308Z",
+    "outputs/experiments/matched_a07s_prompt_injection_guard/E07S_A07S_prompt_injection_guard_family_label_omitted_20260802T233117Z"
+  ],
+  "deleted_artifact_sha256": {
+    "authoritative_a07s_evidence.json": "a185ea3b7f8d50069607bf0bf8a1b218bb21acab44a95c2b97d604f3e91512e1",
+    "experiment_manifest.json": "737e9f958018d1750af0dba10a785635a7f70eef71a642cbd725cde408f32a3b",
+    "prompt_manifest.json": "1490b85494d45546284d7f9ba0357662533a3ff8d61e7ffbcf9e159048302eef",
+    "result_files_sha256.json": "a2fa0d9010b253a9f6f787938ad96292b94a1af2be89a71d47936115d4b86823"
+  },
+  "corrective_action": "Use a stable formulation-to-synthetic-product mapping, require isolated-shard construction to match complete-panel construction before submission, rerun all five targets in a fresh run root, and require the dependent audit to pass before thesis integration."
+}
