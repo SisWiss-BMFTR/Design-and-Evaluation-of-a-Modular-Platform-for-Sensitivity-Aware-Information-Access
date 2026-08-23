@@ -168,15 +168,15 @@ See `docs/EVIDENCE_MAP.md` and `docs/PROVENANCE_LIMITATIONS.md` before interpret
 
 ## Internal raw archives
 
-The twelve large matched and supplemental raw packages are not stored in this Git working tree. Their prepared deterministic `tar.zst` copies remain at the separate development-project archive location:
+The twelve large matched and supplemental raw packages are not stored in this Git working tree. Their original prepared deterministic `tar.zst` copies remain at the separate development-project archive location:
 
 ```text
 internal_archive/thesis_evidence_20260823/archives/
 ```
 
-That directory is intentionally outside this repository. Per-member inventories are retained under `manifests/evidence_inventories/`, and archive-level bindings are in `manifests/ARCHIVED_EVIDENCE.json` and `manifests/RELEASE_SHA256SUMS`.
+An independent external copy of all twelve archives is retained in the [Google Drive raw-evidence archive](https://drive.google.com/drive/folders/1BWu5604Fmyo3qZHEO3OjKPpgqGYT4Cs5?usp=drive_link). After upload, all twelve archives were downloaded to a local machine and SHA-256 was recomputed; 12/12 downloaded hashes matched the canonical `archive_sha256` values in `manifests/ARCHIVED_EVIDENCE.json`. The original HPC copies remain retained.
 
-The original trees and prepared archive copies currently occupy the same HPC-backed filesystem. They are logical copies, not independent durable copies. Their status therefore remains `pending_internal_archival`. Do not claim durable archival completion until an independent university-controlled copy has passed checksum and restoration verification.
+The Drive archive is intended only for restricted, authorized university review and is not presented as public evidence. This metadata update did not call Google APIs, so the current Google sharing configuration was not independently inspected from the repository. Per-member inventories are retained under `manifests/evidence_inventories/`, and archive-level bindings and structured round-trip verification metadata are in `manifests/ARCHIVED_EVIDENCE.json` and `manifests/RELEASE_SHA256SUMS`.
 
 ## Tests and deterministic checks
 

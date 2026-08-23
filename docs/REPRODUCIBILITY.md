@@ -54,6 +54,8 @@ The local archive payloads are under:
 internal_archive/thesis_evidence_20260823/archives/
 ```
 
+An independent external copy of all twelve payloads is recorded at the [Google Drive raw-evidence archive](https://drive.google.com/drive/folders/1BWu5604Fmyo3qZHEO3OjKPpgqGYT4Cs5?usp=drive_link). After upload, the archives were downloaded to a local machine and SHA-256 was recomputed on all twelve downloaded `.tar.zst` files. The result was 12/12 matches against the canonical `archive_sha256` fields in `manifests/ARCHIVED_EVIDENCE.json`. This verifies the archive bytes after a storage round trip; it is distinct from the existing source-inventory/stream verification recorded by each archive's `restoration_test` field.
+
 For each archive:
 
 ```bash
@@ -64,7 +66,7 @@ tar --use-compress-program=zstd -tf internal_archive/thesis_evidence_20260823/ar
 
 `scripts/internal_archive_tools.py` generated and stream-verified each archive against its source inventory. It can be used by an authorized reviewer to repeat verification while the original tree is available.
 
-Before delivery, copy `internal_archive/thesis_evidence_20260823/archives/` together with `manifests/ARCHIVED_EVIDENCE.json`, `manifests/evidence_inventories/`, and `manifests/RELEASE_SHA256SUMS` to an independent authorized university destination. The existing archives and original trees are on the same HPC-backed filesystem and are not independent durable copies. Fresh-clone simulation directories and other local readiness scratch material under `internal_archive/` are not part of the twelve-archive delivery set.
+The previous same-HPC-filesystem-only limitation no longer describes the current storage state because the independently downloaded Drive copies passed the 12/12 canonical-hash comparison. The original raw trees and prepared HPC archive copies remain retained. Access to the Drive folder is intended to remain restricted to authorized university reviewers; because no Google API or remote inspection was used in this metadata update, confirm the sharing configuration administratively before granting reviewer access. Fresh-clone simulation directories and other local readiness scratch material under `internal_archive/` are not part of the twelve-archive delivery set.
 
 ## Restoring an archive
 

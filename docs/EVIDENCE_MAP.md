@@ -59,6 +59,12 @@ outputs/final_thesis_supplemental_evidence_20260806/a06_raw_result_archive_manif
 
 It binds 1,284 records, 529,797,217 bytes, and canonical inventory SHA-256 `59f4d8272e88eadaaeff02df645708138f3abf72c435ee859cf94e258ad77131`.
 
+## External raw-evidence archive
+
+All twelve archive IDs listed above have an external copy in the [Google Drive raw-evidence archive](https://drive.google.com/drive/folders/1BWu5604Fmyo3qZHEO3OjKPpgqGYT4Cs5?usp=drive_link). The copy covers matched A01--A08, supplemental A02, supplemental A06, supplemental A07-S, and verifier replay.
+
+The archives were downloaded from Drive to a local machine and SHA-256 was recomputed on every downloaded `.tar.zst` file. All 12/12 values matched the canonical `archive_sha256` values already stored in `manifests/ARCHIVED_EVIDENCE.json`; those canonical hashes were not changed. The original HPC copies remain retained. Access is intended for restricted, authorized university review; this repository update did not independently inspect Google sharing settings and does not assert public availability.
+
 ## Evidence classifications
 
 - **AUTHORITATIVE:** the roots listed above and their canonical ledgers.

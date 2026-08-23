@@ -2,7 +2,7 @@
 
 ## Repository-history boundary
 
-This clean internal archival repository intentionally begins with a single final snapshot. The original development Git history is not included because historical revisions contained actual-looking OpenAI credentials. No commits, objects, refs, tags, reflogs, bundles, or remote configuration were imported. Revocation or rotation of the affected credentials is a separate mandatory action before delivery.
+This clean internal archival repository intentionally begins with a single final snapshot. The original development Git history is not included because historical revisions contained actual-looking OpenAI credentials. No commits, objects, refs, tags, reflogs, bundles, or remote configuration were imported. Both historically compromised OpenAI API keys have since been revoked; no credential value is recorded here.
 
 Development chronology is therefore not part of this archive. Scientific provenance is instead carried by the vetted captured source snapshots, patches, status captures, manifests, checksums, evidence ledgers, prompt records, scheduler receipts, and the limitations documented here. The manifest-controlled transfer did not require omission of any listed provenance artifact for containing an authentication credential. `manifests/SECRET_PRIVACY_SCAN.json` records the earlier development-project audit; `manifests/ARCHIVAL_WORKSPACE_SECURITY_SCAN.json` records the value-free scan of this isolated archival workspace.
 
@@ -52,7 +52,9 @@ Immutable ledgers and run records retain absolute `/mnt/vast/...`, `/user/...`, 
 
 ## Archive durability
 
-The original raw trees and newly created compressed archives currently reside on the same HPC-backed filesystem. They are separate logical copies but not independent durable copies. `pending_internal_archival` remains the correct status until an authorized university storage destination contains a checksum-verified copy and a restoration test has passed there.
+The original raw trees and prepared compressed archives remain on the HPC-backed filesystem. A second copy of all twelve `.tar.zst` archives is retained in the Google Drive location recorded in `manifests/ARCHIVED_EVIDENCE.json`. After upload, all twelve archives were downloaded to a local machine and rehashed; 12/12 SHA-256 values matched their unchanged canonical archive hashes. The previous same-filesystem-only limitation is therefore historical rather than current.
+
+The Drive location is intended for restricted, authorized university access and is not asserted to be public. This metadata update did not inspect Google sharing configuration through an API, so access settings remain an administrative control rather than a cryptographically verified property.
 
 ## Dependency portability
 
