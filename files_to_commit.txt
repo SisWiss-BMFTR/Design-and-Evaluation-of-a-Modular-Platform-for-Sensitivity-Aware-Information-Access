@@ -69,11 +69,13 @@ files_to_commit.txt
 files_to_exclude.txt
 files_to_internal_archive.txt
 manifests/A06_RAW_MANIFEST_VERIFICATION.json
+manifests/ARCHIVAL_WORKSPACE_SECURITY_SCAN.json
 manifests/ARCHIVED_EVIDENCE.json
 manifests/FIGURE_TABLE_PROVENANCE.json
 manifests/FRESH_CLONE_READINESS.json
 manifests/HARDENED_A05_PROVENANCE.json
 manifests/PATH_MAPPINGS.json
+manifests/PROVENANCE_ARTIFACT_CLASSIFICATION.json
 manifests/RELEASE_SHA256SUMS
 manifests/SECRET_PRIVACY_SCAN.json
 manifests/THESIS_SOURCE_CONSISTENCY.json
@@ -3039,6 +3041,7 @@ sensitivity_policy.yaml
 tests/test_a06_supplemental_challenge.py
 tests/test_field_level_access.py
 tests/test_output_leakage_verifier.py
+thesis/Design and Evaluation of a Modular Platform for Sensitivity-Aware Information Access.pdf
 thesis/appendices/appendix_detailed_baseline.tex
 thesis/appendices/appendix_detailed_hardening.tex
 thesis/appendices/appendix_experiment_protocols.tex

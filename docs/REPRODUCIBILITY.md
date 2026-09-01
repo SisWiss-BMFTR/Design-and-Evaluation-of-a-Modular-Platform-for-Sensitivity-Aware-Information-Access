@@ -37,7 +37,7 @@ python scripts/check_thesis_with_matched_ablations.py \
   --skip-external-raw-rehash
 ```
 
-The checksum file intentionally covers the frozen thesis, dataset, policy, ledgers, archive manifest, source manifests, compact evidence, and locally available evidence archives. `--ignore-missing` verifies the Git-resident subset in a Git-only checkout. After the twelve archive payloads have been restored at their documented repo-relative paths, run `sha256sum -c manifests/RELEASE_SHA256SUMS` without that option for the complete internal archive. No API credential is required.
+The checksum file intentionally covers the frozen thesis, dataset, policy, ledgers, archive manifest, source manifests, compact evidence, and the externally stored evidence archive payloads and verification sidecars. `--ignore-missing` verifies the Git-resident subset in a Git-only checkout. A complete local check without that option requires all 24 non-Git paths at their documented repo-relative locations: twelve `.tar.zst` payloads and twelve `.verification.json` sidecars. The payload hashes remain bound to the canonical `archive_sha256` values in `manifests/ARCHIVED_EVIDENCE.json`; the absent sidecar checksum bindings are retained from the prior release manifest and were not independently revalidated during this final Git-only update. No API credential is required.
 
 ## Large raw evidence
 

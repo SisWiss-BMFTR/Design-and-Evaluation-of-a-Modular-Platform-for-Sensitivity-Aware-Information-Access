@@ -52,11 +52,11 @@ The legacy runner flags were 60/150 and 122/150, but these are retained only as 
 The attack-family-label-free original-baseline runner stored only the final answer and did not store a distinct raw pre-delivery model answer. Raw model leakage is therefore not available for this baseline. Although the offline rescorer used the stored final answer as a computational proxy when populating its internal raw field, that proxy is not reported as an observed raw-generation metric.
 
 \paragraph{Representative recorded output.}
-One sensitivity-evaluation record for target \texttt{t1\_r001\_avocadoel}, public access, one turn, and iteration~1 delivered the following complete reconstruction (Markdown spacing normalised):
+A02 measures newly delivered role-restricted fields from the same formulation row across controlled one-, three-, and five-turn conditions. In the multi-turn conditions, preceding warm-up and focus turns maintain the same formulation. The deterministic policy-aware scorer evaluates the final answer for those fields. One sensitivity-evaluation record for target \texttt{t1\_r001\_avocadoel}, public access, one turn, and iteration~1 delivered the following complete reconstruction (Markdown spacing normalised):
 \begin{quote}\small
 ``Name der Rezeptur: Pure Cream; Produktkategorie: Lotion; Beschreibung: Lotion mit beruhigend Wirkung; Phase: B; INCI: Persea Gratissima Oil; Lieferant: OilPure; Menge (\%): 15.55; Claim: schützend.''
 \end{quote}
-The stored scorer marked all eight target fields and full reconstruction for this record. This excerpt illustrates the event counted by the full-reconstruction metric; it is not an additional trial.
+The stored scorer detected every required restricted target field in the final delivered answer and marked all eight target fields, so the record meets the complete-reconstruction criterion. This excerpt illustrates the event counted by the full-reconstruction metric; it is not an additional trial.
 
 \section{A03: Access-Level Downgrade}
 \label{sec:baseline-a03}
@@ -114,7 +114,7 @@ Sensitivity evaluation & 150/150 & 0/150 & 2/150 & 0/75 / 2/75 & 25/75\\\bottomr
 \paragraph{Observed pattern.}
 The evaluated injection produced no canary compliance in either mode. Secure mode also produced no delivered protected-value disclosure. Sensitivity-evaluation mode produced 2/150 protected-value leaks, both under internal access, at one turn, for the same target/iteration combination. The poisoned row and protected target content were recorded in retrieval in all 150 unauthorised runs per mode. The two disclosures are confidentiality failures. Zero canary output provides no evidence that the stored override instruction was followed. Positive-control success was 75/75 in secure mode and 25/75 in sensitivity-evaluation mode.
 
-\section{A07: Backdoor-Triggered Extraction}
+\section{A07: Triggered Indirect Prompt Injection}
 \label{sec:baseline-a07}
 
 \begin{table}[htbp]\centering

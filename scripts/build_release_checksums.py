@@ -2,8 +2,10 @@
 """Build the internal release/archive SHA-256 checksum file.
 
 The checksum set intentionally covers claim-critical compact evidence, source
-manifests, archive inventories, and the locally available large archives. It
-does not contain caches, raw duplicate trees, or credentials.
+manifests, archive inventories, and the externally archived large evidence
+packages. Missing external packages retain their already-recorded checksum
+bindings; Git-resident files are always hashed from the current tree. It does
+not contain caches, raw duplicate trees, or credentials.
 """
 
 from __future__ import annotations
@@ -11,6 +13,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,9 +44,27 @@ def digest(path: Path) -> str:
     return value.hexdigest()
 
 
+def existing_checksums() -> dict[str, str]:
+    if not OUTPUT.is_file():
+        return {}
+    values: dict[str, str] = {}
+    for number, line in enumerate(OUTPUT.read_text(encoding="utf-8").splitlines(), 1):
+        match = re.fullmatch(r"([0-9a-f]{64})  (.+)", line)
+        if not match:
+            raise ValueError(f"invalid checksum line {number}")
+        checksum, relative = match.groups()
+        if relative in values:
+            raise ValueError(f"duplicate checksum path: {relative}")
+        values[relative] = checksum
+    return values
+
+
 def main() -> None:
+    previous = existing_checksums()
     paths: set[str] = set()
+    external: dict[str, str] = {}
     for relative in (
+        "thesis/Design and Evaluation of a Modular Platform for Sensitivity-Aware Information Access.pdf",
         "thesis/final_thesis.pdf",
         "thesis/main.tex",
         "thesis/references.bib",
@@ -75,11 +96,27 @@ def main() -> None:
         for path in source_root.iterdir():
             if path.is_file() and not path.is_symlink() and path.name != "replay_corpus.json":
                 paths.add(path.relative_to(ROOT).as_posix())
-        add_file(paths, item["current_storage_path"])
-        verification = item["current_storage_path"].replace(
+        archive_relative = item["current_storage_path"]
+        archive_path = ROOT / archive_relative
+        if archive_path.is_file() and not archive_path.is_symlink():
+            if digest(archive_path) != item["archive_sha256"]:
+                raise ValueError(f"archive checksum mismatch: {archive_relative}")
+            paths.add(archive_relative)
+        else:
+            if previous.get(archive_relative) not in (None, item["archive_sha256"]):
+                raise ValueError(f"stale external archive binding: {archive_relative}")
+            external[archive_relative] = item["archive_sha256"]
+
+        verification = archive_relative.replace(
             ".tar.zst", ".verification.json"
         )
-        add_file(paths, verification)
+        verification_path = ROOT / verification
+        if verification_path.is_file() and not verification_path.is_symlink():
+            paths.add(verification)
+        elif verification in previous:
+            external[verification] = previous[verification]
+        else:
+            raise FileNotFoundError(verification)
 
     # Source binding is stored in matched experiment manifests and in explicit
     # source manifests for later supplemental studies.
@@ -90,9 +127,16 @@ def main() -> None:
             if path.is_file():
                 paths.add(path.relative_to(ROOT).as_posix())
 
-    lines = [f"{digest(ROOT / relative)}  {relative}" for relative in sorted(paths)]
+    if paths & external.keys():
+        raise ValueError("local and external checksum paths overlap")
+    checksums = {relative: digest(ROOT / relative) for relative in paths}
+    checksums.update(external)
+    lines = [f"{checksums[relative]}  {relative}" for relative in sorted(checksums)]
     OUTPUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"{OUTPUT.relative_to(ROOT)}: {len(lines)} entries")
+    print(
+        f"{OUTPUT.relative_to(ROOT)}: {len(lines)} entries "
+        f"({len(paths)} local, {len(external)} external)"
+    )
 
 
 if __name__ == "__main__":

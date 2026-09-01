@@ -23,13 +23,19 @@ The canonical thesis PDF is:
 thesis/final_thesis.pdf
 ```
 
-Expected SHA-256:
+The human-readable submission copy is:
 
 ```text
-c08b138ca3343f4284bcd82bec27178c53fdab52f230572c8b47ec84a06b1799
+thesis/Design and Evaluation of a Modular Platform for Sensitivity-Aware Information Access.pdf
 ```
 
-It is a byte-identical copy of the authoritative development-project file `outputs/deliverables/Synchronized_Thesis_P1_Corrections.pdf`; that duplicate is intentionally absent from this clean archival tree. Rebuilding the LaTeX source is a content/buildability check; it does not replace the frozen PDF.
+Both frozen PDFs are byte-identical, contain 192 physical pages, and have SHA-256:
+
+```text
+15ed795d0753c70b88b80e6b652845c3f6c9bd7ba54aba23e2464d1dd2d452d8
+```
+
+These two files are the authoritative final thesis artefacts. Rebuilding the LaTeX source is a content/buildability check; it does not replace either frozen PDF.
 
 ## Architecture
 

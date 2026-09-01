@@ -170,9 +170,9 @@
 
   % The prepared index feeds retrieval; state is read before generation and
   % updated only from the sanitised delivery path.
-  \draw[flow] (index.south) -- ++(0,-8mm) -| (retrieval.east);
+  \draw[flow] (index.south) -- ++(0,-8mm) |- (retrieval.east);
   \draw[stateflow] (memory.west) -- (context.east);
-  \draw[stateflow] (answer.east) -- ++(16mm,0) |- (memory.south);
+  \draw[stateflow] (answer.east) -- ++(16mm,0) -| (memory.south);
 
   \node[telemetry,below=7mm of answer] (telemetry) {
     \textbf{Evidence telemetry}\\

@@ -185,7 +185,7 @@ The transition hook compares the previous and new role and normalised allowed-la
 \paragraph{Relation-access guard.}
 Configured directed edges have separate role sets for traversal and disclosure. In secure or forced-secure paths, the guard can deny eligible product-to-formulation or product-to-process expansion, omit restricted edge values from rendered context, sanitise relation-derived focus identifiers, and contribute relation-policy fields to output verification. In sensitivity-evaluation mode, traversal and labelled restricted-edge display are deliberately retained to test downstream restraint. Disabling the guard bypasses the dedicated edge checks but does not disable ordinary field-level projection. There is no uniform \texttt{last\_relation\_guard} object; projection effects appear in access decisions and visible context, while traversal denials are log events.
 
-These controls use patterns, exact-value inventories, policy objects, and mode-dependent branches. A switch being enabled is not the same as its trigger firing, and a guard action is not the same as a reduction in the attack-specific outcome. These distinctions are part of the empirical interpretation rather than hidden implementation details.
+These controls use patterns, exact-value inventories, policy objects, and mode-dependent branches. Switch state, trigger execution, guard action, and attack-outcome reduction are recorded as distinct observations. Guard telemetry therefore cannot by itself establish a reduction in the attack-specific outcome. These distinctions are part of the empirical interpretation rather than hidden implementation details.
 
 \section{Telemetry and evidence production}
 

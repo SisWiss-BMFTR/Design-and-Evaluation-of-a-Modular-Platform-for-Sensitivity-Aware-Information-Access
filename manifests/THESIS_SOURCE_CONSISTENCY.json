@@ -373,12 +373,12 @@
     }
   ],
   "artifact_sha256": {
-    "thesis/main.tex": "4e9b18cf9853b92110f6024f2646b5cd4f5ebf04d6866dd8ea5e4646456a4ad6",
-    "thesis/chapters/chapter05_experiments.tex": "57b8568b71ee68901c4e35d3b560d619639db28c3f3df80309935876a3c05199",
-    "thesis/chapters/chapter06_results.tex": "c9475485350845ec76112005ab6ce999b0b637d26d8b26e40b4dd6e9fce172ad",
-    "thesis/chapters/chapter07_vulnerability_analysis.tex": "9076eb2cbd39386bc47889aa809b9d1bc82fa3d5fbe0e17928382912021625d9",
-    "thesis/chapters/chapter08_discussion.tex": "52e68da505979823e9b3fcec9282cfb2ea987ee492027c7b87edc7c663c061cc",
-    "thesis/chapters/chapter09_conclusion.tex": "3d8a8d43130f2bc54af76904f6d7748dc8630262b6fa5fe9c7c51d26b13f274e",
+    "thesis/main.tex": "ad2cdabf2f7a9ada74582ee7bc24a1b8cb83520c91b23c156e7ae1424f95fe89",
+    "thesis/chapters/chapter05_experiments.tex": "f2fa1c0b43b26e97e5c2099407e1450cd2ecb95e56be9858bc7a0d591380fc49",
+    "thesis/chapters/chapter06_results.tex": "4d5adadec4eee11d100c77d8365032b7cc72647d4ef1ea49647900c8c360fb82",
+    "thesis/chapters/chapter07_vulnerability_analysis.tex": "b5aff755af973842bb52f0026133ab86ac9870fe4fe0e60126f8e751ddc569e2",
+    "thesis/chapters/chapter08_discussion.tex": "1c715ec129d83bee18c457564699460b72d2b3a9f8795c5babe8be56213a0d3c",
+    "thesis/chapters/chapter09_conclusion.tex": "3138669c66f5fe4c2fda1ab7961e990278fafcfcbe41d065441d2b653dd29752",
     "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/matched_ablation_metric_summary.json": "2be8a7b1f4eb8fd7bc49303cb7ead6f6fd910d8b90717e32ce4236aadaebd567",
     "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/provenance_with_ablations.json": "e79d12b64c18198e8d2059ea797fdabcd6543d693fa5ecff974e3571752a7ed9",
     "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/package_comparison_provenance.json": "c2bbbb4c4b0a3ddf6fa818a899dc04f0d22f8673085cae36d2857026996885d0",
@@ -400,6 +400,6 @@
     "thesis/generated/a06_supplemental_frozen_challenge_table.tex": "07157d1d863477d500c0cfb13b8279c3ba54096ea5671a76a9309ca874cd66dc",
     "thesis/generated/a07s_matched_ablation_table.tex": "72d5afcb93372c5e1f7715ff01a615e624cf628c160d8e1a8cf2d820c2f6da8c",
     "outputs/final_thesis_evidence_20260803_prompt_provenance_v3/README.md": "b37b69f46fb520e9a62cc84f98238914f9e3758e5e782e32099cb684608d45ac",
-    "thesis/build-internal-readiness-20260823/main.pdf": "68f8581610a16a099e33f3f11f6066dab52720406aaeb27998066feea1c2955f"
+    "thesis/build/main.pdf": "6ca7e78d96df92995eacff110db1929e7dbb808438598b8ba305314d290dba97"
   }
 }

@@ -1,5 +1,5 @@
+EXTERNAL_ARCHIVE_ACCESS	Administratively confirm that the documented Google Drive archive remains restricted to authorized university reviewers; repository-local checks do not independently verify Drive sharing permissions.
 INTERNAL_LICENSE	Confirm whether university policy requires a software or dataset license for the internal repository; none was invented.
 LEGACY_RETENTION	Confirm whether the small already-tracked historical experiment/evidence bundles should remain as labelled legacy; the proposed list retains them for provenance completeness.
 OLD_DELIVERABLE_RETENTION	Choose the private retention period for old/non-authoritative thesis PDFs and prior LaTeX packages under outputs/deliverables; they are excluded from normal Git and were not deleted.
 PRIVATE_PATH_DISCLOSURE	Confirm that authorized reviewers may receive immutable historical patches/logs/ledgers containing HPC-private absolute paths; PATH_MAPPINGS.json documents them.
-REMOTE_DESTINATION	Confirm that any future Git remote is access-controlled and approved for internal university material; this clean archival repository currently has no remote and nothing has been pushed.

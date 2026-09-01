@@ -19,7 +19,7 @@ outputs/audits/final_project_review_*/**
 outputs/audits/final_style_review_*/**
 outputs/audits/final_supervised_revision_*/**
 outputs/audits/style_revision_batch*/**
-outputs/deliverables/**  # canonical copy is thesis/final_thesis.pdf
+outputs/deliverables/**  # authoritative copies are the two final PDFs under thesis/
 outputs/experiments/full_a02_verifier_challenge/*/raw_generation/**
 outputs/experiments/matched_a07s_prompt_injection_guard/*/arm_A_injection_guard_off/**
 outputs/experiments/matched_a07s_prompt_injection_guard/*/arm_B_injection_guard_on/**

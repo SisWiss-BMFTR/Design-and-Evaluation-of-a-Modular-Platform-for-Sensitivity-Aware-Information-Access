@@ -3,17 +3,26 @@
   "status": "PASS_WITH_EXTERNAL_ACTIONS",
   "proposed_tree": {
     "source_list": "files_to_commit.txt",
-    "listed_files": 3131,
-    "exported_files_before_build": 3131,
+    "listed_files": 3134,
+    "exported_files_before_build": 3134,
     "exact_file_set_match": true,
     "symlinks": 0,
     "dot_env_present": false,
     "canonical_pdf_present": true,
+    "submission_pdf_present": true,
     "maximum_file_bytes": 3475064
   },
   "verification": {
     "git_resident_release_checksums": "PASS",
-    "full_local_release_checksums_with_archives": "PASS",
+    "full_local_release_checksums_with_archives": "NOT_RUN_EXTERNAL_FILES_ABSENT",
+    "external_checksum_bindings": {
+      "status": "PASS",
+      "entries": 24,
+      "archive_payloads": 12,
+      "verification_sidecars": 12,
+      "archive_payload_hashes_validated_against_archived_evidence": true,
+      "verification_sidecars_independently_revalidated": false
+    },
     "unit_tests": {
       "status": "PASS",
       "tests_run": 55,
@@ -22,23 +31,35 @@
     "latex_build": {
       "status": "PASS",
       "engine": "tectonic",
-      "canonical_pages": 191,
-      "rebuilt_pages": 191,
-      "canonical_pdf_sha256": "c08b138ca3343f4284bcd82bec27178c53fdab52f230572c8b47ec84a06b1799",
-      "rebuilt_pdf_sha256": "0fc8c547a259c466e93bf6b3a05410c9a7621e4eb62a42e221990d09b5afe287",
-      "canonical_pdf_bytes": 818290,
-      "rebuilt_pdf_bytes": 818290,
+      "canonical_pages": 192,
+      "rebuilt_pages": 192,
+      "canonical_pdf_sha256": "15ed795d0753c70b88b80e6b652845c3f6c9bd7ba54aba23e2464d1dd2d452d8",
+      "rebuilt_pdf_sha256": "6ca7e78d96df92995eacff110db1929e7dbb808438598b8ba305314d290dba97",
+      "canonical_pdf_bytes": 820066,
+      "rebuilt_pdf_bytes": 820066,
       "page_text_mismatches": [],
       "text_content_equivalent": true,
       "byte_identical": false,
       "fatal_tex_errors": 0,
+      "undefined_citations": 0,
+      "undefined_references": 0,
       "overfull_hbox_warnings": 0,
-      "note": "The rebuilt PDF is a verification artifact only. Engine-generated PDF bytes differ, while all 191 extracted page texts are identical. The frozen canonical PDF was not overwritten."
+      "note": "The rebuilt PDF is a verification artifact only. Engine-generated PDF bytes differ, while all 192 extracted page texts are identical. The two frozen authoritative PDFs were not overwritten by the rebuild."
     },
     "thesis_source_consistency": {
       "status": "PASS",
       "checks": 74,
       "external_raw_followed": false
+    },
+    "current_clean_archive_security": {
+      "status": "PASS",
+      "files_scanned": 3134,
+      "actual_credentials": 0,
+      "signed_urls": 0,
+      "nested_git": 0,
+      "clean_history_commits_scanned": 2,
+      "high_confidence_history_findings": 0,
+      "note": "The final candidate tree and the intentionally clean two-commit archive history were independently scanned. SECRET_PRIVACY_SCAN.json remains the explicitly documented historical development-project audit."
     }
   },
   "large_evidence": {
@@ -50,8 +71,6 @@
     "new_hosted_model_runs_require_user_supplied_secret": true
   },
   "external_actions_before_delivery": [
-    "Rotate/revoke the two actual-looking OpenAI keys found in Git history.",
-    "Coordinate a Git-history rewrite and re-clone procedure before any further push.",
-    "Copy and restore-test all twelve evidence archives on independent authorized university storage."
+    "Administratively confirm that the documented Google Drive archive remains restricted to authorized university reviewers; repository-local checks do not independently verify Drive sharing permissions."
   ]
 }

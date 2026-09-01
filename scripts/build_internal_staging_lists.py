@@ -236,7 +236,7 @@ def main() -> None:
         "outputs/audits/final_style_review_*/**",
         "outputs/audits/final_supervised_revision_*/**",
         "outputs/audits/style_revision_batch*/**",
-        "outputs/deliverables/**  # canonical copy is thesis/final_thesis.pdf",
+        "outputs/deliverables/**  # authoritative copies are the two final PDFs under thesis/",
         "outputs/nonrun_archives/**",
         "outputs/experiments/matched_single_guard_ablations/*/arm_A_*/**",
         "outputs/experiments/matched_single_guard_ablations/*/arm_B_*/**",
@@ -255,13 +255,11 @@ def main() -> None:
     write_lines(EXCLUDE_LIST, exclude_patterns)
 
     decisions: list[str] = [
-        "ARCHIVE_DESTINATION\tChoose an access-controlled, durable university/institute destination for all 12 tar.zst archives; the current two logical copies share one HPC filesystem.",
-        "CREDENTIAL_ROTATION\tRevoke/rotate both actual-looking OpenAI keys found in Git history, including the current .env key; no rotation was performed.",
+        "EXTERNAL_ARCHIVE_ACCESS\tAdministratively confirm that the documented Google Drive archive remains restricted to authorized university reviewers; repository-local checks do not independently verify Drive sharing permissions.",
         "INTERNAL_LICENSE\tConfirm whether university policy requires a software or dataset license for the internal repository; none was invented.",
         "LEGACY_RETENTION\tConfirm whether the small already-tracked historical experiment/evidence bundles should remain as labelled legacy; the proposed list retains them for provenance completeness.",
         "PRIVATE_PATH_DISCLOSURE\tConfirm that authorized reviewers may receive immutable historical patches/logs/ledgers containing HPC-private absolute paths; PATH_MAPPINGS.json documents them.",
         "OLD_DELIVERABLE_RETENTION\tChoose the private retention period for old/non-authoritative thesis PDFs and prior LaTeX packages under outputs/deliverables; they are excluded from normal Git and were not deleted.",
-        "REMOTE_DESTINATION\tConfirm that any future Git remote is access-controlled and approved for internal university material; the configured GitHub origin's visibility was not verified and nothing was pushed.",
     ]
     write_lines(DECISION_LIST, decisions)
 
